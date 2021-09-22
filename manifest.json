@@ -1,0 +1,9 @@
+{
+    "name": "Tui Truck App",
+    "short_name": "TuiTrucks",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#7CB344",
+    "theme_color": "#7CB344",
+    "orientation": "portrait-primary"
+}
