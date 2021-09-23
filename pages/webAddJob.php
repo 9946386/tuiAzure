@@ -22,10 +22,6 @@ include_once '/includes/dbh.php';
 
 <body>
 
-    <?php
-    include_once '/includes/dbh.php';
-    ?>
-
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
@@ -75,7 +71,7 @@ include_once '/includes/dbh.php';
         </div>
     </div>
 
-    <!-- <div class="container-fluid bg-secondary darkContainer">
+    <div class="container-fluid bg-secondary darkContainer">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
                 <div class="card-body">
@@ -157,29 +153,7 @@ include_once '/includes/dbh.php';
             </div>
 
         </div>
-    </div> -->
-
-    <form action="/includes/insert.php" method="POST">
-        <input type="text" name="JobName" placeholder="Job Name">
-        <br>
-        <input type="text" name="JobDate" placeholder="Job Name">
-        <br>
-        <input type="text" name="Destination" placeholder="Job Name">
-        <br>
-        <input type="text" name="JobType" placeholder="Job Name">
-        <br>
-        <input type="text" name="OrderNumber" placeholder="Job Name">
-        <br>
-        <input type="text" name="ReferenceNumber" placeholder="Job Name">
-        <br>
-        <input type="text" name="Pallets" placeholder="Job Name">
-        <br>
-        <input type="text" name="JobWeight" placeholder="Job Name">
-        <br>
-        <input type="text" name="JobStatus" placeholder="Job Name">
-        <br>
-        <button type="submit" name="submit">Submit</button>
-    </form>
+    </div>
 
     <!-- Footer -->
     <div class="container-fluid bg-primary p-4">
