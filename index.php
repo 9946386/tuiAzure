@@ -18,14 +18,13 @@
 
 <body>
     <?php
-    include 'includes/dbh.php';
+    include '/includes/dbh.php';
     ?>
-
 
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto" id="header">
-            <a href="/pages/webHome.php" class="btn">
+            <a href="/includes/" class="btn">
                 <div class="row text-center">
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
             </a>
