@@ -1,14 +1,13 @@
 <?php
 
-// Database Variables 
-$dbServerName = "tuiprojectserver.database.windows.net";
-$dbUserName = "tuiprojectadmin";
-$dbPassword = "TuiProjectPassword123";
-$dbName = "tui-project-db";
+$host = 'mydemoserver.mysql.database.azure.com';
+$username = 'myadmin';
+$password = 'your_password';
+$db_name = 'your_database';
 
-$conn = new mysqli($dbServerName, $dbUserName, $dbPassword, $dbName) or die(mysqli_error($conn));
-
-$jobResult = $conn->query("select * from OpenJobs") or die($conn->error);
-
-
+//Establishes the connection
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
