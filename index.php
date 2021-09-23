@@ -60,20 +60,7 @@ include_once 'includes/dbh.php'
         <div class="row justify-content webDate">
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
         </div>
-
-        <?php
-        $sql = "SELECT * FROM OpenJobs;";
-        $result = mysqli_query($conn, $sql);
-        $resultsCheck = mysqli_num_rows($result);
-        if ($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo $row['JobName'];
-            }
-        }
-        ?>
     </div>
-
-
 
     <!-- Truck Job Table -->
     <div class="container-fluid bg-secondary vh-100 darkContainer">
@@ -92,6 +79,21 @@ include_once 'includes/dbh.php'
                             </div>
                             <div class="row">
                                 <div class="col pt-3">
+                                    <?php
+                                    $sql = "SELECT JobName, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus FROM OpenJobs";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        echo "<table><tr><th>JobType</th><th>OrderNumber</th></tr><tr><th>Reference</th><th>Pallets</th></tr><tr><th>Weight</th><th>Status</th></tr>";
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr><td>" . $row["JobName"] . "</td><td>" . $row["OrderNumber"] . "</td><td>" . $row["ReferenceNumber"] . "</td><td>" . $row["Pallets"] . "</td><td>" . $row["JobWeight"] . "</td><td>" . $row["JobStatus"] . "</td></tr>";
+                                        }
+                                        echo "</table>";
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    ?>
+
                                     <table class="table table-bordered table-responsive ">
                                         <thead>
                                             <tr class="table-light">
