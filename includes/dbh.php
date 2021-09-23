@@ -8,10 +8,9 @@ $dbName = "tui-project-db";
 
 $conn = new mysqli($dbServerName, $dbUserName, $dbPassword, $dbName) or die(mysqli_error($conn));
 
-$jobResult = $conn->query("select * from Jobs") or die($conn->error);
+$jobResult = $conn->query("select * from OpenJobs") or die($conn->error);
 
-if(isset($_POST['JobName']))
-{
+if (isset($_POST['JobName'])) {
     $JobName = $_POST['JobName'];
     $JobDate = $_POST['JobDate'];
     $Destination = $_POST['Destination'];
