@@ -9,4 +9,7 @@ $conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 
 if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
+    echo '<script>console.log("Failed Bro!")</script>';
+} else {
+    echo '<script>console.log("Success Bro!")</script>';
 }
