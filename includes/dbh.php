@@ -28,8 +28,8 @@ if (isset($_POST['submit'])) {
     $JobWeight = $_POST['JobWeight'];
     $JobStatus = $_POST['JobStatus'];
 
-    $mysqli->query("INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
-    VALUES ('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')") or die($mysqli->error);
+    // $mysqli->query("INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
+    // VALUES ('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')") or die($mysqli->error);
 
     // Create insert command
     // $sql = "insert into OpenJobs(JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
