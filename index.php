@@ -18,7 +18,7 @@
 
 <body>
     <?php
-    include '/includes/dbh.php';
+    include 'includes/dbh.php';
     ?>
 
     <!-- Header -->
