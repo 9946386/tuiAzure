@@ -1,5 +1,5 @@
 <?php
-include '/includes/dbh.php';
+require '/includes/dbh.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +21,6 @@ include '/includes/dbh.php';
 </head>
 
 <body>
-
-
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto" id="header">
