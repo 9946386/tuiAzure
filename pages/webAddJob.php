@@ -1,3 +1,7 @@
+<?php
+    include_once '/includes/dbh.php';
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
