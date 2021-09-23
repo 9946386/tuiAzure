@@ -17,7 +17,7 @@ include_once '/includes/dbh.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
 
-    <title>Web - Daily Plan</title>
+    <title>Web - Add Job</title>
 </head>
 
 <body>
@@ -28,14 +28,159 @@ include_once '/includes/dbh.php';
 
     <!-- Header -->
     <header class="w-100">
-        <div class="container-fluid bg-primary top-0 h-auto" id="header">
-            <a href="/pages/mobileHome.php" class="btn">
+        <div class="container-fluid bg-primary top-0 h-auto">
+            <a href="/index.html" class="btn">
                 <div class="row text-center">
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
             </a>
         </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary webNavBar" id="navbar_top">
+            <div class="container-fluid ">
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-5 ">
+                            <a class="nav-link active text-light" aria-current="page" href="/index.html">Daily Plan</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link text-light" href="/pages/webWeeklyPlan.html">Weekly Plan</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link text-light" href="/pages/webArchives.html">Archives</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link text-light" href="/pages/webReports.html">Reports</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
+    <!-- Page Title -->
+    <div class="container-sm text-dark px-3 p-4 truckList">
+        <div class="row m-auto align-items-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Truck 1
+                </button>
+                <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Truck 2</a>
+                    <a class="dropdown-item" href="#">Truck 3</a>
+                    <a class="dropdown-item" href="#">Truck 4</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-secondary darkContainer">
+        <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
+            <div class="card w-75 m-auto">
+                <div class="card-body">
+                    <form action="process.php" method="POST">
+                        <div class="row gy-5 form-group">
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Date:</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control p-1" name="Date" value="Enter Date">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Destination:</label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" class="form-control p-1" name="Destination" value="Enter Destination">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Type:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="Type" value="Enter Type">
+                            </div>
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Order #:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="OrderNumber" value="Enter Order Number">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Reference:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="ReferenceNumber" value="Enter Reference">
+                            </div>
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Pallets:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="Pallets" value="Enter Pallets">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Weight:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="JobWeight" value="Enter Weight">
+                            </div>
+                            <div class="col-2">
+                                <label for="addJobDate" class="form-label p-1">Status:</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row justify-content-end me-3">
+                        <div class="col-1 form-group">
+                            <button type="submit" class="btn btn-primary text-light" name="save">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-primary p-4">
+        <footer class="webFooter">
+            <div class="row w-75 m-auto align-items-center">
+                <div class="col-3 text-center">
+                    <a href="/index.html">
+                        <img src="/images/navLogo.png" alt="footerImg">
+                    </a>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col text-center">
+                            <a class="text-light m-auto" role="button" href="/index.html">Daily Plan</a>
+                        </div>
+                        <div class="col text-center">
+                            <a class="text-light m-auto" role="button" href="/pages/webWeeklyPlan.html">Weekly Plan</a>
+                        </div>
+                        <div class="col text-center">
+                            <a class="text-light m-auto" role="button" href="/pages/webArchive.html">Archive</a>
+                        </div>
+                        <div class="col text-center">
+                            <a class="text-light m-auto" role="button" href="/pages/webReports.html">Reports</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 text-center loginBtn m-auto">
+                    <button class="btn btn-secondary rounded-pill">Login to Truck App</button>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 
     <!-- Bootstrap Bundle with Popper -->
