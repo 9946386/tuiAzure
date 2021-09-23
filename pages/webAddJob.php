@@ -141,7 +141,7 @@ include_once '/includes/dbh.php';
                     </form>
                     <div class="row justify-content-end me-3">
                         <div class="col-1 form-group">
-                            <button type="submit" class="btn btn-primary text-light" name="save">Confirm</button>
+                            <input type="submit" class="btn btn-primary text-light" name="save">Confirm</input>
                         </div>
                     </div>
                 </div>
