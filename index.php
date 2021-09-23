@@ -1,3 +1,7 @@
+<?php
+include 'includes/dbh.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +21,7 @@
 </head>
 
 <body>
-    <?php
-    include 'includes/dbh.php';
-    ?>
+
 
     <!-- Header -->
     <header class="w-100">
