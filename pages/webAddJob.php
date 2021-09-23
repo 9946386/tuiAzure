@@ -2,8 +2,8 @@
     include_once '/includes/dbh.php';
 ?>
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -13,52 +13,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/styles/myTheme.css"><link rel="preconnect" href="https://fonts.googleapis.com">
-
-        <style>
-            .navbar-expand-lg .navbar-collapse {
-                display: flex!important;
-                justify-content: space-around;
-                flex-basis: auto;
-            }
-
-            .webNavBar a{
-                font-family: var(--bebas-font);
-                font-size: 1.5rem;
-            }
-
-            .webDate h6{
-                font-size: 1.5rem!important;
-            }
-
-            .line {
-                border-left: 1px solid var(--bs-dark);
-                height: auto;
-            }
-
-            .webFooter a{
-                font-family: var(--bebas-font);
-                font-size: 1.5rem;
-                text-decoration: none;
-            }
-
-            .webFooter a:hover{
-                color: var(--bs-success)!important;
-                font-size: 1.7rem!important;
-            }
-
-            .webFooter button, .truckList button{
-                font-family: var(--bebas-font);
-                font-size: 1.2rem;
-                text-decoration: none;
-                width: 10rem;
-            }
-
-            .truckList .active{
-                background-color: var(--bs-secondary);
-                color: var(--bs-light);
-            }
-        </style>
-
+        <link rel="stylesheet" hred="/styles/addedStyles.css">
+        
         <title>Web - Add Job</title>
     </head>
 <body>
