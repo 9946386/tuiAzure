@@ -79,7 +79,15 @@ include_once '/includes/dbh.php';
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
                 <div class="card-body">
-                    <form action="dbh.php" method="POST">
+                    <form action="dbh.php" method="POST" name="insert" class="form-group">
+                        <div class="row gy-5 form-group">
+                            <div class="col-2">
+                                <label for="addJobName" class="form-label p-1">Name:</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control p-1" name="JobName" value="Enter Date" id="JobName">
+                            </div>
+                        </div>
                         <div class="row gy-5 form-group">
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Date:</label>
@@ -138,12 +146,13 @@ include_once '/includes/dbh.php';
                                 <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status" id="JobStatus">
                             </div>
                         </div>
-                    </form>
-                    <div class="row justify-content-end me-3">
-                        <div class="col-1 form-group">
-                            <input type="submit" class="btn btn-primary text-light" name="save">Confirm</input>
+                        <div class="row justify-content-end me-3">
+                            <div class="col-1 form-group">
+                                <input type="submit" class="btn btn-primary text-light" name="submit" value="Submit">
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
             </div>
 
