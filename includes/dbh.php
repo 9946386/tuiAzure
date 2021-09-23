@@ -23,11 +23,10 @@ if (isset($_POST['JobName'])) {
 
     $sql = "insert into Jobs(JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus) values('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
 
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "<h1>Success</h1>"
-    // }
-    // else
-    // {
-    //     echo "<h1>Fail {$conn->error}</h1>"
-    // }
+    if ($conn->query($sql) === TRUE) {
+        echo "<h1>Success</h1>
+                <p><a href='index.html' class='btn btn-primary'>Back home</a></p>";
+    } else {
+        echo "<h1>Fail {$conn->error}</h1>";
+    }
 }
