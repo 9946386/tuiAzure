@@ -1,21 +1,35 @@
 <?php
 
-include "dbh.php";
+include_once "dbh.php";
 
-$JobName = $_POST['JobName'];
-$JobDate = $_POST['JobDate'];
-$Destination = $_POST['Destination'];
-$JobType = $_POST['JobType'];
-$OrderNumber = $_POST['OrderNumber'];
-$ReferenceNumber = $_POST['ReferenceNumber'];
-$Pallets = $_POST['Pallets'];
-$JobWeight = $_POST['JobWeight'];
-$JobStatus = $_POST['JobStatus'];
+if (isset($_POST['submit'])) {
+    $JobName = $_POST['JobName'];
+    $JobDate = $_POST['JobDate'];
+    $Destination = $_POST['Destination'];
+    $JobType = $_POST['JobType'];
+    $OrderNumber = $_POST['OrderNumber'];
+    $ReferenceNumber = $_POST['ReferenceNumber'];
+    $Pallets = $_POST['Pallets'];
+    $JobWeight = $_POST['JobWeight'];
+    $JobStatus = $_POST['JobStatus'];
 
-$sql = "INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
-VALUES ($JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
+    $sql = "INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
+    VALUES ($JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
 
-header("Location: ../index.php?");
+    if (mysqli_query($conn, $sql)) {
+        echo "New record has been added successfully !";
+    } else {
+        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+    }
+
+    // header("Location: ../index.php?");
+}
+
+
+
+
+
+
 
 // Select Data to Display
 // $sql = "SELECT JobName, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus FROM OpenJobs";
