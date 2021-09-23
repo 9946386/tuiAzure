@@ -50,8 +50,8 @@ if (isset($_POST['submit'])) {
 
 // header("Location: ../index.php?");
 
-if (mysqli_query($conn, $sql)) {
-    echo "New record has been added successfully !";
-} else {
-    echo "Error: " . $sql . ":-" . mysqli_error($conn);
-}
+// if (mysqli_query($conn, $sql)) {
+//     echo "New record has been added successfully !";
+// } else {
+//     echo "Error: " . $sql . ":-" . mysqli_error($conn);
+// }
