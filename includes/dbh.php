@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     echo '<script>console.log("Success Bro!")</script>';
 }
 
-$DriversResult = $conn->query("select * from Drivers") or die($conn->error);
+$DriverResult = $conn->query("select * from Drivers") or die($conn->error);
 
 // Check if form has been filled out by checking POST value
 if (isset($_POST['submit'])) {
