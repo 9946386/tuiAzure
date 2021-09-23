@@ -17,8 +17,6 @@ VALUES ($JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$Ref
 
 header("Location: ../index.php?");
 
-
-
 // Select Data to Display
 // $sql = "SELECT JobName, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus FROM OpenJobs";
 // $result = $conn->query($sql);
