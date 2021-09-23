@@ -2,9 +2,8 @@
 include_once '/includes/dbh.php';
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 
 <head>
     <!-- Required meta tags -->
@@ -23,7 +22,6 @@ include_once '/includes/dbh.php';
 
 <body>
 
-
     <?php
     include_once '/includes/dbh.php';
     ?>
@@ -36,19 +34,9 @@ include_once '/includes/dbh.php';
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
             </a>
         </div>
-        </div>
     </header>
 
-    <?php
-    $sql = "SELECT * FROM Jobs;";
-    $results = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($results);
-    if ($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['JobName'];
-        }
-    }
-    ?>
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
