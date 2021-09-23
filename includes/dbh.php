@@ -21,7 +21,7 @@ if (isset($_POST['JobName'])) {
     $JobWeight = $_POST['JobWeight'];
     $JobStatus = $_POST['JobStatus'];
 
-    $sql = "insert into Jobs(JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus) values('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
+    $sql = "insert into OpenJobs(JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus) values('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
 
     if ($conn->query($sql) === TRUE) {
         echo "<h1>Success</h1>
