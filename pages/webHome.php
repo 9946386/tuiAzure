@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html>
+
+<?php
+include_once '/includes/dbh.php';
+?>
 
 <head>
     <!-- Required meta tags -->
@@ -18,9 +22,7 @@
 
 <body>
 
-    <?php
-    include_once '/includes/dbh.php';
-    ?>
+
 
     <?php
     $sql = "SELECT * FROM Jobs;";
