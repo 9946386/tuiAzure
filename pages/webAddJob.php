@@ -79,13 +79,13 @@ include_once '/includes/dbh.php';
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
                 <div class="card-body">
-                    <form action="process.php" method="POST">
+                    <form action="dbh.php" method="POST">
                         <div class="row gy-5 form-group">
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Date:</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control p-1" name="Date" value="Enter Date">
+                                <input type="text" class="form-control p-1" name="JobDate" value="Enter Date" id="JobDate">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -93,7 +93,7 @@ include_once '/includes/dbh.php';
                                 <label for="addJobDate" class="form-label p-1">Destination:</label>
                             </div>
                             <div class="col-10">
-                                <input type="text" class="form-control p-1" name="Destination" value="Enter Destination">
+                                <input type="text" class="form-control p-1" name="Destination" value="Enter Destination" id="Destination">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -101,13 +101,13 @@ include_once '/includes/dbh.php';
                                 <label for="addJobDate" class="form-label p-1">Type:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="Type" value="Enter Type">
+                                <input type="text" class="form-control p-1" name="JobType" value="Enter Type" id="JobType">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Order #:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="OrderNumber" value="Enter Order Number">
+                                <input type="text" class="form-control p-1" name="OrderNumber" value="Enter Order Number" id="OrderNumber">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -115,13 +115,13 @@ include_once '/includes/dbh.php';
                                 <label for="addJobDate" class="form-label p-1">Reference:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="ReferenceNumber" value="Enter Reference">
+                                <input type="text" class="form-control p-1" name="ReferenceNumber" value="Enter Reference" id="ReferenceNumber">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Pallets:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="Pallets" value="Enter Pallets">
+                                <input type="text" class="form-control p-1" name="Pallets" value="Enter Pallets" id="Pallets">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -129,13 +129,13 @@ include_once '/includes/dbh.php';
                                 <label for="addJobDate" class="form-label p-1">Weight:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="JobWeight" value="Enter Weight">
+                                <input type="text" class="form-control p-1" name="JobWeight" value="Enter Weight" id="JobWeight">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Status:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status">
+                                <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status" id="JobStatus">
                             </div>
                         </div>
                     </form>
