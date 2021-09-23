@@ -25,15 +25,15 @@
 
 // mysqli_close($conn);
 
-$JobName = '123';
-$JobDate = '123';
-$Destination = '123';
-$JobType = '123';
-$OrderNumber = '123';
-$ReferenceNumber = '123';
-$Pallets = '123';
-$JobWeight = '123';
-$JobStatus = '123';
+$JobName = 'JobName';
+$JobDate = 'JobDate';
+$Destination = 'Destination';
+$JobType = 'JobType';
+$OrderNumber = 'OrderNumber';
+$ReferenceNumber = 'ReferenceNumber';
+$Pallets = 'Pallets';
+$JobWeight = 'JobWeight';
+$JobStatus = 'JobStatus';
 
 if ($stmt = mysqli_prepare($conn, "INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
     mysqli_stmt_bind_param($stmt, 'ssd', $JobName, $JobDate, $Destination, $JobType, $OrderNumber, $ReferenceNumber, $Pallets, $JobWeight, $JobStatus);
