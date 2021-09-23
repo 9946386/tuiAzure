@@ -13,3 +13,5 @@ if ($conn->connect_error) {
 } else {
     echo '<script>console.log("Success Bro!")</script>';
 }
+
+mysqli_close($conn);
