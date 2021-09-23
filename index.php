@@ -60,18 +60,20 @@ include_once 'includes/dbh.php'
         <div class="row justify-content webDate">
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
         </div>
+
+        <?php
+        $sql = "SELECT * FROM OpenJobs;";
+        $result = mysqli_query($conn, $sql);
+        $resultsCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo $row['JobName'];
+            }
+        }
+        ?>
     </div>
 
-    <?php
-    $sql = "SELECT * FROM OpenJobs;";
-    $result = mysqli_query($conn, $sql);
-    $resultsCheck = mysqli_num_rows($result);
-    if ($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['JobName'];
-        }
-    }
-    ?>
+
 
     <!-- Truck Job Table -->
     <div class="container-fluid bg-secondary vh-100 darkContainer">
