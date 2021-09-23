@@ -1,13 +1,8 @@
 <?php
 
-$host = 'mydemoserver.mysql.database.azure.com';
-$username = 'myadmin';
-$password = 'your_password';
-$db_name = 'your_database';
+$dbServerName = "tuiprojectserver.database.windows.net";
+$dbUserName = "tuiprojectadmin";
+$dbPassword = "TuiProjectPassword123";
+$dbName = "tui-project-db";
 
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-    die('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+$conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
