@@ -14,6 +14,8 @@ if ($conn->connect_error) {
     echo '<script>console.log("Success Bro!")</script>';
 }
 
+$DriversResult = $conn->query("select * from Drivers") or die($conn->error);
+
 // Check if form has been filled out by checking POST value
 if (isset($_POST['submit'])) {
 
@@ -45,4 +47,10 @@ if (isset($_POST['submit'])) {
     }
 }
 
-    // header("Location: ../index.php?");
+// header("Location: ../index.php?");
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record has been added successfully !";
+} else {
+    echo "Error: " . $sql . ":-" . mysqli_error($conn);
+}

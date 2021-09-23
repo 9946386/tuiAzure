@@ -1,7 +1,3 @@
-<?php
-include_once 'includes/dbh.php';
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -21,6 +17,7 @@ include_once 'includes/dbh.php';
 </head>
 
 <body>
+    <?php include '/includes/dbh.php'; ?>
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
