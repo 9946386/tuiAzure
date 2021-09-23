@@ -58,6 +58,7 @@
         <title>Web - Add Job</title>
     </head>
 <body>
+    <?php require_once 'process.php'; ?>
 
     <!-- Header -->
     <header class="w-100">
@@ -111,69 +112,69 @@
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
                 <div class="card-body">
-                    <form action="input">
-                        <div class="row gy-5">
+                    <form action="process.php" method="POST">
+                        <div class="row gy-5 form-group">
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Date:</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="Date" value="Enter Date">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Destination:</label>
                             </div>
                             <div class="col-10">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="Destination" value="Enter Destination">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Type:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="Type" value="Enter Type">
                             </div>
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Order #:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="OrderNumber" value="Enter Order Number">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Reference:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="ReferenceNumber" value="Enter Reference">
                             </div>
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Pallets:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="Pallets" value="Enter Pallets">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Weight:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="JobWeight" value="Enter Weight">
                             </div>
                             <div class="col-2">  
                                 <label for="addJobDate" class="form-label p-1">Status:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1">
+                                <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status">
                             </div>
                         </div>
                     </form>
                     <div class="row justify-content-end me-3">
-                        <div class="col-1 ">
-                            <button type="button" class="btn btn-primary text-light">Confirm</button>
+                        <div class="col-1 form-group">
+                            <button type="submit" class="btn btn-primary text-light" name="save">Confirm</button>
                         </div>
                     </div>
                 </div>
