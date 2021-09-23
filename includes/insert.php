@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $JobStatus = $_POST['JobStatus'];
 
     $sql = "INSERT INTO OpenJobs (JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
-    VALUES ($JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
+    VALUES ('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully !";
