@@ -22,20 +22,6 @@ include_once 'includes/dbh.php'
 
 <body>
 
-    <?php
-    $sql = "SELECT JobName, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus FROM OpenJobs";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        echo "<table><tr><th>JobType</th><th>OrderNumber</th></tr><tr><th>Reference</th><th>Pallets</th></tr><tr><th>Weight</th><th>Status</th></tr>";
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["JobName"] . "</td><td>" . $row["OrderNumber"] . "</td><td>" . $row["ReferenceNumber"] . "</td><td>" . $row["Pallets"] . "</td><td>" . $row["JobWeight"] . "</td><td>" . $row["JobStatus"] . "</td></tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "0 results";
-    }
-    ?>
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto" id="header">
