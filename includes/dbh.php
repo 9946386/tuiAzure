@@ -20,7 +20,7 @@ VALUES ('Pallets ex Booths', 'Pick Up', '12', '154674', '540', '13500', 'Planned
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Didn't Work";
 }
 
 $conn->close();
