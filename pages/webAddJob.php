@@ -22,6 +22,8 @@ include_once 'includes/insert.php';
 
 <body>
 
+    <?php
+    include_once '/includes/insert.php' ?>
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
