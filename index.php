@@ -62,6 +62,17 @@ include_once 'includes/dbh.php'
         </div>
     </div>
 
+    <?php
+    $sql = "SELECT * FROM OpenJobs;";
+    $result = mysqli_query($conn, $sql);
+    $resultsCheck = mysqli_num_rows($result);
+    if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo $row['JobName'];
+        }
+    }
+    ?>
+
     <!-- Truck Job Table -->
     <div class="container-fluid bg-secondary vh-100 darkContainer">
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
