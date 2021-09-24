@@ -13,6 +13,8 @@
 //     echo '<script>console.log("Yes Bro!")</script>';
 // }
 
+ini_set('display_errors', 1);
+
 try {
     $conn = new PDO("sqlsrv:server = tcp:tuiprojectserver.database.windows.net,1433; Database = tui-project-db", "tuiprojectadmin", "TuiProjectPassword123");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
