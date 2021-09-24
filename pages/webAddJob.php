@@ -19,8 +19,8 @@
 <body>
 
     <?php
-    include 'includes/dbh.php';
-    include_once 'includes/insert.php';
+    include '/includes/dbh.php';
+    include '/includes/insert.php';
     ?>
 
     <!-- Header -->
