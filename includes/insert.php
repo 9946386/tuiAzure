@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
     if ($connection->query($mysql) === TRUE) {
         //include 'template/insert_header.php';
-        echo '<script>console.log("Success Bro!")</script>';
+        echo '<script>console.log("Connected to data!")</script>';
         //include 'template/footer.php';
     } else {
         //include 'template/insert_header.php';
