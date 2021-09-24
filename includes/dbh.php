@@ -7,8 +7,8 @@ $dbName = "tui-project-db";
 
 $conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 
-if ($conn->connect_error === TRUE) {
+if (!$conn) {
     echo '<script>console.log("Failed Bro!")</script>';
 } else {
-    echo '<script>console.log("Success Bro!")</script>';
+    echo '<script>console.log("Yes Bro!")</script>';
 }
