@@ -1,5 +1,6 @@
 <?php
 
+ini_set('display_errors', 1);
 include 'dbh.php';
 
 // Check if form has been filled out by checking POST value
