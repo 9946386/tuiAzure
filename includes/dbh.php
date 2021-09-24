@@ -24,6 +24,6 @@ try {
 }
 
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "tuiprojectadmin", "pwd" => "{your_password_here}", "Database" => "tui-project-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:tuiprojectserver.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+// $connectionInfo = array("UID" => "tuiprojectadmin", "pwd" => "{your_password_here}", "Database" => "tui-project-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+// $serverName = "tcp:tuiprojectserver.database.windows.net,1433";
+// $conn = sqlsrv_connect($serverName, $connectionInfo);
