@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     // $sql = "insert into OpenJobs(JobName, JobDate, Destination, JobType, OrderNumber, ReferenceNumber, Pallets, JobWeight, JobStatus)
     // values ('$JobName', '$JobDate', '$Destination', '$JobType', '$OrderNumber', '$ReferenceNumber', '$Pallets', '$JobWeight', '$JobStatus')";
 
-    if ($conn->query($sql) === TRUE) {
+    if (!$sql) {
         //include 'template/insert_header.php';
         echo '<script>console.log("Connected to data!")</script>';
         //include 'template/footer.php';
