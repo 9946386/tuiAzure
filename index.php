@@ -20,7 +20,7 @@
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto" id="header">
-            <a href="/includes/" class="btn">
+            <a href="index.php" class="btn">
                 <div class="row text-center">
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
             </a>
