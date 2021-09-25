@@ -1,7 +1,3 @@
-<?php
-include_once '/includes/dbh.php';
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -21,10 +17,6 @@ include_once '/includes/dbh.php';
 </head>
 
 <body>
-
-    <?php
-    include_once '/includes/dbh.php';
-    ?>
 
     <!-- Header -->
     <header class="w-100">
@@ -161,15 +153,15 @@ include_once '/includes/dbh.php';
     </div>
 
     <?php
-    $sql = "SELECT * FROM Jobs;";
-    $results = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($results);
-    if ($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['JobName'];
-        }
+$sql = "SELECT * FROM Jobs;";
+$results = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($results);
+if ($resultCheck > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo $row['JobName'];
     }
-    ?>
+}
+?>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

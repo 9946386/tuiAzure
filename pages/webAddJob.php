@@ -17,12 +17,6 @@
 </head>
 
 <body>
-
-    <?php
-    include '/includes/dbh.php';
-    include '/includes/insert.php';
-    ?>
-
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
@@ -76,7 +70,7 @@
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
                 <div class="card-body">
-                    <form action="/includes/insert.php" method="POST" class="form-group">
+                    <form action="" method="POST" class="form-group">
                         <div class="row gy-5 form-group">
                             <div class="col-2">
                                 <label for="addJobName" class="form-label p-1">Name:</label>
