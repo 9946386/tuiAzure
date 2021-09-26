@@ -20,7 +20,7 @@ $db_name = 'tui-project-server';
 //     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 // }
 
-mysqli_ssl_set($conn, NULL, NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+mysqli_ssl_set($conn, NULL, NULL, "/SSL/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
 $conn = mysqli_connect('tui-project-server.mysql.database.azure.com', 'impishorange4', 'tuiProjectPassword123', 'tui-project-server', 3306);
 
