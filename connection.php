@@ -1,7 +1,7 @@
 <?php
 
 $host = 'tui-project-server.mysql.database.azure.com';
-$username = 'impishorange4@tui-project-server';
+$username = 'impishorange4';
 $password = 'tuiProjectPassword123';
 $db_name = 'tui-project-server';
 
