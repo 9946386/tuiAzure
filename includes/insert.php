@@ -1,12 +1,12 @@
 <?php
 
-include '/connection.php';
+include '/local-db-connection.php';
 
 if (isset($_POST['submit'])) 
 {
     $firstName = $_POST['JobName'];
     $lastName = $_POST['JobDate'];
-    $sql = "INSERT INTO testTable (firstName, lastName)
+    $sql = "INSERT INTO openJobs (jobName, jobType)
     VALUES ('$firstName', '$lastName')";
 
     if ($conn->query($sql) === TRUE) {
