@@ -2,8 +2,8 @@
 
 $port = '52072';
 $server = "localhost:$port";
-$username = "anyawebb";
-$password = "tuiProjectPassword123";
+$username = "root";
+$password = "6#vWHD_$";
 $db = "localdb";
 
 $mysqli = new mysqli($server, $user, $password, $db);
