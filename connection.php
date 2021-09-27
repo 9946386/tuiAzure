@@ -3,7 +3,7 @@
 $host = 'tui-project-server.mysql.database.azure.com';
 $username = 'impishorange4';
 $password = 'tuiProjectPassword123';
-$db_name = 'tui-project-server';
+$db_name = 'tuiProjectDatabase';
 
 //Initializes MySQLi
 // $conn = mysqli_init();
@@ -22,8 +22,17 @@ $db_name = 'tui-project-server';
 
 // mysqli_ssl_set($conn, NULL, NULL, "/SSL/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
-$conn = mysqli_connect('tui-project-server.mysql.database.azure.com', 'impishorange4', 'tuiProjectPassword123', 'tui-project-server', 3306);
+// $conn = mysqli_connect('tui-project-server.mysql.database.azure.com', 'impishorange4', 'tuiProjectPassword123', 'tui-project-server', 3306);
 
-if (!$conn) {
-    echo 'Connection error: ' . mysqli_connect_error();
+// if (!$conn) {
+//     echo 'Connection error: ' . mysqli_connect_error();
+// }
+
+$conn = mysqli_init();
+
+mysqli_ssl_set($conn, NULL, NULL, "/SSL/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL);
+
+mysqli_real_connect($conn, 'tui-project-server.mysql.database.azure.com', 'impishorange4@tui-project-server', 'tuiProjectPassword123', 'tuiProjectDatabase', 3306, MYSQLI_CLIENT_SSL);
+if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
