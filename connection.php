@@ -14,7 +14,7 @@ mysqli_ssl_set($conn, NULL, NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
 
 //If connection failed, show the error
-if (!$conn) 
+if ($conn === false) 
 {
     echo '<script>console.log("Failed!")</script>';
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
