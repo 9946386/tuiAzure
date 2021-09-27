@@ -15,6 +15,7 @@ if (isset($_POST['submit']))
         echo "New record made";
     }
     else {
+        echo '<script>console.log("Couldnt create entry")';
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
     mysqli_close($conn);
