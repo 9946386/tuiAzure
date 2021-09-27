@@ -3,6 +3,6 @@
     "description": "tui web app project",
     "type": "project",
     "require": {
-        "php": "^8.0"
+        "php": "7.4.24"
     }
 }
