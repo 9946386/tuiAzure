@@ -1,5 +1,8 @@
 {
+    "name": "anya/tui-azure",
+    "description": "tui web app project",
+    "type": "project",
     "require": {
-        "monolog/monolog": "2.0.*"
+        "php": "^8.0"
     }
 }
