@@ -1,7 +1,7 @@
 <?php
 
 
-$server = "localhost:52072";
+$server = "127.0.0.1:52072";
 $username = "azure";
 $password = "6#vWHD_$";
 $db = "localdb";
