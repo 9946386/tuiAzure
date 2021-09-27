@@ -2,8 +2,8 @@
 
 $port = '52072';
 $server = "localhost:$port";
-$username = "azure";
-$password = "6#vWHD_$";
+$username = "anyawebb";
+$password = "tuiProjectPassword123";
 $db = "localdb";
 
 $mysqli = new mysqli($server, $user, $password, $db);
