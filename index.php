@@ -1,5 +1,5 @@
 <?php 
-include 'connection.php' ?>
+include 'local-db-connection.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
