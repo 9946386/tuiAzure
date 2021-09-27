@@ -1,6 +1,7 @@
 <?php
 
-$server = "localhost";
+$port = "52072";
+$server = "localhost:$port";
 $username = "azure";
 $password = "6#vWHD_$";
 $db = "localdb";
