@@ -48,4 +48,14 @@ if (!$link) {
 echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
+$sql = "INSERT INTO openJobs (jobName, jobType, orderNumber, referenceNumber, pallets, jobStatis)
+VALUES ('1', '2', '3', '4', '5', '6')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+}
+else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 mysqli_close($link);
