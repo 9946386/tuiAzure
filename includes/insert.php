@@ -18,9 +18,8 @@ if (isset($_POST['submit']))
     VALUES (NULL, $jobName, $jobDate, $destination, $jobType, $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus);";
 
     if ($conn->query($sql) === TRUE) {
-        include '../index.php';
         echo '<script>console.log("Success Bro!")</script>';
-        echo "New record made";
+        header("Location: index.php");
     }
     else {
         echo '<script>console.log("Couldnt create entry")';

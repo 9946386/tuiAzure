@@ -111,30 +111,9 @@ while ($data = mysqli_fetch_array($openjobsq)) {
                                                 <td><?php echo $data['jobWeight']; ?></td>
                                                 <td><?php echo $data['jobStatus']; ?></td>
                                             </tr>
-                                            <?php
+                                        <?php
 }
 ?>                                    
-
-                                        <!-- <tbody>
-                                            <tr>
-                                                <th scope="row">Upper Hutt Mega</th>
-                                                <td>Delivery</td>
-                                                <td>SEM173666</td>
-                                                <td>TUI181500</td>
-                                                <td>18</td>
-                                                <td>17565</td>
-                                                <td>Loaded</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Kapiti Mega</th>
-                                                <td>Delivery</td>
-                                                <td>SOM112677</td>
-                                                <td>TUI181501</td>
-                                                <td>7</td>
-                                                <td>4980</td>
-                                                <td>Loaded</td>
-                                            </tr>
-                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
