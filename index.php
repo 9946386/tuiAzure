@@ -1,5 +1,5 @@
-<?php 
-include 'local-db-connection.php' ?>
+<?php
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,8 @@ include 'local-db-connection.php' ?>
                                 <div class="col pt-3">
 
 
-                                    <table class="table table-bordered table-responsive ">
+
+                                <table class="table table-bordered table-responsive ">
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
@@ -93,6 +94,27 @@ include 'local-db-connection.php' ?>
                                                 <th scope="col" class="col-2">Status</th>
                                             </tr>
                                         </thead>
+
+                                        <?php
+include 'local-db-connection.php';
+
+$openjobsq = mysqli_query($conn, "select * from openjobs");
+
+while ($data = mysqli_fetch_array($openjobsq)) {
+?>
+                                                <tr>
+                                                <th"><?php echo $data['jobName']; ?></th>
+                                                <td><?php echo $data['jobType']; ?></td>
+                                                <td><?php echo $data['orderNumber']; ?></td>
+                                                <td><?php echo $data['referenceNumber']; ?></td>
+                                                <td><?php echo $data['pallets']; ?></td>
+                                                <td><?php echo $data['jobWeight']; ?></td>
+                                                <td><?php echo $data['jobStatus']; ?></td>
+                                            </tr>
+                                            <?php
+}
+?>                                    
+
                                         <!-- <tbody>
                                             <tr>
                                                 <th scope="row">Upper Hutt Mega</th>
