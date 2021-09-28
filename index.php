@@ -96,9 +96,25 @@
 include 'local-db-connection.php';
 
 $openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-FROM openjobs
-INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-WHERE driver.DriverID = 4");
+                                            FROM openjobs
+                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+
+
+
+while ($row = mysqli_fetch_array($openjobsq)) {
+?>
+                                                <tr>
+                                                <th><?php echo $row['jobName']; ?></th>
+                                                <td><?php echo $row['jobType']; ?></td>
+                                                <td><?php echo $row['orderNumber']; ?></td>
+                                                <td><?php echo $row['referenceNumber']; ?></td>
+                                                <td><?php echo $row['pallets']; ?></td>
+                                                <td><?php echo $row['jobWeight']; ?></td>
+                                                <td><?php echo $row['jobStatus']; ?></td>
+                                            </tr>
+                                            <?
+}
+
 
 while ($data = mysqli_fetch_array($openjobsq)) {
 ?>
