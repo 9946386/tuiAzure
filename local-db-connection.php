@@ -45,15 +45,15 @@ if (!$conn) {
     exit;
 }
 
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
+echo '<script>console.log("Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;")</script>';
+echo '<script>console.log("Host information: " . mysqli_get_host_info($link) . PHP_EOL;")</script>';
 
-$sql = "INSERT INTO `openjobs` (`ID`, `jobName`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`) 
-VALUES (NULL, 'Kapiti Mega', 'Delivery', 'SEM12677', 'TUI181501', '7', '4980', 'Loaded');";
+// $sql = "INSERT INTO `openjobs` (`ID`, `jobName`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`) 
+// VALUES (NULL, 'Kapiti Mega', 'Delivery', 'SEM12677', 'TUI181501', '7', '4980', 'Loaded');";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-}
-else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+// if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+// }
+// else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
