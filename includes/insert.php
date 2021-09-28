@@ -19,7 +19,7 @@ if (isset($_POST['submit']))
 
     if ($conn->query($sql) === TRUE) {
         echo '<script>console.log("Success Bro!")</script>';
-        header("Location: index.php");
+
     }
     else {
         echo '<script>console.log("Couldnt create entry")';
@@ -27,4 +27,6 @@ if (isset($_POST['submit']))
     }
     mysqli_close($conn);
 }
+
+header("Location: index.php");
 ?>
