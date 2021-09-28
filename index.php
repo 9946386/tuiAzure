@@ -79,9 +79,6 @@
                             </div>
                             <div class="row">
                                 <div class="col pt-3">
-
-
-
                                 <table class="table table-bordered table-responsive ">
                                         <thead>
                                             <tr class="table-light">
