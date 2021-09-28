@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
     $pallets = $_POST['pallets'];
     $jobStatus = $_POST['jobStatus'];
 
-    $insert = mysqli_query($conn, "INSERT INTO `openjobs` (`ID`, `jobName`, `jobDate`, `destination`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`, `driverID`) 
+    $insert = mysqli_query($conn, "INSERT INTO openjobs (ID, jobName, jobDate, destination, jobType, orderNumber, refereneceNumber, pallets, jobWeight, jobStatus, driverID) 
     VALUES (NULL, $jobName, $jobDate, $destination, $jobType, $orderNumber, $jobReference, $pallets, $jobWeight, $jobStatus, NULL);");
 
     // if ($conn->query($insert) === TRUE) {
