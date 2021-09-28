@@ -64,7 +64,7 @@
                                 <label for="addJobDate" class="form-label p-1">Reference:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="ReferenceNumber" id="referenceNumber">
+                                <input type="text" class="form-control p-1" name="JobReference" id="referenceNumber">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Pallets:</label>
