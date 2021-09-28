@@ -8,14 +8,9 @@
                     Truck 1
                 </button>
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-                    <?php
-
-                    $drivers = mysqli_query($conn, "SELECT driverName FROM drivers ORDER BY ID");
-                    foreach($drivers as $driverTitle): ?>
-                    <a class="dropdown-item" href="#">
-                        <?php echo $driverTitle; ?>
-                    </a>                   
-                    
+                    <a class="dropdown-item" href="#">Truck 2</a>
+                    <a class="dropdown-item" href="#">Truck 3</a>
+                    <a class="dropdown-item" href="#">Truck 4</a>
                 </div>
             </div>
         </div>
