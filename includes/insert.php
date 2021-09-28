@@ -1,6 +1,6 @@
 <?php
 
-include '../../local-db-connection.php';
+include '../local-db-connection.php';
 
 if (isset($_POST['submit'])) 
 {
