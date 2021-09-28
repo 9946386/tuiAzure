@@ -103,7 +103,7 @@ $openjobsq = mysqli_query($conn, "select * from openjobs");
 while ($data = mysqli_fetch_array($openjobsq)) {
 ?>
                                                 <tr>
-                                                <th"><?php echo $data['jobName']; ?></th>
+                                                <th><?php echo $data['jobName']; ?></th>
                                                 <td><?php echo $data['jobType']; ?></td>
                                                 <td><?php echo $data['orderNumber']; ?></td>
                                                 <td><?php echo $data['referenceNumber']; ?></td>
