@@ -70,7 +70,7 @@
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
-                                    <h5 class="card-title">Driver
+                                    <h5 class="card-title">1. Uncle
                                     </h5>
                                 </div>
                                 <div class="col-1">
@@ -97,24 +97,110 @@ include 'local-db-connection.php';
 
 $openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
                                             FROM openjobs
-                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                            WHERE driver.DriverID = 4");
 
-
-
-while ($row = mysqli_fetch_array($openjobsq)) {
+while ($data = mysqli_fetch_array($openjobsq)) {
 ?>
                                                 <tr>
-                                                <th><?php echo $row['jobName']; ?></th>
-                                                <td><?php echo $row['jobType']; ?></td>
-                                                <td><?php echo $row['orderNumber']; ?></td>
-                                                <td><?php echo $row['referenceNumber']; ?></td>
-                                                <td><?php echo $row['pallets']; ?></td>
-                                                <td><?php echo $row['jobWeight']; ?></td>
-                                                <td><?php echo $row['jobStatus']; ?></td>
+                                                <th><?php echo $data['jobName']; ?></th>
+                                                <td><?php echo $data['jobType']; ?></td>
+                                                <td><?php echo $data['orderNumber']; ?></td>
+                                                <td><?php echo $data['referenceNumber']; ?></td>
+                                                <td><?php echo $data['pallets']; ?></td>
+                                                <td><?php echo $data['jobWeight']; ?></td>
+                                                <td><?php echo $data['jobStatus']; ?></td>
                                             </tr>
-                                            <?
+                                        <?php
 }
+?>                                    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-between">
+                                <div class="col-11">
+                                    <h5 class="card-title">1. Cris T
+                                    </h5>
+                                </div>
+                                <div class="col-1">
+                                    <a href="pages/webAddJob.php" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pt-3">
+                                <table class="table table-bordered table-responsive ">
+                                        <thead>
+                                            <tr class="table-light">
+                                                <th scope="col" class="col-2">Job</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col" class="col-2">Order #</th>
+                                                <th scope="col" class="col-2">Reference</th>
+                                                <th scope="col">Pallets</th>
+                                                <th scope="col">Weight (kg)</th>
+                                                <th scope="col" class="col-2">Status</th>
+                                            </tr>
+                                        </thead>
 
+                                        <?php
+include 'local-db-connection.php';
+
+$openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+                                            FROM openjobs
+                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                            WHERE driver.DriverID = 5");
+
+while ($data = mysqli_fetch_array($openjobsq)) {
+?>
+                                                <tr>
+                                                <th><?php echo $data['jobName']; ?></th>
+                                                <td><?php echo $data['jobType']; ?></td>
+                                                <td><?php echo $data['orderNumber']; ?></td>
+                                                <td><?php echo $data['referenceNumber']; ?></td>
+                                                <td><?php echo $data['pallets']; ?></td>
+                                                <td><?php echo $data['jobWeight']; ?></td>
+                                                <td><?php echo $data['jobStatus']; ?></td>
+                                            </tr>
+                                        <?php
+}
+?>                                    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-between">
+                                <div class="col-11">
+                                    <h5 class="card-title">1. Crusty
+                                    </h5>
+                                </div>
+                                <div class="col-1">
+                                    <a href="pages/webAddJob.php" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pt-3">
+                                <table class="table table-bordered table-responsive ">
+                                        <thead>
+                                            <tr class="table-light">
+                                                <th scope="col" class="col-2">Job</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col" class="col-2">Order #</th>
+                                                <th scope="col" class="col-2">Reference</th>
+                                                <th scope="col">Pallets</th>
+                                                <th scope="col">Weight (kg)</th>
+                                                <th scope="col" class="col-2">Status</th>
+                                            </tr>
+                                        </thead>
+
+                                        <?php
+include 'local-db-connection.php';
+
+$openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+                                            FROM openjobs
+                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                            WHERE driver.DriverID = 6");
 
 while ($data = mysqli_fetch_array($openjobsq)) {
 ?>
