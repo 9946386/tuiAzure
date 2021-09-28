@@ -14,12 +14,12 @@ if (isset($_POST['submit']))
     $pallets = $_POST['Pallets'];
     $jobStatus = $_POST['JobStatus'];
 
-    $sql = "INSERT INTO openjobs(`jobName`, `jobDate`, `destination`, `jobType`, `orderNumber`, `refereneceNumber`, pallets, jobWeight, `jobStatus`) 
-    VALUES (NULL, '$jobName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', NULL);";
+    $sql = "INSERT INTO openjobs(jobName, jobDate, destination, jobType, orderNumber, refereneceNumber, pallets, jobWeight, jobStatus) 
+    VALUES ('$jobName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus');";
 
-    mysqli_query($conn, $sql);
+    $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-    if (!$sql) {
+    if (!$run) {
         echo '<script>console.log("Couldnt create entry")';
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
