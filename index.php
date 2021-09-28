@@ -95,7 +95,10 @@
                                         <?php
 include 'local-db-connection.php';
 
-$openjobsq = mysqli_query($conn, "select * from openjobs");
+$openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+FROM openjobs
+INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+WHERE driver.DriverID = 4");
 
 while ($data = mysqli_fetch_array($openjobsq)) {
 ?>
