@@ -118,6 +118,8 @@ while ($data = mysqli_fetch_array($openjobsq)) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="card mainPageJobCard">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
@@ -169,10 +171,12 @@ while ($data = mysqli_fetch_array($openjobsq)) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="card mainPageJobCard">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
-                                    <h5 class="card-title">1. Crusty
+                                    <h5 class="card-title">3. Crusty
                                     </h5>
                                 </div>
                                 <div class="col-1">
@@ -220,6 +224,7 @@ while ($data = mysqli_fetch_array($openjobsq)) {
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
