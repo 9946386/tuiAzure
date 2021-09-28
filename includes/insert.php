@@ -14,18 +14,25 @@ if (isset($_POST['submit']))
     $pallets = $_POST['pallets'];
     $jobStatus = $_POST['jobStatus'];
 
-    $sql = "INSERT INTO `openjobs` (`ID`, `jobName`, `jobDate`, `destination`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`) 
-    VALUES (NULL, $jobName, $jobDate, $destination, $jobType, $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus);";
+    $insert = mysqli_query($conn, "INSERT INTO `openjobs` (`ID`, `jobName`, `jobDate`, `destination`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`, `driverID`) 
+    VALUES (NULL, $jobName, $jobDate, $destination, $jobType, $orderNumber, $jobReference, $pallets, $jobWeight, $jobStatus, NULL);");
 
-    if ($conn->query($sql) === TRUE) {
-        echo '<script>console.log("Success Bro!")</script>';
+    // if ($conn->query($insert) === TRUE) {
+    //     echo '<script>console.log("Success Bro!")</script>';
 
-    }
-    else {
+    // }
+    // else {
+    //     echo '<script>console.log("Couldnt create entry")';
+    //     echo "Error: " . $sql . "" . mysqli_error($conn);
+    // }
+
+    if (!$insert) {
         echo '<script>console.log("Couldnt create entry")';
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
-    mysqli_close($conn);
+    else {
+        echo '<script>console.log("Success Bro!")</script>';
+    }
 }
 
 header("Location: ../index.php");
