@@ -26,7 +26,7 @@
                                 <label for="addJobName" class="form-label p-1">Name:</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control p-1" name="JobName" value="Enter Date" id="jobName">
+                                <input type="text" class="form-control p-1" name="JobName" id="jobName">
                             </div>
                         </div>
                         <div class="row gy-5 form-group">
@@ -34,7 +34,7 @@
                                 <label for="addJobDate" class="form-label p-1">Date:</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control p-1" name="JobDate" value="Enter Date" id="jobDate">
+                                <input type="text" class="form-control p-1" name="JobDate" id="jobDate">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -42,7 +42,7 @@
                                 <label for="addJobDate" class="form-label p-1">Destination:</label>
                             </div>
                             <div class="col-10">
-                                <input type="text" class="form-control p-1" name="Destination" value="Enter Destination" id="destination">
+                                <input type="text" class="form-control p-1" name="Destination" id="destination">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -50,13 +50,13 @@
                                 <label for="addJobDate" class="form-label p-1">Type:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="JobType" value="Enter Type" id="jobType">
+                                <input type="text" class="form-control p-1" name="JobType" id="jobType">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Order #:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="OrderNumber" value="Enter Order Number" id="orderNumber">
+                                <input type="text" class="form-control p-1" name="OrderNumber" id="orderNumber">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -64,13 +64,13 @@
                                 <label for="addJobDate" class="form-label p-1">Reference:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="ReferenceNumber" value="Enter Reference" id="referenceNumber">
+                                <input type="text" class="form-control p-1" name="ReferenceNumber" id="referenceNumber">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Pallets:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="Pallets" value="Enter Pallets" id="pallets">
+                                <input type="text" class="form-control p-1" name="Pallets" id="pallets">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -78,13 +78,13 @@
                                 <label for="addJobDate" class="form-label p-1">Weight:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="JobWeight" value="Enter Weight" id="jobWeight">
+                                <input type="text" class="form-control p-1" name="JobWeight" id="jobWeight">
                             </div>
                             <div class="col-2">
                                 <label for="addJobDate" class="form-label p-1">Status:</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control p-1" name="JobStatus" value="Enter Status" id="jobStatus">
+                                <input type="text" class="form-control p-1" name="JobStatus" id="jobStatus">
                             </div>
                         </div>
                         <div class="row justify-content-end me-3">

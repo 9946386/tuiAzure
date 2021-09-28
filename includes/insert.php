@@ -4,27 +4,20 @@ include '../local-db-connection.php';
 
 if (isset($_POST['submit'])) 
 {
-    $jobName = $_POST['jobName'];
-    $jobDate = $_POST['jobDate'];
-    $destination = $_POST['destination'];
-    $jobType = $_POST['jobType'];
-    $jobReference = $_POST['jobReference'];
-    $jobWeight = $_POST['jobWeight'];
-    $orderNumber = $_POST['orderNumber'];
-    $pallets = $_POST['pallets'];
-    $jobStatus = $_POST['jobStatus'];
+    $jobName = $_POST['JobName'];
+    $jobDate = $_POST['JobDate'];
+    $destination = $_POST['Destination'];
+    $jobType = $_POST['JobType'];
+    $jobReference = $_POST['JobReference'];
+    $jobWeight = $_POST['JobWeight'];
+    $orderNumber = $_POST['OrderNumber'];
+    $pallets = $_POST['Pallets'];
+    $jobStatus = $_POST['JobStatus'];
 
-    $insert = mysqli_query($conn, "INSERT INTO openjobs (ID, jobName, jobDate, destination, jobType, orderNumber, refereneceNumber, pallets, jobWeight, jobStatus, driverID) 
-    VALUES (NULL, $jobName, $jobDate, $destination, $jobType, $orderNumber, $jobReference, $pallets, $jobWeight, $jobStatus, NULL);");
+    $sql = "INSERT INTO openjobs (ID, jobName, jobDate, destination, jobType, orderNumber, refereneceNumber, pallets, jobWeight, jobStatus, driverID) 
+    VALUES (NULL, '$jobName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', NULL);";
 
-    // if ($conn->query($insert) === TRUE) {
-    //     echo '<script>console.log("Success Bro!")</script>';
-
-    // }
-    // else {
-    //     echo '<script>console.log("Couldnt create entry")';
-    //     echo "Error: " . $sql . "" . mysqli_error($conn);
-    // }
+    mysqli_query($conn, $sql);
 
     if (!$insert) {
         echo '<script>console.log("Couldnt create entry")';
@@ -35,5 +28,5 @@ if (isset($_POST['submit']))
     }
 }
 
-header("Location: ../index.php");
+header("Location: ../index.php?jobadded=success");
 ?>
