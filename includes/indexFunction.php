@@ -1,15 +1,14 @@
 <?php
 
-include '../local-db-connection.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+include '/local-db-connection.php';
+
 
 function openJobsList()
 {
     //$i = 3;
 
     global $conn;
-    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+    $jobsQuery = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
                                     WHERE driver.DriverID = 4");
@@ -19,7 +18,7 @@ function openJobsList()
     // INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
     // WHERE driver.DriverID = $i');
 
-    while ($row = mysqli_fetch_assoc($query)) {
+    while ($row = mysqli_fetch_assoc($jobsQuery)) {
         $id = $row['DriverID'];
         $name = $row['driverName'];
         $jobName = $row['openjobs.jobName'];
