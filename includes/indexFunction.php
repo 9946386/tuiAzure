@@ -69,6 +69,7 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-        $i++;
+
     }
+    $i++;
 }
