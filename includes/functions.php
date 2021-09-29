@@ -19,7 +19,7 @@ function driverMenu()
 
 function openJobsList()
 {
-    $i = 0;
+    $i = 3;
 
     global $conn;
     $query = mysqli_query($conn, "SELECT *
@@ -72,11 +72,11 @@ function openJobsList()
                                 <tr>
                                     <th>{$jobName}</th>
                                     <td>{$jobType}</td>
-                                    <td>{$$orderNumber}</td>
-                                    <td>{$$referenceNumber}</td>
-                                    <td>{$$pallets}</td>
-                                    <td>{$$jobWeight}</td>
-                                    <td>{$$jobStatus}</td>
+                                    <td>{$orderNumber}</td>
+                                    <td>{$referenceNumber}</td>
+                                    <td>{$pallets}</td>
+                                    <td>{$jobWeight}</td>
+                                    <td>{$jobStatus}</td>
                                 </tr>                                 
                             </table>
                         </div>
