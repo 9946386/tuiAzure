@@ -20,7 +20,7 @@ function openJobsList()
 
     while ($row = mysqli_fetch_assoc($query)) {
         $id = $row['driver.DriverID'];
-        $name = $row['driverName'];
+        //$name = $row['driverName'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -34,7 +34,7 @@ function openJobsList()
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>{$name}</h5>
+                            <h5 class='card-title'>{$id}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
