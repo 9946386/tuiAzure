@@ -66,7 +66,7 @@ include '/local-db-connection.php';
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
             <div class="row gy-2">
                 <div class="col-12">
-                <?php include '/includes/indexFunction.php';
+                <?php include 'includes/indexFunction.php';
 openJobsList(); ?> 
                 </div>  
             </div> 
