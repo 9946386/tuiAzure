@@ -5,13 +5,13 @@ include '../local-db-connection.php';
 
 function openJobsList()
 {
-    //$i = 3;
+    $i = 3;
 
     global $conn;
     $jobsQuery = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                    WHERE driver.DriverID = 4");
+                                    WHERE driver.DriverID = $i");
 
     // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
     // FROM openjobs
@@ -19,7 +19,7 @@ function openJobsList()
     // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($jobsQuery)) {
-        $id = $row['driver_fk'];
+        $id = $row['DriverID'];
         // $name = $row['driverName'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
@@ -69,6 +69,6 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-    //$i++;
+        $i++;
     }
 }
