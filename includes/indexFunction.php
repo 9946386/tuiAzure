@@ -70,7 +70,7 @@ function openJobsList()
                 </div>
             </div>";
         $i++;
-        $id++;
+    //$id++;
     }
 
 
