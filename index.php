@@ -67,7 +67,11 @@
             <div class="row gy-2">
                 <div class="col-12">
                 <?php include '/includes/functions.php';
-openJobsList(); ?>                                        
+openJobsList(); ?> 
+                </div>  
+            </div> 
+        </div>   
+    </div>                                   
 
     <!-- Footer -->
     <div class="container-fluid bg-primary p-4">
