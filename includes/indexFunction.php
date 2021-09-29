@@ -19,7 +19,7 @@ function openJobsList()
     // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($query)) {
-        $id = $row['DriverID'];
+        $id = $row['driver_fk'];
         // $name = $row['driverName'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
@@ -70,6 +70,7 @@ function openJobsList()
                 </div>
             </div>";
         $i++;
+        $id++;
     }
 
 
