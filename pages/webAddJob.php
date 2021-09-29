@@ -8,14 +8,7 @@
                     Truck 1
                 </button>
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-                    <?php 
-                    $result = $conn->query("SELECT driverName FROM drivers");
-                    $run = mysqli_query($conn, $result) or die(mysqli_error($conn));
-                    foreach($result as $menu_item): ?>
-
-                    <a class="dropdown-item" href="webAddJob.php?driver='<?php echo $menu_item['driverName']; ?>'"><?php echo $menu_item['driverName']; ?></a>
-
-                    <?php endforeach; ?>
+                    
                 </div>
             </div>
         </div>
