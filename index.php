@@ -70,7 +70,7 @@ while ($data = mysqli_fetch_array($openjobsq)) {
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
-                                    <h5 class="card-title">1. Cris T
+                                    <h5 class="card-title">2. Chris T
                                     </h5>
                                 </div>
                                 <div class="col-1">
