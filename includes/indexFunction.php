@@ -1,8 +1,6 @@
 <?php
 
-
-include '/local-db-connection.php';
-
+include '../local-db-connection.php';
 
 function openJobsList()
 {
