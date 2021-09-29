@@ -19,15 +19,15 @@ function openJobsList()
     // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($jobsQuery)) {
-        $id = $row['openjobs.driver_fk'];
+        $id = $row['driver_fk'];
         // $name = $row['driverName'];
-        $jobName = $row['openjobs.jobName'];
-        $jobType = $row['openjobs.jobType'];
-        $orderNumber = $row['openjobs.orderNumber'];
-        $referenceNumber = $row['openjobs.referenceNumber'];
-        $pallets = $row['openjobs.pallets'];
-        $jobWeight = $row['openjobs.jobWeight'];
-        $jobStatus = $row['openjobs.jobStatus'];
+        $jobName = $row['jobName'];
+        $jobType = $row['jobType'];
+        $orderNumber = $row['orderNumber'];
+        $referenceNumber = $row['referenceNumber'];
+        $pallets = $row['pallets'];
+        $jobWeight = $row['jobWeight'];
+        $jobStatus = $row['jobStatus'];
 
 
         echo "<div class='card mainPageJobCard'>
