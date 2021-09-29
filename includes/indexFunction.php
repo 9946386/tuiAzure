@@ -1,13 +1,14 @@
 <?php
 
 include '../local-db-connection.php';
+ini_set('display_errors', 1);
 
 function openJobsList()
 {
-    $i = 3;
+    //$i = 3;
 
     global $conn;
-    $query = mysqli_query($conn, "SELECT *
+    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
                                     WHERE driver.DriverID = 4");
@@ -19,21 +20,21 @@ function openJobsList()
 
     while ($row = mysqli_fetch_assoc($query)) {
         $id = $row['DriverID'];
-        // $name = $row['driverName'];
-        $jobName = $row['jobName'];
-        $jobType = $row['jobType'];
-        $orderNumber = $row['orderNumber'];
-        $referenceNumber = $row['referenceNumber'];
-        $pallets = $row['pallets'];
-        $jobWeight = $row['jobWeight'];
-        $jobStatus = $row['jobStatus'];
+        $name = $row['driverName'];
+        $jobName = $row['openjobs.jobName'];
+        $jobType = $row['openjobs.jobType'];
+        $orderNumber = $row['openjobs.orderNumber'];
+        $referenceNumber = $row['openjobs.referenceNumber'];
+        $pallets = $row['openjobs.pallets'];
+        $jobWeight = $row['openjobs.jobWeight'];
+        $jobStatus = $row['openjobs.jobStatus'];
 
 
         echo "<div class='card mainPageJobCard'>
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>{$id}</h5>
+                            <h5 class='card-title'>{$name}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
@@ -68,6 +69,6 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-        $i++;
+    //$i++;
     }
 }
