@@ -6,15 +6,16 @@
             <div class="col text-center">
                 <button class="btn btn-primary rounded-pill active" aria-pressed="true">Truck 1</button>
             </div>
-            <div class="col text-center">
+            <?php include '../includes/functions.php'; driverMenu();?>
+            <!-- <div class="col text-center">
                 <button class="btn btn-primary rounded-pill">Truck 2</button>
-            </div>
-            <div class="col text-center">
+            </div> -->
+            <!-- <div class="col text-center">
                 <button class="btn btn-primary rounded-pill">Truck 3</button>
             </div>
             <div class="col text-center">
                 <button class="btn btn-primary rounded-pill">Truck 4</button>
-            </div>
+            </div> -->
         </div>
     </div>
 

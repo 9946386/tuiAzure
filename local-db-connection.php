@@ -1,25 +1,5 @@
 <?php
 
-
-// $server = "127.0.0.1:52072";
-// $username = "azure";
-// $password = "6#vWHD_$";
-// $db = "localdb";
-
-// $mysqli = new mysqli($server, $user, $password, $db);
-
-// if ($mysqli->connect_errno) {
-//     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-//     exit();
-// }
-
-// if ($result = $mysqli->query("SELECT FName FROM testTable")) {
-//     echo "Returned rows are: " . $result->num_rows;
-//     $result->free_result();
-// }
-
-// $mysqli->close();
-
 $connectstr_dbhost = 'localhost';
 $connectstr_dbname = 'localdb';
 $connectstr_dbusername = 'azure';
@@ -47,13 +27,3 @@ if (!$conn) {
 
 echo '<script>console.log("Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;")</script>';
 echo '<script>console.log("Host information: " . mysqli_get_host_info($link) . PHP_EOL;")</script>';
-
-// $sql = "INSERT INTO `openjobs` (`ID`, `jobName`, `jobType`, `orderNumber`, `refereneceNumber`, `pallets`, `jobWeight`, `jobStatus`) 
-// VALUES (NULL, 'Kapiti Mega', 'Delivery', 'SEM12677', 'TUI181501', '7', '4980', 'Loaded');";
-
-// if ($conn->query($sql) === TRUE) {
-//     echo "New record created successfully";
-// }
-// else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
