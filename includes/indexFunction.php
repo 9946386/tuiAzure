@@ -22,7 +22,7 @@ function openJobsList()
 
         //$i++;
 
-        $id[$i] = $row['DriverID'];
+        $id = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
@@ -36,7 +36,7 @@ function openJobsList()
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>Driver:" . [$id];
+                            <h5 class='card-title'>Driver:" . $id;
         echo "</h5>
                         </div>
                         <div class='col-1'>
