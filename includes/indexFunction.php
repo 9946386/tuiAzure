@@ -20,9 +20,9 @@ function openJobsList()
 
     while ($row = mysqli_fetch_assoc($query)) {
 
-        $i++;
+        //$i++;
 
-        $id = $row['DriverID'];
+        $id[$i] = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
@@ -71,7 +71,7 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-    //$i++;
+        $i++;
     //$id++;
     }
 
