@@ -1,4 +1,5 @@
 <?php
+include '/local-db-connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +67,7 @@
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
             <div class="row gy-2">
                 <div class="col-12">
-                <?php include '/includes/functions.php';
+                <?php include 'includes/functions.php';
 openJobsList(); ?> 
                 </div>  
             </div> 
