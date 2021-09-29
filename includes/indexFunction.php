@@ -5,7 +5,7 @@ include '../local-db-connection.php';
 
 function openJobsList()
 {
-    $i = 3;
+    $i = 4;
 
     global $conn;
     $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
