@@ -2,7 +2,7 @@
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?>
 
-<?php include 'header.php' ?>
+<?php include '../header.php' ?>
 
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4">
@@ -16,10 +16,10 @@
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
             <div class="row gy-2">
                 <div class="col-12">
-                 <?php include 'includes/functions.php'; driverMenu(); ?>
+                 <?php include '../includes/functions.php'; driverMenu(); ?>
                 </div>  
             </div> 
         </div>   
     </div>                                   
 
-<?php include 'footer.php' ?>
+<?php include '../footer.php' ?>
