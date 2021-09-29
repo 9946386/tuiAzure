@@ -2,6 +2,8 @@
 
 include '../local-db-connection.php';
 
+// Function to loop through all drivers in driver table
+// Adds the driver names to the buttons on Weekly Plan
 function driverMenu()
 {
     global $conn;
