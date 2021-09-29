@@ -1,3 +1,9 @@
+<?php include '/local-db-connection.php' ?>
+
+<?php ini_set('error_reporting', E_ALL); ?>
+<?php ini_set('display_errors', 1); ?>
+<?php ini_set('display_startup_errors', 1); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +68,7 @@
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
             <div class="row gy-2">
                 <div class="col-12">
-                <?php include '/includes/indexFunction.php';
-openJobsList(); ?> 
+                 <?php include 'includes/indexFunction.php'; openJobsList(); ?>
                 </div>  
             </div> 
         </div>   
