@@ -17,9 +17,6 @@
 </head>
 
 <body>
-    <?php
-include '/local-db-connection.php';
-?>
 
     <!-- Header -->
     <header class="w-100">
