@@ -8,9 +8,10 @@ function openJobsList()
     $i = 3;
 
     global $conn;
-    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-                                    FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
+                                    FROM ((openjobs
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID)
+                                    INNER JOIN driver ON openjobs.driverName_fk = driver.driverName)
                                     WHERE driver.DriverID = 4");
 
     // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
@@ -19,8 +20,8 @@ function openJobsList()
     // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($query)) {
-        $id = $row['driver.DriverID'];
-        // $name = $row['driverName'];
+        //$id = $row['driver.DriverID'];
+        $name = $row['driverName'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -34,7 +35,7 @@ function openJobsList()
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>{$id}</h5>
+                            <h5 class='card-title'>{$row['driverName_fk']}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
