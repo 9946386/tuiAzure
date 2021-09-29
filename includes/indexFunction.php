@@ -11,7 +11,7 @@ function openJobsList()
     $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID                                    
-                                    WHERE driver.DriverID = 4");
+                                    WHERE driver.DriverID = $i");
 
     // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
     // FROM openjobs
@@ -28,14 +28,13 @@ function openJobsList()
         $pallets = $row['pallets'];
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
-        $driver_FK = $row['driver_fk'];
 
 
         echo "<div class='card mainPageJobCard'>
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>" . $row['driver_fk'] . "</h5>
+                            <h5 class='card-title'>{$id}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
