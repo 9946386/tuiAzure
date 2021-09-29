@@ -32,8 +32,7 @@ function openJobsList()
     // INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
     // WHERE driver.DriverID = $i');
 
-    while ($row = mysqli_fetch_assoc($query)) 
-    {
+    while ($row = mysqli_fetch_assoc($query)) {
         $id = $row['DriverID'];
         // $name = $row['driverName'];
         $jobName = $row['jobName'];
@@ -83,6 +82,6 @@ function openJobsList()
                         </div>
                     </div>
                 </div>
-            </div>"
+            </div>";
     }
 }
