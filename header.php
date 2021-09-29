@@ -18,8 +18,6 @@
 
 <body>
 
-<?php include '/local-db-connection.php' ?>
-
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
