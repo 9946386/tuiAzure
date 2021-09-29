@@ -3,9 +3,6 @@
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
-            <div class="col text-center">
-                <button class="btn btn-primary rounded-pill active" aria-pressed="true">Truck 1</button>
-            </div>
             <?php include '../includes/functions.php'; driverMenu();?>
         </div>
     </div>
