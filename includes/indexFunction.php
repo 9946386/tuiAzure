@@ -36,8 +36,7 @@ function openJobsList()
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>Driver: " . $id;
-        echo "</h5>
+                            <h5 class='card-title'>Driver: {$id}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>

@@ -1,3 +1,5 @@
+<?php include '../local-db-connection.php' ?>
+
 <!doctype html>
 <html lang="en">
   <head>
