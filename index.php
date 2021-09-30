@@ -100,8 +100,9 @@ $openjobsq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, ope
                                             INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
                                             WHERE driver.DriverID = 5");
 
+
 while ($data = mysqli_fetch_array($openjobsq)) {
-?>
+?> 
                                                 <tr>
                                                 <th><?php echo $data['jobName']; ?></th>
                                                 <td><?php echo $data['jobType']; ?></td>

@@ -25,18 +25,32 @@
                     </div>
                 </div>
                 <div class="row">
-                    <h1 class="pb-3 text-light">Login</h1>
-                    <div class="row pb-2">
-                        <p class="text-light">Username:</p>
-                        <input type="text" class="rounded-pill border border-white ms-3"></input>
-                    </div>
-                    <div class="row pb-2">
-                        <p class="text-light">Password:</p>
-                        <input type="text" class="rounded-pill border border-white ms-3"></input>
-                    </div>
-                    <div class="col d-flex flex-row-reverse">
-                        <a href="/pages/mobileHome.html" class="btn btn-secondary text-light">Login</a>
-                    </div>
+                    <h1 class="pb-3 text-light">Sign Up</h1>
+                    <form action="../includes/signup.php" method="POST">
+                        <div class="row pb-2">
+                            <p class="text-light">Name:</p>
+                            <input type="text" class="rounded-pill border border-white ms-3" name="name"></input>
+                        </div>
+                        <div class="row pb-2">
+                            <p class="text-light">Username:</p>
+                            <input type="text" class="rounded-pill border border-white ms-3" name="username"></input>
+                        </div>
+                        <div class="row pb-2">
+                            <p class="text-light">Password:</p>
+                            <input type="password" class="rounded-pill border border-white ms-3" name="password"></input>
+                        </div>
+                        <div class="row pb-2">
+                            <p class="text-light"> Confirm Password:</p>
+                            <input type="password" class="rounded-pill border border-white ms-3" name="confirmPassword"></input>
+                        </div>
+                        <div class="row mt-2 d-flex">
+                            <a href="../pages/mobileHome.php" class="btn btn-secondary text-light ms-3" type="submit" name="submit">Sign Up</a>
+                        </div>
+                        <div class="row mt-4 d-flex">
+                            <p class="col-8 text-light"> Already have an account?</p>
+                            <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
+                        </div>
+                    </form>     
                 </div>
             </div>            
         </div>        
