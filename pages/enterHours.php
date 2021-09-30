@@ -1,4 +1,4 @@
-<?php include '../mobileHeader.php' ?>
+<?php include '../includes/mobileHeader.php' ?>
 
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-2">
