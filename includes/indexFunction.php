@@ -51,9 +51,8 @@ function openJobsList()
                                         <th scope='col' class='col-2'>Status</th>
                                     </tr>
                                 </thead>";
-        $i = 3;
 
-        while ($id >= $i) {
+        while ($id >= 4) {
 
             echo "
 
@@ -72,6 +71,5 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-        $i++;
     }
 }
