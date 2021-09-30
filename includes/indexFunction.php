@@ -6,12 +6,9 @@ include '../local-db-connection.php';
 function openJobsList()
 {
     global $conn;
-    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
+    $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
-
-
-
 
     while ($row = mysqli_fetch_assoc($query)) {
 
@@ -51,8 +48,8 @@ function openJobsList()
                                 </thead>";
 
         $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-    FROM openjobs
-    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+                                        FROM openjobs
+                                        INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
 
         while ($row = mysqli_fetch_assoc($openjobq)) {
             echo "              <tr>
