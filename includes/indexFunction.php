@@ -53,9 +53,7 @@ function openJobsList()
                                 </thead>";
 
         while ($row = mysqli_fetch_assoc($query)) {
-            echo "
-
-                                <tr>
+            echo "              <tr>
                                     <th>{$jobName}</th>
                                     <td>{$jobType}</td>
                                     <td>{$orderNumber}</td>
