@@ -14,6 +14,14 @@
         <div class="card mainPageJobCard">
             <div class="card-body">
             <form action="../includes/enterhours.php" method="POST" class="form-group">
+            <div class="row gy-2 p-2">
+                    <div class="col-5">
+                        <h4 class="diesel">Driver:</h1>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" class="form-control" name="driver">
+                    </div>
+                </div>
                 <div class="row gy-2 p-2">
                     <div class="col-5">
                         <h4 class="diesel">Diesel Litres:</h1>
