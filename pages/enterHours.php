@@ -48,7 +48,7 @@
                 </div>
                 <div class="row gy-2 p-2 justify-content-end">
                     <div class="col-3 ">
-                        <button type="button" class="btn btn-primary text-light">Confirm</button>
+                        <button type="submit" class="btn btn-primary text-light" name="submit">Confirm</button>
                     </div>
                 </div>
             </div>
