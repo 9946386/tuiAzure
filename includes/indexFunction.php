@@ -15,6 +15,8 @@ function openJobsList()
     // INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
     // WHERE driver.DriverID = $i');
 
+    $i = 2;
+
     while ($row = mysqli_fetch_assoc($query)) {
 
         $id = $row['DriverID'];
@@ -52,7 +54,8 @@ function openJobsList()
                                     </tr>
                                 </thead>";
 
-        while ($row = mysqli_fetch_assoc($query)) {
+
+        do {
             echo "              <tr>
                                     <th>{$jobName}</th>
                                     <td>{$jobType}</td>
@@ -62,7 +65,9 @@ function openJobsList()
                                     <td>{$jobWeight}</td>
                                     <td>{$jobStatus}</td>
                                 </tr> ";
-        }
+        } while ($id = $i);
+
+        $i++;
         echo "</table>
                         </div>
                     </div>
