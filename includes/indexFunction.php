@@ -31,7 +31,7 @@ function openJobsList()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<div class='card mainPageJobCard'>
+        echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
