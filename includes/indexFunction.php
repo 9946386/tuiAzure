@@ -10,8 +10,7 @@ function openJobsList()
     global $conn;
     $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID                                    
-                                    WHERE driver.DriverID = $i");
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
 
     // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
     // FROM openjobs
