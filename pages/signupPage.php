@@ -32,6 +32,10 @@
                             <input type="text" class="rounded-pill border border-white ms-3" name="name"></input>
                         </div>
                         <div class="row pb-2">
+                            <p class="text-light">Email:</p>
+                            <input type="text" class="rounded-pill border border-white ms-3" name="email"></input>
+                        </div>
+                        <div class="row pb-2">
                             <p class="text-light">Username:</p>
                             <input type="text" class="rounded-pill border border-white ms-3" name="username"></input>
                         </div>
