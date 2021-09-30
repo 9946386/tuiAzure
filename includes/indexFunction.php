@@ -5,8 +5,6 @@ include '../local-db-connection.php';
 
 function openJobsList()
 {
-    $i = 4;
-
     global $conn;
     $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
                                     FROM ((openjobs
@@ -19,8 +17,6 @@ function openJobsList()
     // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($query)) {
-
-        //$i++;
 
         $id = $row['DriverID'];
         $driverName_fk = $row['driverName_fk'];
@@ -55,7 +51,11 @@ function openJobsList()
                                         <th scope='col'>Weight (kg)</th>
                                         <th scope='col' class='col-2'>Status</th>
                                     </tr>
-                                </thead>
+                                </thead>";
+
+        while ($row = mysqli_fetch_assoc($query)) {
+
+            echo "
 
                                 <tr>
                                     <th>{$jobName}</th>
@@ -65,15 +65,12 @@ function openJobsList()
                                     <td>{$pallets}</td>
                                     <td>{$jobWeight}</td>
                                     <td>{$jobStatus}</td>
-                                </tr>                                 
-                            </table>
+                                </tr> ";
+        }
+        echo "</table>
                         </div>
                     </div>
                 </div>
             </div>";
-        //$i++;
-        $id++;
     }
-
-
 }
