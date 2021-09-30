@@ -12,7 +12,7 @@ if (isset($_POST['submit']))
     $mood = $_POST['mood'];
 
     // SQL query to insert the above variables into the openjobs table.
-    $sql = "INSERT INTO driverhours(dieselLitres, driverHours, kms, mood) 
+    $sql = "INSERT INTO driverhours(hoursDriver_FK, dieselLitres, driverHours, kms, mood) 
     VALUES (NULL, '$diesel', '$hours', '$kms', '$mood');";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
