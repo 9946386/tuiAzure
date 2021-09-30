@@ -13,13 +13,13 @@
     <div class="container bg-secondary vh-100 px-4 p-3 enterHoursCard darkMobileContainer ">
         <div class="card mainPageJobCard">
             <div class="card-body">
-
+            <form action="../includes/enterhours.php" method="POST" class="form-group">
                 <div class="row gy-2 p-2">
                     <div class="col-5">
                         <h4 class="diesel">Diesel Litres:</h1>
                     </div>
                     <div class="col-7">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="diesel">
                     </div>
                 </div>
                 <div class="row gy-2 p-2">
@@ -27,7 +27,7 @@
                         <h4 class="diesel">Hours:</h1>
                     </div>
                     <div class="col-7">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="hours">
                     </div>
                 </div>
                 <div class="row gy-2 p-2">
@@ -35,7 +35,7 @@
                         <h4 class="diesel">KMs:</h1>
                     </div>
                     <div class="col-7">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="kms">
                     </div>
                 </div>
                 <div class="row gy-2 p-2">
@@ -43,7 +43,7 @@
                         <h4 class="diesel">Mood:</h1>
                     </div>
                     <div class="col-7">
-                        <input type="text" class="form-control" placeholder="Rating 1-10">
+                        <input type="text" class="form-control" placeholder="Rating 1-10" name="mood">
                     </div>
                 </div>
                 <div class="row gy-2 p-2 justify-content-end">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-
+</form>
         </div>
 
     </div>
