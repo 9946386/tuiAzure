@@ -14,13 +14,7 @@ function openJobsList()
 
         $id = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
-        $jobName = $row['jobName'];
-        $jobType = $row['jobType'];
-        $orderNumber = $row['orderNumber'];
-        $referenceNumber = $row['referenceNumber'];
-        $pallets = $row['pallets'];
-        $jobWeight = $row['jobWeight'];
-        $jobStatus = $row['jobStatus'];
+
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
@@ -50,6 +44,13 @@ function openJobsList()
         $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
                                         FROM openjobs
                                         INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+        $jobName = $row['jobName'];
+        $jobType = $row['jobType'];
+        $orderNumber = $row['orderNumber'];
+        $referenceNumber = $row['referenceNumber'];
+        $pallets = $row['pallets'];
+        $jobWeight = $row['jobWeight'];
+        $jobStatus = $row['jobStatus'];
 
         while ($row = mysqli_fetch_assoc($openjobq)) {
             echo "              <tr>
