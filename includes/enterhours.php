@@ -1,6 +1,4 @@
 <?php
-
-
 include '../local-db-connection.php';
 
 // Taking code added to "Add Job" and inserts it into the openjob database

@@ -6,15 +6,28 @@ include '../local-db-connection.php';
 function openJobsList()
 {
     global $conn;
-    $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
+    $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+
+    // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+    // FROM openjobs
+    // INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+    // WHERE driver.DriverID = $i');
+
+    $i = 2;
 
     while ($row = mysqli_fetch_assoc($query)) {
 
         $id = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
-
+        $jobName = $row['jobName'];
+        $jobType = $row['jobType'];
+        $orderNumber = $row['orderNumber'];
+        $referenceNumber = $row['referenceNumber'];
+        $pallets = $row['pallets'];
+        $jobWeight = $row['jobWeight'];
+        $jobStatus = $row['jobStatus'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
@@ -41,19 +54,7 @@ function openJobsList()
                                     </tr>
                                 </thead>";
 
-        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-                                        FROM openjobs
-                                        INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
-        $jobName = $row['jobName'];
-        $jobType = $row['jobType'];
-        $orderNumber = $row['orderNumber'];
-        $referenceNumber = $row['referenceNumber'];
-        $pallets = $row['pallets'];
-        $jobWeight = $row['jobWeight'];
-        $jobStatus = $row['jobStatus'];
-
-        while ($row = mysqli_fetch_assoc($openjobq)) {
-            echo "              <tr>
+        echo "              <tr>
                                     <th>{$jobName}</th>
                                     <td>{$jobType}</td>
                                     <td>{$orderNumber}</td>
@@ -62,8 +63,6 @@ function openJobsList()
                                     <td>{$jobWeight}</td>
                                     <td>{$jobStatus}</td>
                                 </tr> ";
-        }
-        ;
 
         echo "</table>
                         </div>
