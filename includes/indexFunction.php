@@ -52,8 +52,7 @@ function openJobsList()
                                     </tr>
                                 </thead>";
 
-        while ($id >= 4) {
-
+        while ($row = mysqli_fetch_assoc($query)) {
             echo "
 
                                 <tr>
