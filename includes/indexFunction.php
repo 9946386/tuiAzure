@@ -51,8 +51,9 @@ function openJobsList()
                                         <th scope='col' class='col-2'>Status</th>
                                     </tr>
                                 </thead>";
+        $i = 3;
 
-        while ($row = mysqli_fetch_assoc($query)) {
+        while ($id >= $i) {
 
             echo "
 
@@ -71,5 +72,6 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
+        $i++;
     }
 }
