@@ -1,3 +1,7 @@
+<?php ini_set('error_reporting', E_ALL); ?>
+<?php ini_set('display_errors', 1); ?>
+<?php ini_set('display_startup_errors', 1); ?> 
+
 <!doctype html>
 <html lang="en">
   <head>
