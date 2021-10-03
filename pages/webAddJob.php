@@ -4,7 +4,7 @@
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Truck 1
                 </button>
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
