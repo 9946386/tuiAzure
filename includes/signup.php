@@ -8,8 +8,8 @@ if (isset($_POST["submit"])) {
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
 
-    require_once '../local-db-connection.php';
-    require_once '../includes/functions.php';
+    require '../local-db-connection.php';
+    require '../includes/functions.php';
 
     if (emptyInputSignup($name, $email, $username, $password, $confirmPassword) !== false) {
         header("location: ../pages/signup.php?error=emptyinput");
