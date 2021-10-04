@@ -21,17 +21,14 @@ function driverMenu()
 
 function dropDown()
 {
-
     global $conn;
-    $drivers = mysqli_query($conn, "SELECT * FROM driver");
+    $drivers = mysqli_query($conn, "SELECT driverName FROM driver");
 
-    while ($row = mysqli_fetch_assoc($drivers)) {
-        $id = $row['DriverID'];
-        $name = $row['driverName'];
+    while ($data = mysqli_fetch_array($drivers)) {
+        // $id = $row['DriverID'];
+        // $name = $row['driverName'];
 
-        echo "<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-bs-toggle='dropdown' aria-expanded='false'>
-            {$name}
-            </button>";
+        echo "<option value='" . $data['$name'] . "'>" . $data['$name'] . "</option>";
     }
 }
 
