@@ -2,6 +2,22 @@
 
 include '../local-db-connection.php';
 
+function dropDown()
+{
+
+    global $conn;
+    $drivers = mysqli_query($conn, "SELECT * FROM driver");
+
+    while ($row = mysqli_fetch_assoc($drivers)) {
+        $id = $row['DriverID'];
+        $name = $row['driverName'];
+
+        echo "<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-bs-toggle='dropdown' aria-expanded='false'>
+            {$name}
+            </button>";
+    }
+}
+
 // Taking code added to "Add Job" and inserts it into the openjob database
 // If the submit button is set
 if (isset($_POST['submit'])) 
