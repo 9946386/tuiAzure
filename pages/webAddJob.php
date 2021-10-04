@@ -3,7 +3,8 @@
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
-            <select name="driver" id="driver">
+            <select class="form-select form-select-lg col-4" name="driver" id="driver">
+                <option selected>Pick a driver</option>
                 <?php include '../includes/functions.php'; dropDown();?>
             </select>
             <!-- <div class="dropdown">
@@ -12,7 +13,6 @@
             </div> -->
         </div>
     </div>
-
     <div class="container-fluid bg-secondary darkContainer">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
             <div class="card w-75 m-auto">
@@ -24,6 +24,14 @@
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control p-1" name="JobName" id="jobName">
+                            </div>
+                        </div>
+                        <div class="row gy-5 form-group">
+                            <div class="col-2">
+                                <label for="addDriverID" class="form-label p-1">Driver ID:</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver">
                             </div>
                         </div>
                         <div class="row gy-5 form-group">
