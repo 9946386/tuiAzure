@@ -2,7 +2,6 @@
 
 include '../local-db-connection.php';
 
-
 function openJobsList()
 {
     global $conn;

@@ -58,7 +58,32 @@
                             <p class="col-8 text-light"> Already have an account?</p>
                             <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
                         </div>
-                    </form>     
+                    </form>  
+                    <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emptyimput") {
+        echo "<p>Please fill in all fields</p>";
+    }
+    else if ($_GET["error"] == "invalidUsername") {
+        echo "<p>Please choose a valid username</p>";
+    }
+    else if ($_GET["error"] == "invalidEmail") {
+        echo "<p>Please choose a valid email</p>";
+    }
+    else if ($_GET["error"] == "passwordsdontmatch") {
+        echo "<p>Passwords don't match</p>";
+    }
+    else if ($_GET["error"] == "usernamealreadyused") {
+        echo "<p>That username is already in use. Please try another username.</p>";
+    }
+    else if ($_GET["error"] == "stmtfailed") {
+        echo "<p>Something went wrong. Please try again</p>";
+    }
+    else if ($_GET["error"] == "none") {
+        echo "<p>Success!</p>";
+    }
+}
+?>   
                 </div>
             </div>            
         </div>        
