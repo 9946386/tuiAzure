@@ -92,7 +92,7 @@ function UidExists($conn, $usename, $email)
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $name, $email, $password)
+function createUser($conn, $name, $email, $username, $password)
 {
     // Inserting new user info into users tables
     $sql = "INSERT INTO users (userName, userEmail, userUid, userPW) VALUES (?, ?, ?, ?);";
