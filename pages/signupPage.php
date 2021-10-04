@@ -54,36 +54,37 @@
                         <div class="row mt-2 d-flex form-group">
                             <input type="submit" class="btn btn-secondary text-light ms-3" name="submit" value="Sign Up">
                         </div>
-                        <div class="row mt-4 d-flex">
-                            <p class="col-8 text-light"> Already have an account?</p>
-                            <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
-                        </div>
                         <?php
 // Error messages that will show below form input feilds if user input is invalid
 if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
-        echo "<p>Please fill in all fields</p>";
+        echo "<p class='text-light'>Please fill in all fields</p>";
     }
     else if ($_GET["error"] == "invalidUsername") {
-        echo "<p>Please choose a valid username</p>";
+        echo "<p class='text-light'>Please choose a valid username</p>";
     }
     else if ($_GET["error"] == "invalidEmail") {
-        echo "<p>Please choose a valid email</p>";
+        echo "<p class='text-light'>Please choose a valid email</p>";
     }
     else if ($_GET["error"] == "passwordsdontmatch") {
-        echo "<p>Passwords don't match</p>";
+        echo "<p class='text-light'>Passwords don't match</p>";
     }
     else if ($_GET["error"] == "usernamealreadyused") {
-        echo "<p>That username is already in use. Please try another username.</p>";
+        echo "<p class='text-light'>That username is already in use. Please try another username.</p>";
     }
     else if ($_GET["error"] == "stmtfailed") {
-        echo "<p>Something went wrong. Please try again</p>";
+        echo "<p class='text-light'>Something went wrong. Please try again</p>";
     }
     else if ($_GET["error"] == "none") {
-        echo "<p>Success!</p>";
+        echo "<p class='text-light'>Success!</p>";
     }
 }
 ?>
+                        <div class="row mt-4 d-flex">
+                            <p class="col-8 text-light"> Already have an account?</p>
+                            <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
+                        </div>
+                        
                     </form>  
                        
                 </div>

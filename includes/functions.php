@@ -147,7 +147,7 @@ function loginUser($conn, $username, $password)
         session_start();
         $_SESSION["userid"] = $uidExists["usersID"];
         $_SESSION["useruid"] = $uidExists["userUid"];
-        header("location: ../pages/mobileHome.php");
+        header("location: ../pages/mobileHome.php?loginSuccessful");
         exit();
     }
 }
