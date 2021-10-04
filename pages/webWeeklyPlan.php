@@ -28,7 +28,7 @@
                                     <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
                                 </div>
                             </div>
-                            
+                            <?php include '../includes/weeklyPlan.php'; monday(); ?>
                             
                     <!-- Tuesday -->
                     <div class="card tuesdayJobCard my-2">
@@ -41,7 +41,7 @@
                                     <a href="/pages/webAddJob.html" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
                                 </div>
                             </div>
-                            <?php include '../includes/weeklyPlan.php'; tuesday(); ?>
+                            <?php include '../includes/tuesday.php'; tuesday(); ?>
 
                     <!-- Wednesday -->
                     <div class="card wednesdayJobCard my-2">
