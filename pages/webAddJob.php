@@ -3,7 +3,7 @@
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
-            <select class="form-select form-select-lg col-4" name="driver" id="driver">
+            <select class="form-select form-select-lg col-4 w-50" name="driver" id="driver">
                 <option selected>Pick a driver</option>
                 <?php include '../includes/functions.php'; dropDown();?>
             </select>
@@ -32,6 +32,14 @@
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver">
+                            </div>
+                        </div>
+                        <div class="row gy-5 form-group">
+                            <div class="col-2">
+                                <label for="addDriverName" class="form-label p-1">Driver Name:</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName">
                             </div>
                         </div>
                         <div class="row gy-5 form-group">
