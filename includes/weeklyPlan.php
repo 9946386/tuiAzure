@@ -43,13 +43,14 @@ function monday()
                                 <td>{$pallets}</td>
                                 <td>{$jobWeight}</td>
                                 <td>{$jobStatus}</td>
-                            </tr> 
-                    </table>
-                </div>
+                            </tr> ";
+
+    }
+    echo "</table>
+            </div>
             </div>
             </div>
             </div>";
-    }
 }
 
 function tuesday()
