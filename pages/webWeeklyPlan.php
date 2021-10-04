@@ -16,6 +16,16 @@
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard ">
             <div class="row gy-2"> 
                 <div class="col-12">
+                <div class='card mondayJobCard my-1'>
+        <div class='card-body'>
+            <div class='row justify-content-between'>
+                <div class='col-11'>
+                    <h5 class='card-title'>Monday ...</h5>
+                </div>
+                <div class='col-1'>                            
+                    <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
+                </div>
+            </div>
                 <?php include '../includes/weeklyPlan.php'; monday(); ?>
                     <!-- Monday -->
                     <!-- <div class="card mondayJobCard my-1">
