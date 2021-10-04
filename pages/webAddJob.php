@@ -3,11 +3,13 @@
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
-            <div class="dropdown">
-            <?php include '../includes/functions.php'; dropDown();?>
+            <select name="driver" id="driver">
+                <?php include '../includes/functions.php'; dropDown();?>
+            </select>
+            <!-- <div class="dropdown">
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">                    
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
