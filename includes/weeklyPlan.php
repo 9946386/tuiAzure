@@ -8,7 +8,7 @@ function monday()
     $query = mysqli_query($conn, "SELECT *
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID AND openjobs.driverName_fk = driver.driverName
-                                    WHERE weekday(jobDate) = 0");
+                                    WHERE weekday(jobDate)0");
     while ($row = mysqli_fetch_assoc($query)) {
         $id = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
