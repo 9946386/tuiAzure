@@ -3,10 +3,10 @@
 // Checking if the submit button from login has been clicked
 if (isset($_POST['submit'])) {
     $username = $_POST["username"];
-    $passowrd = $_POST["password"];
+    $password = $_POST["password"];
 
-    require_once '../local-db-connection.php';
-    require_once '../includes/functions.php';
+    require '../local-db-connection.php';
+    require '../includes/functions.php';
 
     // Error handlers 
     if (emptyInputLogin($username, $password) !== false) {

@@ -35,7 +35,7 @@
                         </div>
                         <div class="row pb-2">
                             <p class="text-light">Password:</p>
-                            <input type="text" class="rounded-pill border border-white ms-3" name="password"></input>
+                            <input type="password" class="rounded-pill border border-white ms-3" name="password"></input>
                         </div>
                     </form>
                     <div class="col d-flex flex-row-reverse form-group">
