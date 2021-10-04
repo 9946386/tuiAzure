@@ -62,11 +62,9 @@ function tuesday()
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
                                     WHERE weekday(jobDate) = 2");
-    while ($row = mysqli_fetch_assoc($query)) {
-        //$id = $row['DriverID'];
-        //$driverName_fk = $row['driverName_fk'];
 
-        echo "<div class='row'>
+
+    echo "<div class='row'>
                         <div class='col pt-3'>
                             <table class='table table-bordered table-responsive'>
                                 <thead>
@@ -81,6 +79,9 @@ function tuesday()
                                     </tr>
                                 </thead>";
 
+    while ($row = mysqli_fetch_assoc($query)) {
+        //$id = $row['DriverID'];
+        //$driverName_fk = $row['driverName_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -89,18 +90,16 @@ function tuesday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "              <tr>
-                                    <th>{$jobName}</th>
-                                    <td>{$jobType}</td>
-                                    <td>{$orderNumber}</td>
-                                    <td>{$referenceNumber}</td>
-                                    <td>{$pallets}</td>
-                                    <td>{$jobWeight}</td>
-                                    <td>{$jobStatus}</td>
-                                </tr> ";
-
-
-        echo "</table>
+        echo "<tr>
+                                        <th>{$jobName}</th>
+                                        <td>{$jobType}</td>
+                                        <td>{$orderNumber}</td>
+                                        <td>{$referenceNumber}</td>
+                                        <td>{$pallets}</td>
+                                        <td>{$jobWeight}</td>
+                                        <td>{$jobStatus}</td>
+                                    </tr> 
+                            </table>
                         </div>
                     </div>
                 </div>
