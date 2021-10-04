@@ -59,6 +59,7 @@
                             <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
                         </div>
                         <?php
+// Error messages that will show below form input feilds if user input is invalid
 if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
         echo "<p>Please fill in all fields</p>";

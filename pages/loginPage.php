@@ -1,6 +1,7 @@
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?> 
+<?php include '../local-db-connection.php' ?>
 
 <!doctype html>
 <html lang="en">
@@ -30,18 +31,18 @@
                 </div>
                 <div class="row">
                     <h1 class="pb-3 text-light">Login</h1>
-                    <form action='../includes/login.php' method="POST">
+                    <form action='../includes/login.php' method="POST" class="form-group">
                         <div class="row pb-2">
                             <p class="text-light">Username or Email:</p>
-                            <input type="text" class="rounded-pill border border-white ms-3" name="username"></input>
+                            <input type="text" class="rounded-pill border border-white ms-3 form-control" name="username"></input>
                         </div>
                         <div class="row pb-2">
                             <p class="text-light">Password:</p>
-                            <input type="password" class="rounded-pill border border-white ms-3" name="password"></input>
+                            <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
                     </form>
                     <div class="col d-flex flex-row-reverse form-group">
-                        <input type="submit" class="btn btn-secondary text-light" name="submit" value="Login">
+                        <input type="submit" class="btn btn-secondary text-light form-control" name="submit" value="Login">
                     </div>
                 </div>
             </div> 
