@@ -147,6 +147,7 @@ function loginUser($conn, $username, $password)
         session_start();
         $_SESSION["userid"] = $uidExists["usersID"];
         $_SESSION["useruid"] = $uidExists["userUid"];
+        $_SESSION["driver_id"] = "usersID";
         header("location: ../pages/mobileHome.php?loginSuccessful");
         exit();
     }
