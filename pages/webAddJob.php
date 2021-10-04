@@ -4,7 +4,7 @@
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
             <div class="dropdown">
-            <?php include '../includes/insertJob.php'; dropDown();?>
+            <?php include '../includes/functions.php'; dropDown();?>
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">                    
                 </div>
             </div>
