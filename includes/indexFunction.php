@@ -93,7 +93,7 @@ function openJobsList2()
                             <h5 class='card-title'>Driver: {$id}</h5>
                         </div>
                         <div class='col-1'>
-                            <a href='pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
+                            <a href='/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
                         </div>
                     </div>
                     <div class='row'>
