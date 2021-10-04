@@ -22,13 +22,10 @@ function driverMenu()
 function dropDown()
 {
     global $conn;
-    $drivers = mysqli_query($conn, "SELECT driverName FROM driver");
+    $drivers = mysqli_query($conn, "SELECT * FROM driver");
 
     while ($data = mysqli_fetch_array($drivers)) {
-        // $id = $row['DriverID'];
-        // $name = $row['driverName'];
-
-        echo "<option value='" . $data['driverName'] . "'>" . $data['driverName'] . "</option>";
+        echo "<option value='" . $data['DriverID'] . $data['driverName'] . "'>" . $data['DriverID'] . $data['driverName'] . "</option>";
     }
 }
 
