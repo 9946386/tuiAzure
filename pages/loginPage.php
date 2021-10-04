@@ -40,10 +40,11 @@
                             <p class="text-light">Password:</p>
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
-                    </form>
-                    <div class="col d-flex flex-row-reverse form-group">
+                        <div class="col d-flex flex-row-reverse form-group">
                         <input type="submit" class="btn btn-secondary text-light form-control" name="submit" value="Login">
                     </div>
+                    </form>
+
                 </div>
             </div> 
             <?php
