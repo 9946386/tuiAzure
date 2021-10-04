@@ -1,5 +1,5 @@
 <?php include '../includes/mobileHeader.php' ?>
-
+ 
 <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-2">
         <div class="row justify-content ">
@@ -53,4 +53,9 @@
               </div>
             </div>
         </div>
-    </dib>
+    </div>
+
+         <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/ui.js"></script>
