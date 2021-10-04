@@ -126,7 +126,6 @@ function emptyInputLogin($username, $password)
 
 function loginUser($conn, $username, $password)
 {
-
     $uidExists = UidExists($conn, $username, $username);
 
     // Error handler
@@ -145,7 +144,7 @@ function loginUser($conn, $username, $password)
     else if ($checkPassword === true) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersID"];
-        $_SESSION["userUid"] = $uidExists["userUid"];
+        $_SESSION["useruid"] = $uidExists["userUid"];
         header("location: ../pages/mobileHome.php");
         exit();
     }
