@@ -72,7 +72,7 @@ function UidExists($conn, $usename, $email)
     $sql = "SELECT * FROM users WHERE usersUid = ? OR userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../pages/signup.php?error=stmtfailed");
+        header("location: ../pages/signupPage.php?error=stmtfailed");
         exit();
     }
 
@@ -98,7 +98,7 @@ function createUser($conn, $name, $email, $password)
     $sql = "INSERT INTO users (userName, userEmail, userUid, userPW) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../pages/signup.php?error=stmtfailed");
+        header("location: ../pages/signupPage.php?error=stmtfailed");
         exit();
     }
 
@@ -109,5 +109,5 @@ function createUser($conn, $name, $email, $password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../pages/webHome.php");
+    header("location: ../pages/mobileHome.php");
 }
