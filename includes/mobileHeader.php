@@ -44,6 +44,9 @@
                   <li class="nav-item">
                     <a class="nav-link text-light" href="../pages/enterHours.php">Enter Hours</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="../pages/loginPage.php">Sign Out</a>
+                  </li>
                 </ul>
               </div>
             </div>

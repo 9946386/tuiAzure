@@ -30,7 +30,7 @@
                     <h1 class="pb-3 text-light">Login</h1>
                     <form action='../includes/login.php' method="POST">
                         <div class="row pb-2">
-                            <p class="text-light">Username:</p>
+                            <p class="text-light">Username or Email:</p>
                             <input type="text" class="rounded-pill border border-white ms-3" name="username"></input>
                         </div>
                         <div class="row pb-2">
@@ -38,11 +38,36 @@
                             <input type="text" class="rounded-pill border border-white ms-3" name="password"></input>
                         </div>
                     </form>
-                    <div class="col d-flex flex-row-reverse">
-                        <a href="/pages/mobileHome.html" class="btn btn-secondary text-light">Login</a>
+                    <div class="col d-flex flex-row-reverse form-group">
+                        <input type="submit" class="btn btn-secondary text-light" name="submit" value="Login">
                     </div>
                 </div>
-            </div>            
+            </div> 
+            <?php
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emptyimput") {
+        echo "<p>Please fill in all fields</p>";
+    }
+    else if ($_GET["error"] == "wronglogin") {
+        echo "<p>Incorrect login input</p>";
+    }
+    // else if ($_GET["error"] == "invalidEmail") {
+    //     echo "<p>Please choose a valid email</p>";
+    // }
+    // else if ($_GET["error"] == "passwordsdontmatch") {
+    //     echo "<p>Passwords don't match</p>";
+    // }
+    // else if ($_GET["error"] == "usernamealreadyused") {
+    //     echo "<p>That username is already in use. Please try another username.</p>";
+    // }
+    // else if ($_GET["error"] == "stmtfailed") {
+    //     echo "<p>Something went wrong. Please try again</p>";
+    // }
+    else if ($_GET["error"] == "none") {
+        echo "<p>Success!</p>";
+    }
+}
+?>              
         </div>        
     </div>
 

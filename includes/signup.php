@@ -12,27 +12,27 @@ if (isset($_POST["submit"])) {
     require '../includes/functions.php';
 
     if (emptyInputSignup($name, $email, $username, $password, $confirmPassword) !== false) {
-        header("location: ../pages/signup.php?error=emptyinput");
+        header("location: ../pages/signupPage.php?error=emptyinput");
         exit();
     }
 
     if (invalidUid($username) !== false) {
-        header("location: ../pages/signup.php?error=invalidUsername");
+        header("location: ../pages/signupPage.php?error=invalidUsername");
         exit();
     }
 
     if (invalidEmail($email) !== false) {
-        header("location: ../pages/signup.php?error=invalidEmail");
+        header("location: ../pages/signupPage.php?error=invalidEmail");
         exit();
     }
 
     if (pwdMatch($password, $confirmPassword) !== false) {
-        header("location: ../pages/signup.php?error=passwordsdontmatch");
+        header("location: ../pages/signupPage.php?error=passwordsdontmatch");
         exit();
     }
 
     if (UidExists($conn, $username, $email) !== false) {
-        header("location: ../pages/signup.php?error=usernamealreadyused");
+        header("location: ../pages/signupPage.php?error=usernamealreadyused");
         exit();
     }
 

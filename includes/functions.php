@@ -67,7 +67,7 @@ function pwdMatch($password, $confirmPassword)
     return $result;
 }
 
-function UidExists($conn, $usename, $email)
+function UidExists($conn, $username, $email)
 {
     $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -110,4 +110,43 @@ function createUser($conn, $name, $email, $username, $password)
     mysqli_stmt_close($stmt);
 
     header("location: ../pages/mobileHome.php");
+}
+
+function emptyInputLogin($username, $password)
+{
+    $result = true;
+    if (empty($username) || empty($password)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function loginUser($conn, $username, $password)
+{
+
+    $uidExists = UidExists($conn, $username, $username);
+
+    // Error handler
+    if ($uidExists === false) {
+        header("location: ../pages/loginPage.php?error=wrongLogin");
+        exit();
+    }
+
+    $passwordHashed = $uidExists["userPW"];
+    $checkPassword = password_verify($password, $passwordHashed);
+
+    if ($checkPassword === false) {
+        header("location: ../pages/loginPage.php?error=wrongLogin");
+        exit();
+    }
+    else if ($checkPassword === true) {
+        session_start();
+        $_SESSION["userid"] = $uidExists["usersID"];
+        $_SESSION["userUid"] = $uidExists["userUid"];
+        header("location: ../pages/mobileHome.php");
+        exit();
+    }
 }
