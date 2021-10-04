@@ -69,7 +69,7 @@ function pwdMatch($password, $confirmPassword)
 
 function UidExists($conn, $usename, $email)
 {
-    $sql = "SELECT * FROM users WHERE usersUid = ? OR userEmail = ?;";
+    $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../pages/signupPage.php?error=stmtfailed");
@@ -98,7 +98,7 @@ function createUser($conn, $name, $email, $password)
     $sql = "INSERT INTO users (userName, userEmail, userUid, userPW) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../pages/signupPage.php?error=stmtfailed");
+        header("location: ../pages/signupPage.php?error=stmt2failed");
         exit();
     }
 
