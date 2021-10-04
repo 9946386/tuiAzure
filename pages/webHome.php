@@ -12,7 +12,7 @@
     </div>
 
     <!-- Truck Job Table -->
-    <div class="container-fluid bg-secondary vh-100 darkContainer">
+    <div class="container-fluid bg-secondary darkContainer">
         <div class="container px-4 p-3 webDailyPlanTruckCard vh-100">
             <div class="row gy-2">
                 <div class="col-12">

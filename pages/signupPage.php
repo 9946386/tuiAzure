@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="/styles/myTheme.css"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
 
-    <title>Login</title>
+    <title>Sign Up</title>
 
 </head>
-<body class="loginBody">
+<body class="signupbody">
 
     <div class="container-fluid loginBackground min-vh-100">
         <div class="container w-75 min-vh-100 loginContainer d-flex align-items-center justify-content-center">
@@ -30,29 +30,29 @@
                 </div>
                 <div class="row">
                     <h1 class="pb-3 text-light">Sign Up</h1>
-                    <form action="../includes/signup.php" method="POST">
+                    <form action="../includes/signup.php" method="POST" class="form-group">
                         <div class="row pb-2">
                             <p class="text-light">Name:</p>
-                            <input type="text" class="rounded-pill border border-white ms-3" name="name"></input>
+                            <input type="text" class="rounded-pill border border-white ms-3 form-control" name="name"></input>
                         </div>
                         <div class="row pb-2">
                             <p class="text-light">Email:</p>
-                            <input type="text" class="rounded-pill border border-white ms-3" name="email"></input>
+                            <input type="text" class="rounded-pill border border-white ms-3 form-control" name="email"></input>
                         </div>
                         <div class="row pb-2">
                             <p class="text-light">Username:</p>
-                            <input type="text" class="rounded-pill border border-white ms-3" name="username"></input>
+                            <input type="text" class="rounded-pill border border-white ms-3 form-control" name="username"></input>
                         </div>
                         <div class="row pb-2">
                             <p class="text-light">Password:</p>
-                            <input type="password" class="rounded-pill border border-white ms-3" name="password"></input>
+                            <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
                         <div class="row pb-2">
                             <p class="text-light"> Confirm Password:</p>
-                            <input type="password" class="rounded-pill border border-white ms-3" name="confirmPassword"></input>
+                            <input type="password" class="rounded-pill border border-white ms-3 form-control" name="confirmPassword"></input>
                         </div>
-                        <div class="row mt-2 d-flex">
-                            <a href="../pages/mobileHome.php" class="btn btn-secondary text-light ms-3" type="submit" name="submit">Sign Up</a>
+                        <div class="row mt-2 d-flex form-group">
+                            <input type="submit" class="btn btn-secondary text-light ms-3" name="submit" value="Sign Up">
                         </div>
                         <div class="row mt-4 d-flex">
                             <p class="col-8 text-light"> Already have an account?</p>

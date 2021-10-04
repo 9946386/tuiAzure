@@ -21,7 +21,7 @@ function driverMenu()
 
 function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
 {
-    $result;
+    $result = true;
     if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword)) {
         $result = true;
     }
@@ -90,7 +90,6 @@ function UidExists($conn, $usename, $email)
     }
 
     mysqli_stmt_close($stmt);
-
 }
 
 function createUser($conn, $name, $email, $password)
