@@ -25,7 +25,7 @@ function dropDown()
     $drivers = mysqli_query($conn, "SELECT * FROM driver");
 
     while ($data = mysqli_fetch_array($drivers)) {
-        echo "<option value='" . $data['DriverID'] . $data['driverName'] . "'>" . $data['DriverID'] . $data['driverName'] . "</option>";
+        echo "<option value='" . $data['DriverID'] . ": " . $data['driverName'] . "'>" . $data['DriverID'] . $data['driverName'] . "</option>";
     }
 }
 
