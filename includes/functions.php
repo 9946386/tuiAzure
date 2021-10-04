@@ -137,10 +137,12 @@ function loginUser($conn, $username, $password)
     $passwordHashed = $uidExists["userPW"];
     $checkPassword = password_verify($password, $passwordHashed);
 
+    // If false the database pw and input pw are not the same
     if ($checkPassword === false) {
         header("location: ../pages/loginPage.php?error=wrongLogin");
         exit();
     }
+    // 
     else if ($checkPassword === true) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersID"];

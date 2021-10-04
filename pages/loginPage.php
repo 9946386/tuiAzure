@@ -1,4 +1,6 @@
-<?php include '../local-db-connection.php' ?>
+<?php ini_set('error_reporting', E_ALL); ?>
+<?php ini_set('display_errors', 1); ?>
+<?php ini_set('display_startup_errors', 1); ?> 
 
 <!doctype html>
 <html lang="en">
@@ -48,21 +50,9 @@ if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyimput") {
         echo "<p>Please fill in all fields</p>";
     }
-    else if ($_GET["error"] == "wronglogin") {
+    else if ($_GET["error"] == "wrongLogin") {
         echo "<p>Incorrect login input</p>";
     }
-    // else if ($_GET["error"] == "invalidEmail") {
-    //     echo "<p>Please choose a valid email</p>";
-    // }
-    // else if ($_GET["error"] == "passwordsdontmatch") {
-    //     echo "<p>Passwords don't match</p>";
-    // }
-    // else if ($_GET["error"] == "usernamealreadyused") {
-    //     echo "<p>That username is already in use. Please try another username.</p>";
-    // }
-    // else if ($_GET["error"] == "stmtfailed") {
-    //     echo "<p>Something went wrong. Please try again</p>";
-    // }
     else if ($_GET["error"] == "none") {
         echo "<p>Success!</p>";
     }

@@ -58,10 +58,9 @@
                             <p class="col-8 text-light"> Already have an account?</p>
                             <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
                         </div>
-                    </form>  
-                    <?php
+                        <?php
 if (isset($_GET["error"])) {
-    if ($_GET["error"] == "emptyimput") {
+    if ($_GET["error"] == "emptyinput") {
         echo "<p>Please fill in all fields</p>";
     }
     else if ($_GET["error"] == "invalidUsername") {
@@ -83,7 +82,9 @@ if (isset($_GET["error"])) {
         echo "<p>Success!</p>";
     }
 }
-?>   
+?>
+                    </form>  
+                       
                 </div>
             </div>            
         </div>        
