@@ -16,7 +16,7 @@
         <div class="container px-4 p-3 webDailyPlanTruckCard">
             <div class="row gy-2">
                 <div class="col-12">
-                 <?php include 'includes/indexFunction.php'; openJobsList2(); ?>
+                 <?php include 'includes/indexFunction.php'; openJobsList(); ?>
                 </div>  
             </div> 
         </div>   
