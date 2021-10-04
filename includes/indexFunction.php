@@ -77,13 +77,9 @@ function openJobsList2()
     global $conn;
     $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                    INNER JOIN driver ON openjobs.driverName_fk = driver.driverName");
     // INNER JOIN driver ON openJobs.driverName_fk = driver.driverName
-
-    // $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-    // FROM openjobs
-    // INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-    // WHERE driver.DriverID = $i');
 
     while ($row = mysqli_fetch_assoc($query)) {
 
