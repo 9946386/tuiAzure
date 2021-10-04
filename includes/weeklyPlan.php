@@ -8,9 +8,9 @@ function monday()
     $query = mysqli_query($conn, "SELECT *
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                    WHERE weekday(jobDate)0");
+                                    WHERE weekday(jobDate) = 0");
     while ($row = mysqli_fetch_assoc($query)) {
-        $id = $row['DriverID'];
+        //$id = $row['DriverID'];
         //$driverName_fk = $row['driverName_fk'];
 
         echo "<div class='card mondayJobCard my-1'>
