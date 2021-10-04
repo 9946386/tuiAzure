@@ -7,7 +7,7 @@ function monday()
     global $conn;
     $query = mysqli_query($conn, "SELECT *
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                    INNER JOIN driver ON openjobs.driverName_fk = driver.driverName
                                     WHERE weekday(jobDate) = 0");
     echo "<div class='row'>
         <div class='col pt-3'>
@@ -26,7 +26,7 @@ function monday()
 
     while ($row = mysqli_fetch_assoc($query)) {
         //$id = $row['DriverID'];
-        //$driverName_fk = $row['driverName_fk'];
+        $driverName_fk = $row['driverName_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -37,6 +37,7 @@ function monday()
 
         echo "<tr>
                                 <th>{$jobName}</th>
+                                <th>{$driverName_fk}</td>
                                 <td>{$jobType}</td>
                                 <td>{$orderNumber}</td>
                                 <td>{$referenceNumber}</td>
@@ -51,6 +52,7 @@ function monday()
             </div>
             </div>
             </div>";
+    mysqli_close($conn);
 }
 
 function tuesday()
@@ -59,7 +61,7 @@ function tuesday()
     $query = mysqli_query($conn, "SELECT *
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                    WHERE weekday(jobDate) = 2");
+                                    WHERE weekday(jobDate) = 1");
 
 
     echo "<div class='row'>
@@ -79,7 +81,7 @@ function tuesday()
 
     while ($row = mysqli_fetch_assoc($query)) {
         //$id = $row['DriverID'];
-        //$driverName_fk = $row['driverName_fk'];
+        $driverName_fk = $row['driverName_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -89,18 +91,20 @@ function tuesday()
         $jobStatus = $row['jobStatus'];
 
         echo "<tr>
-                                        <th>{$jobName}</th>
-                                        <td>{$jobType}</td>
-                                        <td>{$orderNumber}</td>
-                                        <td>{$referenceNumber}</td>
-                                        <td>{$pallets}</td>
-                                        <td>{$jobWeight}</td>
-                                        <td>{$jobStatus}</td>
-                                    </tr> 
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>";
+                                <th>{$jobName}</th>
+                                <th>{$driverName_fk}</td>
+                                <td>{$jobType}</td>
+                                <td>{$orderNumber}</td>
+                                <td>{$referenceNumber}</td>
+                                <td>{$pallets}</td>
+                                <td>{$jobWeight}</td>
+                                <td>{$jobStatus}</td>
+                            </tr> ";
+
     }
+    echo "</table>
+            </div>
+            </div>
+            </div>
+            </div>";
 }
