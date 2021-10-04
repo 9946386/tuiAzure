@@ -7,7 +7,7 @@ function monday()
     global $conn;
     $query = mysqli_query($conn, "SELECT *
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID AND openjobs.driverName_fk = driver.driverName
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
                                     WHERE weekday(jobDate)0");
     while ($row = mysqli_fetch_assoc($query)) {
         $id = $row['DriverID'];
@@ -38,21 +38,21 @@ function monday()
                                     </tr>
                                 </thead>";
 
-        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
-                                            FROM openjobs
-                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                            WHERE driver.DriverID = $id");
+        // $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
+        //                                     FROM openjobs
+        //                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+        //                                     WHERE driver.DriverID = $id");
 
-        while ($row = mysqli_fetch_assoc($openjobq)) {
-            $jobName = $row['jobName'];
-            $jobType = $row['jobType'];
-            $orderNumber = $row['orderNumber'];
-            $referenceNumber = $row['referenceNumber'];
-            $pallets = $row['pallets'];
-            $jobWeight = $row['jobWeight'];
-            $jobStatus = $row['jobStatus'];
+        // while ($row = mysqli_fetch_assoc($openjobq)) {
+        $jobName = $row['jobName'];
+        $jobType = $row['jobType'];
+        $orderNumber = $row['orderNumber'];
+        $referenceNumber = $row['referenceNumber'];
+        $pallets = $row['pallets'];
+        $jobWeight = $row['jobWeight'];
+        $jobStatus = $row['jobStatus'];
 
-            echo "              <tr>
+        echo "              <tr>
                                     <th>{$jobName}</th>
                                     <td>{$jobType}</td>
                                     <td>{$orderNumber}</td>
@@ -61,7 +61,7 @@ function monday()
                                     <td>{$jobWeight}</td>
                                     <td>{$jobStatus}</td>
                                 </tr> ";
-        }
+
 
         echo "</table>
                         </div>
