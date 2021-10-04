@@ -28,7 +28,7 @@ function dropDown()
         // $id = $row['DriverID'];
         // $name = $row['driverName'];
 
-        echo "<option value='" . $data['$name'] . "'>" . $data['$name'] . "</option>";
+        echo "<option value='" . $data['driverName'] . "'>" . $data['driverName'] . "</option>";
     }
 }
 
