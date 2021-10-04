@@ -47,7 +47,7 @@
                                 <label for="addJobDate" class="form-label p-1">Date:</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control p-1" name="JobDate" id="jobDate">
+                                <input type="date" class="form-control p-1" name="JobDate" id="jobDate">
                             </div>
                         </div>
                         <div class="row form-group">
