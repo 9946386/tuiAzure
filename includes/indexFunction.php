@@ -6,7 +6,7 @@ function openJobsList()
 {
     global $conn;
     $query = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
-                                    (FROM openjobs
+                                    FROM openjobs
                                     INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
     // INNER JOIN driver ON openJobs.driverName_fk = driver.driverName
 
@@ -115,10 +115,10 @@ function openJobsList2()
                                     </tr>
                                 </thead>";
 
-        $openjobq = mysqli_query($conn, 'SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
-                                                                    FROM openjobs
-                                                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                                                    WHERE driver.DriverID = $id');
+        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
+                                            FROM openjobs
+                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                            WHERE driver.DriverID = $id");
 
         while ($row = mysqli_fetch_assoc($openjobq)) {
             $jobName = $row['jobName'];
