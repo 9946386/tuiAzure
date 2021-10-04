@@ -58,25 +58,25 @@
 // Error messages that will show below form input feilds if user input is invalid
 if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
-        echo "<p class='text-light'>Please fill in all fields</p>";
+        echo "<br><p class='text-light'>Please fill in all fields</p>";
     }
     else if ($_GET["error"] == "invalidUsername") {
-        echo "<p class='text-light'>Please choose a valid username</p>";
+        echo "<br><p class='text-light'>Please choose a valid username</p>";
     }
     else if ($_GET["error"] == "invalidEmail") {
-        echo "<p class='text-light'>Please choose a valid email</p>";
+        echo "<br><p class='text-light'>Please choose a valid email</p>";
     }
     else if ($_GET["error"] == "passwordsdontmatch") {
-        echo "<p class='text-light'>Passwords don't match</p>";
+        echo "<br><p class='text-light'>Passwords don't match</p>";
     }
     else if ($_GET["error"] == "usernamealreadyused") {
-        echo "<p class='text-light'>That username is already in use. Please try another username.</p>";
+        echo "<br><p class='text-light'>That username is already in use. Please try another username.</p>";
     }
     else if ($_GET["error"] == "stmtfailed") {
-        echo "<p class='text-light'>Something went wrong. Please try again</p>";
+        echo "<br><p class='text-light'>Something went wrong. Please try again</p>";
     }
     else if ($_GET["error"] == "none") {
-        echo "<p class='text-light'>Success!</p>";
+        echo "<br><p class='text-light'>Success!</p>";
     }
 }
 ?>
