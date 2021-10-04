@@ -5,4 +5,4 @@ session_start();
 session_unset();
 session_destroy();
 
-header("location: ../pages/loginPage.php");
+header("location: ../pages/loginPage.php?loggedout");
