@@ -96,6 +96,7 @@
                                                             <td>{$jobStatus}</td>
                                                         </tr> 
                                                     </tbody>";
+                                            }
                                         ?>
 
                                     </table>
@@ -155,6 +156,7 @@
                                                             <td>{$jobStatus}</td>
                                                         </tr> 
                                                     </tbody>";
+                                            }
                                         ?>
                                     </table>
                                 </div>
@@ -211,6 +213,7 @@
                                                         <td>{$jobStatus}</td>
                                                     </tr> 
                                                 </tbody>";  
+                                          }
                                         ?>
                                     </table>
                                 </div>
@@ -267,6 +270,7 @@
                                                             <td>{$jobStatus}</td>
                                                         </tr>
                                                     </tbody>";
+                                            }
                                         ?>
                                     </table>
                                 </div>
@@ -323,6 +327,7 @@
                                                             <td>{$jobStatus}</td>
                                                         </tr>
                                                     </tbody>";
+                                            }
                                         ?>
                                     </table>
                                 </div>
