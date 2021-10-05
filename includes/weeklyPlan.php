@@ -2,7 +2,7 @@
 
 include '../local-db-connection.php';
 
-function monday()
+function weekDays()
 {
     global $conn;
     $query = mysqli_query($conn, "SELECT *
@@ -11,34 +11,34 @@ function monday()
                                     WHERE weekday(jobDate) = 0");
 
     echo "<div class='container-fluid bg-secondary darkContainer'>
-    <div class='container py-5 px-4 p-3 webWeeklyPlanTruckCard'>
-        <div class='row gy-2'> 
-            <div class='col-12'>
-    <div class='card mondayJobCard my-1'>
-    <div class='card-body'>
-        <div class='row justify-content-between'>
-            <div class='col-11'>
-                <h5 class='card-title'>Monday ...</h5>
-            </div>
-            <div class='col-1'>                            
-                <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
-            </div>
-        </div>
-        <div class='row'>
-        <div class='col pt-3'>
-            <table class='table table-bordered table-responsive'>
-                <thead>
-                <tr class='table-light'>
-                        <th scope='col' class='col-2'>Job</th>
-                        <th scope='col'>Name</th>
-                        <th scope='col'>Type</th>
-                        <th scope='col' class='col-2'>Order #</th>
-                        <th scope='col' class='col-2'>Reference</th>
-                        <th scope='col'>Pallets</th>
-                        <th scope='col'>Weight (kg)</th>
-                        <th scope='col' class='col-2'>Status</th>
-                    </tr>
-                </thead>";
+            <div class='container py-5 px-4 p-3 webWeeklyPlanTruckCard'>
+                <div class='row gy-2'> 
+                    <div class='col-12'>
+                        <div class='card mondayJobCard my-1'>
+                            <div class='card-body'>
+                                <div class='row justify-content-between'>
+                                    <div class='col-11'>
+                                        <h5 class='card-title'>Monday ...</h5>
+                                    </div>
+                                    <div class='col-1'>                            
+                                        <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                <div class='col pt-3'>
+                                    <table class='table table-bordered table-responsive'>
+                                        <thead>
+                                        <tr class='table-light'>
+                                                <th scope='col' class='col-2'>Job</th>
+                                                <th scope='col'>Name</th>
+                                                <th scope='col'>Type</th>
+                                                <th scope='col' class='col-2'>Order #</th>
+                                                <th scope='col' class='col-2'>Reference</th>
+                                                <th scope='col'>Pallets</th>
+                                                <th scope='col'>Weight (kg)</th>
+                                                <th scope='col' class='col-2'>Status</th>
+                                            </tr>
+                                        </thead>";
 
     while ($row = mysqli_fetch_assoc($query)) {
         //$id = $row['DriverID'];
@@ -140,7 +140,7 @@ function monday()
             WHERE weekday(jobDate) = 2");
 
 
-    echo "<div class='card tuesdayJobCard my-2>
+    echo "<div class='card wednesdayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -177,8 +177,7 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "
-            <tbody>
+        echo "<tbody>
                 <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>
@@ -204,7 +203,7 @@ function monday()
             WHERE weekday(jobDate) = 3");
 
 
-    echo "<div class='card tuesdayJobCard my-2>
+    echo "<div class='card thursdayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -304,8 +303,7 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "
-            <tbody>
+        echo "<tbody>
                 <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>

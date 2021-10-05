@@ -28,7 +28,7 @@
                                     <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
                                 </div>
                             </div> -->
-                            <?php include '../includes/weeklyPlan.php'; monday();?>
+                            <?php include '../includes/weeklyPlan.php'; weekDays();?>
                             
                     <!-- Tuesday -->
                     <!-- <div class="card tuesdayJobCard my-2">
