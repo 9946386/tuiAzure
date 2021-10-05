@@ -18,7 +18,7 @@
                 <div class="col-12">
 
                     <!-- Monday -->
-                    <div class='card mondayJobCard my-1'>
+                    <!-- <div class='card mondayJobCard my-1'>
                         <div class='card-body'>
                             <div class='row justify-content-between'>
                                 <div class='col-11'>
@@ -27,11 +27,11 @@
                                 <div class='col-1'>                            
                                     <a href='/pages/webAddJob.html' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
                                 </div>
-                            </div>
-                            <?php include '../includes/weeklyPlan.php'; monday(); ?>
+                            </div> -->
+                            <?php include '../includes/weeklyPlan.php'; monday();?>
                             
                     <!-- Tuesday -->
-                    <div class="card tuesdayJobCard my-2">
+                    <!-- <div class="card tuesdayJobCard my-2">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
@@ -40,11 +40,11 @@
                                 <div class="col-1">                            
                                     <a href="/pages/webAddJob.html" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
                                 </div>
-                            </div>
-                            <?php include '../includes/tuesday.php'; tuesday(); ?>
+                            </div> -->
+                            
 
                     <!-- Wednesday -->
-                    <div class="card wednesdayJobCard my-2">
+                    <!-- <div class="card wednesdayJobCard my-2">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
@@ -92,9 +92,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Thursday -->
-                    <div class="card thursdayJobCard my-2">
+                    <!-- <div class="card thursdayJobCard my-2">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
@@ -142,9 +142,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Friday -->
-                    <div class="card fridayJobCard my-2">
+                    <!-- <div class="card fridayJobCard my-2">
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="col-11">
@@ -192,7 +192,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

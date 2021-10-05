@@ -14,13 +14,13 @@ function openJobsList()
     while ($row = mysqli_fetch_assoc($query)) {
 
         $id = $row['DriverID'];
-        //$driverName_fk = $row['driverName_fk'];
+        $driverName_fk = $row['driverName_fk'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>Driver: {$id}</h5>
+                            <h5 class='card-title'>Driver: {$id} {$driverName_fk}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='../pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
