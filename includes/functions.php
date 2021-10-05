@@ -14,7 +14,7 @@ function driverMenu()
         $name = $row['driverName'];
 
         echo "<div class='col text-center'>
-                <button href='webWeeklyPlan.php?id=<?php echo $id; ?>' name='driverNameBtn' class='btn btn-primary rounded-pill text-light'>{$name}</button>
+                <a href='webWeeklyPlan.php?id=<?php echo $id; ?>' name='driverNameBtn' class='btn btn-primary rounded-pill text-light'>{$name}</a>
                 </div>";
     }
 }
