@@ -40,8 +40,39 @@
                                 <div class="col-1">                            
                                     <a href="/pages/webAddJob.html" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
                                 </div>
-                            </div> -->
-                            
+                            </div>
+            <div class='row'>
+            <div class='col pt-3'>
+                <table class='table table-bordered table-responsive'>
+                    <thead>
+                        <tr class='table-light'>
+                            <th scope='col' class='col-2'>Job</th>
+                            <th scope='col'>Name</th>
+                            <th scope='col'>Type</th>
+                            <th scope='col' class='col-2'>Order #</th>
+                            <th scope='col' class='col-2'>Reference</th>
+                            <th scope='col'>Pallets</th>
+                            <th scope='col'>Weight (kg)</th>
+                            <th scope='col' class='col-2'>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <tr>
+                    <th>{$jobName}</th>
+                    <th>{$driverName_fk}</td>
+                    <td>{$jobType}</td>
+                    <td>{$orderNumber}</td>
+                    <td>{$referenceNumber}</td>
+                    <td>{$pallets}</td>
+                    <td>{$jobWeight}</td>
+                    <td>{$jobStatus}</td>
+                </tr> 
+            </tbody>
+        </table>
+            </div>
+            </div>
+            </div>
+            </div>-->                            
 
                     <!-- Wednesday -->
                     <!-- <div class="card wednesdayJobCard my-2">
@@ -76,15 +107,6 @@
                                                 <td>TUI181500</td>
                                                 <td>18</td>
                                                 <td>17565</td>
-                                                <td>Loaded</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Kapiti Mega</th>
-                                                <td>Delivery</td>
-                                                <td>SOM112677</td>
-                                                <td>TUI181501</td>
-                                                <td>7</td>
-                                                <td>4980</td>
                                                 <td>Loaded</td>
                                             </tr>
                                         </tbody>
@@ -177,26 +199,17 @@
                                                 <td>18</td>
                                                 <td>17565</td>
                                                 <td>Loaded</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Kapiti Mega</th>
-                                                <td>Delivery</td>
-                                                <td>SOM112677</td>
-                                                <td>TUI181501</td>
-                                                <td>7</td>
-                                                <td>4980</td>
-                                                <td>Loaded</td>
-                                            </tr>
+                                            </tr>                                            
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

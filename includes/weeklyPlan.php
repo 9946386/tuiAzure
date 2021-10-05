@@ -9,6 +9,7 @@ function monday()
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driverName_fk = driver.driverName
                                     WHERE weekday(jobDate) = 0");
+
     echo "<div class='card mondayJobCard my-1'>
     <div class='card-body'>
         <div class='row justify-content-between'>
@@ -46,16 +47,18 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<tr>
-                                <th>{$jobName}</th>
-                                <th>{$driverName_fk}</td>
-                                <td>{$jobType}</td>
-                                <td>{$orderNumber}</td>
-                                <td>{$referenceNumber}</td>
-                                <td>{$pallets}</td>
-                                <td>{$jobWeight}</td>
-                                <td>{$jobStatus}</td>
-                            </tr> ";
+        echo "<tbody>
+                <tr>
+                    <th>{$jobName}</th>
+                    <th>{$driverName_fk}</td>
+                    <td>{$jobType}</td>
+                    <td>{$orderNumber}</td>
+                    <td>{$referenceNumber}</td>
+                    <td>{$pallets}</td>
+                    <td>{$jobWeight}</td>
+                    <td>{$jobStatus}</td>
+                </tr> 
+            </tbody>";
 
     }
     echo "</table>
@@ -260,7 +263,7 @@ function monday()
             WHERE weekday(jobDate) = 4");
 
 
-    echo "<div class='card tuesdayJobCard my-2>
+    echo "<div class='card fridayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -316,7 +319,11 @@ function monday()
             </div>
             </div>
             </div>
-            </div>";
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>";
 
     mysqli_close($conn);
 }
