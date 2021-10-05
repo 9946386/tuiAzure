@@ -25,6 +25,7 @@ function monday()
                 <thead>
                 <tr class='table-light'>
                         <th scope='col' class='col-2'>Job</th>
+                        <th scope='col'>Name</th>
                         <th scope='col'>Type</th>
                         <th scope='col' class='col-2'>Order #</th>
                         <th scope='col' class='col-2'>Reference</th>
@@ -85,6 +86,7 @@ function monday()
                     <thead>
                         <tr class='table-light'>
                             <th scope='col' class='col-2'>Job</th>
+                            <th scope='col'>Name</th>
                             <th scope='col'>Type</th>
                             <th scope='col' class='col-2'>Order #</th>
                             <th scope='col' class='col-2'>Reference</th>
@@ -105,7 +107,8 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<tr>
+        echo "<tbody>
+                <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>
                     <td>{$jobType}</td>
@@ -114,7 +117,8 @@ function monday()
                     <td>{$pallets}</td>
                     <td>{$jobWeight}</td>
                     <td>{$jobStatus}</td>
-                </tr> ";
+                </tr> 
+            </tbody>";
 
     }
     echo "</table>
@@ -145,6 +149,7 @@ function monday()
                     <thead>
                         <tr class='table-light'>
                             <th scope='col' class='col-2'>Job</th>
+                            <th scope='col'>Name</th>
                             <th scope='col'>Type</th>
                             <th scope='col' class='col-2'>Order #</th>
                             <th scope='col' class='col-2'>Reference</th>
@@ -165,7 +170,9 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<tr>
+        echo "
+            <tbody>
+                <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>
                     <td>{$jobType}</td>
@@ -174,7 +181,8 @@ function monday()
                     <td>{$pallets}</td>
                     <td>{$jobWeight}</td>
                     <td>{$jobStatus}</td>
-                </tr> ";
+                </tr> 
+            </tbody>";
 
     }
     echo "</table>
@@ -205,6 +213,7 @@ function monday()
                     <thead>
                         <tr class='table-light'>
                             <th scope='col' class='col-2'>Job</th>
+                            <th scope='col'>Name</th>
                             <th scope='col'>Type</th>
                             <th scope='col' class='col-2'>Order #</th>
                             <th scope='col' class='col-2'>Reference</th>
@@ -225,7 +234,8 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<tr>
+        echo "<tbody>
+                <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>
                     <td>{$jobType}</td>
@@ -234,7 +244,8 @@ function monday()
                     <td>{$pallets}</td>
                     <td>{$jobWeight}</td>
                     <td>{$jobStatus}</td>
-                </tr> ";
+                </tr>
+            </tbody>";
 
     }
     echo "</table>
@@ -265,6 +276,7 @@ function monday()
                     <thead>
                         <tr class='table-light'>
                             <th scope='col' class='col-2'>Job</th>
+                            <th scope='col'>Name</th>
                             <th scope='col'>Type</th>
                             <th scope='col' class='col-2'>Order #</th>
                             <th scope='col' class='col-2'>Reference</th>
@@ -285,7 +297,9 @@ function monday()
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
 
-        echo "<tr>
+        echo "
+            <tbody>
+                <tr>
                     <th>{$jobName}</th>
                     <th>{$driverName_fk}</td>
                     <td>{$jobType}</td>
@@ -294,7 +308,8 @@ function monday()
                     <td>{$pallets}</td>
                     <td>{$jobWeight}</td>
                     <td>{$jobStatus}</td>
-                </tr> ";
+                </tr>
+            </tbody>";
 
     }
     echo "</table>
