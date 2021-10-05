@@ -9,6 +9,23 @@ function weekDays()
                                     FROM openjobs
                                     INNER JOIN driver ON openjobs.driverName_fk = driver.driverName
                                     WHERE weekday(jobDate) = 0");
+    $tuesday = mysqli_query($conn, "SELECT *
+            FROM openjobs
+            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+            WHERE weekday(jobDate) = 1");
+    $wednesday = mysqli_query($conn, "SELECT *
+FROM openjobs
+INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+WHERE weekday(jobDate) = 2");
+    $thursday = mysqli_query($conn, "SELECT *
+            FROM openjobs
+            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+            WHERE weekday(jobDate) = 3");
+
+    $friday = mysqli_query($conn, "SELECT *
+FROM openjobs
+INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+WHERE weekday(jobDate) = 4");
 
     echo "<div class='container-fluid bg-secondary darkContainer'>
             <div class='container py-5 px-4 p-3 webWeeklyPlanTruckCard'>
@@ -69,15 +86,9 @@ function weekDays()
             </div>
             </div>
             </div>
-            </div>";
+            </div>
 
-    $tuesday = mysqli_query($conn, "SELECT *
-            FROM openjobs
-            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-            WHERE weekday(jobDate) = 1");
-
-
-    echo "<div class='card tuesdayJobCard my-2>
+            <div class='card tuesdayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -132,15 +143,9 @@ function weekDays()
             </div>
             </div>
             </div>
-            </div>";
-
-    $wednesday = mysqli_query($conn, "SELECT *
-            FROM openjobs
-            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-            WHERE weekday(jobDate) = 2");
-
-
-    echo "<div class='card wednesdayJobCard my-2>
+            </div>
+ 
+            <div class='card wednesdayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -195,15 +200,9 @@ function weekDays()
             </div>
             </div>
             </div>
-            </div>";
+            </div>  
 
-    $thursday = mysqli_query($conn, "SELECT *
-            FROM openjobs
-            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-            WHERE weekday(jobDate) = 3");
-
-
-    echo "<div class='card thursdayJobCard my-2>
+            <div class='card thursdayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
@@ -258,15 +257,9 @@ function weekDays()
             </div>
             </div>
             </div>
-            </div>";
+            </div>
 
-    $friday = mysqli_query($conn, "SELECT *
-            FROM openjobs
-            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-            WHERE weekday(jobDate) = 4");
-
-
-    echo "<div class='card fridayJobCard my-2>
+            <div class='card fridayJobCard my-2>
             <div class='card-body'>
             <div class='row justify-content-between'>
             <div class='col-11'>
