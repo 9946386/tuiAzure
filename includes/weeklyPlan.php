@@ -10,7 +10,11 @@ function monday()
                                     INNER JOIN driver ON openjobs.driverName_fk = driver.driverName
                                     WHERE weekday(jobDate) = 0");
 
-    echo "<div class='card mondayJobCard my-1'>
+    echo "<div class='container-fluid bg-secondary darkContainer'>
+    <div class='container py-5 px-4 p-3 webWeeklyPlanTruckCard'>
+        <div class='row gy-2'> 
+            <div class='col-12'>
+    <div class='card mondayJobCard my-1'>
     <div class='card-body'>
         <div class='row justify-content-between'>
             <div class='col-11'>
