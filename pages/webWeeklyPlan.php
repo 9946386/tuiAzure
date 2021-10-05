@@ -12,11 +12,10 @@
     </div>
 
     <!-- Truck's Weekly Job List -->
-    <div class="container-fluid bg-secondary darkContainer">
+    <!-- <div class="container-fluid bg-secondary darkContainer">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard ">
             <div class="row gy-2"> 
-                <div class="col-12">
-
+                <div class="col-12"> -->
                     <!-- Monday -->
                     <!-- <div class='card mondayJobCard my-1'>
                         <div class='card-body'>
