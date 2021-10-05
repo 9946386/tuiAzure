@@ -62,7 +62,7 @@
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Driver</th>
                                                 <th scope="col">Type</th>
                                                 <th scope="col" class="col-2">Order #</th>
                                                 <th scope="col" class="col-2">Reference</th>
@@ -122,7 +122,7 @@
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Driver</th>
                                                 <th scope="col">Type</th>
                                                 <th scope="col" class="col-2">Order #</th>
                                                 <th scope="col" class="col-2">Reference</th>
@@ -181,6 +181,7 @@
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
+                                                <th scope="col">Driver</th>
                                                 <th scope="col">Type</th>
                                                 <th scope="col" class="col-2">Order #</th>
                                                 <th scope="col" class="col-2">Reference</th>
@@ -238,6 +239,7 @@
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
+                                                <th scope="col">Driver</th>
                                                 <th scope="col">Type</th>
                                                 <th scope="col" class="col-2">Order #</th>
                                                 <th scope="col" class="col-2">Reference</th>
@@ -295,6 +297,7 @@
                                         <thead>
                                             <tr class="table-light">
                                                 <th scope="col" class="col-2">Job</th>
+                                                <th scope="col">Driver</th>
                                                 <th scope="col">Type</th>
                                                 <th scope="col" class="col-2">Order #</th>
                                                 <th scope="col" class="col-2">Reference</th>
