@@ -9,7 +9,9 @@
     if(isset($_GET['$id'])){
         $getID = mysqli_real_escape_string($conn, $_GET['$id']);
 
-        $sql = "SELECT * FROM drivers WHERE $id = $getID";
+        $sql = "SELECT * FROM openjobs 
+                            INNER JOIN driver ON openjobs.driverName_fk = driver.driverName
+                            WHERE $id = $getID";
 
         $results = mysqli_query($conn, $sql);
 
