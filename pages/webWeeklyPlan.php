@@ -4,6 +4,23 @@
 
 <?php include '../header.php' ?>
 
+<?php 
+    // Check GET request id param
+    if(isset($_GET['$id'])){
+        $getID = mysqli_real_escape_string($conn, $_GET['$id']);
+
+        $sql = "SELECT * FROM drivers WHERE $id = $getID";
+
+        $results = mysqli_query($conn, $sql);
+
+        $drivers = mysqli_fetch_assoc($result);
+
+        mysqli_free_result($result);
+        print_r($drivers);
+    }
+
+?>
+
 <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
