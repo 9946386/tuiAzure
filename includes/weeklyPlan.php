@@ -257,7 +257,7 @@ function monday()
     $friday = mysqli_query($conn, "SELECT *
             FROM openjobs
             INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-            WHERE weekday(jobDate) = 1");
+            WHERE weekday(jobDate) = 4");
 
 
     echo "<div class='card tuesdayJobCard my-2>
