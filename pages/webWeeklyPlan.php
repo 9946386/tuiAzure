@@ -25,8 +25,7 @@
             INNER JOIN driver ON openjobs.driverName_fk = driver.driverName';
         $results = $conn->query( $sql );
         
-        $days=array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
-        );
+        $days=array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday');
 
         for( $i=1; $i<=5; $i++ ){
                 printf('<div class="card %2$sJobCard my-3">
@@ -61,7 +60,7 @@
                 
                 
             while( $row = $results->fetch_object() ) {
-                if( (int)date( 'w', strtotime( $row->jobDate ) )==($i + 1)){
+                if( (int)date( 'w', strtotime( $row->jobDate ) )== $days[ $i ]){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
