@@ -60,7 +60,7 @@
                 
                 
             while( $row = $results->fetch_object() ) {
-                if( (int)date( 'w', strtotime( $row->jobDate ) )== $days[ $i ]){
+                if( (int)date( 'w', strtotime( $row->jobDate ) )== $i){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
