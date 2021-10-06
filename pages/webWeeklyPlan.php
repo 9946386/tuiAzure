@@ -64,8 +64,8 @@
                     strtolower( $days[$i] )
                 );//close printf()
                 
-            $i++;
             
+
             while( $row = $results->fetch_object() ) {
                 if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
                     printf('<tbody>
@@ -91,7 +91,9 @@
                             $row->DriverID
                     );
                 }
-            }         
+            } 
+            
+            $i++;
             
             echo "
                                     </table>
