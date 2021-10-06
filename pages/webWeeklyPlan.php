@@ -81,15 +81,15 @@
                                     <td>%8$s</td>
                                 </tr> 
                             </tbody>',
-                            $row['driverName_fk'],
-                            $row['jobName'],
-                            $row['jobType'],
-                            $row['orderNumber'],
-                            $row['referenceNumber'],
-                            $row['pallets'],
-                            $row['jobWeight'],
-                            $row['jobStatus'],
-                            $row['DriverID']
+                            $row->driverName_fk,
+                            $row->jobName,
+                            $row->jobType,
+                            $row->orderNumber,
+                            $row->referenceNumber,
+                            $row->pallets,
+                            $row->jobWeight,
+                            $row->jobStatus,
+                            $row->DriverID
                     );
                 }
             }
