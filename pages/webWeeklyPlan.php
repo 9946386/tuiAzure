@@ -66,7 +66,7 @@
                 
                 
             while( $row = $results->fetch_object() ) {
-                if( (int)date( 'w', strtotime( $row->jobDate ) ) == ($days[$i]) ){
+                if( (int)date( 'w', strtotime( $row->jobDate ) ) == $i ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
@@ -106,18 +106,18 @@
     </div>
 
     <script>
-    const qa=(e,n=document)=>n.querySelectorAll(e);
-    
-    qa('input[ data-name="driverNameBtn" ]').forEach( bttn=>bttn.addEventListener('click',function(e){
-        e.preventDefault();
-        qa('table.table-responsive tbody tr').forEach( tr=>{
-            if( tr.dataset.did==this.dataset.did && tr.dataset.driver==this.value ){
-                tr.style.display='table-row';
-            }else{
-                tr.style.display='none';
-            }
-        })
-    }));
+        const qa=(e,n=document)=>n.querySelectorAll(e);
+        
+        qa('input[ data-name="driverNameBtn" ]').forEach( bttn=>bttn.addEventListener('click',function(e){
+            e.preventDefault();
+            qa('table.table-responsive tbody tr').forEach( tr=>{
+                if( tr.dataset.did==this.dataset.did && tr.dataset.driver==this.value ){
+                    tr.style.display='table-row';
+                }else{
+                    tr.style.display='none';
+                }
+            })
+        }));
     </script>
 
     <!-- Bootstrap Bundle with Popper -->
