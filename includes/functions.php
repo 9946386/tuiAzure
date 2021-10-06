@@ -24,7 +24,7 @@ function driverMenu()
     while ($row = $results->fetch_object()) {
         printf('
             <div class="col text-center">
-                <input type="button" data-name="driverNameBtn" class="btn btn-primary rounded-pill text-light" data-did="%s" value="%s" />
+                <input type="button" aria-pressed="true" data-name="driverNameBtn" class="btn btn-primary rounded-pill text-light" data-did="%s" value="%s" />
             </div>',
             $row->DriverID,
             $row->driverName
