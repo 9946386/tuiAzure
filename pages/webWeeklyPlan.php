@@ -91,7 +91,6 @@
                             $row->DriverID
                     );
                 }
-                $i++;
             }            
             
             
