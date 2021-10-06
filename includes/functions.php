@@ -6,18 +6,6 @@ include '../local-db-connection.php';
 // Adds the driver names to the buttons on Weekly Plan
 function driverMenu()
 {
-    // global $conn;
-    // $query = mysqli_query($conn, "SELECT * FROM driver");
-
-    // while ($row = mysqli_fetch_assoc($query)) {
-    //     $id = $row['DriverID'];
-    //     $name = $row['driverName'];
-
-    //     echo "<div class='col text-center'>
-    //             <input type='submit' href='webWeeklyPlan.php?id={$id}' name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$name}'></input>
-    //             </div>";
-    // }
-
     global $conn;
     $results = $conn->query('select * from driver');
 
