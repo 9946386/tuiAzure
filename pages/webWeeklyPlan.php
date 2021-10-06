@@ -90,10 +90,10 @@
                             $row->jobStatus,
                             $row->DriverID
                     );
+                    $i++;
                 }
-            } 
+            }           
             
-            $i++;
             
             echo "
                                     </table>
