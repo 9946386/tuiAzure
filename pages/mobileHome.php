@@ -32,19 +32,29 @@ if(!isset($_SESSION['useruid'])){
 else{
   
 
-  $sql = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName, driver.userID_FK
-                              FROM openJobs
-                              INNER JOIN drivers ON openJobs.driver_fk = driver.DriverID
-                              WHERE driver.userID_FK = '".$_SESSION['userid']."' "); 
+  $sql = mysqli_query($conn, "SELECT * FROM users
+                              -- INNER JOIN users ON drivers.userID_FK = users.usersID
+                              WHERE usersID = '".$_SESSION['userid']."' "); 
 
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);
 
-  
-
   if($num > 0){
-    echo "User with ID: {$arr['usersID']} {$arr['userName']} is logged in"; }
-    // echo "2. User with ID: {$_SESSION['useruid']} is logged in"; }
+
+
+    echo "User with ID: {$userID} is logged in";
+    echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
+
+    $driver = mysqli_query($conn, "SELECT * FROM drivers 
+    WHERE userID_fk = '".$_SESSION['userid']."' ");
+
+    $arr2 = mysqli_fetch_array($sql);
+    $num2 = mysqli_num_rows($sql);
+
+    if($num2 > 0){
+    echo "Driver with ID: {$userID} is logged in"; 
+    }
+  }
 
   // while ($row = mysqli_fetch_assoc($sql)) {
   //   $jobName = $row['jobName'];
