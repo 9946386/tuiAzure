@@ -31,9 +31,9 @@ if(!isset($_SESSION['useruid'])){
 }
 else{
   $sql = mysqli_query($conn, "SELECT usersID FROM users 
-                              WHERE userID = '" . $_SESSION['useruid'] ."'"); 
+                              WHERE usersID = '" . $_SESSION['useruid'] ."'"); 
 
-                              $userID = $row['usersID'];
+  $userID = $row['usersID'];
 
   echo "User with ID: {$userID} is logged in";
   echo "2. User with ID: {$_SESSION['useruid']} is logged in";
