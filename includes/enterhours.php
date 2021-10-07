@@ -6,7 +6,7 @@ include '../local-db-connection.php';
 if (isset($_POST['submit'])) 
 {
     // Takes the input names from Add Job and assigns them to a variable
-    //$driver = $_POST[$_SESSION['userid']];
+    $driver = $_POST['driver'];
     $diesel = $_POST['diesel'];
     $hours = $_POST['hours'];
     $kms = $_POST['kms'];
@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
 
     // SQL query to insert the above variables into the openjobs table.
     $sql = "INSERT INTO driverhours(hoursDriver_FK, dieselLitres, driverHours, kms, mood) 
-    VALUES ('" . $_SESSION['userid'] . "', '$diesel', '$hours', '$kms', '$mood');";
+    VALUES ('$driver', '$diesel', '$hours', '$kms', '$mood');";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
