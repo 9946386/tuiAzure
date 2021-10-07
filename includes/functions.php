@@ -137,6 +137,7 @@ function emptyInputLogin($username, $password)
 
 function loginUser($conn, $username, $password)
 {
+    // Checking if the user details already exsist in the database
     $uidExists = UidExists($conn, $username, $username);
 
     // Error handler
@@ -145,7 +146,9 @@ function loginUser($conn, $username, $password)
         exit();
     }
 
+    // Putting the database password into a variable
     $passwordHashed = $uidExists["userPW"];
+    // Checking password entered and database password are equal
     $checkPassword = password_verify($password, $passwordHashed);
 
     // If false the database pw and input pw are not the same
@@ -158,7 +161,7 @@ function loginUser($conn, $username, $password)
         session_start();
         $_SESSION["userid"] = $uidExists["usersID"];
         $_SESSION["useruid"] = $uidExists["userUid"];
-        $_SESSION["driver_id"] = "usersID";
+        $_SESSION["usersname"] = $uidExists["userName"];
         header("location: ../pages/mobileHome.php?loginSuccessful");
         exit();
     }
