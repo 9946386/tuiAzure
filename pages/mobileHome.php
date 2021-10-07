@@ -33,7 +33,7 @@ else{
   $sql = mysqli_query($conn, "SELECT usersID FROM users 
                               WHERE userID = '" . $_SESSION['useruid'] ."'"); 
 
-                              $userID = $row['userID'];
+                              $userID = $row['usersID'];
 
   echo "User with ID: {$userID} is logged in";
   echo "2. User with ID: {$_SESSION['useruid']} is logged in";
