@@ -58,7 +58,7 @@ else{
                                     WHERE users.usersID = $id"); 
 
       while ($row = mysqli_fetch_assoc($jobs)) {
-        $driverID = $row['driver_fk'];
+        $userID = $row['usersID'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -72,7 +72,7 @@ else{
                               <tbody>
                                 <tr>
                                   <th>Type:</th>
-                                  <td>{$jobType}}</td>
+                                  <td>{$jobType}</td>
                                 </tr>
                                 <tr>
                                   <th>Order #:</th>
