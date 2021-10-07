@@ -51,10 +51,10 @@ else{
       $id = $row['usersID'];
     
 
-      $jobs = mysqli_query($conn, "SELECT  users.usersID, users.userName, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
-                                FROM users
-                                INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
-                                WHERE users.usersID = $id"); 
+      $jobs = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+                                    FROM openjobs
+                                    INNER JOIN users ON openjobs.driver_fk = users.usersID
+                                    WHERE openjobs.driver_fk = $id"); 
 
       $arr2 = mysqli_fetch_array($jobs);
       $num2 = mysqli_num_rows($jobs);
