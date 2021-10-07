@@ -30,12 +30,14 @@ if(!isset($_SESSION['useruid'])){
   echo "You are not logged in";
 }
 else{
+  $theID = $_SESSION['useruid'];
+
   $sql = mysqli_query($conn, "SELECT userID_FK FROM drivers
                               -- INNER JOIN users ON drivers.userID_FK = users.usersID
-                              WHERE userID_FK = '".$_SESSION['useruid']."'"); 
+                              WHERE userID_FK = $theID"); 
 
 while($row = mysqli_fetch_assoc($sql)){
-  $userID = $row['userID_FK'];
+  $thisUserID = $row['userID_FK'];
 
   echo "User with ID: {$userID} is logged in";
   echo "2. User with ID: {$_SESSION['useruid']} is logged in"; }
