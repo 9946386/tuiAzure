@@ -212,7 +212,7 @@ function getUserJobs()
                 $jobStatus = $row['jobStatus'];
 
                 echo "              
-                            <div class='card-body mb-3'>
+                            <div class='card-body mb-3 mt-2'>
                                 <h5 class='card-title'>{$jobName}</h5>
                                 <table class='table table-responsive'>
                                     <tbody>

@@ -9,7 +9,7 @@ include '../local-db-connection.php';
 ?>
 
 <!-- Page Title -->
-    <div class="container-sm text-dark px-3 p-2">
+    <div class="container-sm text-dark min-vh-100 px-3 p-2">
         <div class="row justify-content ">
             <h1 class="pageTitle col-5 align-self-center ">To Complete</h1>
             <div class="line col-1 "></div>
