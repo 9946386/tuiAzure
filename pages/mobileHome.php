@@ -1,4 +1,15 @@
 <?php include '../includes/mobileHeader.php' ?>
+
+<?php 
+session_start();
+include '../local-db-connection.php'; 
+
+$username = $_SESSION["username"];
+
+$sql = "SELECT * FROM openJobs WHERE driverUserName = $username";
+$results = $conn->query( $sql ); ?>
+
+
  
 <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-2">
@@ -15,33 +26,48 @@
             <div class="col-12">
                 <div class="card mainPageJobCard">
                     <div class="card-body">
-                      <h5 class="card-title">Upper Hutt Mega</h5>
-                      <table class="table table-responsive">
+                      
+                          <?php
+
+while ($row = mysqli_fetch_assoc($results)) {
+  $jobName = $row['jobName'];
+  $jobType = $row['jobType'];
+  $orderNumber = $row['orderNumber'];
+  $referenceNumber = $row['referenceNumber'];
+  $pallets = $row['pallets'];
+  $jobWeight = $row['jobWeight'];
+  $jobStatus = $row['jobStatus'];
+
+  echo "              <h5 class='card-title'>{$jobName}</h5>
+                      <table class='table table-responsive'>
                         <tbody>
                           <tr>
                             <th>Type:</th>
-                            <td id="jobTypeData">Delivery</td>
+                            <td>{$jobType}}</td>
                           </tr>
                           <tr>
                             <th>Order #:</th>
-                            <td id="orderNumData">SEM173666</td>
+                            <td>{$orderNumber}</td>
                           </tr>
                           <tr>
                             <th>Reference:</th>
-                            <td id="referenceData">TUI181500</td>
+                            <td>{$referenceNumber}</td>
                           </tr>
                           <tr>
                             <th>Pallets:</th>
-                            <td id="palletsData">18</td>
+                            <td>{$pallets}</td>
                           </tr>
                           <tr>
                             <th>Weight:</th>
-                            <td id="weightData">17565</td>
+                            <td>{$jobWeight}</td>
                           </tr>
                           <tr>
                             <th>Status:</th>
-                            <td id="statusData">Loaded</td>
-                          </tr>                              
+                            <td>{$jobStatus}</td>
+                          </tr> ";  
+                          
+                          }?>
+
                         </tbody>                          
                       </table>
                       <div class="row">
