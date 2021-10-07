@@ -31,8 +31,8 @@ if(!isset($_SESSION['useruid'])){
 }
 else{
   $sql = mysqli_query($conn, "SELECT userID_FK FROM drivers
-                              INNER JOIN users ON drivers.userID_FK = users.usersID
-                              WHERE drivers.userID_FK = '".$_SESSION['useruid']."'"); 
+                              -- INNER JOIN users ON drivers.userID_FK = users.usersID
+                              WHERE userID_FK = '".$_SESSION['useruid']."'"); 
 
 while($row = mysqli_fetch_assoc($sql)){
   $userID = $row['userID_FK'];
