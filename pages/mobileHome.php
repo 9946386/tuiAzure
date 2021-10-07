@@ -35,7 +35,7 @@ else{
   // $sql = mysqli_query($conn, "SELECT * FROM users
   //                             WHERE usersID = '".$_SESSION['userid']."' ");
   
-  $sql = mysqli_query($conn, "SELECT  users.usersID, users.userName, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+  $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
                               FROM users
                               INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
                               WHERE users.usersID = '".$_SESSION['userid']."' "); 
@@ -47,45 +47,59 @@ else{
     //echo "User with ID: {$userID} is logged in";
     echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
-    while ($row = $arr) {
-      $jobName = $row['jobName'];
-      $jobType = $row['jobType'];
-      $orderNumber = $row['orderNumber'];
-      $referenceNumber = $row['referenceNumber'];
-      $pallets = $row['pallets'];
-      $jobWeight = $row['jobWeight'];
-      $jobStatus = $row['jobStatus'];
+    while($row = $arr){
+      $id = $row['usersID'];
     
-      echo "              <h5 class='card-title'>{$jobName}</h5>
-                          <table class='table table-responsive'>
-                            <tbody>
-                              <tr>
-                                <th>Type:</th>
-                                <td>{$jobType}}</td>
-                              </tr>
-                              <tr>
-                                <th>Order #:</th>
-                                <td>{$orderNumber}</td>
-                              </tr>
-                              <tr>
-                                <th>Reference:</th>
-                                <td>{$referenceNumber}</td>
-                              </tr>
-                              <tr>
-                                <th>Pallets:</th>
-                                <td>{$pallets}</td>
-                              </tr>
-                              <tr>
-                                <th>Weight:</th>
-                                <td>{$jobWeight}</td>
-                              </tr>
-                              <tr>
-                                <th>Status:</th>
-                                <td>{$jobStatus}</td>
-                              </tr>";
-    
-                            
-      }
+
+      $jobs = mysqli_query($conn, "SELECT  users.usersID, users.userName, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus
+                                FROM users
+                                INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
+                                WHERE users.usersID = $id"); 
+
+      $arr2 = mysqli_fetch_array($jobs);
+      $num2 = mysqli_num_rows($jobs);
+
+      while ($row = $arr) {
+        $driverID = $row['driver_fk'];
+        $jobName = $row['jobName'];
+        $jobType = $row['jobType'];
+        $orderNumber = $row['orderNumber'];
+        $referenceNumber = $row['referenceNumber'];
+        $pallets = $row['pallets'];
+        $jobWeight = $row['jobWeight'];
+        $jobStatus = $row['jobStatus'];
+      
+        echo "              <h5 class='card-title'>{$jobName}</h5>
+                            <table class='table table-responsive'>
+                              <tbody>
+                                <tr>
+                                  <th>Type:</th>
+                                  <td>{$jobType}}</td>
+                                </tr>
+                                <tr>
+                                  <th>Order #:</th>
+                                  <td>{$orderNumber}</td>
+                                </tr>
+                                <tr>
+                                  <th>Reference:</th>
+                                  <td>{$referenceNumber}</td>
+                                </tr>
+                                <tr>
+                                  <th>Pallets:</th>
+                                  <td>{$pallets}</td>
+                                </tr>
+                                <tr>
+                                  <th>Weight:</th>
+                                  <td>{$jobWeight}</td>
+                                </tr>
+                                <tr>
+                                  <th>Status:</th>
+                                  <td>{$jobStatus}</td>
+                                </tr>";
+      
+                              
+        }
+    }
       echo "</tbody>                          
       </table>
       <div class='row'>
