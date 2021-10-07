@@ -46,7 +46,7 @@
                       </table>
                       <div class="row">
                         <div class="col d-flex flex-row-reverse">
-                          <a href="completedJobsDetails.html" class="btn btn-primary text-light btn-sm">View Job</a>
+                          <a href="completedJobsDetails.php" class="btn btn-primary text-light btn-sm">View Job</a>
                         </div>
                       </div>
                   </div>
