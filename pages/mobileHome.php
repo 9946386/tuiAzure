@@ -22,7 +22,7 @@ include '../local-db-connection.php';
         <div class="row gy-2">
             <div class="col-12">
                 <div class="card mainPageJobCard">
-                    <div class="card-body">
+                    
                       
                           <?php
 
@@ -30,11 +30,7 @@ if(!isset($_SESSION['useruid'])){
   echo "You are not logged in";
 }
 else{
-  
-
-  // $sql = mysqli_query($conn, "SELECT * FROM users
-  //                             WHERE usersID = '".$_SESSION['userid']."' ");
-  
+  // Query to get users and open jobs data and link to logged in user
   $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
                               FROM users
                               INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
@@ -45,20 +41,23 @@ else{
 
   // if($num > 0){
     //echo "User with ID: {$userID} is logged in";
-    // echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
+    // echo "2. User with ID: {$_SESSION['useruid']} is logged in";
 
     while($row = mysqli_fetch_assoc($sql)){
+
+      // Assigning variables to use when fetching allocated jobs
       $id = $row['usersID'];
       $name = $row['userName'];
     
-
+      // Query to get open jobs and user info that are equal to the id of signed in user
       $jobs = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
                                     FROM openjobs
                                     INNER JOIN users ON openjobs.driver_fk = users.usersID
                                     WHERE users.usersID = $id"); 
 
+      // While loop to loop through each job assigned to the user
       while ($row = mysqli_fetch_assoc($jobs)) {
-        $userID = $row['usersID'];
+        //$userID = $row['usersID'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
         $orderNumber = $row['orderNumber'];
@@ -67,7 +66,9 @@ else{
         $jobWeight = $row['jobWeight'];
         $jobStatus = $row['jobStatus'];
       
-        echo "              <h5 class='card-title'>{$jobName}</h5>
+        echo "              
+                        <div class='card-body'>
+                          <h5 class='card-title'>{$jobName}</h5>
                             <table class='table table-responsive'>
                               <tbody>
                                 <tr>
@@ -93,20 +94,19 @@ else{
                                 <tr>
                                   <th>Status:</th>
                                   <td>{$jobStatus}</td>
-                                </tr>";
-      
-                              
+                                </tr>
+                                </tbody>                          
+                              </table>
+                              <div class='row'>
+                                <div class='col d-flex flex-row-reverse'>
+                                  <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                </div>
+                                </div>
+                              </div>";                                    
         }
     }
-      echo "</tbody>                          
-      </table>
-      <div class='row'>
-        <div class='col d-flex flex-row-reverse'>
-          <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
-        </div>
-        </div>
-      </div>
-      </div>
+
+      echo "</div>
       </div>
       </div>
       </div>";
