@@ -43,63 +43,64 @@ else{
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);
 
+  
+
   if($num > 0){
     //echo "User with ID: {$userID} is logged in";
     echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
-  }
-
-  // while ($row = mysqli_fetch_assoc($sql)) {
-  //   $jobName = $row['jobName'];
-  //   $jobType = $row['jobType'];
-  //   $orderNumber = $row['orderNumber'];
-  //   $referenceNumber = $row['referenceNumber'];
-  //   $pallets = $row['pallets'];
-  //   $jobWeight = $row['jobWeight'];
-  //   $jobStatus = $row['jobStatus'];
-  
-  //   echo "              <h5 class='card-title'>{$jobName}</h5>
-  //                       <table class='table table-responsive'>
-  //                         <tbody>
-  //                           <tr>
-  //                             <th>Type:</th>
-  //                             <td>{$jobType}}</td>
-  //                           </tr>
-  //                           <tr>
-  //                             <th>Order #:</th>
-  //                             <td>{$orderNumber}</td>
-  //                           </tr>
-  //                           <tr>
-  //                             <th>Reference:</th>
-  //                             <td>{$referenceNumber}</td>
-  //                           </tr>
-  //                           <tr>
-  //                             <th>Pallets:</th>
-  //                             <td>{$pallets}</td>
-  //                           </tr>
-  //                           <tr>
-  //                             <th>Weight:</th>
-  //                             <td>{$jobWeight}</td>
-  //                           </tr>
-  //                           <tr>
-  //                             <th>Status:</th>
-  //                             <td>{$jobStatus}</td>
-  //                           </tr>";
-  
-                          
-  //   }
-  //   echo "</tbody>                          
-  //   </table>
-  //   <div class='row'>
-  //     <div class='col d-flex flex-row-reverse'>
-  //       <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
-  //     </div>
-  //   </div>
-  // </div>
-  // </div>
-  // </div>
-  // </div>
-  // </div>";
+    while ($row = mysqli_fetch_assoc($sql)) {
+      $jobName = $row['jobName'];
+      $jobType = $row['jobType'];
+      $orderNumber = $row['orderNumber'];
+      $referenceNumber = $row['referenceNumber'];
+      $pallets = $row['pallets'];
+      $jobWeight = $row['jobWeight'];
+      $jobStatus = $row['jobStatus'];
+    
+      echo "              <h5 class='card-title'>{$jobName}</h5>
+                          <table class='table table-responsive'>
+                            <tbody>
+                              <tr>
+                                <th>Type:</th>
+                                <td>{$jobType}}</td>
+                              </tr>
+                              <tr>
+                                <th>Order #:</th>
+                                <td>{$orderNumber}</td>
+                              </tr>
+                              <tr>
+                                <th>Reference:</th>
+                                <td>{$referenceNumber}</td>
+                              </tr>
+                              <tr>
+                                <th>Pallets:</th>
+                                <td>{$pallets}</td>
+                              </tr>
+                              <tr>
+                                <th>Weight:</th>
+                                <td>{$jobWeight}</td>
+                              </tr>
+                              <tr>
+                                <th>Status:</th>
+                                <td>{$jobStatus}</td>
+                              </tr>";
+    
+                            
+      }
+      echo "</tbody>                          
+      </table>
+      <div class='row'>
+        <div class='col d-flex flex-row-reverse'>
+          <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
+        </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>";
+    }
   } ?>
 
 
