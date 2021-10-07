@@ -43,9 +43,9 @@ else{
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);  
 
-  if($num > 0){
+  // if($num > 0){
     //echo "User with ID: {$userID} is logged in";
-    echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
+    // echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
     while($row = $arr){
       $id = $row['usersID'];
@@ -59,7 +59,7 @@ else{
       $arr2 = mysqli_fetch_array($jobs);
       $num2 = mysqli_num_rows($jobs);
 
-      while ($row = $arr) {
+      while ($row = $arr2) {
         $driverID = $row['driver_fk'];
         $jobName = $row['jobName'];
         $jobType = $row['jobType'];
@@ -113,7 +113,8 @@ else{
       </div>
       </div>";
     }
-  } ?>
+  // }
+   ?>
 
 
 
