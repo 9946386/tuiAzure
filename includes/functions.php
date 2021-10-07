@@ -171,8 +171,6 @@ function getUserJobs()
 {
     global $conn;
 
-    session_start();
-
     if (!isset($_SESSION['useruid'])) {
         echo "You are not logged in";
     }
