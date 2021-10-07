@@ -6,7 +6,7 @@ include '../local-db-connection.php';
 if (isset($_POST['submit'])) 
 {
     // Takes the input names from Add Job and assigns them to a variable
-    $driver = $_POST['driver'];
+    $driver = $_POST[$_SESSION['userid']];
     $diesel = $_POST['diesel'];
     $hours = $_POST['hours'];
     $kms = $_POST['kms'];

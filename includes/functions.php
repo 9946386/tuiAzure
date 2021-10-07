@@ -171,22 +171,21 @@ function getUserJobs()
 {
     global $conn;
 
+    // Checking if the session 'useruid' has started / Checking someone is logged in
     if (!isset($_SESSION['useruid'])) {
+        // If no one is logged in:
         echo "You are not logged in";
+
+    // Need to add button to redirect to login page
     }
     else {
+        // If someone is logged in: 
+
         // Query to get users and open jobs data and link to logged in user
         $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
                                     FROM users
                                     INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
                                     WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
-
-        // $arr = mysqli_fetch_array($sql);
-        // $num = mysqli_num_rows($sql);  
-
-        // if($num > 0){
-        //echo "User with ID: {$userID} is logged in";
-        // echo "2. User with ID: {$_SESSION['useruid']} is logged in";
 
         while ($row = mysqli_fetch_assoc($sql)) {
 

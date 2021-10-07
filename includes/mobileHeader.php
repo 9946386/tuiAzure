@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,6 +16,19 @@
     <link rel="stylesheet" href="../styles/addedStyles.css">
 
     <link rel="manifest" href="../manifest.json">
+
+    <!-- jQuery libraries for signature pad -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- jQuery UI library for touch-enabled devices -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+
+    <link type="text/css" href="/styles/jquery.signature.css" rel="stylesheet"> 
+    <script type="text/javascript" src="/JS/jquery.signature.js"></script>
+    <!-- <script type="text/javascript" src="/JS/jquery.signature.min.js"></script> -->
 
     <title>Tui App Practice</title>
   </head>
