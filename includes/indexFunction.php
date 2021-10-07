@@ -7,14 +7,13 @@ function openJobsList()
     global $conn;
     $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
-
-    // INNER JOIN driver ON openJobs.driverName_fk = driver.driverName
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
+                                    INNER JOIN driver ON openJobs.driverName_fk = driver.driverName");
 
     while ($row = mysqli_fetch_assoc($query)) {
 
         $id = $row['DriverID'];
-        $driverName_fk = $row['driverName_fk'];
+        $driverName_fk = $row['driverName'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
