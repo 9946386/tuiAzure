@@ -27,5 +27,5 @@ if (isset($_POST['submit']))
     }
 }
 
-header("Location: ../index.php?jobadded=success");
+header("Location: ../pages/mobileHome.php?jobadded=success");
 ?>

@@ -9,7 +9,7 @@ include '../local-db-connection.php';
 ?>
 
 <!-- Page Title -->
-    <div class="container-sm text-dark min-vh-100 px-3 p-2">
+    <div class="container-sm text-dark px-3 p-2">
         <div class="row justify-content ">
             <h1 class="pageTitle col-5 align-self-center ">To Complete</h1>
             <div class="line col-1 "></div>
@@ -18,7 +18,7 @@ include '../local-db-connection.php';
     </div>
 
     <!-- Job Cards -->
-    <div class="container px-4 p-3 mainPageJobCardContainer bg-secondary darkMobileContainer">
+    <div class="container px-4 p-3 mainPageJobCardContainer bg-secondary darkMobileContainer min-vh-100">
         <div class="row gy-2">
             <div class="col-12">
                 <div class="card mainPageJobCard">
