@@ -32,13 +32,13 @@ if(!isset($_SESSION['useruid'])){
 else{
   
 
-  // $sql = mysqli_query($conn, "SELECT * FROM users
-  //                             WHERE usersID = '".$_SESSION['userid']."' ");
+  $sql = mysqli_query($conn, "SELECT * FROM users
+                              WHERE usersID = '".$_SESSION['userid']."' ");
   
-  $sql = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
-                              FROM openjobs
-                              INNER JOIN users ON openjobs.driver_fk = users.userdID
-                              WHERE openjobs.driver_fk = '".$_SESSION['userid']."' "); 
+  // $sql = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+  //                             FROM openjobs
+  //                             INNER JOIN users ON openjobs.driver_fk = users.userdID
+  //                             WHERE openjobs.driver_fk = '".$_SESSION['userid']."' "); 
 
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);
