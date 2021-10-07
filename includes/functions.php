@@ -213,7 +213,7 @@ function getUserJobs()
 
                 echo "
                         <div class='card mainPageJobCard mt-2'>              
-                            <div class='card-body '>
+                            <div class='card-body'>
                                 <h5 class='card-title'>{$jobName}</h5>
                                 <table class='table table-responsive'>
                                     <tbody>
@@ -252,10 +252,5 @@ function getUserJobs()
                         </div>";
             }
         }
-
-        echo "
-            </div>
-            </div>
-            </div>";
     }
 }

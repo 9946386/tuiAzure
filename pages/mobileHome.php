@@ -21,12 +21,14 @@ include '../local-db-connection.php';
     <div class="container px-4 p-3 mainPageJobCardContainer bg-secondary darkMobileContainer min-vh-100">
         <div class="row gy-2">
             <div class="col-12">
-                <div class="card mainPageJobCard">
                     
                 <?php 
                 include '../includes/functions.php';
                 getUserJobs();
             ?>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
