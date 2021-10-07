@@ -7,13 +7,11 @@
 session_start();
 include '../local-db-connection.php'; 
 
-$username = $_SESSION["username"];
+$name = $_SESSION["name"];
 
-$sql = "SELECT * FROM openJobs WHERE driverUserName = $username";
+$sql = "SELECT * FROM openJobs WHERE driverName_fk = $name";
 $results = $conn->query( $sql ); ?>
 
-
- 
 <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-2">
         <div class="row justify-content ">
