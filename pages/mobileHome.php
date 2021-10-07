@@ -9,7 +9,7 @@ include '../local-db-connection.php';
 
 $name = $_SESSION["name"];
 
-$sql = "SELECT * FROM openJobs WHERE driverName_fk = $name";
+$sql = mysqli_query($conn, "SELECT * FROM openJobs WHERE driverName_fk = $name");
 $results = $conn->query( $sql ); ?>
 
 <!-- Page Title -->
@@ -30,7 +30,7 @@ $results = $conn->query( $sql ); ?>
                       
                           <?php
 
-while ($row = mysqli_fetch_assoc($results)) {
+while ($row = mysqli_fetch_assoc($sql)) {
   $jobName = $row['jobName'];
   $jobType = $row['jobType'];
   $orderNumber = $row['orderNumber'];
