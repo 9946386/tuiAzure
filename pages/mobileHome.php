@@ -41,15 +41,13 @@ else{
                               WHERE users.usersID = '".$_SESSION['userid']."' "); 
 
   $arr = mysqli_fetch_array($sql);
-  $num = mysqli_num_rows($sql);
-
-  
+  $num = mysqli_num_rows($sql);  
 
   if($num > 0){
     //echo "User with ID: {$userID} is logged in";
     echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
-    while ($row = mysqli_fetch_assoc($sql)) {
+    while ($row = $arr) {
       $jobName = $row['jobName'];
       $jobType = $row['jobType'];
       $orderNumber = $row['orderNumber'];
