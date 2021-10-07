@@ -33,23 +33,20 @@ else{
   
 
   $sql = mysqli_query($conn, "SELECT * FROM users
-                              -- INNER JOIN users ON drivers.userID_FK = users.usersID
                               WHERE usersID = '".$_SESSION['userid']."' "); 
 
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);
 
   if($num > 0){
-
-
     echo "User with ID: {$userID} is logged in";
     echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
     $driver = mysqli_query($conn, "SELECT * FROM drivers 
-    WHERE userID_fk = '".$_SESSION['userid']."' ");
+    WHERE userID_FK = '".$_SESSION['userid']."' ");
 
-    $arr2 = mysqli_fetch_array($sql);
-    $num2 = mysqli_num_rows($sql);
+    $arr2 = mysqli_fetch_array($driver);
+    $num2 = mysqli_num_rows($driver);
 
     if($num2 > 0){
     echo "Driver with ID: {$userID} is logged in"; 
