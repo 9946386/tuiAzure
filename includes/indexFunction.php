@@ -6,20 +6,19 @@ function openJobsList()
 {
     global $conn;
     $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
-                                    ((FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID)
-                                    driver ON openJobs.driverName_fk = driver.driverName)");
+                                    FROM openjobs
+                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
 
     while ($row = mysqli_fetch_assoc($query)) {
 
         $id = $row['DriverID'];
-        $driverName_fk = $row['driverName'];
+        //$driverName_fk = $row['driverName'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
                     <div class='row justify-content-between'>
                         <div class='col-11'>
-                            <h5 class='card-title'>Driver: {$id} {$driverName_fk}</h5>
+                            <h5 class='card-title'>Driver: {$id}</h5>
                         </div>
                         <div class='col-1'>
                             <a href='../pages/webAddJob.php' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
