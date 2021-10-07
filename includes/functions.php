@@ -211,8 +211,9 @@ function getUserJobs()
                 $jobWeight = $row['jobWeight'];
                 $jobStatus = $row['jobStatus'];
 
-                echo "              
-                            <div class='card-body mb-3 mt-2'>
+                echo "
+                        <div class='card mainPageJobCard mt-2'>              
+                            <div class='card-body '>
                                 <h5 class='card-title'>{$jobName}</h5>
                                 <table class='table table-responsive'>
                                     <tbody>
@@ -247,11 +248,12 @@ function getUserJobs()
                                     <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
-                            </div>";
+                            </div>
+                        </div>";
             }
         }
 
-        echo "</div>
+        echo "
             </div>
             </div>
             </div>";
