@@ -32,25 +32,21 @@ if(!isset($_SESSION['useruid'])){
 else{
   
 
-  $sql = mysqli_query($conn, "SELECT * FROM users
-                              WHERE usersID = '".$_SESSION['userid']."' "); 
+  // $sql = mysqli_query($conn, "SELECT * FROM users
+  //                             WHERE usersID = '".$_SESSION['userid']."' ");
+  
+  $sql = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+                              FROM openjobs
+                              FULL OUTER JOIN users ON openjobs.driver_fk = users.userdID
+                              WHERE users.usersID = '".$_SESSION['userid']."' "); 
 
   $arr = mysqli_fetch_array($sql);
   $num = mysqli_num_rows($sql);
 
   if($num > 0){
-    echo "User with ID: {$userID} is logged in";
+    //echo "User with ID: {$userID} is logged in";
     echo "2. User with ID: {$_SESSION['useruid']} is logged in"; 
 
-    $driver = mysqli_query($conn, "SELECT * FROM drivers 
-    WHERE userID_FK = '".$_SESSION['userid']."' ");
-
-    $arr2 = mysqli_fetch_array($driver);
-    $num2 = mysqli_num_rows($driver);
-
-    if($num2 > 0){
-    echo "Driver with ID: {$userID} is logged in"; 
-    }
   }
 
   // while ($row = mysqli_fetch_assoc($sql)) {
