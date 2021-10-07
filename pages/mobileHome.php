@@ -18,103 +18,15 @@ include '../local-db-connection.php';
     </div>
 
     <!-- Job Cards -->
-    <div class="container px-4 p-3 mainPageJobCardContainer bg-secondary vh-100 darkMobileContainer">
+    <div class="container px-4 p-3 mainPageJobCardContainer bg-secondary darkMobileContainer">
         <div class="row gy-2">
             <div class="col-12">
                 <div class="card mainPageJobCard">
                     
-                      
-                          <?php
-
-if(!isset($_SESSION['useruid'])){
-  echo "You are not logged in";
-}
-else{
-  // Query to get users and open jobs data and link to logged in user
-  $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
-                              FROM users
-                              INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
-                              WHERE users.usersID = '".$_SESSION['userid']."' "); 
-
-  // $arr = mysqli_fetch_array($sql);
-  // $num = mysqli_num_rows($sql);  
-
-  // if($num > 0){
-    //echo "User with ID: {$userID} is logged in";
-    // echo "2. User with ID: {$_SESSION['useruid']} is logged in";
-
-    while($row = mysqli_fetch_assoc($sql)){
-
-      // Assigning variables to use when fetching allocated jobs
-      $id = $row['usersID'];
-      $name = $row['userName'];
-    
-      // Query to get open jobs and user info that are equal to the id of signed in user
-      $jobs = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
-                                    FROM openjobs
-                                    INNER JOIN users ON openjobs.driver_fk = users.usersID
-                                    WHERE users.usersID = $id"); 
-
-      // While loop to loop through each job assigned to the user
-      while ($row = mysqli_fetch_assoc($jobs)) {
-        //$userID = $row['usersID'];
-        $jobName = $row['jobName'];
-        $jobType = $row['jobType'];
-        $orderNumber = $row['orderNumber'];
-        $referenceNumber = $row['referenceNumber'];
-        $pallets = $row['pallets'];
-        $jobWeight = $row['jobWeight'];
-        $jobStatus = $row['jobStatus'];
-      
-        echo "              
-                        <div class='card-body'>
-                          <h5 class='card-title'>{$jobName}</h5>
-                            <table class='table table-responsive'>
-                              <tbody>
-                                <tr>
-                                  <th>Type:</th>
-                                  <td>{$jobType}</td>
-                                </tr>
-                                <tr>
-                                  <th>Order #:</th>
-                                  <td>{$orderNumber}</td>
-                                </tr>
-                                <tr>
-                                  <th>Reference:</th>
-                                  <td>{$referenceNumber}</td>
-                                </tr>
-                                <tr>
-                                  <th>Pallets:</th>
-                                  <td>{$pallets}</td>
-                                </tr>
-                                <tr>
-                                  <th>Weight:</th>
-                                  <td>{$jobWeight}</td>
-                                </tr>
-                                <tr>
-                                  <th>Status:</th>
-                                  <td>{$jobStatus}</td>
-                                </tr>
-                                </tbody>                          
-                              </table>
-                              <div class='row'>
-                                <div class='col d-flex flex-row-reverse'>
-                                  <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
-                                </div>
-                                </div>
-                              </div>";                                    
-        }
-    }
-
-      echo "</div>
-      </div>
-      </div>
-      </div>";
-    }
-  // }
-   ?>
-
-
+                <?php 
+                include '../includes/functions.php';
+                getUserJobs();
+            ?>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
