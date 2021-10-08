@@ -6,6 +6,7 @@
 <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
+            <!-- Calling the driver menu function to display all drivers as buttons -->
             <?php 
                 include '../includes/functions.php';
                 driverMenu();
@@ -25,6 +26,7 @@
             INNER JOIN driver ON openjobs.driverName_fk = driver.driverName';
         $results = $conn->query( $sql );
         
+        // Creating a day array to popluate cards
         $days=array(
             1   =>  'Monday',
             2   =>  'Tuesday',
@@ -33,6 +35,7 @@
             5   =>  'Friday'
         );
 
+        // For loop that loops through 5 times added different days to each card
         for( $i=1; $i<=5; $i++ ){
                 printf('<div class="card %2$sJobCard my-3">
                             <div class="card-body">
@@ -62,10 +65,10 @@
                     ',
                     $days[$i],
                     strtolower( $days[$i] )
-                );//close printf()
-                
+                );//close printf()               
             
 
+            // While loop to loop through all jobs attached to that day
             while( $row = $results->fetch_object() ) {
                 if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
                     printf('<tbody>
@@ -107,6 +110,7 @@
         </div>
     </div>
 
+    <!-- JavaScript that adds functions to the driver name buttons and changes jobs displayed when selected -->
     <script>
         const qa=(e,n=document)=>n.querySelectorAll(e);
         

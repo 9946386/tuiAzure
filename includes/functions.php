@@ -23,7 +23,7 @@ function driverMenu()
 function dropDown()
 {
     global $conn;
-    $drivers = mysqli_query($conn, "SELECT usersID, userName FROM driver");
+    $drivers = mysqli_query($conn, "SELECT usersID, userName FROM users");
 
     while ($data = mysqli_fetch_array($drivers)) {
         echo "<option value='" . $data['usersID'] . ": " . $data['userName'] . "'>" . $data['usersID'] . $data['userName'] . "</option>";
