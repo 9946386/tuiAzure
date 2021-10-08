@@ -19,7 +19,7 @@
                         <h4 class="diesel">Driver ID: </h1>
                     </div>
                     <div class="col-7">
-                        <h4 class="form-control" name="driver"><?php $_SESSION['userid']?></h4>
+                        <h4 name="driver"><?php $_SESSION['userid']?></h4>
                     </div>
                 </div>
                 <div class="row gy-2 p-2">
