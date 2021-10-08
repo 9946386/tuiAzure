@@ -253,3 +253,34 @@ function getUserJobs()
         }
     }
 }
+
+function enterHours()
+{
+
+    global $conn;
+
+    if (isset($_POST['submit'])) {
+        // Takes the input names from Add Job and assigns them to a variable
+        $driver = $_POST[$_SESSION['userid']];
+        $diesel = $_POST['diesel'];
+        $hours = $_POST['hours'];
+        $kms = $_POST['kms'];
+        $mood = $_POST['mood'];
+
+        // SQL query to insert the above variables into the openjobs table.
+        $sql = "INSERT INTO driverhours(hoursDriver_FK, dieselLitres, driverHours, kms, mood) 
+        VALUES ('$driver', '$diesel', '$hours', '$kms', '$mood');";
+
+        $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+        if (!$run) {
+            echo '<script>console.log("Couldnt create entry")';
+            echo "Error: " . $sql . "" . mysqli_error($conn);
+        }
+        else {
+            echo '<script>console.log("Success Bro!")</script>';
+        }
+    }
+
+    header("Location: ../pages/mobileHome.php?jobadded=success");
+}

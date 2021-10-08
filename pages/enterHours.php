@@ -16,10 +16,10 @@
             <form action="../includes/enterhours.php" method="POST" class="form-group">
             <div class="row gy-2 p-2">
                     <div class="col-5">
-                        <h4 class="diesel">Driver ID: </h1>
+                        <h4 class="diesel">Driver ID:</h1>
                     </div>
                     <div class="col-7">
-                        <h4 name="driver"><?php $_SESSION['userid']?></h4>
+                        <input type="text" class="form-control" name="driver">
                     </div>
                 </div>
                 <div class="row gy-2 p-2">
