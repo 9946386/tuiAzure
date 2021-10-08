@@ -63,6 +63,7 @@ session_start();
                   </li>
                   <!-- Checking if the user is signed in -->
                   <?php
+session_start();
 // If they are signed in show sign out button
 if (isset($_SESSION['useruid'])) {
   echo "<li class='nav-item'>
