@@ -41,7 +41,7 @@
                                         <h5 class="card-title">%1$s ...</h5>
                                     </div>
                                     <div class="col-1">                            
-                                        <a href="/pages/webAddJob.html" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
+                                        <a href="/pages/webAddJob.php" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
                                     </div>
                                 </div>
                                 <div class="row">
