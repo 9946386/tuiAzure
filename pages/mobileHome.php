@@ -4,7 +4,6 @@
 <?php include '../includes/mobileHeader.php' ?>
 
 <?php 
-session_start();
 include '../local-db-connection.php'; 
 ?>
 

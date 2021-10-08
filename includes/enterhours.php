@@ -18,7 +18,7 @@ if (isset($_SESSION['useruid'])) {
 
         // SQL query to insert the above variables into the openjobs table.
         $sql = "INSERT INTO driverhours(hoursDriver_FK, dieselLitres, driverHours, kms, mood) 
-        VALUES ('$driver', '$diesel', '$hours', '$kms', '$mood');";
+        VALUES ('" . $_SESSION['userid'] . "', '$diesel', '$hours', '$kms', '$mood');";
 
         $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
