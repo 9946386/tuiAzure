@@ -7,15 +7,15 @@ include '../local-db-connection.php';
 function driverMenu()
 {
     global $conn;
-    $results = $conn->query('select * from driver');
+    $results = $conn->query('select usersID, userName from users');
 
     while ($row = $results->fetch_object()) {
         printf('
             <div class="col text-center">
                 <input type="button" aria-pressed="true" data-name="driverNameBtn" class="btn btn-primary rounded-pill text-light" data-did="%s" value="%s" />
             </div>',
-            $row->DriverID,
-            $row->driverName
+            $row->usersID,
+            $row->userName
         );
     }
 }
