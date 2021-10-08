@@ -18,7 +18,7 @@
     <title>Sign Up</title>
 
 </head>
-<body class="signupbody">
+<body>
 
     <div class="container-fluid loginBackground min-vh-100">
         <div class="container w-75 min-vh-100 loginContainer d-flex align-items-center justify-content-center">
@@ -52,7 +52,7 @@
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="confirmPassword"></input>
                         </div>
                         <div class="row mt-2 d-flex form-group">
-                            <input type="submit" class="btn btn-secondary text-light ms-3" name="submit" value="Sign Up">
+                            <input type="submit" class="col-12 btn btn-secondary text-light ms-3" name="submit" value="Sign Up">
                         </div>
                         <?php
 // Error messages that will show below form input feilds if user input is invalid
