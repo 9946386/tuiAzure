@@ -3,7 +3,7 @@
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4 truckList">
         <div class="row m-auto align-items-center">
-            <select class="form-select form-select-lg col-4 w-50" name="driver" id="driver">
+            <select class="form-select form-select-lg col-4 w-50" name="selectedDriver" id="driver">
                 <option selected>Pick a driver</option>
                 <?php include '../includes/functions.php'; dropDown();?>
             </select>

@@ -26,7 +26,7 @@ function dropDown()
     $drivers = mysqli_query($conn, "SELECT usersID, userName FROM users");
 
     while ($data = mysqli_fetch_array($drivers)) {
-        echo "<option value='" . $data['usersID'] . ": " . $data['userName'] . "'>" . $data['usersID'] . ': ' . $data['userName'] . "</option>";
+        echo "<option value='" . $data['usersID'] . "'>" . $data['usersID'] . ': ' . $data['userName'] . "</option>";
     }
 }
 

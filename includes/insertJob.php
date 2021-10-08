@@ -10,7 +10,7 @@ if (isset($_POST['submit']))
 {
     // Takes the input names from Add Job and assigns them to a variable
     $jobName = $_POST['JobName'];
-    $jobDriver = $_POST['JobDriver'];
+    $jobDriver = $_POST['selectedDriver'];
     $jobDriverName = $_POST['JobDriverName'];
     $jobDate = $_POST['JobDate'];
     $destination = $_POST['Destination'];
