@@ -1,7 +1,7 @@
 {
     "name": "Tui Truck App",
     "short_name": "TuiTrucks",
-    "start_url": "/index.php",
+    "start_url": "https://tui-project-webapp.azurewebsites.net/",
     "display": "standalone",
     "background_color": "#7CB344",
     "theme_color": "#7CB344",
