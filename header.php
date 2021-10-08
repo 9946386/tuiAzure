@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
 
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="../manifest.json">
 
     <title>Tui Dispatcher App</title>
 </head>
