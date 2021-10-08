@@ -61,9 +61,24 @@ session_start();
                   <li class="nav-item">
                     <a class="nav-link text-light" href="../pages/enterHours.php">Enter Hours</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-light" href="../includes/logout.php">Sign Out</a>
-                  </li>
+                  <!-- Checking if the user is signed in -->
+                  <?php
+// If they are signed in show sign out button
+if (isset($_SESSION['useruid'])) {
+  echo "<li class='nav-item'>
+                            <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
+                          </li>";
+}
+// If they are not signed in show a sign in button
+else {
+  echo "<li class='nav-item'>
+                            <a class='nav-link text-light' href='../includes/loginPage.php'>Sign In</a>
+                          </li>
+                          <li class='nav-item'>
+                            <a class='nav-link text-light' href='../includes/signupPage.php'>Sign Up</a>
+                          </li>";
+}
+?>
                 </ul>
               </div>
             </div>
