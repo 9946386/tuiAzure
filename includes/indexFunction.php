@@ -5,13 +5,13 @@ include 'local-db-connection.php';
 function openJobsList()
 {
     global $conn;
-    $query = mysqli_query($conn, "SELECT driver.DriverID, driver.driverName
+    $query = mysqli_query($conn, "SELECT users.usersID users.userName
                                     FROM openjobs
-                                    INNER JOIN driver ON openjobs.driver_fk = driver.DriverID");
+                                    INNER JOIN users ON openjobs.driver_fk = users.usersID");
 
     while ($row = mysqli_fetch_assoc($query)) {
 
-        $id = $row['DriverID'];
+        $id = $row['usersID'];
         //$driverName_fk = $row['driverName'];
 
         echo "<div class='card mainPageJobCard my-2'>
@@ -39,10 +39,10 @@ function openJobsList()
                                     </tr>
                                 </thead>";
 
-        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, driver.DriverID, driver.driverName
+        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
                                             FROM openjobs
-                                            INNER JOIN driver ON openjobs.driver_fk = driver.DriverID
-                                            WHERE driver.DriverID = $id");
+                                            INNER JOIN users ON openjobs.driver_fk = users.usersID
+                                            WHERE user.usersID = $id");
 
         while ($row = mysqli_fetch_assoc($openjobq)) {
             $jobName = $row['jobName'];
