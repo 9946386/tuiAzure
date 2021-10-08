@@ -69,6 +69,7 @@
         <div class="container px-4 p-3 webDailyPlanTruckCard">
             <div class="row gy-2">
                 <div class="col-12">
+                <!-- Adding function that lists all open jobs -->
                  <?php include 'includes/indexFunction.php'; openJobsList(); ?>
                 </div>  
             </div> 
@@ -80,4 +81,5 @@
     <script src="/JS/app.js"></script>
     <script src="/JS/ui.js"></script>
 
+<!-- Including the footer.php section to the bottom of the page -->
 <?php include 'footer.php' ?>

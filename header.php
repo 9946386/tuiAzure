@@ -1,6 +1,7 @@
+<!-- Header section to be added to all web pages except index.php as the navigation links are different -->
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
 
+    <!-- Link to manifest.json for PWA functionality -->
     <link rel="manifest" href="../manifest.json">
 
     <title>Tui Dispatcher App</title>

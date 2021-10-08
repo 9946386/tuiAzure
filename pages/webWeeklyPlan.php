@@ -131,4 +131,5 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script>
 
+    <!-- Link to manifest.json for PWA functionality -->
     <?php include '../footer.php' ?>

@@ -1,6 +1,10 @@
+
+<!-- Starting a session so that the logged in users information is accessible -->
 <?php
 session_start();
 ?>
+
+<!-- Mobile Header section to be added to all mobile pages -->
 
 <!doctype html>
 <html lang="en">
@@ -15,9 +19,10 @@ session_start();
     <link rel="stylesheet" href="../styles/myTheme.css"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../styles/addedStyles.css">
 
+    <!-- Link to manifest file for PWA functionality -->
     <link rel="manifest" href="../manifest.json">
 
-    <title>Tui App Practice</title>
+    <title>Tui Truck App</title>
   </head>
   <body> 
 
