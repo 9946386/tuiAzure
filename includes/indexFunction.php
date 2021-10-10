@@ -6,8 +6,7 @@ function openJobsList()
 {
     global $conn;
     $query = "SELECT usersID, userName
-            FROM users
-            ";
+                FROM users";
 
     $result = mysqli_query($conn, $query);
 
