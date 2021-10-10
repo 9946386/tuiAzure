@@ -3,8 +3,9 @@
 include '../local-db-connection.php';
 include '../header.php' ?>
 
-<form action="" method="POST">
+
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
+    <form action="" method="POST">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
                 <div class="row gx-3">
@@ -89,8 +90,9 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
