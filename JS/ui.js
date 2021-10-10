@@ -19,7 +19,7 @@ document.getElementById("todaysDate").innerHTML = d.toDateString();
 var height = $('header').height();
 
 $(window).scroll(function (){
-    if($(this).scrollTop() > height){
+    if($(this).scrollTop() > 370){
         $('.navbar').addClass('fixed');
     }else{
         $('.navbar').removeClass('fixed');
