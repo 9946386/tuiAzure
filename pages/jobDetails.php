@@ -1,4 +1,29 @@
-<?php include '../includes/mobileHeader.php' ?>
+<?php include '../includes/mobileHeader.php';
+
+// check GET request id param
+
+if (isset($_GET[$jobID])) {
+
+  $id = mysqli_real_escape_string($conn, $_GET[$jobID]);
+
+  // Make sql
+  $sql = "SELECT * FROM openjobs WHERE openJobsID = $id";
+
+  // Get results
+  $result = mysqli_query($conn, $sql);
+
+  // Fetch the results in an array
+  $job = mysqli_fetch_assoc($result);
+
+  mysqli_free_result($result);
+  mysqli_close($conn);
+
+  print_r($job);
+}
+
+
+
+?>
 
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-2">
@@ -45,7 +70,7 @@
             </table>
           </div>
         </div>
-    </div>
+    </div> 
 
       <div class="container px-4 customerInputContainer">
         <div class="row">
