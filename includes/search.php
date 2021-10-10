@@ -3,9 +3,9 @@
 include '../local-db-connection.php';
 include '../header.php' ?>
 
+<form action="" method="POST">
 
-<div class="container text-dark px-3 p-4 searchInputs w-50">
-    <form action="" method="POST">
+<div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
                 <div class="row gx-3">
@@ -34,6 +34,7 @@ include '../header.php' ?>
                 </div>
             </div>
         </div>
+</div>
 
 
     <div class="container-fluid bg-secondary darkContainer">
@@ -90,8 +91,9 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </form>
+
 </div>
+</form>
 
 
     <!-- Bootstrap Bundle with Popper -->
