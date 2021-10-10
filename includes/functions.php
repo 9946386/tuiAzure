@@ -194,7 +194,7 @@ function getUserJobs()
             $name = $row['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
-            $jobs = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+            $jobs = mysqli_query($conn, "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
                                           FROM openjobs
                                           INNER JOIN users ON openjobs.driver_fk = users.usersID
                                           WHERE users.usersID = $id");
@@ -202,6 +202,7 @@ function getUserJobs()
             // While loop to loop through each job assigned to the user
             while ($row = mysqli_fetch_assoc($jobs)) {
                 //$userID = $row['usersID'];
+                $jobID = $row['openJobID'];
                 $jobName = $row['jobName'];
                 $jobType = $row['jobType'];
                 $orderNumber = $row['orderNumber'];
@@ -244,7 +245,7 @@ function getUserJobs()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='jobDetails.php?id=<?php echo $jobID ?>' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
