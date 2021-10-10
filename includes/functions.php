@@ -187,7 +187,7 @@ function getUserJobs()
                                     INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
                                     WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
 
-        while ($row = mysqli_fetch_assoc($sql)) {
+        while ($row = mysqli_fetch_row($sql)) {
 
             // Assigning variables to use when fetching allocated jobs
             $id = $row['usersID'];
