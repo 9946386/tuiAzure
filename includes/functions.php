@@ -187,7 +187,7 @@ function getUserJobs()
                                     INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
                                     WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
 
-        while ($row = mysqli_fetch_row($sql)) {
+        while ($row = mysqli_fetch_assoc($sql)) {
 
             // Assigning variables to use when fetching allocated jobs
             $id = $row['usersID'];
@@ -245,7 +245,7 @@ function getUserJobs()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id=$jobID' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='jobDetails.php?id='.$jobID.'' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
