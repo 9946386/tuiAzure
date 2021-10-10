@@ -21,7 +21,7 @@
 
     <?php
     
-        $sql='SELECT openjobs.jobName, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.userName, DAYNAME(openjobs.jobDate) AS day_name
+        $sql='SELECT *
             FROM openjobs
             INNER JOIN users ON openjobs.driverName_fk = users.userName';
         $results = $conn->query( $sql );
@@ -70,9 +70,7 @@
 
             // While loop to loop through all jobs attached to that day
             while( $row = $results->fetch_object() ) {
-                // $jobDate = $row['jobDate'];
-                
-                if( ( $row->day_name )  == $i ){
+                if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>

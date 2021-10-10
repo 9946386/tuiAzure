@@ -27,12 +27,12 @@
                             </div>
                         </div>
                         <div class="row gy-5 form-group">
-                            <!-- <div class="col-2">
+                            <div class="col-2">
                                 <label for="addDriverID" class="form-label p-1">Driver ID:</label>
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver">
-                            </div> -->
+                            </div>
                         </div>
                         <div class="row gy-5 form-group">
                             <div class="col-2">
