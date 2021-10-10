@@ -4,7 +4,7 @@
 
 <?php include '../header.php' ?>
 
-<form>
+<form action="../includes/search.php" method="POST">
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
@@ -52,10 +52,8 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Results</p>
-                                    
+                                    <p>Results</p>                                    
                                     <input class="col-12" type="text" name="search">
-                                    <?php include '../includes/functions.php'; searchArchives(); ?>
                                 </div>
                             </div>
 

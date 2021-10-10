@@ -285,7 +285,7 @@ function enterHours()
     header("Location: ../pages/mobileHome.php?jobadded=success");
 }
 
-function searchArchives()
+function searchOrders()
 {
     if (isset($_POST['submit'])) {
 
