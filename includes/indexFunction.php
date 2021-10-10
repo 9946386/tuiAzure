@@ -13,10 +13,10 @@ function openJobsList()
 
     $users = mysqli_fetch_assoc($result);
 
-    if ($users):
+    foreach ($users as $user) {
 
-        $id = $users['usersID'];
-        $driverName_fk = $users['userName'];
+        $id = $user['usersID'];
+        $driverName_fk = $user['userName'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
@@ -48,14 +48,14 @@ function openJobsList()
                                             INNER JOIN users ON openjobs.driver_fk = users.usersID
                                             WHERE users.usersID = $id");
 
-        while ($row = mysqli_fetch_assoc($openjobq)) {
-            $jobName = $row['jobName'];
-            $jobType = $row['jobType'];
-            $orderNumber = $row['orderNumber'];
-            $referenceNumber = $row['referenceNumber'];
-            $pallets = $row['pallets'];
-            $jobWeight = $row['jobWeight'];
-            $jobStatus = $row['jobStatus'];
+        foreach ($openjobq as $openjob) {
+            $jobName = $openjob['jobName'];
+            $jobType = $openjob['jobType'];
+            $orderNumber = $openjob['orderNumber'];
+            $referenceNumber = $openjob['referenceNumber'];
+            $pallets = $openjob['pallets'];
+            $jobWeight = $openjob['jobWeight'];
+            $jobStatus = $openjob['jobStatus'];
 
             echo "              <tr>
                                     <th>{$jobName}</th>
@@ -73,6 +73,7 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-    endif;
+    }
+    ;
 
 }
