@@ -5,14 +5,18 @@ include 'local-db-connection.php';
 function openJobsList()
 {
     global $conn;
-    $query = mysqli_query($conn, "SELECT users.usersID, users.userName
-                                    FROM openjobs
-                                    INNER JOIN users ON openjobs.driver_fk = users.usersID");
+    $query = "SELECT users.usersID, users.userName
+            FROM openjobs
+            INNER JOIN users ON openjobs.driver_fk = users.usersID";
 
-    while ($row = mysqli_fetch_assoc($query)) {
+    $result = mysqli_query($conn, $query);
 
-        $id = $row['usersID'];
-        $driverName_fk = $row['userName'];
+    $users = mysqli_fetch_assoc($result);
+
+    if ($users):
+
+        $id = $users['usersID'];
+        $driverName_fk = $users['userName'];
 
         echo "<div class='card mainPageJobCard my-2'>
                 <div class='card-body'>
@@ -69,6 +73,6 @@ function openJobsList()
                     </div>
                 </div>
             </div>";
-    }
+    endif;
 
 }
