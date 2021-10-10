@@ -33,25 +33,23 @@ include '../header.php' ?>
                 </div>
             </div>
         </div>
-    </div>
+
 
     <div class="container-fluid bg-secondary darkContainer">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard ">
-            <!-- <div class="row gy-2"> 
-                <div class="col-12"> -->
-                    <div class="card my-1">
-                        <div class="card-body p-5">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Results</h1>
-                                </div>
-                                <div class="col d-flex flex-row-reverse">
-                                    <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <?php 
+            <div class="card my-1">
+                <div class="card-body p-5">
+                    <div class="row">
+                        <div class="col">
+                            <h3>Results</h1>
+                        </div>
+                        <div class="col d-flex flex-row-reverse">
+                            <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <?php 
 
 if (isset($_POST['submit'])) {
 
@@ -86,13 +84,10 @@ if (isset($_POST['submit'])) {
     }
 };
     ?>
-</div>
-                            </div>
-
                         </div>
                     </div>
-                <!-- </div>
-            </div> -->
+                </div>
+            </div>
         </div>
     </div>
 </form>
