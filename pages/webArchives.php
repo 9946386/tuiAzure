@@ -1,12 +1,13 @@
 <?php include '../header.php' ?>
 
+<form>
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
                 <div class="row gx-3">
                     <h6 class="p-2">Con Note:</h6>
                     <div class="input-group">
-                        <input type="text" class="form-control rounded-pill" placeholder="Search">
+                        <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
@@ -19,7 +20,7 @@
                 <div class="row gx-3">
                     <h6 class="p-2">Date:</h6>
                     <div class="input-group">
-                        <input type="text" class="form-control rounded-pill" placeholder="Search">
+                        <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
@@ -42,12 +43,13 @@
                                     <h3>Results</h1>
                                 </div>
                                 <div class="col d-flex flex-row-reverse">
-                                    <button type="button" class="btn btn-primary text-light ">Export</button>
+                                    <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Results will show here</p>
+                                    <p>Results</p>
+                                    <input type="text" name="search">
                                 </div>
                             </div>
 
@@ -57,6 +59,7 @@
             </div> -->
         </div>
     </div>
+</form>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
