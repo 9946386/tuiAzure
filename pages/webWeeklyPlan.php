@@ -70,9 +70,9 @@
 
             // While loop to loop through all jobs attached to that day
             while( $row = $results->fetch_object() ) {
-                $jobDate = $row['day_name'];
-
-                if( $jobDate == $i ){
+                // $jobDate = $row['jobDate'];
+                
+                if( ( $row->day_name )  == $i ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
