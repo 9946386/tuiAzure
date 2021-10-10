@@ -44,32 +44,32 @@ if (isset($_GET['id'])) {
         <div class="card mainPageJobCard">
           <div class="card-body">
             <?php if($job): ?>
-              <h5 class="card-title"><?php echo $job['jobName']; ?></h5>
+              <h5 class="card-title"><?php echo htmlspecialchars($job['jobName']); ?></h5>
               <table class="table table-responsive">
               <tbody>
                 <tr>
                   <th>Type:</th>
-                  <td id="jobTypeData"><?php echo $job['jobType']; ?></td>
+                  <td id="jobTypeData"><?php echo htmlspecialchars($job['jobType']); ?></td>
                 </tr>
                 <tr>
                   <th>Order #:</th>
-                  <td id="orderNumData"><?php echo $job['orderNumber']; ?></td>
+                  <td id="orderNumData"><?php echo htmlspecialchars($job['orderNumber']); ?></td>
                 </tr>
                 <tr>
                   <th>Reference:</th>
-                  <td id="referenceData"><?php echo $job['referenceNumber']; ?></td>
+                  <td id="referenceData"><?php echo htmlspecialchars($job['referenceNumber']); ?></td>
                 </tr>
                 <tr>
                   <th>Pallets:</th>
-                  <td id="palletsData"><?php echo $job['pallets']; ?></td>
+                  <td id="palletsData"><?php echo htmlspecialchars($job['pallets']); ?></td>
                 </tr>
                 <tr>
                   <th>Weight:</th>
-                  <td id="weightData"><?php echo $job['jobWeight']; ?></td>
+                  <td id="weightData"><?php echo htmlspecialchars($job['jobWeight']); ?></td>
                 </tr>
                 <tr>
                   <th>Status:</th>
-                  <td id="statusData"><?php echo $job['jobStatus']; ?></td>
+                  <td id="statusData"><?php echo htmlspecialchars($job['jobStatus']); ?></td>
                 </tr>                              
               </tbody>                          
             </table>
