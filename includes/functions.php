@@ -330,18 +330,20 @@ function getUserJobs2()
         // If someone is logged in: 
 
         // Query to get users and open jobs data and link to logged in user
-        $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
+        $sql = "SELECT users.usersID, users.userName, openjobs.driver_fk
                                     FROM users
                                     INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
-                                    WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
+                                    WHERE users.usersID = '" . $_SESSION['userid'] . "' ";
 
+        $result1 = mysqli_query($conn, $sql);
 
+        $user = mysqli_fetch_assoc($result1);
 
-        while ($row = mysqli_fetch_assoc($sql)) {
+        if ($user):
 
             // Assigning variables to use when fetching allocated jobs
-            $id = $row['usersID'];
-            $name = $row['userName'];
+            $id = $user['usersID'];
+            $name = $user['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
@@ -395,6 +397,8 @@ function getUserJobs2()
                         </div>";
             }
             ;
-        }
+
+        endif;
+
     }
 }
