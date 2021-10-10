@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
   echo $jobID;
 
 
-  $id = mysqli_real_escape_string($conn, $jobID);
+  //$id = mysqli_real_escape_string($conn, $jobID);
 
 
   $sql = "SELECT * FROM openjobs WHERE openJobsID = $jobID";
