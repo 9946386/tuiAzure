@@ -27,8 +27,7 @@
         <div class="container-fluid bg-primary top-0 h-auto">
             <a href="/index.php" class="btn">
                 <div class="row text-center">
-                    <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
-            </a>
+                    <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto"></a>
             </div>
         </div>
     </header> 
@@ -60,6 +59,9 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/JS/ui.js" type="text/javascript"></script>
 
 </body>
 

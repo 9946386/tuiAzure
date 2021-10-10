@@ -29,11 +29,9 @@
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
             <a href="/index.php" class="btn">
-                <div class="row text-center">
-                    <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
-                </div>              
-            </a>
-        </div>
+            <div class="row text-center">
+                <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto"></a>
+            </div>              
         </div>
     </header>
 
