@@ -26,7 +26,7 @@ function dropDown()
     $drivers = mysqli_query($conn, "SELECT usersID, userName FROM users");
 
     while ($data = mysqli_fetch_array($drivers)) {
-        echo "<option value='" . $data['usersID'] . ": " . $data['userName'] . "'>" . $data['usersID'] . ': ' . $data['userName'] . "</option>";
+        echo "<option value='" . $data['usersID'] . "'>" . $data['usersID'] . ': ' . $data['userName'] . "</option>";
     }
 }
 
@@ -283,4 +283,32 @@ function enterHours()
     }
 
     header("Location: ../pages/mobileHome.php?jobadded=success");
+}
+
+function searchArchives()
+{
+    if (isset($_POST['submit'])) {
+
+        global $conn;
+
+        $searchValue = $_POST['search'];
+        $sql = "SELECT * FROM completedJobs WHERE referenceNumber OR orderNumber LIKE '%$searchValue%'";
+
+        $result = $conn->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+            echo $row['completedJobName'] . "<br>";
+            echo $row['completedJobDate'] . "<br>";
+            echo $row['completedJobDestination'] . "<br>";
+            echo $row['completedJobType'] . "<br>";
+            echo $row['completedJobOrdernumber'] . "<br>";
+            echo $row['completedJobReferenceNumber'] . "<br>";
+            echo $row['completedJobPallets'] . "<br>";
+            echo $row['completedJobWeight'] . "<br>";
+            echo $row['completedJobStatus'] . "<br>";
+            echo $row['completedJobDriverName_fk'] . "<br>";
+        }
+        ;
+    }
+
 }

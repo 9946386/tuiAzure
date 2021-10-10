@@ -49,7 +49,9 @@
                             <div class="row">
                                 <div class="col">
                                     <p>Results</p>
-                                    <input type="text" name="search">
+                                    
+                                    <input class="col-12" type="text" name="search">
+                                    <?php include 'includes/functions.php'; searchArchives(); ?>
                                 </div>
                             </div>
 
