@@ -3,12 +3,13 @@
 <?php ini_set('display_startup_errors', 1); ?>
 
 <?php include '../includes/mobileHeader.php';
+include '../local-db-connection.php';
 
 // check GET request id param
 
 if (isset($_GET['id'])) {
 
-  global $conn;
+  //global $conn;
   $jobID = $_GET['id'];
 
 
