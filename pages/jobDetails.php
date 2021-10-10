@@ -12,10 +12,10 @@ if (isset($_GET['id'])) {
   $jobID = $_GET['id'];
 
 
-  //$id = mysqli_real_escape_string($conn, $jobID);
+  $id = mysqli_real_escape_string($conn, $jobID);
 
 
-  $sql = "SELECT * FROM openjobs WHERE openJobID = $jobID";
+  $sql = "SELECT * FROM openjobs WHERE openJobID = $id";
 
 
   $result = mysqli_query($conn, $sql);
