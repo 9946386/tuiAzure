@@ -56,23 +56,45 @@
                                     <?php                                    
                                     if (isset($_POST['submit'])) {
 
+                                        global $conn;
+
                                         $searchValue = $_POST['search'];
-                                        $sql = mysqli_query($conn,"SELECT * FROM completedJobs WHERE completedJobReferenceNumber OR completedJobOrderNumber LIKE '%$searchValue%'");
+
+                                        $sql = "SELECT * FROM completedJobs 
+                                                WHERE completedJobReferenceNumber OR completedJobOrderNumber 
+                                                LIKE '%$searchValue%'";
+
+                                        $run = mysqli_query($conn, $sql);
+                                        $foundNum = mysqli_num_rows($run);
                                     
                                         //$result = $conn->query($sql);
                                     
-                                        while ($row = mysqli_fetch_assoc($sql)) {
-                                            echo $row['completedJobName'] . "<br>";
-                                            echo $row['completedJobDate'] . "<br>";
-                                            echo $row['completedJobDestination'] . "<br>";
-                                            echo $row['completedJobType'] . "<br>";
-                                            echo $row['completedJobOrdernumber'] . "<br>";
-                                            echo $row['completedJobReferenceNumber'] . "<br>";
-                                            echo $row['completedJobPallets'] . "<br>";
-                                            echo $row['completedJobWeight'] . "<br>";
-                                            echo $row['completedJobStatus'] . "<br>";
-                                            echo $row['completedJobDriverName_fk'] . "<br>";
+                                        if( $foundNum == 0){
+                                            echo "Unable to find a job that matched. Please try a different value";
+                                        }
+                                        else{
+
+                                            $sql = "SELECT * FROM completedJobs 
+                                                WHERE completedJobReferenceNumber OR completedJobOrderNumber 
+                                                LIKE '%$searchValue%'";
+
+                                                $getQuery = mysqli_query($conn, $sql);
+
+                                            while ($runrows = mysqli_fetch_array($getQuery)) {
+                                                
+                                                echo $row['completedJobName'] . "<br>";
+                                                echo $row['completedJobDate'] . "<br>";
+                                                echo $row['completedJobDestination'] . "<br>";
+                                                echo $row['completedJobType'] . "<br>";
+                                                echo $row['completedJobOrdernumber'] . "<br>";
+                                                echo $row['completedJobReferenceNumber'] . "<br>";
+                                                echo $row['completedJobPallets'] . "<br>";
+                                                echo $row['completedJobWeight'] . "<br>";
+                                                echo $row['completedJobStatus'] . "<br>";
+                                                echo $row['completedJobDriverName_fk'] . "<br>";
+                                            };
                                         };
+                                        
                                     };                               
                                     ?>
                                 </div>
