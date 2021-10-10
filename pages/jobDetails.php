@@ -6,7 +6,7 @@
 
 // check GET request id param
 
-if (isset($_GET[$jobID])) {
+if (isset($_GET['$jobID'])) {
 
   $id = mysqli_real_escape_string($conn, $_GET[$jobID]);
 
