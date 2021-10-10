@@ -60,22 +60,8 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script> -->
 
-    <script type="text/javascript">
-    
-        var height = $('header').height();
-
-        $(window).scroll(function (){
-            if($(this).scrollTop() > 370){
-                $('.navbar').addClass('fixed');
-            }else{
-                $('.navbar').removeClass('fixed');
-            }
-        });
-
-    </script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="/JS/ui.js" type="text/javascript"></script> -->
+    <script src="../JS/ui.js" type="text/javascript"></script>
 
 </body>
 

@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-secondary darkContainer">
+    <div class="container-fluid bg-secondary darkContainer h-75">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard ">
             <div class="card my-1">
                 <div class="card-body p-5">
