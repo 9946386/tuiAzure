@@ -58,8 +58,24 @@ body {
   padding-top: 0px;
 }
 
-header{
-  height: 280px;
+header {
+  height: 370px;
+}
+
+#nav.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+#sidebar.affix-top {
+  position: static;
+}
+
+#sidebar.affix {
+  position: fixed;
+  top: 80px;
 }
 
 .darkMobileContainer {

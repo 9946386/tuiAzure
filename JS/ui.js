@@ -35,18 +35,44 @@ document.getElementById("todaysDate").innerHTML = d.toDateString();
 //     });
 //   }); 
 
-$(document).ready(function() {
+// $(document).ready(function() {
   
-    $(window).scroll(function () {
-        //if you hard code, then use console
-        //.log to determine when you want the 
-        //nav bar to stick.  
-        console.log($(window).scrollTop())
-      if ($(window).scrollTop() > 370) {
-        $('#navbar_top').addClass('navbar-fixed');
-      }
-      if ($(window).scrollTop() < 370) {
-        $('#navbar_top').removeClass('navbar-fixed');
-      }
+//     $(window).scroll(function () {
+//         //if you hard code, then use console
+//         //.log to determine when you want the 
+//         //nav bar to stick.  
+//         console.log($(window).scrollTop())
+//       if ($(window).scrollTop() > 370) {
+//         $('#navbar_top').addClass('navbar-fixed');
+//       }
+//       if ($(window).scrollTop() < 370) {
+//         $('#navbar_top').removeClass('navbar-fixed');
+//       }
+//     });
+//   });
+
+  $(document).ready(function () {
+    var navpos = $('#navbar_top').offset();
+    console.log(navpos.top);
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > navpos.top) {
+            $('#navbar_top').addClass('navbar-fixed-top');
+            // $('#topnav').removeClass('navbar-fixed-top');
+        } else {
+            // $('#topnav').addClass('navbar-fixed-top');
+            $('#mainnav').removeClass('navbar-fixed-top');
+        }
     });
-  });
+});
+
+// $('#navbar_top').affix({
+//     offset: {
+//       top: $('header').height()
+//     }
+// });	
+
+// $('#sidebar').affix({
+//     offset: {
+//       top: 200
+//     }
+// });	
