@@ -69,16 +69,16 @@ if (isset($_POST['submit'])) {
     if ($queryResult > 0) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['completedJobName'] . "<br>";
-            echo $row['completedJobDate'] . "<br>";
-            echo $row['completedJobDestination'] . "<br>";
-            echo $row['completedJobType'] . "<br>";
-            echo $row['completedOrderNumber'] . "<br>";
-            echo $row['completedReferenceNumber'] . "<br>";
-            echo $row['completedPallets'] . "<br>";
-            echo $row['completedJobWeight'] . "<br>";
-            echo $row['completedJobStatus'] . "<br>";
-            echo $row['completedJobDriverName_fk'] . "<br>";
+            echo "Job Name: " . $row['completedJobName'] . "<br>";
+            echo "Date: " . $row['completedJobDate'] . "<br>";
+            echo "Destination: " . $row['completedJobDestination'] . "<br>";
+            echo "Type: " . $row['completedJobType'] . "<br>";
+            echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
+            echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
+            echo "Pallets: " . $row['completedPallets'] . "<br>";
+            echo "Weight: " . $row['completedJobWeight'] . "<br>";
+            echo "Status: " . $row['completedJobStatus'] . "<br>";
+            echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
         }
     }
     else {
