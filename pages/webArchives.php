@@ -52,12 +52,13 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p>Results</p> 
                                     <?php
+                                    // include '../local-db-connection.php';
                                     if (isset($_POST['submit'])) {
 
                                     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
+                                    global $conn;
                                     // Select all from completed jobs where the reference or order number is what was entered in the search input
                                     $sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
                                     $result = mysqli_query($conn, $sql);
