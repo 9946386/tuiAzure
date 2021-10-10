@@ -344,12 +344,14 @@ function getUserJobs2()
             $name = $row['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
-            $jobs = mysqli_query($conn, "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+            $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
                                           FROM openjobs
                                           INNER JOIN users ON openjobs.driver_fk = users.usersID
-                                          WHERE users.usersID = $id");
+                                          WHERE users.usersID = $id";
 
-            $openjobs = mysqli_fetch_assoc($jobs);
+            $result = mysqli_query($conn, $jobs);
+
+            $openjobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
             foreach ($openjobs as $openjob) {
                 echo "
