@@ -14,7 +14,7 @@
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" name="submit">
-                            <i class="glyphicon glyphicon-search" style="color:#58595d"></i>
+                            <i class="glyphicon glyphicon-search" style="color:var(--bs-secondary)"></i>
                             </button>
                         </div>
                     </div>                    
