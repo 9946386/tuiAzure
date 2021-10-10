@@ -5,9 +5,9 @@ include 'local-db-connection.php';
 function openJobsList()
 {
     global $conn;
-    $query = "SELECT users.usersID, users.userName
-            FROM openjobs
-            INNER JOIN users ON openjobs.driver_fk = users.usersID";
+    $query = "SELECT usersID, userName
+            FROM users
+            ";
 
     $result = mysqli_query($conn, $query);
 
@@ -42,30 +42,30 @@ function openJobsList()
                                     </tr>
                                 </thead>";
 
-        // $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
-        //                                     FROM openjobs
-        //                                     INNER JOIN users ON openjobs.driver_fk = users.usersID
-        //                                     WHERE users.usersID = $id");
+        $openjobq = mysqli_query($conn, "SELECT openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+                                            FROM openjobs
+                                            INNER JOIN users ON openjobs.driver_fk = users.usersID
+                                            WHERE users.usersID = $id");
 
-        // foreach ($openjobq as $openjob) {
-        //     $jobName = $openjob['jobName'];
-        //     $jobType = $openjob['jobType'];
-        //     $orderNumber = $openjob['orderNumber'];
-        //     $referenceNumber = $openjob['referenceNumber'];
-        //     $pallets = $openjob['pallets'];
-        //     $jobWeight = $openjob['jobWeight'];
-        //     $jobStatus = $openjob['jobStatus'];
+        foreach ($openjobq as $openjob) {
+            $jobName = $openjob['jobName'];
+            $jobType = $openjob['jobType'];
+            $orderNumber = $openjob['orderNumber'];
+            $referenceNumber = $openjob['referenceNumber'];
+            $pallets = $openjob['pallets'];
+            $jobWeight = $openjob['jobWeight'];
+            $jobStatus = $openjob['jobStatus'];
 
-        //     echo "              <tr>
-        //                             <th>{$jobName}</th>
-        //                             <td>{$jobType}</td>
-        //                             <td>{$orderNumber}</td>
-        //                             <td>{$referenceNumber}</td>
-        //                             <td>{$pallets}</td>
-        //                             <td>{$jobWeight}</td>
-        //                             <td>{$jobStatus}</td>
-        //                         </tr> ";
-        // }
+            echo "              <tr>
+                                    <th>{$jobName}</th>
+                                    <td>{$jobType}</td>
+                                    <td>{$orderNumber}</td>
+                                    <td>{$referenceNumber}</td>
+                                    <td>{$pallets}</td>
+                                    <td>{$jobWeight}</td>
+                                    <td>{$jobStatus}</td>
+                                </tr> ";
+        }
 
         echo "</table>
                         </div>
