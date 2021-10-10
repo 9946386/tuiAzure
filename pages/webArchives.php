@@ -1,3 +1,7 @@
+<?php ini_set('error_reporting', E_ALL); ?>
+<?php ini_set('display_errors', 1); ?>
+<?php ini_set('display_startup_errors', 1); ?>
+
 <?php include '../header.php' ?>
 
 <form>
@@ -51,7 +55,7 @@
                                     <p>Results</p>
                                     
                                     <input class="col-12" type="text" name="search">
-                                    <?php include 'includes/functions.php'; searchArchives(); ?>
+                                    <?php include '../includes/functions.php'; searchArchives(); ?>
                                 </div>
                             </div>
 
@@ -68,5 +72,5 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script>
     
-    <!-- Link to manifest.json for PWA functionality -->
+    <!-- Show footer at bottom of page -->
     <?php include '../footer.php' ?>
