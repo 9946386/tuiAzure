@@ -61,7 +61,7 @@
                                         $searchValue = $_POST['search'];
 
                                         $sql = "SELECT * FROM completedJobs 
-                                                WHERE completedJobReferenceNumber OR completedJobOrderNumber 
+                                                WHERE completedReferenceNumber OR completedOrderNumber 
                                                 LIKE '%$searchValue%'";
 
                                         $run = mysqli_query($conn, $sql);
@@ -86,8 +86,8 @@
                                                 echo $row['completedJobDate'] . "<br>";
                                                 echo $row['completedJobDestination'] . "<br>";
                                                 echo $row['completedJobType'] . "<br>";
-                                                echo $row['completedJobOrdernumber'] . "<br>";
-                                                echo $row['completedJobReferenceNumber'] . "<br>";
+                                                echo $row['completedOrdernumber'] . "<br>";
+                                                echo $row['completedReferenceNumber'] . "<br>";
                                                 echo $row['completedJobPallets'] . "<br>";
                                                 echo $row['completedJobWeight'] . "<br>";
                                                 echo $row['completedJobStatus'] . "<br>";
