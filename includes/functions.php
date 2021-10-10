@@ -245,7 +245,7 @@ function getUserJobs()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id=$jobID' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='jobDetails.php?id={$row['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
