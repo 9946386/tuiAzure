@@ -355,38 +355,38 @@ function getUserJobs2()
                 echo "
                         <div class='card mainPageJobCard mt-2'>              
                             <div class='card-body'>
-                                <h5 class='card-title'> {$openjobs['jobName']} </h5>
+                                <h5 class='card-title'> {$openjob['jobName']} </h5>
                                 <table class='table table-responsive'>
                                     <tbody>
                                         <tr>
                                             <th>Type:</th>
-                                            <td>{$openjobs['jobType']}</td>
+                                            <td>{$openjob['jobType']}</td>
                                         </tr>
                                         <tr>
                                             <th>Order #:</th>
-                                            <td>{$openjobs['orderNumber']}</td>
+                                            <td>{$openjob['orderNumber']}</td>
                                         </tr>
                                         <tr>
                                             <th>Reference:</th>
-                                            <td>{$openjobs['referenceNumber']}</td>
+                                            <td>{$openjob['referenceNumber']}</td>
                                         </tr>
                                         <tr>
                                             <th>Pallets:</th>
-                                            <td>{$openjobs['pallets']}</td>
+                                            <td>{$openjob['pallets']}</td>
                                         </tr>
                                         <tr>
                                             <th>Weight:</th>
-                                            <td>{$openjobs['jobWeight']}</td>
+                                            <td>{$openjob['jobWeight']}</td>
                                         </tr>
                                         <tr>
                                             <th>Status:</th>
-                                            <td>{$openjobs['jobStatus']}</td>
+                                            <td>{$openjob['jobStatus']}</td>
                                         </tr>
                                     </tbody>                          
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id={$openjobs['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='jobDetails.php?id={$openjob['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
