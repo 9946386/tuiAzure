@@ -139,6 +139,13 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
+    <div class="d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
+        <a class="btn " href="../pages/enterHours.php">Complete Job</a>
+      </button>
+
+    </div>
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="../JS/app.js"></script>

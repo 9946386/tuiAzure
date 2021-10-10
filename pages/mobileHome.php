@@ -23,7 +23,7 @@ include '../local-db-connection.php';
                     
                 <?php 
                 include '../includes/functions.php';
-                getUserJobs();
+                getUserJobs2();
             ?>
             </div>
         </div>

@@ -245,7 +245,7 @@ function getUserJobs()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id={$row['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='jobDetails.php?id={$jobs['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
@@ -312,4 +312,88 @@ function searchOrders()
         ;
     }
 
+}
+
+function getUserJobs2()
+{
+    global $conn;
+
+    // Checking if the session 'useruid' has started / Checking someone is logged in
+    if (!isset($_SESSION['useruid'])) {
+        // If no one is logged in:
+        echo "You are not logged in";
+
+    // Need to add button to redirect to login page
+    }
+    else {
+        // If someone is logged in: 
+
+        // Query to get users and open jobs data and link to logged in user
+        $sql = mysqli_query($conn, "SELECT users.usersID, users.userName, openjobs.driver_fk
+                                    FROM users
+                                    INNER JOIN openjobs ON users.usersID = openjobs.driver_fk
+                                    WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
+
+
+
+        while ($row = mysqli_fetch_assoc($sql)) {
+
+            // Assigning variables to use when fetching allocated jobs
+            $id = $row['usersID'];
+            $name = $row['userName'];
+
+            // Query to get open jobs and user info that are equal to the id of signed in user
+            $jobs = mysqli_query($conn, "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+                                          FROM openjobs
+                                          INNER JOIN users ON openjobs.driver_fk = users.usersID
+                                          WHERE users.usersID = $id");
+
+            $result = mysqli_query($conn, $jobs);
+
+            $openjobs = mysqli_fetch_assoc($result);
+
+            if ($openjobs):
+                echo "
+                        <div class='card mainPageJobCard mt-2'>              
+                            <div class='card-body'>
+                                <h5 class='card-title'> {$openjobs['jobName']} </h5>
+                                <table class='table table-responsive'>
+                                    <tbody>
+                                        <tr>
+                                            <th>Type:</th>
+                                            <td>{$openjobs['jobType']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Order #:</th>
+                                            <td>{$openjobs['orderNumber']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Reference:</th>
+                                            <td>{$openjobs['referenceNumber']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Pallets:</th>
+                                            <td>{$openjobs['pallets']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight:</th>
+                                            <td>{$openjobs['jobWeight']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status:</th>
+                                            <td>{$openjobs['jobStatus']}</td>
+                                        </tr>
+                                    </tbody>                          
+                                </table>
+                                <div class='row'>
+                                    <div class='col d-flex flex-row-reverse'>
+                                    <a href='jobDetails.php?id={$openjobs['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+
+            endif;
+        }
+    }
 }
