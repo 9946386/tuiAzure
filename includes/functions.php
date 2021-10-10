@@ -351,7 +351,7 @@ function getUserJobs2()
 
             $openjobs = mysqli_fetch_assoc($jobs);
 
-            if ($openjobs):
+            foreach ($openjobs as $openjob) {
                 echo "
                         <div class='card mainPageJobCard mt-2'>              
                             <div class='card-body'>
@@ -391,8 +391,8 @@ function getUserJobs2()
                                 </div>
                             </div>
                         </div>";
-
-            endif;
+            }
+            ;
         }
     }
 }
