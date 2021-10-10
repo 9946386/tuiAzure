@@ -57,11 +57,11 @@
                                     if (isset($_POST['submit'])) {
 
                                         $searchValue = $_POST['search'];
-                                        $sql = "SELECT * FROM completedJobs WHERE completedJobReferenceNumber OR completedJobOrderNumber LIKE '%$searchValue%'";
+                                        $sql = mysqli_query($conn,"SELECT * FROM completedJobs WHERE completedJobReferenceNumber OR completedJobOrderNumber LIKE '%$searchValue%'");
                                     
-                                        $result = $conn->query($sql);
+                                        //$result = $conn->query($sql);
                                     
-                                        while ($row = $result->fetch_assoc()) {
+                                        while ($row = mysqli_fetch_assoc($sql)) {
                                             echo $row['completedJobName'] . "<br>";
                                             echo $row['completedJobDate'] . "<br>";
                                             echo $row['completedJobDestination'] . "<br>";
