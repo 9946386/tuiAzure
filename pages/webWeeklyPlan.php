@@ -70,7 +70,7 @@
 
             // While loop to loop through all jobs attached to that day
             while( $row = $results->fetch_object() ) {
-                $jobDate = $row['jobDate'];
+                $jobDate = $row['day_name'];
 
                 if( $jobDate == $i ){
                     printf('<tbody>
