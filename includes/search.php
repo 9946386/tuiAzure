@@ -21,9 +21,9 @@ if (isset($_POST['submit'])) {
             echo $row['completedJobDate'] . "<br>";
             echo $row['completedJobDestination'] . "<br>";
             echo $row['completedJobType'] . "<br>";
-            echo $row['completedJobOrdernumber'] . "<br>";
-            echo $row['completedJobReferenceNumber'] . "<br>";
-            echo $row['completedJobPallets'] . "<br>";
+            echo $row['completedOrdernumber'] . "<br>";
+            echo $row['completedReferenceNumber'] . "<br>";
+            echo $row['completedPallets'] . "<br>";
             echo $row['completedJobWeight'] . "<br>";
             echo $row['completedJobStatus'] . "<br>";
             echo $row['completedJobDriverName_fk'] . "<br>";

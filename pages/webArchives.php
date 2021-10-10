@@ -4,7 +4,7 @@
 
 <?php include '../header.php' ?>
 
-<form action="../includes/search.php" method="POST">
+<form action="" method="POST">
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
@@ -53,6 +53,40 @@
                             <div class="row">
                                 <div class="col">
                                     <p>Results</p> 
+                                    <?php
+                                    if (isset($_POST['submit'])) {
+
+                                    $search = mysqli_real_escape_string($conn, $_POST['search']);
+
+                                    // Select all from completed jobs where the reference or order number is what was entered in the search input
+                                    $sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    // Checking if anything matched the search value
+                                    $queryResult = mysqli_num_rows($result);
+
+                                    // Checking if theres more than 0 results
+                                    if ($queryResult > 0) {
+
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            echo $row['completedJobName'] . "<br>";
+                                            echo $row['completedJobDate'] . "<br>";
+                                            echo $row['completedJobDestination'] . "<br>";
+                                            echo $row['completedJobType'] . "<br>";
+                                            echo $row['completedOrdernumber'] . "<br>";
+                                            echo $row['completedReferenceNumber'] . "<br>";
+                                            echo $row['completedPallets'] . "<br>";
+                                            echo $row['completedJobWeight'] . "<br>";
+                                            echo $row['completedJobStatus'] . "<br>";
+                                            echo $row['completedJobDriverName_fk'] . "<br>";
+                                        }
+                                    }
+                                    else {
+                                        // If there are no matches
+                                        echo "No matching results. Please try again";
+                                    }
+                                    } 
+                                    ?>
                                     
                                 </div>
                             </div>
