@@ -25,11 +25,8 @@ if (isset($_GET['id'])) {
 
   mysqli_free_result($result);
   mysqli_close($conn);
-  print_r($job);
+  //print_r($job);
 }
-
-
-
 ?>
 
 <!-- Page Title -->
@@ -46,35 +43,39 @@ if (isset($_GET['id'])) {
       <div class="container px-4 p-3 mainPageJobCardContainer ">
         <div class="card mainPageJobCard">
           <div class="card-body">
-            <h5 class="card-title">Upper Hutt Mega</h5>
-            <table class="table table-responsive">
+            <?php if($job): ?>
+              <h5 class="card-title"><?php echo $job['jobName']; ?></h5>
+              <table class="table table-responsive">
               <tbody>
                 <tr>
                   <th>Type:</th>
-                  <td id="jobTypeData">Delivery</td>
+                  <td id="jobTypeData"><?php echo $job['jobType']; ?></td>
                 </tr>
                 <tr>
                   <th>Order #:</th>
-                  <td id="orderNumData">SEM173666</td>
+                  <td id="orderNumData"><?php echo $job['orderNumber']; ?></td>
                 </tr>
                 <tr>
                   <th>Reference:</th>
-                  <td id="referenceData">TUI181500</td>
+                  <td id="referenceData"><?php echo $job['referenceNumber']; ?></td>
                 </tr>
                 <tr>
                   <th>Pallets:</th>
-                  <td id="palletsData">18</td>
+                  <td id="palletsData"><?php echo $job['pallets']; ?></td>
                 </tr>
                 <tr>
                   <th>Weight:</th>
-                  <td id="weightData">17565</td>
+                  <td id="weightData"><?php echo $job['jobWeight']; ?></td>
                 </tr>
                 <tr>
                   <th>Status:</th>
-                  <td id="statusData">Loaded</td>
+                  <td id="statusData"><?php echo $job['jobStatus']; ?></td>
                 </tr>                              
               </tbody>                          
             </table>
+              <?php else: ?>
+                <h5>This job is no longer open.</h5>
+              <?php endif ?>
           </div>
         </div>
     </div> 
