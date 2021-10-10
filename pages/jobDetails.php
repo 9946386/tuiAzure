@@ -7,13 +7,14 @@
 // check GET request id param
 
 if (isset($_GET['id'])) {
+  echo $_GET['id'];
+  global $conn;
+  $jobID = $_GET['id'];
+  $id = mysqli_real_escape_string($conn, $jobID);
 
-  echo $_GET['id'];  global $conn;  $id = mysqli_real_escape_string($conn, $_GET['id']);
-
-  $sql = "SELECT * FROM openjobs WHERE openJobsID = {$_GET['id']}";
+  $sql = "SELECT * FROM openjobs WHERE openJobsID = $id";
 
   $result = mysqli_query($conn, $sql);
-
   $job = mysqli_fetch_assoc($result);
   mysqli_free_result($result);  mysqli_close($conn);
   print_r($job);
