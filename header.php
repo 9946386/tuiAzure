@@ -35,7 +35,6 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary webNavBar" id="navbar_top">
-            <div class="navbar navbar-default navbar-static">
             <div class="container-fluid ">
                 <div class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav">
@@ -53,7 +52,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
             </div>
         </nav>
    
