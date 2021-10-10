@@ -71,10 +71,23 @@
                     strtolower( $days[$i] )
                 );//close printf()               
             
+            $dates = "SELECT dayname(jobDate) FROM openjobs";
+
+            $result2 = mysqli_query($conn, $dates);
+
+            $daysofweek = mysqli_fetch_all($result2, MYSQLI_ASSOC);            
 
             // While loop to loop through all jobs attached to that day
-            foreach($jobs as $job) {
-                if( date( 'w', strtotime( $row->$job['jobDate'] ) ) == $i ){
+            foreach($daysofweek as $weekdays) {
+                $weekday = $weekdays['jobDate'];
+                if( $weekday == $i ){
+                    $sql='SELECT *
+                            FROM openjobs
+                            INNER JOIN users ON openjobs.driverName_fk = users.userName';
+                            $result = mysqli_query($conn, $sql);
+
+                            $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
@@ -87,15 +100,15 @@
                                     <td>%8$s</td>
                                 </tr> 
                             </tbody>',
-                            $row->$job['driverName_fk'],
-                            $row->$job['jobName'],
-                            $row->$job['jobType'],
-                            $row->$job['orderNumber'],
-                            $row->$job['referenceNumber'],
-                            $row->$job['pallets'],
-                            $row->$job['jobWeight'],
-                            $row->$job['jobStatus'],
-                            $row->$job['usersID']
+                            $row->$jobs['driverName_fk'],
+                            $row->$jobs['jobName'],
+                            $row->$jobs['jobType'],
+                            $row->$jobs['orderNumber'],
+                            $row->$jobs['referenceNumber'],
+                            $row->$jobs['pallets'],
+                            $row->$jobs['jobWeight'],
+                            $row->$jobs['jobStatus'],
+                            $row->$jobs['usersID']
                     );
                 }
             }            
