@@ -11,14 +11,22 @@ if (isset($_GET['id'])) {
   global $conn;
   $jobID = $_GET['id'];
   echo $jobID;
-// $id = mysqli_real_escape_string($conn, $jobID);
 
-// $sql = "SELECT * FROM openjobs WHERE openJobsID = $jobID";
 
-// $result = mysqli_query($conn, $sql);
-// $job = mysqli_fetch_assoc($result);
-// mysqli_free_result($result);  mysqli_close($conn);
-// print_r($job);
+  $id = mysqli_real_escape_string($conn, $jobID);
+
+
+  $sql = "SELECT * FROM openjobs WHERE openJobsID = $jobID";
+
+
+  $result = mysqli_query($conn, $sql);
+
+  $job = mysqli_fetch_assoc($result);
+  mysqli_free_result($result);
+
+
+  mysqli_close($conn);
+  print_r($job);
 }
 
 
