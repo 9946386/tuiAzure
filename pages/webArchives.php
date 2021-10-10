@@ -13,8 +13,8 @@
                     <div class="input-group">
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
+                            <button class="btn btn-default" type="submit" name="submit">
+                            <i class="glyphicon glyphicon-search" style="color:#58595d"></i>
                             </button>
                         </div>
                     </div>                    
@@ -26,9 +26,9 @@
                     <div class="input-group">
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                            </button>
+                            <!-- <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search" style="color:#58595d"></i>
+                            </button> -->
                         </div>
                     </div>
                 </div>
