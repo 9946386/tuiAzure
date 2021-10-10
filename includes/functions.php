@@ -317,6 +317,7 @@ function searchOrders()
 function getUserJobs2()
 {
     global $conn;
+    include '../local-db-connection.php';
 
     // Checking if the session 'useruid' has started / Checking someone is logged in
     if (!isset($_SESSION['useruid'])) {
