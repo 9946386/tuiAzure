@@ -11,10 +11,9 @@ function openJobsList()
 
     $result = mysqli_query($conn, $query);
 
-    $users = mysqli_fetch_assoc($result);
+    $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     foreach ($users as $user) {
-
         $id = $user['usersID'];
         $driverName_fk = $user['userName'];
 
