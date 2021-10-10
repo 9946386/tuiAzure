@@ -23,7 +23,7 @@
     
         $sql='SELECT *
             FROM openjobs
-            INNER JOIN driver ON openjobs.driverName_fk = driver.driverName';
+            INNER JOIN users ON openjobs.driverName_fk = users.userName';
         $results = $conn->query( $sql );
         
         // Creating a day array to popluate cards
@@ -91,7 +91,7 @@
                             $row->pallets,
                             $row->jobWeight,
                             $row->jobStatus,
-                            $row->DriverID
+                            $row->usersID
                     );
                 }
             }            
