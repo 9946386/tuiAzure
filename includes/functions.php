@@ -292,7 +292,7 @@ function searchArchives()
         global $conn;
 
         $searchValue = $_POST['search'];
-        $sql = "SELECT * FROM completedJobs WHERE referenceNumber OR orderNumber LIKE '%$searchValue%'";
+        $sql = "SELECT * FROM completedJobs WHERE completedJobReferenceNumber OR completedJobOrderNumber LIKE '%$searchValue%'";
 
         $result = $conn->query($sql);
 
