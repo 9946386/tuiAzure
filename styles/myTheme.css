@@ -58,10 +58,6 @@ body {
   padding-top: 0px;
 }
 
-header {
-  height: 370px;
-}
-
 #nav.affix {
   position: fixed;
   top: 0;
