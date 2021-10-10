@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
             echo $row['completedJobDate'] . "<br>";
             echo $row['completedJobDestination'] . "<br>";
             echo $row['completedJobType'] . "<br>";
-            echo $row['completedOrdernumber'] . "<br>";
+            echo $row['completedOrderNumber'] . "<br>";
             echo $row['completedReferenceNumber'] . "<br>";
             echo $row['completedPallets'] . "<br>";
             echo $row['completedJobWeight'] . "<br>";
