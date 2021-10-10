@@ -8,22 +8,23 @@
 
 if (isset($_GET['id'])) {
 
-  global $conn;
-  $id = mysqli_real_escape_string($conn, $_GET['id']);
+  echo $_GET['id'];
+// global $conn;
+// $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-  // Make sql
-  $sql = "SELECT * FROM openjobs WHERE openJobsID = $id";
+// // Make sql
+// $sql = "SELECT * FROM openjobs WHERE openJobsID = $id";
 
-  // Get results
-  $result = mysqli_query($conn, $sql);
+// // Get results
+// $result = mysqli_query($conn, $sql);
 
-  // Fetch the results in an array
-  $job = mysqli_fetch_assoc($result);
+// // Fetch the results in an array
+// $job = mysqli_fetch_assoc($result);
 
-  mysqli_free_result($result);
-  mysqli_close($conn);
+// mysqli_free_result($result);
+// mysqli_close($conn);
 
-  print_r($job);
+// print_r($job);
 }
 
 
