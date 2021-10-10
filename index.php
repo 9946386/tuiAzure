@@ -31,9 +31,11 @@
             <a href="/index.php" class="btn">
                 <div class="row text-center">
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
+                </div>              
             </a>
         </div>
         </div>
+    </header>
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary webNavBar" id="navbar_top">
@@ -56,7 +58,7 @@
                 </div>
             </div>
         </nav>
-    </header>    
+   
 
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4">
