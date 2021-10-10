@@ -4,7 +4,7 @@
 
 <?php include '../header.php' ?>
 
-<form action="" method="POST">
+<form action="../includes/search.php" method="POST">
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
@@ -53,50 +53,7 @@
                             <div class="row">
                                 <div class="col">
                                     <p>Results</p> 
-                                    <?php                                    
-                                    if (isset($_POST['submit'])) {
-
-                                        global $conn;
-
-                                        $searchValue = $_POST['search'];
-
-                                        $sql = "SELECT * FROM completedJobs 
-                                                WHERE completedReferenceNumber OR completedOrderNumber 
-                                                LIKE '%$searchValue%'";
-
-                                        $run = mysqli_query($conn, $sql);
-                                        $foundNum = mysqli_num_rows($run);
                                     
-                                        //$result = $conn->query($sql);
-                                    
-                                        if( $foundNum == 0){
-                                            echo "Unable to find a job that matched. Please try a different value";
-                                        }
-                                        else{
-
-                                            $sql = "SELECT * FROM completedJobs 
-                                                WHERE completedJobReferenceNumber OR completedJobOrderNumber 
-                                                LIKE '%$searchValue%'";
-
-                                                $getQuery = mysqli_query($conn, $sql);
-
-                                            while ($runrows = mysqli_fetch_array($getQuery)) {
-                                                
-                                                echo $row['completedJobName'] . "<br>";
-                                                echo $row['completedJobDate'] . "<br>";
-                                                echo $row['completedJobDestination'] . "<br>";
-                                                echo $row['completedJobType'] . "<br>";
-                                                echo $row['completedOrdernumber'] . "<br>";
-                                                echo $row['completedReferenceNumber'] . "<br>";
-                                                echo $row['completedJobPallets'] . "<br>";
-                                                echo $row['completedJobWeight'] . "<br>";
-                                                echo $row['completedJobStatus'] . "<br>";
-                                                echo $row['completedJobDriverName_fk'] . "<br>";
-                                            };
-                                        };
-                                        
-                                    };                               
-                                    ?>
                                 </div>
                             </div>
 
