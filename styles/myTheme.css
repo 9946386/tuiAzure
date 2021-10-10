@@ -58,6 +58,10 @@ body {
   padding-top: 0px;
 }
 
+header{
+  height: 280px;
+}
+
 .darkMobileContainer {
   background-image: url(/images/backgroundDots2.png);
   background-color: var(--bs-secondary);

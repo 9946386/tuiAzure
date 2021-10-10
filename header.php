@@ -28,9 +28,8 @@
             <a href="/index.php" class="btn">
                 <div class="row text-center">
                     <img src="/images/WebLogo.png" alt="Tui Logo" class="h-100 p-4 mx-auto">
-                </div>  
+                </div>
             </a>
-        </div>
         </div>
     </header> 
 
