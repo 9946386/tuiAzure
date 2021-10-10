@@ -4,7 +4,7 @@
 
 <?php include '../header.php' ?>
 
-<form action="" method="POST">
+<form action="<?php echo $_SERVER['PHP_Self']; ?>" method="POST">
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
