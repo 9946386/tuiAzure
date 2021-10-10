@@ -5,7 +5,7 @@
 <?php include '../header.php' ?>
 
 
-    <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
+    <div class="container text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">
             <form action="../includes/search.php" method="POST">
                 <div class="col gy-3">

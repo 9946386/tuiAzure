@@ -4,7 +4,7 @@ include '../local-db-connection.php';
 include '../header.php' ?>
 
 
-<div class="container-sm text-dark px-3 p-4 searchInputs w-50">
+<div class="container text-dark px-3 p-4 searchInputs w-50">
     <form action="" method="POST">
         <div class="row m-auto align-items-center">
             <div class="col gy-3">
