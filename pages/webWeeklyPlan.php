@@ -21,7 +21,7 @@
 
     <?php
     
-        $sql='SELECT *
+        $sql='SELECT openjobs.jobName, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.userName, DAYNAME(openjobs.jobDate) AS day_name
             FROM openjobs
             INNER JOIN users ON openjobs.driverName_fk = users.userName';
         $results = $conn->query( $sql );
