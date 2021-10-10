@@ -8,6 +8,7 @@
 
 if (isset($_GET['id'])) {
 
+  global $conn;
   $id = mysqli_real_escape_string($conn, $_GET['id']);
 
   // Make sql
