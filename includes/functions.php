@@ -317,7 +317,7 @@ function searchOrders()
 function getUserJobs2()
 {
     global $conn;
-    include '../local-db-connection.php';
+
 
     // Checking if the session 'useruid' has started / Checking someone is logged in
     if (!isset($_SESSION['useruid'])) {
@@ -349,9 +349,7 @@ function getUserJobs2()
                                           INNER JOIN users ON openjobs.driver_fk = users.usersID
                                           WHERE users.usersID = $id");
 
-            $result = mysqli_query($conn, $jobs);
-
-            $openjobs = mysqli_fetch_assoc($result);
+            $openjobs = mysqli_fetch_assoc($jobs);
 
             if ($openjobs):
                 echo "
