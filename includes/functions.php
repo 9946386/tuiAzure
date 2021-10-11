@@ -7,16 +7,15 @@ include '../local-db-connection.php';
 function driverMenu()
 {
     global $conn;
-    $results = $conn->query('select usersID, userName from users');
+    $sql = "select usersID, userName from users";
+    $results = mysqli_query($conn, $sql);
+    $drivers = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
-    while ($row = $results->fetch_object()) {
-        printf('
-            <div class="col text-center">
-                <input type="button" aria-pressed="true" data-name="driverNameBtn" class="btn btn-primary rounded-pill text-light" data-did="%s" value="%s" />
-            </div>',
-            $row->usersID,
-            $row->userName
-        );
+    foreach ($drivers as $driver) {
+        echo "
+            <div class='col text-center'>
+                <input type='button' aria-pressed='true' data-name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$driver['usersID']} . {$driver['userName']}' />
+            </div>";
     }
 }
 
