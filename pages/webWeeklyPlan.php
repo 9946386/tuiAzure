@@ -48,7 +48,7 @@
                             <div class="card-body">
                                 <div class="row justify-content-between">
                                     <div class="col-11">
-                                        <h5 class="card-title">%1$s ...</h5>
+                                        <h5 class="card-title">%1$s</h5>
                                     </div>
                                     <div class="col-1">                            
                                         <a href="/pages/webAddJob.php" class="btn btn-primary btn-sm text-light rounded-pill">Add Job</a>
