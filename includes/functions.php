@@ -14,7 +14,7 @@ function driverMenu()
     foreach ($drivers as $driver) {
         echo "
             <div class='col text-center'>
-                <input type='button' aria-pressed='true' data-name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$driver['usersID']} . {$driver['userName']}' />
+                <input type='button' aria-pressed='true' data-name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$driver['usersID']}. {$driver['userName']}' />
             </div>";
     }
 }
