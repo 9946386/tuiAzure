@@ -76,7 +76,7 @@
 
             // While loop to loop through all jobs attached to that day
             foreach( $openjobs as $driverJobs) {
-                if( $driverJobs['Day'] == $i ){
+                if( $driverJobs['Day'] == $days[$i] ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
