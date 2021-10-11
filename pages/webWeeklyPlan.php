@@ -24,11 +24,7 @@
         $sql='SELECT *
             FROM openjobs
             INNER JOIN users ON openjobs.driverName_fk = users.userName';
-        $result = mysqli_query($conn, $sql);
-
-        $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        //$results = $conn->query( $sql );
+        $results = $conn->query( $sql );
         
         // Creating a day array to popluate cards
         $days=array(
@@ -71,25 +67,10 @@
                     strtolower( $days[$i] )
                 );//close printf()               
             
-            $dates = "SELECT DAYNAME(jobDate) FROM openjobs";
-
-            $result2 = mysqli_query($conn, $dates);
-
-            $daysofweek = mysqli_fetch_all($result2, MYSQLI_ASSOC);  
-            
-            // print_r($daysofweek);
 
             // While loop to loop through all jobs attached to that day
-            foreach($daysofweek as $weekdays) {
-                //$weekday = $weekdays['jobDate'];
-                if( $weekdays == $i ){
-                    $sql='SELECT *
-                            FROM openjobs
-                            INNER JOIN users ON openjobs.driverName_fk = users.userName';
-                            $result = mysqli_query($conn, $sql);
-
-                            $jobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+            while( $row = $results->fetch_object() ) {
+                if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
@@ -102,15 +83,15 @@
                                     <td>%8$s</td>
                                 </tr> 
                             </tbody>',
-                            $row->$jobs['driverName_fk'],
-                            $row->$jobs['jobName'],
-                            $row->$jobs['jobType'],
-                            $row->$jobs['orderNumber'],
-                            $row->$jobs['referenceNumber'],
-                            $row->$jobs['pallets'],
-                            $row->$jobs['jobWeight'],
-                            $row->$jobs['jobStatus'],
-                            $row->$jobs['usersID']
+                            $row->driverName_fk,
+                            $row->jobName,
+                            $row->jobType,
+                            $row->orderNumber,
+                            $row->referenceNumber,
+                            $row->pallets,
+                            $row->jobWeight,
+                            $row->jobStatus,
+                            $row->usersID
                     );
                 }
             }            
@@ -145,10 +126,10 @@
         }));
     </script>
 
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-<script src="../JS/app.js"></script>
-<script src="../JS/ui.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/ui.js"></script>
 
-<!-- Link to manifest.json for PWA functionality -->
-<?php include '../footer.php' ?>
+    <!-- Link to manifest.json for PWA functionality -->
+    <?php include '../footer.php' ?>
