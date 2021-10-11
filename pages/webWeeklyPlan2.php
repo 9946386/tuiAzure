@@ -24,13 +24,9 @@
         $sql="SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
             FROM openjobs
             INNER JOIN users ON openjobs.driverName_fk = users.userName";
-        //$results = $conn->query( $sql );
+        $results = $conn->query( $sql );
 
-        $results = mysqli_query($conn, $sql);
-
-        $openjobs = mysqli_fetch_all($results, MYSQLI_ASSOC);
-
-        //print_r($openjobs);
+        print_r($results);
         
         // Creating a day array to popluate cards
         $days=array(
@@ -75,42 +71,30 @@
             
 
             // While loop to loop through all jobs attached to that day
-            foreach( $openjobs as $driverJobs) {
-                if( $driverJobs['Day'] == $days[$i] ){
-                    echo "<tbody>
-                                <tr>
-                                    <th>{$driverJobs['jobName']}</th>
-                                    <td>{$driverJobs['driverName_fk']}</td>
-                                    <td>{$driverJobs['jobType']}</td>
-                                    <td>{$driverJobs['orderNumber']}</td>
-                                    <td>{$driverJobs['referenceNumber']}</td>
-                                    <td>{$driverJobs['pallets']}</td>
-                                    <td>{$driverJobs['jobWeight']}</td>
-                                    <td>{$driverJobs['jobStatus']}</td>
+            while( $row = $results->fetch_object() ) {
+                if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
+                    printf('<tbody>
+                                <tr data-did="%9$s" data-driver="%1$s">
+                                    <th>%2$s</th>
+                                    <th>%1$s</td>
+                                    <td>%3$s</td>
+                                    <td>%4$s</td>
+                                    <td>%5$s</td>
+                                    <td>%6$s</td>
+                                    <td>%7$s</td>
+                                    <td>%8$s</td>
                                 </tr> 
-                            </tbody>";
-                    // printf('<tbody>
-                    //             <tr data-did="%9$s" data-driver="%1$s">
-                    //                 <th>%2$s</th>
-                    //                 <th>%1$s</td>
-                    //                 <td>%3$s</td>
-                    //                 <td>%4$s</td>
-                    //                 <td>%5$s</td>
-                    //                 <td>%6$s</td>
-                    //                 <td>%7$s</td>
-                    //                 <td>%8$s</td>
-                    //             </tr> 
-                    //         </tbody>',
-                    //         $driverJobs->driverName_fk,
-                    //         $driverJobs->jobName,
-                    //         $driverJobs->jobType,
-                    //         $driverJobs->orderNumber,
-                    //         $driverJobs->referenceNumber,
-                    //         $driverJobs->pallets,
-                    //         $driverJobs->jobWeight,
-                    //         $driverJobs->jobStatus,
-                    //         $driverJobs->usersID
-                    // );
+                            </tbody>',
+                            $row->driverName_fk,
+                            $row->jobName,
+                            $row->jobType,
+                            $row->orderNumber,
+                            $row->referenceNumber,
+                            $row->pallets,
+                            $row->jobWeight,
+                            $row->jobStatus,
+                            $row->usersID
+                    );
                 }
             }            
             
