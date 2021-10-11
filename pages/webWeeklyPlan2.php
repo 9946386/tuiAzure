@@ -30,7 +30,7 @@
 
         $openjobs = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
-        print_r($openjobs);
+        //print_r($openjobs);
         
         // Creating a day array to popluate cards
         $days=array(
@@ -75,8 +75,8 @@
             
 
             // While loop to loop through all jobs attached to that day
-            while( $row = $results->fetch_object() ) {
-                if( date( 'w', strtotime( $row->jobDate ) ) == $i ){
+            foreach( $openjobs as $driverJobs) {
+                if( $driverJobs['Day'] == $i ){
                     printf('<tbody>
                                 <tr data-did="%9$s" data-driver="%1$s">
                                     <th>%2$s</th>
@@ -89,15 +89,15 @@
                                     <td>%8$s</td>
                                 </tr> 
                             </tbody>',
-                            $row->driverName_fk,
-                            $row->jobName,
-                            $row->jobType,
-                            $row->orderNumber,
-                            $row->referenceNumber,
-                            $row->pallets,
-                            $row->jobWeight,
-                            $row->jobStatus,
-                            $row->usersID
+                            $driverJobs->driverName_fk,
+                            $driverJobs->jobName,
+                            $driverJobs->jobType,
+                            $driverJobs->orderNumber,
+                            $driverJobs->referenceNumber,
+                            $driverJobs->pallets,
+                            $driverJobs->jobWeight,
+                            $driverJobs->jobStatus,
+                            $driverJobs->usersID
                     );
                 }
             }            
