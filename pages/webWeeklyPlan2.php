@@ -77,28 +77,40 @@
             // While loop to loop through all jobs attached to that day
             foreach( $openjobs as $driverJobs) {
                 if( $driverJobs['Day'] == $days[$i] ){
-                    printf('<tbody>
-                                <tr data-did="%9$s" data-driver="%1$s">
-                                    <th>%2$s</th>
-                                    <th>%1$s</td>
-                                    <td>%3$s</td>
-                                    <td>%4$s</td>
-                                    <td>%5$s</td>
-                                    <td>%6$s</td>
-                                    <td>%7$s</td>
-                                    <td>%8$s</td>
+                    echo "<tbody>
+                                <tr>
+                                    <th>{$driverJobs['jobName']}</th>
+                                    <td>{$driverJobs['driverName_fk']}</td>
+                                    <td>{$driverJobs['jobType']}</td>
+                                    <td>{$driverJobs['orderNumber']}</td>
+                                    <td>{$driverJobs['referenceNumber']}</td>
+                                    <td>{$driverJobs['pallets']}</td>
+                                    <td>{$driverJobs['jobWeight']}</td>
+                                    <td>{$driverJobs['jobStatus']}</td>
                                 </tr> 
-                            </tbody>',
-                            $driverJobs->driverName_fk,
-                            $driverJobs->jobName,
-                            $driverJobs->jobType,
-                            $driverJobs->orderNumber,
-                            $driverJobs->referenceNumber,
-                            $driverJobs->pallets,
-                            $driverJobs->jobWeight,
-                            $driverJobs->jobStatus,
-                            $driverJobs->usersID
-                    );
+                            </tbody>";
+                    // printf('<tbody>
+                    //             <tr data-did="%9$s" data-driver="%1$s">
+                    //                 <th>%2$s</th>
+                    //                 <th>%1$s</td>
+                    //                 <td>%3$s</td>
+                    //                 <td>%4$s</td>
+                    //                 <td>%5$s</td>
+                    //                 <td>%6$s</td>
+                    //                 <td>%7$s</td>
+                    //                 <td>%8$s</td>
+                    //             </tr> 
+                    //         </tbody>',
+                    //         $driverJobs->driverName_fk,
+                    //         $driverJobs->jobName,
+                    //         $driverJobs->jobType,
+                    //         $driverJobs->orderNumber,
+                    //         $driverJobs->referenceNumber,
+                    //         $driverJobs->pallets,
+                    //         $driverJobs->jobWeight,
+                    //         $driverJobs->jobStatus,
+                    //         $driverJobs->usersID
+                    // );
                 }
             }            
             
