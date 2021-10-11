@@ -9,12 +9,12 @@ function driverMenu()
     global $conn;
     $sql = "select usersID, userName from users";
     $results = mysqli_query($conn, $sql);
-    $drivers = mysqli_fetch_all($results, MYSQLI_ASSOC);
+    //$drivers = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
-    foreach ($drivers as $driver) {
+    while ($row = mysqli_fetch_assoc($results)) {
         echo "
             <div class='col text-center'>
-                <input type='button' aria-pressed='true' name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$driver['usersID']}. {$driver['userName']}' />
+                <input type='button' aria-pressed='true' name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$row['usersID']}. {$row['userName']}' />
             </div>";
     }
 }
