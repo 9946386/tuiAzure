@@ -21,9 +21,9 @@
 
     <?php
     
-        $sql='SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
+        $sql="SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
             FROM openjobs
-            INNER JOIN users ON openjobs.driverName_fk = users.userName';
+            INNER JOIN users ON openjobs.driverName_fk = users.userName";
         $results = $conn->query( $sql );
 
         print_r($results);
