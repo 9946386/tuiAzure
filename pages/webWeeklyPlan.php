@@ -111,10 +111,10 @@
     <script>
         const qa=(e,n=document)=>n.querySelectorAll(e);
         
-        qa('input[ data-name="driverNameBtn" ]').forEach( bttn=>bttn.addEventListener('click',function(e){
+        qa('input[ name="driverNameBtn" ]').forEach( bttn=>bttn.addEventListener('click',function(e){
             e.preventDefault();
             qa('table.table-responsive tbody tr').forEach( tr=>{
-                if( tr.dataset.did==this.dataset.did && tr.dataset.driver==this.value ){
+                if( tr.dataset.did==this.dataset.did && tr.dataset.users==this.value ){
                     tr.style.display='table-row';
                 }else{
                     tr.style.display='none';
