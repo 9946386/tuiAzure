@@ -71,16 +71,18 @@
                     strtolower( $days[$i] )
                 );//close printf()               
             
-            $dates = "SELECT dayname(jobDate) FROM openjobs";
+            $dates = "SELECT DAYNAME(jobDate) FROM openjobs";
 
             $result2 = mysqli_query($conn, $dates);
 
-            $daysofweek = mysqli_fetch_all($result2, MYSQLI_ASSOC);            
+            $daysofweek = mysqli_fetch_all($result2, MYSQLI_ASSOC);  
+            
+            print_r($daysofweek);
 
             // While loop to loop through all jobs attached to that day
             foreach($daysofweek as $weekdays) {
-                $weekday = $weekdays['jobDate'];
-                if( $weekday == $i ){
+                //$weekday = $weekdays['jobDate'];
+                if( $weekdays['jobDate'] == $i ){
                     $sql='SELECT *
                             FROM openjobs
                             INNER JOIN users ON openjobs.driverName_fk = users.userName';
