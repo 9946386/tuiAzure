@@ -100,7 +100,7 @@ if (isset($_GET['id'])) {
     
         if(isset($_POST['completed'])){
               $sql = mysqli_query($conn, "INSERT INTO completedjobs 
-                      SELECT * FROM openjobs WHERE id=$id");  
+                      SELECT * FROM openjobs WHERE openJobID = $id");  
               echo "<script>console.log('Job moved to completed jobs')</script>";
               echo "Job has been moved to Completed Jobs";                    
         }
