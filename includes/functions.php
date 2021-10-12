@@ -423,6 +423,7 @@ function getCompletedJob()
 
         // Performing the query
         $result1 = mysqli_query($conn, $sql);
+        print_r($result1);
 
         // Fetching results as an associative array
         $user = mysqli_fetch_assoc($result1);
