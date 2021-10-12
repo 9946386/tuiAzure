@@ -100,10 +100,9 @@ if (isset($_GET['id'])) {
     
         if(isset($_POST['completed'])){
               $sql = "INSERT INTO completedjobs 
-                      SELECT * FROM openjobs WHERE id=$id";
-
-                      header("Location: ../pages/mobileHome.php");
+                      SELECT * FROM openjobs WHERE id=$id";                      
         }
+        header("Location: ../pages/mobileHome.php");
     
     ?>
 
