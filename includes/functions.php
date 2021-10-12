@@ -416,9 +416,9 @@ function getCompletedJob()
         // If someone is logged in: 
 
         // Query to get users and open jobs data and link to logged in user
-        $sql = "SELECT users.usersID, users.userName, completedjobs.completedJobsDriver_fk
+        $sql = "SELECT users.usersID, users.userName, completedjobs.completedJobDriver_fk
                 FROM users
-                INNER JOIN completedjobs ON users.usersID = completedjobs.completedJobsDriver_fk
+                INNER JOIN completedjobs ON users.usersID = completedjobs.completedJobDriver_fk
                 WHERE users.usersID = '" . $_SESSION['userid'] . "' ";
 
         // Performing the query
