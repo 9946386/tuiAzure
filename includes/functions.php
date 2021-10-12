@@ -431,8 +431,8 @@ function getCompletedJob()
         // If there is a logged in user in the array
         if ($user):
             // Assigning variables to use when fetching allocated jobs
-            $id = $user['completedJobDriver_fk'];
-            //$name = $user['completedJobDriverName_fk'];
+            $id = $user['usersID'];
+            $name = $user['usersName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
