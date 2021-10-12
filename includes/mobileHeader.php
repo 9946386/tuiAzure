@@ -47,6 +47,7 @@ session_start();
                 <!-- Checking if the user is signed in -->
                 <?php
 if (isset($_SESSION['useruid'])) {
+  $loggedInUser = $_SESSION['useruid'];
   // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
                     <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php'>Daily Plan</a>
@@ -55,7 +56,7 @@ if (isset($_SESSION['useruid'])) {
                     <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
                   </li>
                   <li class='nav-item'>
-                    <a class='nav-link text-light' href='../pages/enterHours.php?id={$_SESSION['useruid']}>Enter Hours</a>
+                    <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}>Enter Hours</a>
                   </li>
 
                   <li class='nav-item'>
