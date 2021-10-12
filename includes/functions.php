@@ -432,7 +432,7 @@ function getCompletedJob()
         if ($user):
             // Assigning variables to use when fetching allocated jobs
             $id = $user['usersID'];
-            $name = $user['usersName'];
+            $name = $user['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
@@ -452,38 +452,38 @@ function getCompletedJob()
                 echo "
                         <div class='card mainPageJobCard mt-2'>              
                             <div class='card-body'>
-                                <h5 class='card-title'> {$completedJob['jobName']} </h5>
+                                <h5 class='card-title'> {$completedJob['completedJobName']} </h5>
                                 <table class='table table-responsive'>
                                     <tbody>
                                         <tr>
                                             <th>Type:</th>
-                                            <td>{$completedJob['jobType']}</td>
+                                            <td>{$completedJob['completedJobType']}</td>
                                         </tr>
                                         <tr>
                                             <th>Order #:</th>
-                                            <td>{$completedJob['orderNumber']}</td>
+                                            <td>{$completedJob['completedOrderNumber']}</td>
                                         </tr>
                                         <tr>
                                             <th>Reference:</th>
-                                            <td>{$completedJob['referenceNumber']}</td>
+                                            <td>{$completedJob['completedReferenceNumber']}</td>
                                         </tr>
                                         <tr>
                                             <th>Pallets:</th>
-                                            <td>{$completedJob['pallets']}</td>
+                                            <td>{$completedJob['completedPallets']}</td>
                                         </tr>
                                         <tr>
                                             <th>Weight:</th>
-                                            <td>{$completedJob['jobWeight']}</td>
+                                            <td>{$completedJob['completedJobWeight']}</td>
                                         </tr>
                                         <tr>
                                             <th>Status:</th>
-                                            <td>{$completedJob['jobStatus']}</td>
+                                            <td>{$completedJob['completedJobStatus']}</td>
                                         </tr>
                                     </tbody>                          
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='completedJobDetails.php?id={$completedJob['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='completedJobDetails.php?id={$completedJob['completedJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
