@@ -2,6 +2,7 @@
 <!-- Starting a session so that the logged in users information is accessible -->
 <?php
 session_start();
+include '../local-db-connection.php';
 ?>
 
 <!-- Mobile Header section to be added to all mobile pages -->
