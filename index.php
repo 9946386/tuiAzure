@@ -1,10 +1,10 @@
+<!-- PHP error handling - Can be removed before shipped - Shows any errors with PHP straight on webpage -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,6 +25,7 @@
 
 <body>
 
+    <!-- Does not load header.php as the links to pages are different to other pages found in "Pages" folder -->
     <!-- Header -->
     <header class="w-100">
         <div class="container-fluid bg-primary top-0 h-auto">
@@ -61,6 +62,7 @@
     <!-- Page Title -->
     <div class="container-sm text-dark px-3 p-4">
         <div class="row justify-content webDate">
+            <!-- Uses JavaScript to load todays date -->
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
         </div>
     </div>

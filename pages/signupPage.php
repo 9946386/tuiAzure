@@ -1,3 +1,4 @@
+<!-- PHP error handling - Shows errors on the webpage -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?> 
@@ -30,6 +31,7 @@
                 </div>
                 <div class="row">
                     <h1 class="pb-3 text-light">Sign Up</h1>
+                    <!-- Form that uses the signup.php file to take form input, error check and insert user into database -->
                     <form action="../includes/signup.php" method="POST" class="form-group">
                         <div class="row pb-2">
                             <p class="text-light">Name:</p>
@@ -57,24 +59,31 @@
                         <?php
 // Error messages that will show below form input feilds if user input is invalid
 if (isset($_GET["error"])) {
+    // Empty Input
     if ($_GET["error"] == "emptyinput") {
         echo "<br><p class='text-light'>Please fill in all fields</p>";
     }
+    // Invalid Username
     else if ($_GET["error"] == "invalidUsername") {
         echo "<br><p class='text-light'>Please choose a valid username</p>";
     }
+    // Invalid Email address
     else if ($_GET["error"] == "invalidEmail") {
         echo "<br><p class='text-light'>Please choose a valid email</p>";
     }
+    // Passwords entered don't match
     else if ($_GET["error"] == "passwordsdontmatch") {
         echo "<br><p class='text-light'>Passwords don't match</p>";
     }
+    // Username being used by someone else
     else if ($_GET["error"] == "usernamealreadyused") {
         echo "<br><p class='text-light'>That username is already in use. Please try another username.</p>";
     }
+    // Sign up failed
     else if ($_GET["error"] == "stmtfailed") {
         echo "<br><p class='text-light'>Something went wrong. Please try again</p>";
     }
+    // IF theres no error
     else if ($_GET["error"] == "none") {
         echo "<br><p class='text-light'>Success!</p>";
     }
@@ -82,6 +91,7 @@ if (isset($_GET["error"])) {
 ?>
                         <div class="row mt-4 d-flex">
                             <p class="col-8 text-light"> Already have an account?</p>
+                            <!-- Redirect to login page if they already have an account -->
                             <a href="../pages/loginPage.php" class="btn btn-secondary text-light col-4">Login</a>
                         </div>
                         

@@ -1,6 +1,9 @@
+<!-- PHP error handling - Can be removed before shipped - Shows any errors with PHP straight on webpage -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?>
+
+<!-- Including the header at the top of the page -->
 <?php include '../header.php' ?>
 
 <!-- Page Title -->
@@ -19,8 +22,9 @@
             <div class="row gy-2"> 
                 <div class="col-12"> 
 
-    <?php
-    
+    <?php    
+        // This could probably be moved to a function?? 
+
         // Selecting all from openjobs, getting the day value from date and setting it to "day", joining with the users table
         $sql="SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
             FROM openjobs
@@ -128,5 +132,5 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script>
 
-    <!-- Link to manifest.json for PWA functionality -->
+    <!-- Including the footer at the bottom of the page -->
     <?php include '../footer.php' ?>

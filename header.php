@@ -1,5 +1,4 @@
 <!-- Header section to be added to all web pages except index.php as the navigation links are different -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,16 +52,14 @@
                 </div>
             </div>
         </nav>
-   
 
-    <!-- Bootstrap Bundle with Popper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="../JS/app.js"></script>
-    <script src="../JS/ui.js"></script> -->
-
+    <!-- Bootstrap JavaScript (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- app.js for PWA functionality and ui.js for in app functionality -->
     <script src="../JS/ui.js" type="text/javascript"></script>
+    <script src="../JS/app.js" type="text/javascript"></script>
 
 </body>
-
 </html>

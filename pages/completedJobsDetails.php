@@ -1,3 +1,4 @@
+<!-- Includes mobile header at the top of the page -->
 <?php include '../includes/mobileHeader.php' ?>
 
 <!-- Page Title -->
@@ -5,6 +6,7 @@
         <div class="row justify-content ">
             <h1 class="pageTitle col-5 align-self-center ">Job Details</h1>
             <div class="line col-1 "></div>
+            <!-- Uses JavaScript to add todays date to the page -->
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
         </div>
     </div>

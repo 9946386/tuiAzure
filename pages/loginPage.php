@@ -1,3 +1,4 @@
+<!-- PHP errors -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?> 
@@ -31,6 +32,7 @@
                 </div>
                 <div class="row">
                     <h1 class="pb-3 text-light">Login</h1>
+                    <!-- Form that uses the login.php file to check user exists and log them in -->
                     <form action='../includes/login.php' method="POST" class="form-group">
                         <div class="row pb-2">
                             <p class="text-light">Username or Email:</p>
@@ -47,13 +49,17 @@
                 </div>
             </div> 
             <?php
+// Error to show if input is incorrect
 if (isset($_GET["error"])) {
+    // Empty input
     if ($_GET["error"] == "emptyimput") {
         echo "<p>Please fill in all fields</p>";
     }
+    // Incorrect login
     else if ($_GET["error"] == "wrongLogin") {
         echo "<p>Incorrect login input</p>";
     }
+    // No errors
     else if ($_GET["error"] == "none") {
         echo "<p>Success!</p>";
     }

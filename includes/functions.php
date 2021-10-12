@@ -166,7 +166,7 @@ function loginUser($conn, $username, $password)
     }
 }
 
-function getUserJobs()
+function getUserJobs2()
 {
     global $conn;
 
@@ -313,10 +313,9 @@ function searchOrders()
 
 }
 
-function getUserJobs2()
+function getUserJobs()
 {
     global $conn;
-
 
     // Checking if the session 'useruid' has started / Checking someone is logged in
     if (!isset($_SESSION['useruid'])) {
@@ -400,4 +399,98 @@ function getUserJobs2()
         endif;
 
     }
+}
+
+function getCompletedJob()
+{
+    global $conn;
+
+    // Checking if the session 'useruid' has started / Checking someone is logged in
+    if (!isset($_SESSION['useruid'])) {
+        // If no one is logged in:
+        echo "You are not logged in";
+
+    // Need to add button to redirect to login page
+    }
+    else {
+        // If someone is logged in: 
+
+        // Query to get users and open jobs data and link to logged in user
+        $sql = "SELECT users.usersID, users.userName, completedjobs.completedJobsDriver_fk
+                FROM users
+                INNER JOIN completedjobs ON users.usersID = completedjobs.completedJobsDriver_fk
+                WHERE users.usersID = '" . $_SESSION['userid'] . "' ";
+
+        // Performing the query
+        $result1 = mysqli_query($conn, $sql);
+
+        // Fetching results as an associative array
+        $user = mysqli_fetch_assoc($result1);
+
+        // If there is a logged in user in the array
+        if ($user):
+            // Assigning variables to use when fetching allocated jobs
+            $id = $user['usersID'];
+            $name = $user['userName'];
+
+            // Query to get open jobs and user info that are equal to the id of signed in user
+            $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
+                        FROM completedjobs
+                        INNER JOIN users ON completedjobs.completedJobsDriver_fk = users.usersID
+                        WHERE users.usersID = $id";
+
+            // Performing the query
+            $result = mysqli_query($conn, $jobs);
+
+            // Fetching results as an associative array 
+            $completedJobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            // Looping through all completed jobs
+            foreach ($completedJobs as $completedJob) {
+                echo "
+                        <div class='card mainPageJobCard mt-2'>              
+                            <div class='card-body'>
+                                <h5 class='card-title'> {$completedJob['jobName']} </h5>
+                                <table class='table table-responsive'>
+                                    <tbody>
+                                        <tr>
+                                            <th>Type:</th>
+                                            <td>{$completedJob['jobType']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Order #:</th>
+                                            <td>{$completedJob['orderNumber']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Reference:</th>
+                                            <td>{$completedJob['referenceNumber']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Pallets:</th>
+                                            <td>{$completedJob['pallets']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight:</th>
+                                            <td>{$completedJob['jobWeight']}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status:</th>
+                                            <td>{$completedJob['jobStatus']}</td>
+                                        </tr>
+                                    </tbody>                          
+                                </table>
+                                <div class='row'>
+                                    <div class='col d-flex flex-row-reverse'>
+                                    <a href='jobDetails.php?id={$completedJob['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+            }
+            ;
+
+        endif;
+
+    }
+
 }

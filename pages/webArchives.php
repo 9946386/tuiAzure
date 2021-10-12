@@ -1,9 +1,12 @@
+<!-- PHP error handling - Can be removed before shipped - Shows any errors with PHP straight on webpage -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?>
 
+<!-- Including the header at the top of the page -->
 <?php include '../header.php' ?>
 
+<!-- Form that uses the search.php file to search database for anything that matches user input -->
 <form action="../includes/search.php" method="POST">
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">            
@@ -36,6 +39,7 @@
         </div>
     </div>
 
+    <!-- Container where the results will be displayed -->
     <div class="container-fluid bg-secondary darkContainer h-75">
         <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard ">
             <div class="card my-1">

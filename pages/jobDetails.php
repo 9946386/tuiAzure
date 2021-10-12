@@ -1,29 +1,35 @@
+<!-- PHP errors -->
 <?php ini_set('error_reporting', E_ALL); ?>
 <?php ini_set('display_errors', 1); ?>
 <?php ini_set('display_startup_errors', 1); ?>
 
+<!-- Including the mobile header at top of page -->
 <?php include '../includes/mobileHeader.php';
+// Including the connection file
 include '../local-db-connection.php';
 
 // check GET request id param
-
+// Getting the number that comes after 'id=' in the url
 if (isset($_GET['id'])) {
 
   //global $conn;
   $jobID = $_GET['id'];
 
-
+  // Takes away any special characters in the string
   $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-
+  // Select statement to get all the jobs linked to the id number passed through the url
   $sql = "SELECT * FROM openjobs WHERE openJobID = $id";
 
-
+  // Performing the query
   $result = mysqli_query($conn, $sql);
 
+  // Fetching the results as an associative array
   $job = mysqli_fetch_assoc($result);
 
+  // Frees the memory associated with the results
   mysqli_free_result($result);
+  // Closing connectiong
   mysqli_close($conn);
 
 }
@@ -43,6 +49,8 @@ if (isset($_GET['id'])) {
       <div class="container px-4 p-3 mainPageJobCardContainer ">
         <div class="card mainPageJobCard">
           <div class="card-body">
+            <!-- If there are any jobs from above query -->
+            <!-- Take the results and put them into the table - Uses htmlspecialchars to change any special characters to html -->
             <?php if($job): ?>
               <h5 class="card-title"><?php echo htmlspecialchars($job['jobName']); ?></h5>
               <table class="table table-responsive">
@@ -73,6 +81,7 @@ if (isset($_GET['id'])) {
                 </tr>                              
               </tbody>                          
             </table>
+            <!-- If there are no jobs to show -->
               <?php else: ?>
                 <h5>This job is no longer open.</h5>
               <?php endif ?>
@@ -80,6 +89,7 @@ if (isset($_GET['id'])) {
         </div>
     </div> 
 
+    <!-- Customer input modal to collect signature-pad and name etc -->
       <div class="container px-4 customerInputContainer">
         <div class="row">
           <div class="col d-flex flex-row-reverse">
@@ -139,11 +149,11 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
+    <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
     <div class="d-flex flex-row-reverse">
       <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
         <a class="btn " href="../pages/enterHours.php">Complete Job</a>
       </button>
-
     </div>
 
     <!-- Bootstrap Bundle with Popper -->

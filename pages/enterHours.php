@@ -1,3 +1,4 @@
+<!-- Including the mobile header at the top of the page -->
 <?php include '../includes/mobileHeader.php' ?>
 
 <!-- Page Title -->
@@ -13,6 +14,7 @@
     <div class="container bg-secondary vh-100 px-4 p-3 enterHoursCard darkMobileContainer ">
         <div class="card mainPageJobCard">
             <div class="card-body">
+            <!-- Form that uses the enterhours.php to take the form input and enter it into the database -->
             <form action="../includes/enterhours.php" method="POST" class="form-group">
             <div class="row gy-2 p-2">
                     <div class="col-5">
@@ -60,9 +62,8 @@
                     </div>
                 </div>
             </div>
-</form>
+            </form>
         </div>
-
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
