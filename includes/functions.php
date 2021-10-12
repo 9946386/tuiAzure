@@ -416,10 +416,10 @@ function getCompletedJob()
         // If someone is logged in: 
 
         // Query to get users and open jobs data and link to logged in user
-        $sql = "SELECT users.usersID, users.userName, completedjobs.completedJobsDriver_fk
-                FROM users
-                INNER JOIN completedjobs ON users.usersID = completedjobs.completedJobsDriver_fk
-                WHERE users.usersID = '" . $_SESSION['userid'] . "' ";
+        $sql = "SELECT openjobs.driver_fk, openjobs.driverName_fk, completedjobs.completedJobsDriver_fk
+                FROM openjobs
+                INNER JOIN completedjobs ON openjobs.driver_fk = completedjobs.completedJobsDriver_fk
+                WHERE openjobs.driver_fk = '" . $_SESSION['userid'] . "' ";
 
         // Performing the query
         $result1 = mysqli_query($conn, $sql);
@@ -430,8 +430,8 @@ function getCompletedJob()
         // If there is a logged in user in the array
         if ($user):
             // Assigning variables to use when fetching allocated jobs
-            $id = $user['usersID'];
-            $name = $user['userName'];
+            $id = $user['driver_fk'];
+            $name = $user['driverName_fk'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
@@ -481,7 +481,7 @@ function getCompletedJob()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id={$completedJob['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='completedJobDetails.php?id={$completedJob['openJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
