@@ -63,9 +63,8 @@ if (isset($_SESSION['useruid'])) {
       <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}>Enter Hours</a>
+      <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}'>Enter Hours</a>
       </li>
-
       <li class='nav-item'>
       <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
       </li>";
