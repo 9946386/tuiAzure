@@ -99,8 +99,8 @@ if (isset($_GET['id'])) {
     <?php  
     
         if(isset($_POST['completed'])){
-              $sql = "INSERT INTO completedjobs 
-                      SELECT * FROM openjobs WHERE id=$id";  
+              $sql = mysqli_query($conn, "INSERT INTO completedjobs 
+                      SELECT * FROM openjobs WHERE id=$id");  
               echo "<script>console.log('Job moved to completed jobs')</script>";                    
         }
         //header("Location: ../pages/mobileHome.php");
