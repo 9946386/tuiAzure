@@ -54,32 +54,32 @@ if (isset($_GET['id'])) {
             <!-- If there are any jobs from above query -->
             <!-- Take the results and put them into the table - Uses htmlspecialchars to change any special characters to html -->
             <?php if($job): ?>
-              <h5 class="card-title"><?php echo htmlspecialchars($job['jobName']); ?></h5>
+              <h5 class="card-title"><?php echo htmlspecialchars($job['completedJobName']); ?></h5>
               <table class="table table-responsive">
               <tbody>
                 <tr>
                   <th>Type:</th>
-                  <td id="jobTypeData"><?php echo htmlspecialchars($job['jobType']); ?></td>
+                  <td id="jobTypeData"><?php echo htmlspecialchars($job['completedJobType']); ?></td>
                 </tr>
                 <tr>
                   <th>Order #:</th>
-                  <td id="orderNumData"><?php echo htmlspecialchars($job['orderNumber']); ?></td>
+                  <td id="orderNumData"><?php echo htmlspecialchars($job['completedOrderNumber']); ?></td>
                 </tr>
                 <tr>
                   <th>Reference:</th>
-                  <td id="referenceData"><?php echo htmlspecialchars($job['referenceNumber']); ?></td>
+                  <td id="referenceData"><?php echo htmlspecialchars($job['completedReferenceNumber']); ?></td>
                 </tr>
                 <tr>
                   <th>Pallets:</th>
-                  <td id="palletsData"><?php echo htmlspecialchars($job['pallets']); ?></td>
+                  <td id="palletsData"><?php echo htmlspecialchars($job['completedPallets']); ?></td>
                 </tr>
                 <tr>
                   <th>Weight:</th>
-                  <td id="weightData"><?php echo htmlspecialchars($job['jobWeight']); ?></td>
+                  <td id="weightData"><?php echo htmlspecialchars($job['completedJobWeight']); ?></td>
                 </tr>
                 <tr>
                   <th>Status:</th>
-                  <td id="statusData"><?php echo htmlspecialchars($job['jobStatus']); ?></td>
+                  <td id="statusData"><?php echo htmlspecialchars($job['completedJobStatus']); ?></td>
                 </tr>                              
               </tbody>                          
               </table>
