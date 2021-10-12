@@ -107,8 +107,8 @@ if (isset($_GET['id'])) {
           // Takes away any special characters in the string
           // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
 
-          $sql2 = mysqli_query($conn, "INSERT INTO completedjobs (completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
-                      SELECT jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2");  
+          $sql2 = "INSERT INTO completedjobs (completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
+                      SELECT jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2";  
               echo "<script>console.log('Job moved to completed jobs')</script>";
               echo "Job has been moved to Completed Jobs";                    
         }
