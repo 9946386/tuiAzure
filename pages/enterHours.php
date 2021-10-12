@@ -1,19 +1,7 @@
 <!-- Including the mobile header at the top of the page -->
 <?php include '../includes/mobileHeader.php';
 // Including the connection file
-include '../local-db-connection.php';
-
-
-if (isset($_GET['id']) && ($_GET['username'])) {
-    $userID = $_GET['id'];
-    $userName = $_GET['username'];
-
-    print_r($userID);
-    print_r($userName);
-}
-
-
-?>
+include '../local-db-connection.php'; ?>
 
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-2">
@@ -23,6 +11,17 @@ if (isset($_GET['id']) && ($_GET['username'])) {
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
         </div>
     </div>
+
+    <?php
+if (isset($_GET['id'])) {
+    $userID = $_GET['id'];
+    // $userName = $_GET['username'];
+
+    print_r($userID);
+// print_r($userName);
+}
+
+?>
 
     <!-- Hours Card -->
     <div class="container bg-secondary vh-100 px-4 p-3 enterHoursCard darkMobileContainer ">
