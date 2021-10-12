@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
   // Fetching the results as an associative array
   $job = mysqli_fetch_assoc($result);
 
-  print_r($job);
+  //print_r($job);
 
   // Frees the memory associated with the results
   mysqli_free_result($result);
@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
       </div> 
 
 
-      <div class="col-12">
+      <div class="container px-4 p-3 ">
           <div class="card mainPageJobCard">
               <div class="card-body">
                   <label for="customerName" class="form-label">Customer Name:</label>
