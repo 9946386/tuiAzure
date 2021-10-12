@@ -91,7 +91,7 @@ if (isset($_GET['id'])) {
 
     <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
     <div class="d-flex flex-row-reverse">
-      <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
+      <button type="button" class="btn btn-primary text-light ">
         <a class="btn" name="completed" href="../pages/mobileHome.php?id=<?php echo $jobs['openJobID']?>">Complete Job</a>
       </button>
     </div>
@@ -166,6 +166,12 @@ if (isset($_GET['id'])) {
         </div> -->
       </div>
     </div>
+
+    <!-- <div class="d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
+        <a class="btn" name="completed" href="../pages/mobileHome.php?id=<?php echo $jobs['openJobID']?>">Complete Job</a>
+      </button>
+    </div> -->
 
     
 
