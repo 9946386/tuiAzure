@@ -16,25 +16,8 @@ include '../local-db-connection.php'; ?>
     <div class="container bg-secondary vh-100 px-4 p-3 enterHoursCard darkMobileContainer ">
         <div class="card mainPageJobCard">
             <div class="card-body">
-            <?php
-if (isset($_GET['id'])) {
-    $userID = $_GET['id'];
-    // $userName = $_GET['username'];
-
-    print_r($userID);
-// print_r($userName);
-}
-?>
             <!-- Form that uses the enterhours.php to take the form input and enter it into the database -->
             <form action="../includes/enterhours.php" method="POST" class="form-group">
-            <!-- <div class="row gy-2 p-2">
-                    <div class="col-5">
-                        <h4 class="diesel">Driver ID:</h1>
-                    </div>
-                    <div class="col-7">
-                        <input type="text" class="form-control" name="driver">
-                    </div>
-                </div> -->
                 <div class="row gy-2 p-2">
                     <div class="col-5">
                         <h4 class="diesel">Diesel Litres:</h1>

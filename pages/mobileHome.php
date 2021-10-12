@@ -5,7 +5,7 @@
 
 <!-- Including the mobile header -->
 <?php include '../includes/mobileHeader.php' ?>
-
+ 
 <!-- Including the connection file -->
 <?php 
 include '../local-db-connection.php'; 

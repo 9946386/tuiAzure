@@ -14,6 +14,8 @@ if (isset($_SESSION['useruid'])) {
                                                 WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
 
         // Takes the input names from Enter Hours and assigns them to a variable
+        // Driver ID is set by the session variable userid that gets details from logged in user
+        // This automatically assigns the hours input to the logged in user
         $driverID = $_SESSION['userid'];
         $diesel = $_POST['diesel'];
         $hours = $_POST['hours'];
@@ -38,8 +40,6 @@ if (isset($_SESSION['useruid'])) {
 else {
     echo "You are not logged in";
 }
-
-
 
 header("Location: ../pages/mobileHome.php?jobadded=success");
 ?>

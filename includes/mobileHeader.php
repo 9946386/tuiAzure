@@ -48,19 +48,12 @@ include '../local-db-connection.php';
                 <!-- Checking if the user is signed in -->
                 <?php
 if (isset($_SESSION['useruid']) || $_SESSION["userid"]) {
-  // $sql = "SELECT usersID FROM users WHERE usersID = '" . $_SESSION['useruid'] . "' ";
-
-  // $result = mysqli_query($conn, $sql);
-
-  // $loggedInUser = mysqli_fetch_assoc($result);
-
-
   // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
-      <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php'>Daily Plan</a>
+      <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Daily Plan</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
+      <a class='nav-link text-light' href='../pages/completedJobs.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Completed Jobs</a>
       </li>
       <li class='nav-item'>
       <a class='nav-link text-light' href='../pages/enterHours.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Enter Hours</a>
