@@ -109,7 +109,7 @@ if (isset($_GET['id'])) {
     ?>
 
     <!-- Customer input modal to collect signature-pad and name etc -->
-      <div class="container px-4 customerInputContainer">
+      <!-- <div class="container px-4 customerInputContainer">
         <div class="row">
           <div class="col d-flex flex-row-reverse">
             <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">Customer Input</button>
@@ -142,7 +142,7 @@ if (isset($_GET['id'])) {
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         
         <!-- <div class="card customerInputCard ">
             <div class="card-body">
