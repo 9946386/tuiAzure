@@ -44,22 +44,23 @@ session_start();
               </div>
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link text-light" aria-current="page" href="../pages/mobileHome.php">Daily Plan</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-light" href="../pages/completedJobs.php">Completed Jobs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-light" href="../pages/enterHours.php">Enter Hours</a>
-                  </li>
-                  <!-- Checking if the user is signed in -->
-                  <?php
-// If they are signed in show sign out button
+                <!-- Checking if the user is signed in -->
+                <?php
 if (isset($_SESSION['useruid'])) {
+  // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
-                            <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
-                          </li>";
+                    <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php'>Daily Plan</a>
+                  </li>
+                  <li class='nav-item'>
+                    <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
+                  </li>
+                  <li class='nav-item'>
+                    <a class='nav-link text-light' href='../pages/enterHours.php?id={$_SESSION['useruid']}>Enter Hours</a>
+                  </li>
+
+                  <li class='nav-item'>
+                    <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
+                  </li>";
 }
 // If they are not signed in show a sign in button
 else {
