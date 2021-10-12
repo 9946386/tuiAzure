@@ -437,7 +437,7 @@ function getCompletedJob()
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
                         FROM completedjobs
-                        INNER JOIN users ON completedjobs.completedJobsDriver_fk = users.usersID
+                        INNER JOIN users ON completedjobs.completedJobDriver_fk = users.usersID
                         WHERE users.usersID = $id";
 
             // Performing the query
