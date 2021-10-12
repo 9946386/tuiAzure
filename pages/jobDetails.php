@@ -113,6 +113,7 @@ if (isset($_GET['id'])) {
               echo "<script>console.log('Job moved to completed jobs')</script>";
                          
           $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
+                      mysqli_query($conn, $deleteColumn);
               echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
         }
         //header("Location: ../pages/mobileHome.php");
