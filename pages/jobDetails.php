@@ -111,7 +111,9 @@ if (isset($_GET['id'])) {
                       SELECT jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
                       mysqli_query($conn, $sql2); 
               echo "<script>console.log('Job moved to completed jobs')</script>";
-              echo "Job has been moved to Completed Jobs";                    
+                         
+          $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
+              echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
         }
         //header("Location: ../pages/mobileHome.php");
     
