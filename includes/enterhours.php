@@ -4,7 +4,6 @@ include '../local-db-connection.php';
 //This needs to be moved to the php page and wrap around the whole hours form - the rest of the code stays here
 if (isset($_SESSION['useruid'])) {
 
-    // Taking code added to "Add Job" and inserts it into the openjob database
     // If the submit button is set
     if (isset($_POST['submit'])) {
 
@@ -13,8 +12,8 @@ if (isset($_SESSION['useruid'])) {
                                                 FROM users
                                                 WHERE users.usersID = '" . $_SESSION['userid'] . "' ");
 
-        // Takes the input names from Add Job and assigns them to a variable
-        $driver = $_POST['driver'];
+        // Takes the input names from Enter Hours and assigns them to a variable
+        $driverID = $_SESSION['userid'];
         $diesel = $_POST['diesel'];
         $hours = $_POST['hours'];
         $kms = $_POST['kms'];
@@ -22,7 +21,7 @@ if (isset($_SESSION['useruid'])) {
 
         // SQL query to insert the above variables into the openjobs table.
         $sql = "INSERT INTO driverhours(hoursDriver_FK, dieselLitres, driverHours, kms, mood) 
-        VALUES ('$driver', '$diesel', '$hours', '$kms', '$mood');";
+        VALUES ('$driverID', '$diesel', '$hours', '$kms', '$mood');";
 
         $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -34,7 +33,6 @@ if (isset($_SESSION['useruid'])) {
             echo '<script>console.log("Success Bro!")</script>';
         }
     }
-
 }
 else {
     echo "You are not logged in";
