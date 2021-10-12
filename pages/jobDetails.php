@@ -103,7 +103,7 @@ if (isset($_GET['id'])) {
                       SELECT * FROM openjobs WHERE id=$id";  
               echo "<script>console.log('Job moved to completed jobs')</script>";                    
         }
-        header("Location: ../pages/mobileHome.php");
+        //header("Location: ../pages/mobileHome.php");
     
     ?>
 
