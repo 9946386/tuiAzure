@@ -423,7 +423,7 @@ function getCompletedJob()
 
         // Performing the query
         $result1 = mysqli_query($conn, $sql);
-        print_r($result1);
+        //print_r($result1);
 
         // Fetching results as an associative array
         $user = mysqli_fetch_assoc($result1);
@@ -442,7 +442,7 @@ function getCompletedJob()
 
             // Performing the query
             $result = mysqli_query($conn, $jobs);
-            print_r($result);
+            //print_r($result);
 
             // Fetching results as an associative array 
             $completedJobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -483,16 +483,13 @@ function getCompletedJob()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='completedJobDetails.php?id={$completedJob['completedJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
+                                    <a href='completedJobsDetails.php?id={$completedJob['completedJobID']}' class='btn btn-primary text-light btn-sm'>View Job</a>
                                     </div>
                                 </div>
                             </div>
                         </div>";
             }
             ;
-
         endif;
-
     }
-
 }
