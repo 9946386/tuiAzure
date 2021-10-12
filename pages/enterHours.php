@@ -1,5 +1,19 @@
 <!-- Including the mobile header at the top of the page -->
-<?php include '../includes/mobileHeader.php' ?>
+<?php include '../includes/mobileHeader.php';
+// Including the connection file
+include '../local-db-connection.php';
+
+
+if (isset($_GET['id']) && ($_GET['username'])) {
+    $userID = $_GET['id'];
+    $userName = $_GET['username'];
+
+    print_r($userID);
+    print_r($userName);
+}
+
+
+?>
 
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-2">
