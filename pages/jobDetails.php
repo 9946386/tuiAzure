@@ -89,6 +89,24 @@ if (isset($_GET['id'])) {
         </div>
     </div> 
 
+    <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
+    <div class="d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
+        <a class="btn" name="completed" href="../pages/mobileHome.php?id=<?php echo $jobs['openJobID']?>">Complete Job</a>
+      </button>
+    </div>
+
+    <?php
+    
+        if(isset($_POST['completed'])){
+              $sql = "INSERT INTO completedjobs 
+                      SELECT * FROM openjobs WHERE id=$id";
+
+                      header('../pages/mobileHome.php');
+        }
+    
+    ?>
+
     <!-- Customer input modal to collect signature-pad and name etc -->
       <div class="container px-4 customerInputContainer">
         <div class="row">
@@ -149,23 +167,7 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
-    <div class="d-flex flex-row-reverse">
-      <button type="button" class="btn btn-primary text-light " data-bs-toggle="modal" data-bs-target="#customerInput">
-        <a class="btn" name="completed" href="../pages/mobileHome.php?id=<?php echo $jobs['openJobID']?>">Complete Job</a>
-      </button>
-    </div>
-
-    <?php
     
-        if(isset($_POST['completed'])){
-              $sql = "INSERT INTO completedjobs 
-                      SELECT * FROM openjobs WHERE id=$id";
-
-                      header('../pages/mobileHome.php');
-        }
-    
-    ?>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
