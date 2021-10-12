@@ -30,14 +30,8 @@ if (isset($_GET['id'])) {
   // Frees the memory associated with the results
   mysqli_free_result($result);
   // Closing connectiong
-  mysqli_close($conn);
+  mysqli_close($conn);                
 
-  if(isset($_POST['completed'])){
-    $sql = mysqli_query($conn, "INSERT INTO completedjobs 
-            SELECT * FROM openjobs WHERE openJobID = $id");  
-    echo "<script>console.log('Job moved to completed jobs')</script>";
-    echo "Job has been moved to Completed Jobs";                    
-}
 
 }
 ?>
@@ -105,12 +99,12 @@ if (isset($_GET['id'])) {
 
     <?php  
     
-        // if(isset($_POST['completed'])){
-        //       $sql = mysqli_query($conn, "INSERT INTO completedjobs 
-        //               SELECT * FROM openjobs WHERE openJobID = $id");  
-        //       echo "<script>console.log('Job moved to completed jobs')</script>";
-        //       echo "Job has been moved to Completed Jobs";                    
-        // }
+        if(isset($_POST['completed'])){
+              $sql = mysqli_query($conn, "INSERT INTO completedjobs 
+                      SELECT * FROM openjobs WHERE openJobID = $job[openJobID]");  
+              echo "<script>console.log('Job moved to completed jobs')</script>";
+              echo "Job has been moved to Completed Jobs";                    
+        }
         //header("Location: ../pages/mobileHome.php");
     
     ?>
