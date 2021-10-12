@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
   // Frees the memory associated with the results
   mysqli_free_result($result);
   // Closing connectiong
-  mysqli_close($conn);
+  // mysqli_close($conn);
 
 
 }
