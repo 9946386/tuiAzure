@@ -92,6 +92,7 @@ if (isset($_GET['id'])) {
       </div> 
 
 
+      <!-- This will be completed once the customer signature pad is working -->
       <div class="container px-4 p-3 ">
           <div class="card mainPageJobCard">
               <div class="card-body">
