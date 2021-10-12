@@ -1,5 +1,6 @@
 <?php
 include '../local-db-connection.php';
+session_start();
 
 //This needs to be moved to the php page and wrap around the whole hours form - the rest of the code stays here
 if (isset($_SESSION['useruid'])) {
