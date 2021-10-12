@@ -99,9 +99,15 @@ if (isset($_GET['id'])) {
 
     <?php  
     
-        if(isset($_POST['completed'])){
-              $sql = mysqli_query($conn, "INSERT INTO completedjobs 
-                      SELECT * FROM openjobs WHERE openJobID = $_GET[id]");  
+        if(isset($_POST['completed']) && isset($_GET['id'])){
+
+          $jobID2 = $_GET['id'];
+
+          // Takes away any special characters in the string
+          $id2 = mysqli_real_escape_string($conn, $_GET['id']);
+
+          $sql2 = mysqli_query($conn, "INSERT INTO completedjobs 
+                      SELECT * FROM openjobs WHERE openJobID = $id2");  
               echo "<script>console.log('Job moved to completed jobs')</script>";
               echo "Job has been moved to Completed Jobs";                    
         }
