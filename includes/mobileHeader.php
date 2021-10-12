@@ -48,11 +48,11 @@ include '../local-db-connection.php';
                 <!-- Checking if the user is signed in -->
                 <?php
 if (isset($_SESSION['useruid'])) {
-  $sql = "SELECT usersID FROM users WHERE usersID = '" . $_SESSION['useruid'] . "' ";
+  // $sql = "SELECT usersID FROM users WHERE usersID = '" . $_SESSION['useruid'] . "' ";
 
-  $result = mysqli_query($conn, $sql);
+  // $result = mysqli_query($conn, $sql);
 
-  $loggedInUser = mysqli_fetch_assoc($result);
+  // $loggedInUser = mysqli_fetch_assoc($result);
 
 
   // If they are signed in show all buttons and sign out button
@@ -63,14 +63,11 @@ if (isset($_SESSION['useruid'])) {
       <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}'>Enter Hours</a>
+      <a class='nav-link text-light' href='../pages/enterHours.php?id={$_SESSION['useruid']}'>Enter Hours</a>
       </li>
       <li class='nav-item'>
       <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
       </li>";
-
-
-
 }
 // If they are not signed in show a sign in button
 else {
