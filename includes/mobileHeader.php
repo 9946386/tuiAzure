@@ -47,21 +47,30 @@ session_start();
                 <!-- Checking if the user is signed in -->
                 <?php
 if (isset($_SESSION['useruid'])) {
-  $loggedInUser = $_SESSION['useruid'];
+  $sql = "SELECT usersID FROM users WHERE usersID = '" . $_SESSION['useruid'] . "' ";
+
+  $result = mysqli_query($conn, $sql);
+
+  $loggedInUser = mysqli_fetch_assoc($result);
+
+
   // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
-                    <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php'>Daily Plan</a>
-                  </li>
-                  <li class='nav-item'>
-                    <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
-                  </li>
-                  <li class='nav-item'>
-                    <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}>Enter Hours</a>
-                  </li>
+      <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php'>Daily Plan</a>
+      </li>
+      <li class='nav-item'>
+      <a class='nav-link text-light' href='../pages/completedJobs.php'>Completed Jobs</a>
+      </li>
+      <li class='nav-item'>
+      <a class='nav-link text-light' href='../pages/enterHours.php?id={$loggedInUser}>Enter Hours</a>
+      </li>
 
-                  <li class='nav-item'>
-                    <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
-                  </li>";
+      <li class='nav-item'>
+      <a class='nav-link text-light' href='../includes/logout.php'>Sign Out</a>
+      </li>";
+
+
+
 }
 // If they are not signed in show a sign in button
 else {
