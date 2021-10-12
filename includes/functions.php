@@ -432,7 +432,7 @@ function getCompletedJob()
         if ($user):
             // Assigning variables to use when fetching allocated jobs
             $id = $user['completedJobDriver_fk'];
-            $name = $user['completedJobDriverName_fk'];
+            //$name = $user['completedJobDriverName_fk'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
             $jobs = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, users.usersID, users.userName
@@ -442,6 +442,7 @@ function getCompletedJob()
 
             // Performing the query
             $result = mysqli_query($conn, $jobs);
+            print_r($result);
 
             // Fetching results as an associative array 
             $completedJobs = mysqli_fetch_all($result, MYSQLI_ASSOC);
