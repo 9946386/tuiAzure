@@ -102,6 +102,7 @@ if (isset($_GET['id'])) {
         if(isset($_POST['completed']) && isset($_GET['id'])){
 
           $jobID2 = $_GET['id'];
+          print_r($jobID2);
           global $conn;     
           // Takes away any special characters in the string
           // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
