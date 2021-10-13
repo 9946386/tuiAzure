@@ -9,18 +9,18 @@
 
 <?php 
 
-    if(isset($_GET['id'])){
-        $driverID = $_GET['id'];
-        //$driverName = $_GET['name'];
+    // if(isset($_GET['id'])){
+    //     $driverID = $_GET['id'];
+    //     //$driverName = $_GET['name'];
         
-        $id = mysqli_real_escape_string($conn, $_GET['id']);
+    //     $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-        $sql = "SELECT * FROM users WHERE usersID = $id";
+    //     $sql = "SELECT * FROM users WHERE usersID = $id";
 
-        $result = mysqli_query($conn, $sql);
+    //     $result = mysqli_query($conn, $sql);
 
-        $driverDetails = mysqli_fetch_assoc($result);
-    }
+    //     $driverDetails = mysqli_fetch_assoc($result);
+    // }
 ?>
 
 <!-- Page Title -->
