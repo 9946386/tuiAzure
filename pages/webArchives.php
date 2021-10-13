@@ -57,9 +57,10 @@
                         <?php if (isset($_POST['submit'])) {
 
                             global $conn;
-                            $search = $_POST['search'];
+                            $search = $_POST['search']; 
 
                             // Select all from completed jobs where the reference or order number is what was entered in the search input
+                            
                             $sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
                             $result = mysqli_query($conn, $sql);
 
