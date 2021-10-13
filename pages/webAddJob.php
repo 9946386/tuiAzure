@@ -30,19 +30,7 @@
         <select class="form-select form-select-lg col-2 w-50 m-auto" name="selectedDriver" id="driver">
             <option selected>Change driver</option>
             <!-- Calling the dropDown function to supply driver names in drop down -->
-            <?php 
-            //include '../includes/functions.php'; dropDown();
-            global $conn;
-            $sql = "select usersID, userName from users";
-            $results = mysqli_query($conn, $sql);
-            //$drivers = mysqli_fetch_all($results, MYSQLI_ASSOC);
-
-            while ($row = mysqli_fetch_assoc($results)) {
-                echo "
-                    <div class='col text-center'>
-                        <input type='button' aria-pressed='true' name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$row['usersID']}. {$row['userName']}' />
-                    </div>";
-            }?>
+            <?php include '../includes/functions.php'; dropDown();?>
         </select>
     </div>
 </div>

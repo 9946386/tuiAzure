@@ -10,24 +10,16 @@ if (isset($_POST['submit']))
 {
     // Takes the input names from Add Job and assigns them to a variable
     $jobName = $_POST['JobName'];
-    $jobDriver = (int)$_POST['driverID'];
-
-    // $driverID = "SELECT * FROM users WHERE usersID = $jobDriver";
-    // $result3 = mysqli_query($conn, $driverID);
-    // $idResults = mysqli_fetch_assoc($result3);
+    $jobDriver = (int)$_POST['selectedDriver'];
 
     $sql = "SELECT * FROM users WHERE usersID = $jobDriver";
     $result = mysqli_query($conn, $sql);
     $driverDetails = mysqli_fetch_assoc($result);
-    print_r($driverDetails);
+    //print_r($driverDetails);
 
     $driversID = (int)$driverDetails['usersID'];
     $driversName = $driverDetails['userName'];
     $driversUserName = $driverDetails['userUid'];
-
-    // $sql2 = "SELECT userUid FROM users WHERE usersID = $jobDriver";
-    // $result2 = mysqli_query($conn, $sql);
-    // $driverUserName = mysqli_fetch_assoc($result);
 
     //$jobDriverName = $_POST['JobDriverName'];
     $jobDate = $_POST['JobDate'];
