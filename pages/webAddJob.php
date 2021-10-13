@@ -57,14 +57,14 @@
                         </div>
                     </div> -->
                     <!-- Drivers Name -->
-                    <!-- <div class="row gy-5 form-group">
+                    <div class="row gy-5 form-group">
                         <div class="col-2">
                             <label for="addDriverName" class="form-label p-1">Driver Name:</label>
                         </div>
                         <div class="col-6">
                             <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName" value="<?php htmlspecialchars($driverDetails['usersName'])?>">
                         </div>
-                    </div> -->
+                    </div>
                     <!-- Job date -->
                     <div class="row gy-5 form-group">
                         <div class="col-2">
