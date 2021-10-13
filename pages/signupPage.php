@@ -19,7 +19,7 @@
     <title>Sign Up</title>
 
 </head>
-<body>
+<body class="mobile-login">
 
     <div class="container-fluid loginBackground min-vh-100">
         <div class="container w-75 min-vh-100 loginContainer d-flex align-items-center justify-content-center">
