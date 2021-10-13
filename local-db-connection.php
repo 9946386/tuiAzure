@@ -32,6 +32,6 @@ if (!$conn) {
 // If the connection did work:
 else {
     // Show message in the console
-    echo '<script>console.log("Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;")</script>';
-    echo '<script>console.log("Host information: " . mysqli_get_host_info($link) . PHP_EOL;")</script>';
+    echo "<script>console.log('Success: A proper connection to MySQL was made! The my_db database is great.')</script>";
+//echo '<script>console.log("Host information: " . mysqli_get_host_info($link) . PHP_EOL;")</script>';
 }
