@@ -23,7 +23,7 @@ function openJobsList()
                             <h5 class='card-title'>Driver: {$id} {$driverName_fk}</h5>
                         </div>
                         <div class='col-1'>
-                            <a href='../pages/webAddJob.php?id={$id}' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
+                            <a href='../pages/webAddJob.php?id={$id}name={$driverName_fk}' class='btn btn-primary btn-sm text-light rounded-pill'>Add Job</a>
                         </div>
                     </div>
                     <div class='row'>

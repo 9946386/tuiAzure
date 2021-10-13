@@ -1,6 +1,22 @@
 <!-- Including the header at the top of the page -->
 <?php include '../header.php' ?>
 
+<?php 
+
+    if(isset($_GET['id']) && ($_GET['name'])){
+        $driverID = $_GET['id'];
+        $driverName = $_GET['name'];
+        
+        $id = mysqli_real_escape_string($conn, $_GET['id']);
+
+        $sql = "SELECT * FROM users WHERE usersID = $id";
+
+        $result = mysqli_query($conn, $sql);
+
+        $driverDetails = mysqli_fetch_assoc($result);
+    }
+?>
+
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-4 truckList">
     <div class="row m-auto align-items-center">
@@ -23,7 +39,7 @@
                             <label for="addJobName" class="form-label p-1">Name:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobName" id="jobName">
+                            <input type="text" class="form-control p-1" name="JobName" id="jobName" value="<?php htmlspecialchars($driverDetails['usersName'])?>">
                         </div>
                     </div>
                     <!-- Drivers ID -->
@@ -32,7 +48,7 @@
                             <label for="addDriverID" class="form-label p-1">Driver ID:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver">
+                            <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver" value="<?php htmlspecialchars($driverDetails['usersID'])?>">
                         </div>
                     </div>
                     <!-- Drivers Name -->
