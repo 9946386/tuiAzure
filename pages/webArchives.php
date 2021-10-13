@@ -23,19 +23,19 @@
                     </div>                    
                 </div>
             </div>
-            <div class="col gy-3">
+            <!-- <div class="col gy-3">
                 <div class="row gx-3">
                     <h6 class="p-2">Date:</h6>
                     <div class="input-group">
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
-                        <div class="input-group-btn">
+                        <div class="input-group-btn"> -->
                             <!-- <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search" style="color:#58595d"></i>
                             </button> -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -55,37 +55,37 @@
                         </div>
                         <?php if (isset($_POST['submit'])) {
 
-global $conn;
-$search = mysqli_real_escape_string($conn, $_POST['search']);
+                            global $conn;
+                            $search = mysqli_real_escape_string($conn, $_POST['search']);
 
-// Select all from completed jobs where the reference or order number is what was entered in the search input
-$sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
-$result = mysqli_query($conn, $sql);
+                            // Select all from completed jobs where the reference or order number is what was entered in the search input
+                            $sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+                            $result = mysqli_query($conn, $sql);
 
-// Checking if anything matched the search value
-$queryResult = mysqli_num_rows($result);
+                            // Checking if anything matched the search value
+                            $queryResult = mysqli_num_rows($result);
 
-// Checking if theres more than 0 results
-if ($queryResult > 0) {
+                            // Checking if theres more than 0 results
+                            if ($queryResult > 0) {
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "Job Name: " . $row['completedJobName'] . "<br>";
-        echo "Date: " . $row['completedJobDate'] . "<br>";
-        echo "Destination: " . $row['completedJobDestination'] . "<br>";
-        echo "Type: " . $row['completedJobType'] . "<br>";
-        echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
-        echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
-        echo "Pallets: " . $row['completedPallets'] . "<br>";
-        echo "Weight: " . $row['completedJobWeight'] . "<br>";
-        echo "Status: " . $row['completedJobStatus'] . "<br>";
-        echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
-    }
-}
-else {
-    // If there are no matches
-    echo "No matching results. Please try again";
-}
-}; ?>
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "Job Name: " . $row['completedJobName'] . "<br>";
+                                    echo "Date: " . $row['completedJobDate'] . "<br>";
+                                    echo "Destination: " . $row['completedJobDestination'] . "<br>";
+                                    echo "Type: " . $row['completedJobType'] . "<br>";
+                                    echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
+                                    echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
+                                    echo "Pallets: " . $row['completedPallets'] . "<br>";
+                                    echo "Weight: " . $row['completedJobWeight'] . "<br>";
+                                    echo "Status: " . $row['completedJobStatus'] . "<br>";
+                                    echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
+                                }
+                            }
+                            else {
+                                // If there are no matches
+                                echo "No matching results. Please try again";
+                            }
+                            }; ?>
                     </div>
                         <!-- <div class="row">
                             <div class="col">                                    
