@@ -53,7 +53,7 @@
                             <label for="addDriverID" class="form-label p-1">Driver ID:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver" value="<?php htmlspecialchars($driverDetails['usersID'])?>">
+                            <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver" value="htmlspecialchars($driverDetails['usersID'])?>">
                         </div>
                     </div> -->
                     <!-- Drivers Name -->
@@ -62,7 +62,7 @@
                             <label for="addDriverName" class="form-label p-1">Driver Name:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName" value="<?php htmlspecialchars($driverDetails['usersName'])?>">
+                            <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName" value="htmlspecialchars($driverDetails['usersName'])?>">
                         </div>
                     </div> -->
                     <!-- Job date -->
