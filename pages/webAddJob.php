@@ -5,12 +5,13 @@
 
 <!-- Including the header at the top of the page -->
 <?php include '../header.php' ?>
+<?php include '../local-db-connection.php' ?>
 
 <?php 
 
     if(isset($_GET['id'])){
         $driverID = $_GET['id'];
-        $driverName = $_GET['name'];
+        //$driverName = $_GET['name'];
         
         $id = mysqli_real_escape_string($conn, $_GET['id']);
 
