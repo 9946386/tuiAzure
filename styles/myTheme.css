@@ -85,7 +85,7 @@ body {
 
 @media (max-width: 575px) {
   body {
-    padding-top: 78px;
+    padding-top: 100px;
   }
 
   .loginBody {

@@ -4,17 +4,19 @@
 <?php ini_set('display_startup_errors', 1); ?>
 
 <!-- Including the mobile header -->
-<?php include '../includes/mobileHeader.php' ?>
+<?php include '../includes/mobileHeader.php'; ?>
  
 <!-- Including the connection file -->
-<?php 
-include '../local-db-connection.php'; 
+<?php
+
+include '../local-db-connection.php';
+
 ?>
 
 <!-- Page Title -->
-    <div class="container-sm text-dark px-3 p-2">
+    <div class="container-sm text-dark px-4 p-2">
         <div class="row justify-content ">
-            <h1 class="pageTitle col-5 align-self-center ">To Complete</h1>
+            <h1 class="pageTitle col-5 align-self-center py-3">To Complete</h1>
             <div class="line col-1 "></div>
             <!-- Uses JavaScript to display todays date -->
             <h6 class="todaysDate col-6 align-self-center" id="todaysDate"></h6>
@@ -26,10 +28,10 @@ include '../local-db-connection.php';
         <div class="row gy-2">
             <div class="col-12">
                 <!-- Calling the get users function to get the loged in users openjobs -->
-                <?php 
-                include '../includes/functions.php';
-                getUserJobs();
-            ?>
+                <?php
+include '../includes/functions.php';
+getUserJobs();
+?>
             </div>
         </div>
     </div>
