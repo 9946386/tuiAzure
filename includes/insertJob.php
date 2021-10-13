@@ -12,13 +12,21 @@ if (isset($_POST['submit']))
     $jobName = $_POST['JobName'];
     $jobDriver = (int)$_POST['driverID'];
 
-    $sql = "SELECT userName FROM users WHERE usersID = $jobDriver";
-    $result = mysqli_query($conn, $sql);
-    $driverName = mysqli_fetch_assoc($result);
+    // $driverID = "SELECT * FROM users WHERE usersID = $jobDriver";
+    // $result3 = mysqli_query($conn, $driverID);
+    // $idResults = mysqli_fetch_assoc($result3);
 
-    $sql2 = "SELECT userUid FROM users WHERE usersID = $jobDriver";
-    $result2 = mysqli_query($conn, $sql);
-    $driverUserName = mysqli_fetch_assoc($result);
+    $sql = "SELECT * FROM users WHERE usersID = $jobDriver";
+    $result = mysqli_query($conn, $sql);
+    $driverDetails = mysqli_fetch_assoc($result);
+
+    $driversID = $driverDetails['usersID'];
+    $driversName = $driverDetails['userName'];
+    $driversUserName = $driverDetails['userUid'];
+
+    // $sql2 = "SELECT userUid FROM users WHERE usersID = $jobDriver";
+    // $result2 = mysqli_query($conn, $sql);
+    // $driverUserName = mysqli_fetch_assoc($result);
 
     //$jobDriverName = $_POST['JobDriverName'];
     $jobDate = $_POST['JobDate'];
@@ -32,7 +40,7 @@ if (isset($_POST['submit']))
 
     // SQL query to insert the above variables into the openjobs table.
     $sql = "INSERT INTO openjobs(jobName, driver_fk, driverName_fk, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driverUserName_fk) 
-    VALUES ('$jobName', '$jobDriver', '$driverName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', '$driverUserName');";
+    VALUES ('$jobName', '$driversID', '$driversName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', '$driversUserName');";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
