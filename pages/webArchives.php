@@ -17,7 +17,7 @@
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit" name="submit">
-                            <i class="glyphicon glyphicon-search" style="color:var(--bs-secondary)"></i>
+                            <i class="glyphicon glyphicon-search" style="black"></i>
                         </button>
                     </div>
                     </div>                    
@@ -49,7 +49,9 @@
                                 <h3>Results</h1>
                         </div>
                         <div class="col d-flex flex-row-reverse">
-                                <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
+                            <form class="" action="../includes/functions.php" method="POST" name="export_excel" enctype="multipart/form-data">
+                                <input type="submit" name="export" class="btn btn-primary text-light ">Export</button>
+                            </form> 
                         </div>
                     </div>
                         <!-- <div class="row">
