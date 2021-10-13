@@ -65,7 +65,7 @@ if (isset($_SESSION['useruid'])) {
 // If they are not signed in show a sign in button
 else {
   echo "<li class='nav-item'>
-                            <a class='nav-link text-light h6 display-4' href='../pages/loginPage.php'>Sign In</a>
+                            <a class='nav-link text-light h6 display-4' href='../pages/loginPage.php'>Login</a>
                           </li>
                           <li class='nav-item'>
                             <a class='nav-link text-light h6 display-4' href='../pages/signupPage.php'>Sign Up</a>
