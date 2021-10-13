@@ -320,7 +320,9 @@ function getUserJobs()
     // Checking if the session 'useruid' has started / Checking someone is logged in
     if (!isset($_SESSION['useruid'])) {
         // If no one is logged in:
-        echo "You are not logged in";
+        echo "<div class='card mainPageJobCard mt-2'>
+                <h5>You are not logged in</h5>
+            </div>";
 
     // Need to add button to redirect to login page
     }

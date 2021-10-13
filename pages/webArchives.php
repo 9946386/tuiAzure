@@ -14,7 +14,7 @@
                 <div class="row gx-3">
                     <h6 class="p-2">Con Note:</h6>
                     <div class="input-group">
-                        <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
+                        <input name="search" type="text" class="form-control rounded-pill" placeholder="Search" >
                     <div class="input-group-btn">
                         <input class="btn btn-default" type="submit" name="submit" value="Submit">
                         <!-- <button class="btn btn-default" type="submit" name="submit">
