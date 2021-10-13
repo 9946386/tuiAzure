@@ -61,11 +61,11 @@
 
                             // Select all from completed jobs where the reference or order number is what was entered in the search input
                             
-                            $sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
-                            $result = mysqli_query($conn, $sql);
+                            $searchJobs = mysqli_query($conn, "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'");
+                            //$result = mysqli_query($conn, $sql);
 
                             // Checking if anything matched the search value
-                            $queryResult = mysqli_num_rows($result);
+                            $queryResult = mysqli_num_rows($searchJobs);
 
                             // Checking if theres more than 0 results
                             if ($queryResult > 0) {
