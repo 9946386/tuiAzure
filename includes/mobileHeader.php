@@ -50,25 +50,25 @@ include '../local-db-connection.php';
 if (isset($_SESSION['useruid'])) {
   // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
-      <a class='nav-link text-light h2' aria-current='page' href='../pages/mobileHome.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Daily Plan</a>
+      <a class='nav-link text-light h6 display-4' aria-current='page' href='../pages/mobileHome.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Daily Plan</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light h2' href='../pages/completedJobs.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Completed Jobs</a>
+      <a class='nav-link text-light h6 display-4' href='../pages/completedJobs.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Completed Jobs</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light h2' href='../pages/enterHours.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Enter Hours</a>
+      <a class='nav-link text-light h6 display-4' href='../pages/enterHours.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Enter Hours</a>
       </li>
       <li class='nav-item'>
-      <a class='nav-link text-light h2' href='../includes/logout.php'>Sign Out</a>
+      <a class='nav-link text-light h6 display-4' href='../includes/logout.php'>Sign Out</a>
       </li>";
 }
 // If they are not signed in show a sign in button
 else {
   echo "<li class='nav-item'>
-                            <a class='nav-link text-light h2' href='../pages/loginPage.php'>Sign In</a>
+                            <a class='nav-link text-light h6 display-4' href='../pages/loginPage.php'>Sign In</a>
                           </li>
                           <li class='nav-item'>
-                            <a class='nav-link text-light h2' href='../pages/signupPage.php'>Sign Up</a>
+                            <a class='nav-link text-light h6 display-4' href='../pages/signupPage.php'>Sign Up</a>
                           </li>";
 }
 ?>
