@@ -20,7 +20,7 @@ if (isset($_POST['submit']))
     $result = mysqli_query($conn, $sql);
     $driverDetails = mysqli_fetch_assoc($result);
 
-    $driversID = $driverDetails['usersID'];
+    $driversID = (int)$driverDetails['usersID'];
     $driversName = $driverDetails['userName'];
     $driversUserName = $driverDetails['userUid'];
 
