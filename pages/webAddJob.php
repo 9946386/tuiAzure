@@ -7,21 +7,6 @@
 <?php include '../header.php' ?>
 <?php include '../local-db-connection.php' ?>
 
-<?php 
-    // if(isset($_GET['id'])){
-    //     $driverID = $_GET['id'];
-    //     //$driverName = $_GET['name'];
-        
-    //     $id = mysqli_real_escape_string($conn, $_GET['id']);
-
-    //     $sql = "SELECT * FROM users WHERE usersID = $id";
-
-    //     $result = mysqli_query($conn, $sql);
-
-    //     $driverDetails = mysqli_fetch_assoc($result);
-    // }
-?>
-
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-4 truckList">
     <div class="row m-auto align-items-center">

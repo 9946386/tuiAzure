@@ -2,8 +2,6 @@
 
 include '../local-db-connection.php';
 
-
-
 // Taking code added to "Add Job" and inserts it into the openjob database
 // If the submit button is set
 if (isset($_POST['submit'])) 

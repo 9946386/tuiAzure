@@ -166,6 +166,7 @@ function loginUser($conn, $username, $password)
     }
 }
 
+// Not being used - tried some different loop types that worked better
 function getUserJobs2()
 {
     global $conn;
@@ -321,7 +322,9 @@ function getUserJobs()
     if (!isset($_SESSION['useruid'])) {
         // If no one is logged in:
         echo "<div class='card mainPageJobCard mt-2'>
-                <h5>You are not logged in</h5>
+                <div class='card-body'>
+                    <h5>You are not logged in</h5>
+                </div
             </div>";
 
     // Need to add button to redirect to login page
