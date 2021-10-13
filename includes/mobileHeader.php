@@ -47,7 +47,7 @@ include '../local-db-connection.php';
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <!-- Checking if the user is signed in -->
                 <?php
-if (isset($_SESSION['useruid']) || $_SESSION["userid"]) {
+if (isset($_SESSION['useruid'])) {
   // If they are signed in show all buttons and sign out button
   echo "<li class='nav-item'>
       <a class='nav-link text-light' aria-current='page' href='../pages/mobileHome.php?username={$_SESSION['useruid']}id={$_SESSION["userid"]}'>Daily Plan</a>
