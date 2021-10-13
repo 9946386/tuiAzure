@@ -349,7 +349,7 @@ function getUserJobs()
             $name = $user['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
-            $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+            $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
                                           FROM openjobs
                                           INNER JOIN users ON openjobs.driver_fk = users.usersID
                                           WHERE users.usersID = $id";
@@ -370,21 +370,14 @@ function getUserJobs()
                                             <td>{$openjob['jobType']}</td>
                                         </tr>
                                         <tr>
+                                            <th>Destination:</th>
+                                            <td>{$openjob['destination']}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Order #:</th>
                                             <td>{$openjob['orderNumber']}</td>
                                         </tr>
-                                        <tr>
-                                            <th>Reference:</th>
-                                            <td>{$openjob['referenceNumber']}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Pallets:</th>
-                                            <td>{$openjob['pallets']}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Weight:</th>
-                                            <td>{$openjob['jobWeight']}</td>
-                                        </tr>
+                                        
                                         <tr>
                                             <th>Status:</th>
                                             <td>{$openjob['jobStatus']}</td>
