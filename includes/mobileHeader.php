@@ -40,7 +40,7 @@ include '../local-db-connection.php';
             
             <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div class="offcanvas-header">
-                <h1 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Tui Truck App</h1>
+                <h1 class="offcanvas-title text-light display-3" id="offcanvasNavbarLabel">Tui Truck App</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" onclick=""></button>
               </div>
               <div class="offcanvas-body">
