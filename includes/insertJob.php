@@ -10,7 +10,7 @@ if (isset($_POST['submit']))
 {
     // Takes the input names from Add Job and assigns them to a variable
     $jobName = $_POST['JobName'];
-    $jobDriver = $_POST['driverID'];
+    $jobDriver = (int)$_POST['driverID'];
 
     $sql = "SELECT userName FROM users WHERE usersID = $jobDriver";
     $result = mysqli_query($conn, $sql);
