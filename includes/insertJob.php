@@ -19,6 +19,7 @@ if (isset($_POST['submit']))
     $sql = "SELECT * FROM users WHERE usersID = $jobDriver";
     $result = mysqli_query($conn, $sql);
     $driverDetails = mysqli_fetch_assoc($result);
+    print_r($driverDetails);
 
     $driversID = (int)$driverDetails['usersID'];
     $driversName = $driverDetails['userName'];
