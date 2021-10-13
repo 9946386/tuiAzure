@@ -57,6 +57,7 @@ include '../header.php' ?>
 
 if (isset($_POST['submit'])) {
 
+    global $conn;
     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
     // Select all from completed jobs where the reference or order number is what was entered in the search input
