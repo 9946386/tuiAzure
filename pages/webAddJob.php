@@ -8,7 +8,7 @@
 
 <?php 
 
-    if(isset($_GET['id']) && ($_GET['name'])){
+    if(isset($_GET['id'])){
         $driverID = $_GET['id'];
         $driverName = $_GET['name'];
         
