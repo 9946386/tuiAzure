@@ -1,3 +1,8 @@
+<!-- PHP errors -->
+<?php ini_set('error_reporting', E_ALL); ?>
+<?php ini_set('display_errors', 1); ?>
+<?php ini_set('display_startup_errors', 1); ?>
+
 <!-- Including the header at the top of the page -->
 <?php include '../header.php' ?>
 
@@ -20,8 +25,10 @@
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-4 truckList">
     <div class="row m-auto align-items-center">
+        <!-- Form that uses the insertJob.php file to take form input and insert it into the openjobs table -->
+        <form action="../includes/insertJob.php" method="POST" class="form-group">
         <select class="form-select form-select-lg col-2 w-50 m-auto" name="selectedDriver" id="driver">
-            <option selected>Pick a driver</option>
+            <option selected>Change driver</option>
             <!-- Calling the dropDown function to supply driver names in drop down -->
             <?php include '../includes/functions.php'; dropDown();?>
         </select>
@@ -31,35 +38,33 @@
     <div class="container py-5 px-4 p-3 webWeeklyPlanTruckCard">
         <div class="card w-75 m-auto">
             <div class="card-body">
-                <!-- Form that uses the insertJob.php file to take form input and insert it into the openjobs table -->
-                <form action="../includes/insertJob.php" method="POST" class="form-group">
                     <div class="row gy-5 form-group">
                         <!-- Job name -->
                         <div class="col-2">
                             <label for="addJobName" class="form-label p-1">Name:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobName" id="jobName" value="<?php htmlspecialchars($driverDetails['usersName'])?>">
+                            <input type="text" class="form-control p-1" name="JobName" id="jobName" >
                         </div>
                     </div>
                     <!-- Drivers ID -->
-                    <div class="row gy-5 form-group">
+                    <!-- <div class="row gy-5 form-group">
                         <div class="col-2">
                             <label for="addDriverID" class="form-label p-1">Driver ID:</label>
                         </div>
                         <div class="col-6">
                             <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver" value="<?php htmlspecialchars($driverDetails['usersID'])?>">
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Drivers Name -->
-                    <div class="row gy-5 form-group">
+                    <!-- <div class="row gy-5 form-group">
                         <div class="col-2">
                             <label for="addDriverName" class="form-label p-1">Driver Name:</label>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName">
+                            <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName" value="<?php htmlspecialchars($driverDetails['usersName'])?>">
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Job date -->
                     <div class="row gy-5 form-group">
                         <div class="col-2">
