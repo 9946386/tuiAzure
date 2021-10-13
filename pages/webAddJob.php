@@ -8,7 +8,6 @@
 <?php include '../local-db-connection.php' ?>
 
 <?php 
-
     // if(isset($_GET['id'])){
     //     $driverID = $_GET['id'];
     //     //$driverName = $_GET['name'];

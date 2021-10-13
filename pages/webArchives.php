@@ -14,7 +14,7 @@
                 <div class="row gx-3">
                     <h6 class="p-2">Con Note:</h6>
                     <div class="input-group">
-                        <input name="search" type="text" class="form-control rounded-pill" placeholder="Search" >
+                        <input name="search" type="text" class="form-control rounded-pill" placeholder="Search">
                     <div class="input-group-btn">
                         <input class="btn btn-default" type="submit" name="submit" value="Submit">
                         <!-- <button class="btn btn-default" type="submit" name="submit">
@@ -52,6 +52,7 @@
                         <div class="col d-flex flex-row-reverse">
                             <form class="" action="../includes/functions.php" method="POST" name="export_excel" enctype="multipart/form-data">
                                 <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
+                            </form>         
                         </div>
                         <?php if (isset($_POST['submit'])) {
 
