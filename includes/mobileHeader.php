@@ -29,7 +29,7 @@ include '../local-db-connection.php';
 
     <!-- Pop Out Nav Bar -->
     
-    <nav class="navbar navbar-light bg-primary fixed-top">
+    <nav class="navbar navbar-light bg-primary fixed-top py-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="../pages/mobileHome.php">
               <img src="../images/navLogo.png" alt="navLogo">
