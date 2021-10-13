@@ -2,7 +2,7 @@
     "name": "Tui Truck App",
     "short_name": "TuiTrucks",
     "homepage": "https://tui-project-webapp.azurewebsites.net/",
-    "start_url": "https://tui-project-webapp.azurewebsites.net/index.php",
+    "start_url": "https://tui-project-webapp.azurewebsites.net/pages/mobileHome.php",
     "display": "standalone",
     "background_color": "#7CB344",
     "theme_color": "#7CB344",
