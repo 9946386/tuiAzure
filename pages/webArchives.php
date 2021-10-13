@@ -16,9 +16,10 @@
                     <div class="input-group">
                         <input type="text" class="form-control rounded-pill" placeholder="Search" name="search">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" name="submit">
+                        <input class="btn btn-default" type="submit" name="submit" value="Submit">
+                        <!-- <button class="btn btn-default" type="submit" name="submit">
                             <i class="glyphicon glyphicon-search" style="black"></i>
-                        </button>
+                        </button> -->
                     </div>
                     </div>                    
                 </div>
