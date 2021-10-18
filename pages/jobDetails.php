@@ -168,7 +168,7 @@ if (isset($_GET['id'])) {
 
           <?php
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']) && isset($_GET['id'])){
 
     require_once '../includes/signature-to-image.php';
 
