@@ -131,11 +131,11 @@ if (isset($_GET['id'])) {
     
     ?>
 
-<!-- <div class="container">
+<div class="container">
               <button type="button" class="btn btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
                 Customer Input
               </button>
-            </div> -->
+            </div>
 
             <!-- <div class="modal"> -->
             <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
