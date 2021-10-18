@@ -36,6 +36,17 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<!-- JS -->
+    <!--[if lt IE 9]><script src="/Signature/flashcanvas.js"></script><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Signature/jquery.signaturepad.js"></script>
+    <script src="../Signature/json2.min.js"></script>
+    <link rel="stylesheet" href="../Signature/jquery.signaturepad.css">
+
+    <script>
+          $('.sigPad').signaturePad(options);
+    </script>
+
 <!-- Page Title -->
 <div class="container-sm text-dark px-3 p-2">
       <div class="row justify-content ">
@@ -259,6 +270,8 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         <a class="btn" name="completed" href="../pages/mobileHome.php?id=">Complete Job</a>
       </button>
     </div> -->
+
+    <script src="../Signature/json2.min.js"></script> 
 
     
 
