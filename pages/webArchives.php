@@ -7,8 +7,9 @@
 <?php include '../header.php' ?>
 
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
-<form action="" method="POST">
+
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
+    <form action="" method="POST">
         <div class="row m-auto align-items-center">            
             <div class="col gy-3">
                 <div class="row gx-3">
@@ -56,7 +57,7 @@
                         </div> -->
                         <?php if (isset($_POST['submit'])) {
 
-//global $conn;
+global $conn;
 $search = mysqli_real_escape_string($conn, $_POST['search']);
 
 // Select all from completed jobs where the reference or order number is what was entered in the search input
@@ -99,8 +100,9 @@ else {
                 </div>
             </div>
         </div>
+        </form>
     </div>
-</form>
+
 
 
 <!-- Bootstrap Bundle with Popper -->
