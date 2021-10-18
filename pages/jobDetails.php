@@ -154,6 +154,9 @@ if (isset($_GET['id'])) {
             </div>
           </div> -->
 
+          <div class="container">
+            <div class="card">
+              <div class="card-body">
           <form method="post" action="" class="sigPad">
                   <label for="name" class="form-label">Print your name</label>
                   <input type="text" name="name" id="name" class="name">
@@ -168,10 +171,11 @@ if (isset($_GET['id'])) {
                   <button type="submit" name="submit">Confirm</button>
                 </div>
                 </form> 
+                </div>
+                </div>
+      </div>
 
           <?php
-include '../local-db-connection.php';
-session_start();
 
 if(isset($_POST['submit']) && isset($_GET['id'])){
 
