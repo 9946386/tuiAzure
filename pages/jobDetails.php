@@ -193,7 +193,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
             VALUES ('$customerName', '$theimage', $jobsID')";
 
-    $run = mysqli_query($conn, $sql);
+    $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if (!$run) {
       echo '<script>console.log("Couldnt create entry")';
