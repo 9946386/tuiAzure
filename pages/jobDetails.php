@@ -184,6 +184,13 @@ if(isset($_POST['submit'])){
 
     $run = mysqli_query($conn, $sql);
 
+    if (!$run) {
+      echo '<script>console.log("Couldnt create entry")';
+      echo "Error: " . $sql . "" . mysqli_error($conn);
+    }
+    else {
+        echo '<script>console.log("Success Bro!")</script>';
+    }
     
 }
 ?>
