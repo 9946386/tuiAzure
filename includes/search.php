@@ -4,6 +4,7 @@
 <?php ini_set('display_startup_errors', 1); ?>
 <?php
 
+include '../local-db-connection.php';
 include '../header.php' ?>
 
 <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
@@ -57,7 +58,7 @@ include '../header.php' ?>
 
 if (isset($_POST['submit'])) {
 
-    global $conn;
+    //global $conn;
     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
     // Select all from completed jobs where the reference or order number is what was entered in the search input

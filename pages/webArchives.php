@@ -7,7 +7,7 @@
 <?php include '../header.php' ?>
 
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
-<form action="" method="POST">
+<form action="../includes/search.php" method="POST">
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">            
             <div class="col gy-3">
@@ -16,10 +16,10 @@
                     <div class="input-group">
                         <input name="search" type="text" class="form-control rounded-pill" placeholder="Search">
                     <div class="input-group-btn">
-                        <input class="btn btn-default" type="submit" name="submit" value="Submit">
-                        <!-- <button class="btn btn-default" type="submit" name="submit">
+                        <!-- <input class="btn btn-default" type="submit" name="submit" value="Submit"> -->
+                        <button class="btn btn-default" type="submit" name="submit">
                             <i class="glyphicon glyphicon-search" style="black"></i>
-                        </button> -->
+                        </button>
                     </div>
                     </div>                    
                 </div>
