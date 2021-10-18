@@ -120,6 +120,44 @@ if (isset($_GET['id'])) {
     
     ?>
 
+<div class="container">
+              <button type="button" class="btn btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
+                Customer Input
+              </button>
+            </div>
+
+            <!-- <div class="modal"> -->
+            <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Customer Input</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form method="post" action="" class="sigPad">
+                  <label for="name" class="form-label">Print your name</label>
+                  <input type="text" name="name" id="name" class="name">
+                  <p class="drawItDesc">Draw your signature</p>
+                  <!-- <ul class="sigNav"> -->
+                    <!-- <li class="drawIt"><a href="#draw-it">Draw It</a></li> -->
+                    <!-- <li class="clearButton"><a href="#clear">Clear</a></li> -->
+                  <!-- </ul> -->
+                  <div class="sig sigWrapper">
+                    <div class="typed"></div>
+                    <canvas class="pad" width="300" height="150"></canvas>
+                    <input type="hidden" name="output" class="output">
+                    <li class="clearButton btn" id="clearBtn"><a href="#clear" class="btn btn-secondary text-light">Clear</a></li>
+                  </div>
+                </div>
+                  <div class="modal-footer">
+                  <button type="submit">Confirm</button>
+                </div>
+                </form>                
+              </div>
+            </div>
+          </div>
+
     <!-- Customer input modal to collect signature-pad and name etc -->
       <!-- <div class="container px-4 customerInputContainer">
         <div class="row">

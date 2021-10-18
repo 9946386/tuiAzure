@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/myTheme.css"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
+
+    <!-- JS -->
+    <!--[if lt IE 9]><script src="/Signature/flashcanvas.js"></script><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/Signature/jquery.signaturepad.js"></script>
+    <script src="/Signature/json2.min.js"></script>
+    <link rel="stylesheet" href="/Signature/jquery.signaturepad.css">
+
+    <script>
+          $('.sigPad').signaturePad(options);
+    </script>
+
+
     
     <title>Completed Jobs</title>
 </head>
@@ -98,21 +111,60 @@
                   </div>
               </div>
             </div>
-            <div class="col-12">
-                <div class="card mainPageJobCard">
-                    <div class="card-body">
-                        <label for="customerName" class="form-label">Customer Name:</label>
-                        <input type="text" class="form-control" id="customerNameInput" placeholder="Customers name will be here">
-                        <label for="customerSignature" class="form-label">Customer Signature:</label>
-                        <br>
-                        <canvas id="signature-pad" width="200%" height="100%" style="border: 1px solid #ddd;"></canvas>
-                        <br>
-                        <button id="editCompletedJobDetails" class="btn btn-primary text-light float-end">Edit</button>
-                    </div>
+
+            <div class="container">
+            <button type="button" class="btn btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
+              Customer Input
+            </button>
+          </div>
+
+            <!-- <div class="modal"> -->
+            <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Customer Input</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                <form method="post" action="" class="sigPad">
+                  <label for="name" class="form-label">Print your name</label>
+                  <input type="text" name="name" id="name" class="name">
+                  <p class="drawItDesc">Draw your signature</p>
+                  <!-- <ul class="sigNav"> -->
+                    <!-- <li class="drawIt"><a href="#draw-it">Draw It</a></li> -->
+                    <!-- <li class="clearButton"><a href="#clear">Clear</a></li> -->
+                  <!-- </ul> -->
+                  <div class="sig sigWrapper">
+                    <div class="typed"></div>
+                    <canvas class="pad" width="300" height="150"></canvas>
+                    <input type="hidden" name="output" class="output">
+                    <li class="clearButton btn" id="clearBtn"><a href="#clear" class="btn btn-secondary text-light">Clear</a></li>
+                  </div>
+                </div>
+                  <div class="modal-footer">
+                  <button type="submit">Confirm</button>
+                </div>
+                </form>                
+              </div>
             </div>
+          </div>
+        <!-- </div> -->
+            
         </div>
     </div>
+
+    <script>
+      $(document).ready(function () {
+        $('.sigPad').signaturePad({drawOnly:true});
+      });
+
+      $(document).ready(function () {
+        $('.sigPad').signaturePad();
+      });
+    </script>
+
+    <script src="/Signature/json2.min.js"></script>    
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
