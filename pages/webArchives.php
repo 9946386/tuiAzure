@@ -60,7 +60,10 @@
 $search = mysqli_real_escape_string($conn, $_POST['search']);
 
 // Select all from completed jobs where the reference or order number is what was entered in the search input
-$sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+$sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
+         FROM completedJobs 
+         INNER JOIN customers ON completedjobs. = customers.completedJobID_fk
+         WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
 $result = mysqli_query($conn, $sql);
 
 // Checking if anything matched the search value
@@ -80,6 +83,7 @@ if ($queryResult > 0) {
         echo "Weight: " . $row['completedJobWeight'] . "<br>";
         echo "Status: " . $row['completedJobStatus'] . "<br>";
         echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
+        echo "Customer Name: " . $row['customerName'] . "<br>";
     }
 }
 else {
