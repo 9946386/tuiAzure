@@ -191,7 +191,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     
     // Insert into the customer table
     $sql = "INSERT INTO customers(customerName, customerSignature, completedJobID_fk)
-            VALUES ('$customerName', '$sigImg', $jobsID');";
+            VALUES ('$customerName', '$sigImg', '$jobsID')";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
