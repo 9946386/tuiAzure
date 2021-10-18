@@ -180,13 +180,8 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     
     //imagepng($sigImg);
     
-    $sql = $conn->prepare
-          ("INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
-            VALUES (:customerName, :customerSignature, :jobsID)");
-            $sql->bind_param(':customerName', $customerName);
-            $sql->bind_param(':customerSignature', $customerSignature);
-            $sql->bind_param(':jobsID', $jobsID);
-            $sql->execute();
+    $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
+            VALUES ('$customerName', '$customerSignature', $jobsID')";
 
     $run = mysqli_query($conn, $sql);
 
