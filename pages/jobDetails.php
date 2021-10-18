@@ -151,12 +151,33 @@ if (isset($_GET['id'])) {
                   </div>
                 </div>
                   <div class="modal-footer">
-                  <button type="submit">Confirm</button>
+                  <button type="submit" name="submit">Confirm</button>
                 </div>
                 </form>                
               </div>
             </div>
           </div>
+
+          <?php
+include '../local-db-connection.php';
+session_start();
+
+if(isset($_POST['submit']) && isset($_GET['id'])){
+
+    $customerName = $_POST['name'];
+    $customerSignature = $_POST['output'];
+    $jobsID = $_GET['id'];
+
+    $sigImg = json_decode($customerSignature); 
+    
+    $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
+            VALUES ('$customerName', '$sigImg', $jobsID');";
+
+    $run = mysqli_query($conn, $sql);
+
+    
+}
+?>
 
     <!-- Customer input modal to collect signature-pad and name etc -->
       <!-- <div class="container px-4 customerInputContainer">
