@@ -138,7 +138,7 @@ if (isset($_GET['id'])) {
             </div> -->
 
             <!-- <div class="modal"> -->
-            <!-- <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -163,9 +163,9 @@ if (isset($_GET['id'])) {
                 </form>                
               </div>
             </div>
-          </div> -->
+          </div>
 
-          <div class="container">
+          <!-- <div class="container">
             <div class="card">
               <div class="card-body">
                 <form method="post" action="" class="sigPad">
@@ -184,7 +184,7 @@ if (isset($_GET['id'])) {
                 </form> 
                 </div>
                 </div>
-      </div>
+      </div> -->
 
           <?php
 
