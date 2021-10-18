@@ -186,7 +186,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     // Taking input and converting it to an image (Don't think it's working)
     $sigImg = sigJsonToImage($customerSignature);
     
-    $file = '../sigs/test.png';
+    $file = 'test.png';
     imagepng($sigImg, $file);
     
     // Insert into the customer table
