@@ -146,7 +146,7 @@ if (isset($_GET['id'])) {
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form method="post" action="" class="sigPad">
+                <form method="POST" action="" class="sigPad">
                   <label for="name" class="form-label">Print your name</label>
                   <input type="text" name="name" id="name" class="name">
                   <p class="drawItDesc">Draw your signature</p>
@@ -165,30 +165,9 @@ if (isset($_GET['id'])) {
             </div>
           </div>
 
-          <!-- <div class="container">
-            <div class="card">
-              <div class="card-body">
-                <form method="post" action="" class="sigPad">
-                  <label for="name" class="form-label">Print your name</label>
-                  <input type="text" name="name" id="name" class="name">
-                  <p class="drawItDesc">Draw your signature</p>
-                  <div class="sig sigWrapper">
-                    <div class="typed"></div>
-                    <canvas class="pad" width="300" height="150"></canvas>
-                    <input type="hidden" name="output" class="output">
-                    <li class="clearButton btn" id="clearBtn"><a href="#clear" class="btn btn-secondary text-light">Clear</a></li>
-                  </div>
-                  <div class="modal-footer">
-                  <button type="submit" name="submit">Confirm</button>
-                </div>
-                </form> 
-                </div>
-                </div>
-      </div> -->
-
           <?php
 
-if(isset($_POST['submit']) && isset($_GET['id'])){
+if(isset($_POST['submit'])){
 
     require_once '../includes/signature-to-image.php';
 
@@ -196,7 +175,9 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     $customerSignature = $_POST['output'];
     $jobsID = $_GET['id'];
 
-    $sigImg = sigJsonToImage($customerSignature); 
+    $sigImg = sigJsonToImage($customerSignature);
+    
+    imagepng($sigImg);
     
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
             VALUES ('$customerName', '$sigImg', $jobsID');";
