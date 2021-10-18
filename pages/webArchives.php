@@ -49,11 +49,11 @@
                         <div class="col">
                                 <h3>Results</h1>
                         </div>
-                        <div class="col d-flex flex-row-reverse">
+                        <!-- <div class="col d-flex flex-row-reverse">
                             <form class="" action="../includes/functions.php" method="POST" name="export_excel" enctype="multipart/form-data">
                                 <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
                             </form>         
-                        </div>
+                        </div> -->
                         <?php if (isset($_POST['submit'])) {
 
                             include '../local-db-connection.php';
