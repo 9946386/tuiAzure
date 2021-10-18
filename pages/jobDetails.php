@@ -191,7 +191,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     }
     else {
         echo '<script>console.log("Success Bro!")</script>';
-    }
+    } 
     
 }
 ?>
