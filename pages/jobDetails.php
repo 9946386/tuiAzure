@@ -190,11 +190,13 @@ if (isset($_GET['id'])) {
 
 if(isset($_POST['submit']) && isset($_GET['id'])){
 
+    require_once '../includes/signature-to-image.php';
+
     $customerName = $_POST['name'];
     $customerSignature = $_POST['output'];
     $jobsID = $_GET['id'];
 
-    $sigImg = json_decode($customerSignature); 
+    $sigImg = sigJsonToImage($customerSignature); 
     
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
             VALUES ('$customerName', '$sigImg', $jobsID');";
