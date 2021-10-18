@@ -180,7 +180,7 @@ if(isset($_POST['submit'])){
     //imagepng($sigImg);
     
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
-            VALUES ('$customerName', '$sigImg', $jobsID');";
+            VALUES ('$customerName', '$customerSignature', $jobsID');";
 
     $run = mysqli_query($conn, $sql);
 
