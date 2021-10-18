@@ -177,7 +177,7 @@ if(isset($_POST['submit'])){
 
     $sigImg = sigJsonToImage($customerSignature);
     
-    imagepng($sigImg);
+    //imagepng($sigImg);
     
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
             VALUES ('$customerName', '$sigImg', $jobsID');";
