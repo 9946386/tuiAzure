@@ -99,14 +99,15 @@ if (isset($_GET['id'])) {
               <?php endif ?>
           </div>
         </div>
+        <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
+        <div class="d-flex flex-row-reverse">
+          <form action="" method="POST">
+            <button name="completed" type="submit" class="btn btn-primary text-light ">Complete Job</button>
+          </form>
+        </div>
     </div> 
 
-    <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
-    <div class="d-flex flex-row-reverse">
-      <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-primary text-light ">Complete Job</button>
-      </form>
-    </div>
+    
 
     <?php  
     
