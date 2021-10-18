@@ -187,11 +187,11 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     $sigImg = sigJsonToImage($customerSignature);
     
     $file = 'test.png';
-    imagepng($sigImg, $file);
+    $theimage = imagepng($sigImg, $file);
     
     // Insert into the customer table
     $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
-            VALUES ('$customerName', '$sigImg', $jobsID')";
+            VALUES ('$customerName', '$theimage', $jobsID')";
 
     $run = mysqli_query($conn, $sql);
 
