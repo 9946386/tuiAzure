@@ -39,9 +39,9 @@ if (isset($_GET['id'])) {
 <!-- JS -->
     <!--[if lt IE 9]><script src="/Signature/flashcanvas.js"></script><![endif]-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../Signature/jquery.signaturepad.js"></script>
-    <script src="../Signature/json2.min.js"></script>
-    <link rel="stylesheet" href="../Signature/jquery.signaturepad.css">
+    <script src="/Signature/jquery.signaturepad.js"></script>
+    <script src="/Signature/json2.min.js"></script>
+    <link rel="stylesheet" href="/Signature/jquery.signaturepad.css">
 
     <script>
           $('.sigPad').signaturePad(options);
@@ -168,7 +168,7 @@ if (isset($_GET['id'])) {
           <div class="container">
             <div class="card">
               <div class="card-body">
-          <form method="post" action="" class="sigPad">
+                <form method="post" action="" class="sigPad">
                   <label for="name" class="form-label">Print your name</label>
                   <input type="text" name="name" id="name" class="name">
                   <p class="drawItDesc">Draw your signature</p>
@@ -271,7 +271,17 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
       </button>
     </div> -->
 
-    <script src="../Signature/json2.min.js"></script> 
+    <script>
+      $(document).ready(function () {
+        $('.sigPad').signaturePad({drawOnly:true});
+      });
+
+      $(document).ready(function () {
+        $('.sigPad').signaturePad();
+      });
+    </script>
+
+    <script src="/Signature/json2.min.js"></script> 
 
     
 
