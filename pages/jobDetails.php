@@ -173,7 +173,7 @@ if(isset($_POST['submit'])){
     require_once '../includes/signature-to-image.php';
 
     $customerName = $_POST['name'];
-    $customerSignature = $_POST['output'];
+    $customerSignature = filter_input(INPUT_POST, 'output', FILTER_UNSAFE_RAW);
     $jobsID = $_GET['id'];
 
     $sigImg = sigJsonToImage($customerSignature);
