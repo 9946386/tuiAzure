@@ -56,6 +56,8 @@
                         </div>
                         <?php if (isset($_POST['submit'])) {
 
+                            include '../local-db-connection.php';
+
                             global $conn;
                             $search = $_POST['search']; 
 
