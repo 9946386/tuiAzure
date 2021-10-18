@@ -7,7 +7,7 @@
 <?php include '../header.php' ?>
 
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
-<form action="../includes/search.php" method="POST">
+<form action="" method="POST">
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
         <div class="row m-auto align-items-center">            
             <div class="col gy-3">
@@ -56,40 +56,37 @@
                         </div> -->
                         <?php if (isset($_POST['submit'])) {
 
-                            include '../local-db-connection.php';
+//global $conn;
+$search = mysqli_real_escape_string($conn, $_POST['search']);
 
-                            global $conn;
-                            $search = $_POST['search']; 
+// Select all from completed jobs where the reference or order number is what was entered in the search input
+$sql = "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+$result = mysqli_query($conn, $sql);
 
-                            // Select all from completed jobs where the reference or order number is what was entered in the search input
-                            
-                            $searchJobs = mysqli_query($conn, "SELECT * FROM completedJobs WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'");
-                            //$result = mysqli_query($conn, $sql);
+// Checking if anything matched the search value
+$queryResult = mysqli_num_rows($result);
 
-                            // Checking if anything matched the search value
-                            $queryResult = mysqli_num_rows($searchJobs);
+// Checking if theres more than 0 results
+if ($queryResult > 0) {
 
-                            // Checking if theres more than 0 results
-                            if ($queryResult > 0) {
-
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "Job Name: " . $row['completedJobName'] . "<br>";
-                                    echo "Date: " . $row['completedJobDate'] . "<br>";
-                                    echo "Destination: " . $row['completedJobDestination'] . "<br>";
-                                    echo "Type: " . $row['completedJobType'] . "<br>";
-                                    echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
-                                    echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
-                                    echo "Pallets: " . $row['completedPallets'] . "<br>";
-                                    echo "Weight: " . $row['completedJobWeight'] . "<br>";
-                                    echo "Status: " . $row['completedJobStatus'] . "<br>";
-                                    echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
-                                }
-                            }
-                            else {
-                                // If there are no matches
-                                echo "No matching results. Please try again";
-                            }
-                            }; ?>
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "Job Name: " . $row['completedJobName'] . "<br>";
+        echo "Date: " . $row['completedJobDate'] . "<br>";
+        echo "Destination: " . $row['completedJobDestination'] . "<br>";
+        echo "Type: " . $row['completedJobType'] . "<br>";
+        echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
+        echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
+        echo "Pallets: " . $row['completedPallets'] . "<br>";
+        echo "Weight: " . $row['completedJobWeight'] . "<br>";
+        echo "Status: " . $row['completedJobStatus'] . "<br>";
+        echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
+    }
+}
+else {
+    // If there are no matches
+    echo "No matching results. Please try again";
+}
+}; ?>
                     </div>
                         <!-- <div class="row">
                             <div class="col">                                    
