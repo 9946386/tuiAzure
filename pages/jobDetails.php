@@ -139,10 +139,6 @@ if (isset($_GET['id'])) {
                   <label for="name" class="form-label">Print your name</label>
                   <input type="text" name="name" id="name" class="name">
                   <p class="drawItDesc">Draw your signature</p>
-                  <!-- <ul class="sigNav"> -->
-                    <!-- <li class="drawIt"><a href="#draw-it">Draw It</a></li> -->
-                    <!-- <li class="clearButton"><a href="#clear">Clear</a></li> -->
-                  <!-- </ul> -->
                   <div class="sig sigWrapper">
                     <div class="typed"></div>
                     <canvas class="pad" width="300" height="150"></canvas>
@@ -157,6 +153,21 @@ if (isset($_GET['id'])) {
               </div>
             </div>
           </div>
+
+          <form method="post" action="" class="sigPad">
+                  <label for="name" class="form-label">Print your name</label>
+                  <input type="text" name="name" id="name" class="name">
+                  <p class="drawItDesc">Draw your signature</p>
+                  <div class="sig sigWrapper">
+                    <div class="typed"></div>
+                    <canvas class="pad" width="300" height="150"></canvas>
+                    <input type="hidden" name="output" class="output">
+                    <li class="clearButton btn" id="clearBtn"><a href="#clear" class="btn btn-secondary text-light">Clear</a></li>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="submit" name="submit">Confirm</button>
+                </div>
+                </form> 
 
           <?php
 include '../local-db-connection.php';
