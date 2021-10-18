@@ -1,7 +1,7 @@
 <!-- PHP errors -->
-<?php ini_set('error_reporting', E_ALL); ?>
-<?php ini_set('display_errors', 1); ?>
-<?php ini_set('display_startup_errors', 1); ?>
+<?php //ini_set('error_reporting', E_ALL); ?>
+<?php //ini_set('display_errors', 1); ?>
+<?php //ini_set('display_startup_errors', 1); ?>
 
 <!-- Including the mobile header at top of page -->
 <?php include '../includes/mobileHeader.php';
@@ -190,7 +190,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     $theimage = imagepng($sigImg);
     
     // Insert into the customer table
-    $sql = "INSERT INTO customers (customerName, customerSignature, completedJobID_fk)
+    $sql = "INSERT INTO customers(customerName, customerSignature, completedJobID_fk)
             VALUES ('$customerName', '$theimage', $jobsID');";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
