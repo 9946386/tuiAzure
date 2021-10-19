@@ -86,7 +86,8 @@ include '../header.php' ?>
                                 echo "Status: " . $row['completedJobStatus'] . "<br>";
                                 echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
                                 echo "Customer Name: " . $row['customerName'] . "<br>";
-                                echo "Customer Signature: " . $row['customerSignature'] . "<br>";
+                                echo "Customer Signature: <br>";
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']->load()) .'" />';
                             }
                         }
                         else {
