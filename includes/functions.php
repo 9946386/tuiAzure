@@ -41,6 +41,18 @@ function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
     return $result;
 }
 
+function emptyInput($diesel, $hours, $kms, $mood)
+{
+    $result = true;
+    if (empty($diesel) || empty($hours) || empty($kms) || empty($mood)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
 function invalidUid($username)
 {
     $result;

@@ -8,6 +8,8 @@ if (isset($_SESSION['useruid'])) {
     // If the submit button is set
     if (isset($_POST['submit'])) {
 
+
+
         // Get driver ID from the users table
         $driver = $sql = mysqli_query($conn, "SELECT users.usersID
                                                 FROM users
@@ -22,6 +24,11 @@ if (isset($_SESSION['useruid'])) {
         $kms = $_POST['kms'];
         $mood = $_POST['mood'];
         $date = date('Y-m-d H:i:s');
+
+        if (emptyInput($diesel, $hours, $km, $mood) !== false) {
+            header("location: ../pages/signupPage.php?error=emptyinput");
+            exit();
+        }
 
         // SQL query to insert the above variables into the openjobs table.
         $sql = "INSERT INTO driverhours(hoursDriver_FK, hoursDate, dieselLitres, driverHours, kms, mood) 

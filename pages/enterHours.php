@@ -54,6 +54,15 @@ include '../local-db-connection.php'; ?>
                     <div class="col-3 ">
                         <button type="submit" class="btn btn-primary text-light" name="submit">Confirm</button>
                     </div>
+                    <?php
+
+if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emptyinput") {
+        echo "<br><p class='text-light'>Please fill in all fields and try again</p>";
+    }
+}
+
+?>
                 </div>
             </div>
             </form>
