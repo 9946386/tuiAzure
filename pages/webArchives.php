@@ -52,13 +52,12 @@ include '../header.php' ?>
                         <div class="col">
                                 <h3>Results</h1>
                         </div>
-                        <!-- <div class="col d-flex flex-row-reverse">
-                            <form class="" action="../includes/functions.php" method="POST" name="export_excel" enctype="multipart/form-data">
-                                <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
-                            </form>         
-                        </div> -->
+                        <div class="col d-flex flex-row-reverse">
+                            <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
+                        </div>
+                        </div>
                         <div class="row">
-                            <div class="col">                                    
+                            <div class="col">                                  
                         <?php if (isset($_POST['submit'])) {
 
                         //global $conn;
@@ -96,16 +95,13 @@ include '../header.php' ?>
                             echo "No matching results. Please try again";
                         }
                         }; ?>
+                        </div>
                     </div>
-                        <!-- <div class="row">
-                            <div class="col">                                    
-                            </div>
-                        </div> -->
                 </div>
             </div>
         </div>
-        </form>
-    </div>
+    </form>
+</div>
 
 
 
