@@ -88,6 +88,7 @@ include '../header.php' ?>
                                 echo "Status: " . $row['completedJobStatus'] . "<br>";
                                 echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
                                 echo "Customer Name: " . $row['customerName'] . "<br>";
+                                echo "Customer Signature: " . $row['customerSignature'] . "<br>";
                             }
                         }
                         else {
@@ -95,6 +96,7 @@ include '../header.php' ?>
                             echo "No matching results. Please try again";
                         }
                         }; ?>
+
                         </div>
                     </div>
                 </div>
