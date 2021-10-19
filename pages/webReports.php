@@ -89,19 +89,26 @@
                                 echo "Customer Signature: <br>";
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
                             }
+
+                            
                         }
                         else {
                             // If there are no matches
                             echo "No matching results. Please try again";
                         }
-                        }; ?>
+                        };
 
-                        </div>
-                        <div class="col d-flex flex-row-reverse">
-                            <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
-                        </div>
+                        //<!-- </div>
+                        //<div class="col d-flex flex-row-reverse">
+                            //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
+                        //</div> -->
 
-                        <?php
+                                echo "</div>
+                                    <div class='col d-flex flex-row-reverse'>
+                                        <button type='submit' name='export' class='btn btn-primary text-light'>Export</button>
+                                    </div>";
+
+                        
                             if(isset($_POST['export'])){
                                 header('Content-Type: text/csv; charset=utf-8');  
                                 header('Content-Disposition: attachment; filename=data.csv');  
