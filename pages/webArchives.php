@@ -57,43 +57,45 @@ include '../header.php' ?>
                                 <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
                             </form>         
                         </div> -->
+                        <div class="row">
+                            <div class="col">                                    
                         <?php if (isset($_POST['submit'])) {
 
-//global $conn;
-$search = mysqli_real_escape_string($conn, $_POST['search']);
+                        //global $conn;
+                        $search = mysqli_real_escape_string($conn, $_POST['search']);
 
-// Select all from completed jobs where the reference or order number is what was entered in the search input
-$sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
-         FROM completedJobs 
-         INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
-         WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
-$result = mysqli_query($conn, $sql);
+                        // Select all from completed jobs where the reference or order number is what was entered in the search input
+                        $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
+                                FROM completedJobs 
+                                INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
+                                WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+                        $result = mysqli_query($conn, $sql);
 
-// Checking if anything matched the search value
-$queryResult = mysqli_num_rows($result);
+                        // Checking if anything matched the search value
+                        $queryResult = mysqli_num_rows($result);
 
-// Checking if theres more than 0 results
-if ($queryResult > 0) {
+                        // Checking if theres more than 0 results
+                        if ($queryResult > 0) {
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "Job Name: " . $row['completedJobName'] . "<br>";
-        echo "Date: " . $row['completedJobDate'] . "<br>";
-        echo "Destination: " . $row['completedJobDestination'] . "<br>";
-        echo "Type: " . $row['completedJobType'] . "<br>";
-        echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
-        echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
-        echo "Pallets: " . $row['completedPallets'] . "<br>";
-        echo "Weight: " . $row['completedJobWeight'] . "<br>";
-        echo "Status: " . $row['completedJobStatus'] . "<br>";
-        echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
-        echo "Customer Name: " . $row['customerName'] . "<br>";
-    }
-}
-else {
-    // If there are no matches
-    echo "No matching results. Please try again";
-}
-}; ?>
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "Job Name: " . $row['completedJobName'] . "<br>";
+                                echo "Date: " . $row['completedJobDate'] . "<br>";
+                                echo "Destination: " . $row['completedJobDestination'] . "<br>";
+                                echo "Type: " . $row['completedJobType'] . "<br>";
+                                echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
+                                echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
+                                echo "Pallets: " . $row['completedPallets'] . "<br>";
+                                echo "Weight: " . $row['completedJobWeight'] . "<br>";
+                                echo "Status: " . $row['completedJobStatus'] . "<br>";
+                                echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
+                                echo "Customer Name: " . $row['customerName'] . "<br>";
+                            }
+                        }
+                        else {
+                            // If there are no matches
+                            echo "No matching results. Please try again";
+                        }
+                        }; ?>
                     </div>
                         <!-- <div class="row">
                             <div class="col">                                    
