@@ -74,7 +74,7 @@
                         // Checking if theres more than 0 results
                         if ($queryResult > 0) {
 
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            while ($row = mysqli_fetch_array($result)) {
                                 echo "Job Name: " . $row['completedJobName'] . "<br>";
                                 echo "Date: " . $row['completedJobDate'] . "<br>";
                                 echo "Destination: " . $row['completedJobDestination'] . "<br>";
@@ -90,11 +90,16 @@
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
                                 
                             }
-                            echo "</div>
-                                    <div class='col d-flex flex-row-reverse'>
-                                        <button type='submit' name='export' class='btn btn-primary text-light'>Export</button>
-                                    </div>";
+                        }
+                        else {
+                            // If there are no matches
+                            echo "No matching results. Please try again";
+                        }
+                        }; ?>
 
+                        
+
+                        <?php
                             if(isset($_POST['export'])){
                                 header('Content-Type: text/csv; charset=utf-8');  
                                 header('Content-Disposition: attachment; filename=data.csv');  
@@ -106,12 +111,8 @@
                                 }
                                 fclose($output);
                             }
-                        }
-                        else {
-                            // If there are no matches
-                            echo "No matching results. Please try again";
-                        }
-                        }; ?>
+
+?>
                     </div>
                 </div>
             </div>
