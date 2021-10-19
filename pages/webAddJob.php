@@ -26,30 +26,12 @@
                     <div class="row gy-5 form-group">
                         <!-- Job name -->
                         <div class="col-2">
-                            <label for="addJobName" class="form-label p-1">Name:</label>
+                            <label for="addJobName" class="form-label p-1">Job Name:</label>
                         </div>
                         <div class="col-6">
                             <input type="text" class="form-control p-1" name="JobName" id="jobName" >
                         </div>
                     </div>
-                    <!-- Drivers ID -->
-                    <!-- <div class="row gy-5 form-group">
-                        <div class="col-2">
-                            <label for="addDriverID" class="form-label p-1">Driver ID:</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriver" id="jobDriver" value="htmlspecialchars($driverDetails['usersID'])?>">
-                        </div>
-                    </div> -->
-                    <!-- Drivers Name -->
-                    <!-- <div class="row gy-5 form-group">
-                        <div class="col-2">
-                            <label for="addDriverName" class="form-label p-1">Driver Name:</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="form-control p-1" name="JobDriverName" id="jobDriverName" value="htmlspecialchars($driverDetails['usersName'])?>">
-                        </div>
-                    </div> -->
                     <!-- Job date -->
                     <div class="row gy-5 form-group">
                         <div class="col-2">

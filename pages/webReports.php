@@ -108,17 +108,17 @@
                             // If there are no matches
                             echo "No matching results. Please try again";
                         }
-                        };
+                        }; ?>
 
                         //<!-- </div>
                         //<div class="col d-flex flex-row-reverse">
                             //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
                         //</div> -->
 
-                            echo "</div>
-                            <form method='POST' action='../includes/export.php'>
-                                <div class='col d-flex flex-row-reverse'>
-                                    <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
+                            </div>
+                            <form method="POST" action="../includes/export.php" enctype="mulitpart/form-data">
+                                <div class="col d-flex flex-row-reverse">
+                                    <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
                                 </div>
                             </form>";                        
                             ?>
