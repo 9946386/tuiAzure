@@ -58,7 +58,7 @@ include '../local-db-connection.php'; ?>
 
 if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
-        echo "<br><p class='text-light'>Please fill in all fields and try again</p>";
+        echo "<br><p>Please fill in all fields and try again</p>";
     }
 }
 
