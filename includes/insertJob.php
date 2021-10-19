@@ -29,6 +29,8 @@ if (isset($_POST['submit']))
     $pallets = $_POST['Pallets'];
     $jobStatus = $_POST['JobStatus'];
 
+    require '../includes/functions.php';
+
     if (emptyInput($driversID, $jobName, $jobDate, $destination, $jobType, $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus) !== false) {
         header("location: ../pages/webAddJob.php?error=emptyinput");
         exit();
