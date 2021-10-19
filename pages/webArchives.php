@@ -65,7 +65,7 @@ include '../header.php' ?>
                         $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
                                 FROM completedJobs 
                                 INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
-                                WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%'";
+                                WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%' OR completedJobDriverName_fk LIKE '%$search%'";
                         $result = mysqli_query($conn, $sql);
 
                         // Checking if anything matched the search value
