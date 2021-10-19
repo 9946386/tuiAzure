@@ -87,7 +87,7 @@ include '../header.php' ?>
                                 echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
                                 echo "Customer Name: " . $row['customerName'] . "<br>";
                                 echo "Customer Signature: <br>";
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode(stream_get_contents($row['customerSignature'])) .'" />';
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" />';
                             }
                         }
                         else {
