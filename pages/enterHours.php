@@ -60,6 +60,9 @@ if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
         echo "<br><p>Please fill in all fields and try again</p>";
     }
+    else if ($_GET["error"] == "none") {
+        echo "<br><p>Complete. Your hours have been added.</p>";
+    }
 }
 
 ?>
