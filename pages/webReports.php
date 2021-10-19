@@ -74,7 +74,7 @@
                         // Checking if theres more than 0 results
                         if ($queryResult > 0) {
 
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            while ($row = mysqli_fetch_array($result)) {
                                 echo "Job Name: " . $row['completedJobName'] . "<br>";
                                 echo "Date: " . $row['completedJobDate'] . "<br>";
                                 echo "Destination: " . $row['completedJobDestination'] . "<br>";
