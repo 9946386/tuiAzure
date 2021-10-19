@@ -74,7 +74,7 @@
                         // Checking if theres more than 0 results
                         if ($queryResult > 0) {
 
-                            while ($row = mysqli_fetch_array($result)) {
+                            while ($row = mysqli_fetch_assoc($result)) {
                                 echo "Job Name: " . $row['completedJobName'] . "<br>";
                                 echo "Date: " . $row['completedJobDate'] . "<br>";
                                 echo "Destination: " . $row['completedJobDestination'] . "<br>";
@@ -88,7 +88,6 @@
                                 echo "Customer Name: " . $row['customerName'] . "<br>";
                                 echo "Customer Signature: <br>";
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
-                                
                             }
                         }
                         else {
@@ -97,7 +96,10 @@
                         }
                         }; ?>
 
-                        
+                        </div>
+                        <div class="col d-flex flex-row-reverse">
+                            <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
+                        </div>
 
                         <?php
                             if(isset($_POST['export'])){
@@ -105,14 +107,13 @@
                                 header('Content-Disposition: attachment; filename=data.csv');  
                                 $output = fopen("php://output", "w");  
                                 fputcsv($output, array('completedJobName', 'completedJobDate', 'completedJobDestination', 'completedJobType', 'completedOrderNumber', 'completedReferenceNumber', 'completedPallets', 'completedJobWeight', 'completedJobStatus', 'completedJobDriverName_fk', 'customerName', 'customerSignature'));
-                                
                                 while($row = mysqli_fetch_assoc($result)){
                                     fputcsv($output, $row);
                                 }
                                 fclose($output);
-                            }
+                            }?>
 
-?>
+
                     </div>
                 </div>
             </div>
