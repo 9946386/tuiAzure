@@ -11,7 +11,7 @@ include '../header.php' ?>
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
 
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="mulitpart/form-data">
         <div class="row m-auto align-items-center">            
             <div class="col gy-3">
                 <div class="row gx-3">
@@ -100,6 +100,20 @@ include '../header.php' ?>
                         <div class="col d-flex flex-row-reverse">
                             <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
                         </div>
+
+                        <?php
+                            if(isset($_POST['export'])){
+                                header('Content-Type: text/csv; charset=utf-8');  
+                                header('Content-Disposition: attachment; filename=data.csv');  
+                                $output = fopen("php://output", "w");  
+                                fputcsv($output, array('completedJobName', 'completedJobDate', 'completedJobDestination', 'completedJobType', 'completedOrderNumber'));
+                                while($row = mysqli_fetch_assoc($result)){
+                                    fputcsv($output, $row);
+                                }
+                                fclose($output);
+                            }
+
+?>
                     </div>
                 </div>
             </div>
