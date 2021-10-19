@@ -4,7 +4,9 @@
 <?php ini_set('display_startup_errors', 1); ?>
 
 <!-- Including the header at the top of the page -->
-<?php include '../header.php' ?>
+<?php 
+include '../local-db-connection.php';
+include '../header.php' ?>
 
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
 
