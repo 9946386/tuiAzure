@@ -50,11 +50,9 @@ include '../header.php' ?>
                 <div class="card-body p-5">
                     <div class="row">
                         <div class="col">
-                                <h3>Results</h1>
+                            <h3>Results</h1>
                         </div>
-                        <div class="col d-flex flex-row-reverse">
-                            <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
-                        </div>
+                        
                         </div>
                         <div class="row">
                             <div class="col">                                  
@@ -97,6 +95,9 @@ include '../header.php' ?>
                         }
                         }; ?>
 
+                        </div>
+                        <div class="col d-flex flex-row-reverse">
+                            <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
                         </div>
                     </div>
                 </div>
