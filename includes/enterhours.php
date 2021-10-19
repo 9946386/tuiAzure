@@ -8,8 +8,6 @@ if (isset($_SESSION['useruid'])) {
     // If the submit button is set
     if (isset($_POST['submit'])) {
 
-
-
         // Get driver ID from the users table
         $driver = $sql = mysqli_query($conn, "SELECT users.usersID
                                                 FROM users
@@ -24,6 +22,8 @@ if (isset($_SESSION['useruid'])) {
         $kms = $_POST['kms'];
         $mood = $_POST['mood'];
         $date = date('Y-m-d H:i:s');
+
+        require '../includes/functions.php';
 
         if (emptyInput($diesel, $hours, $km, $mood) !== false) {
             header("location: ../pages/enterHours.php?error=emptyinput");
