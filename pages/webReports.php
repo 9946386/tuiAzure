@@ -11,7 +11,7 @@
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
 
     <div class="container-sm text-dark px-3 p-4 searchInputs w-50">
-    <form action="" method="POST" enctype="mulitpart/form-data">
+    <form action="" method="POST" >
         <div class="row m-auto align-items-center">            
             <div class="col gy-3">
                 <div class="row gx-3">
@@ -104,9 +104,11 @@
                         //</div> -->
 
                             echo "</div>
+                            <form method='POST' action=''>
                                 <div class='col d-flex flex-row-reverse'>
-                                    <button type='submit' name='export' class='btn btn-primary text-light'>Export</button>
-                                </div>";
+                                    <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
+                                </div>
+                            </form>";
 
                         
                             if(isset($_POST['export'])){
