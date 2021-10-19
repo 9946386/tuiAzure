@@ -96,8 +96,14 @@
                             // If there are no matches
                             echo "No matching results. Please try again";
                         }
+                        };
 
-                        echo "</div>
+                        //<!-- </div>
+                        //<div class="col d-flex flex-row-reverse">
+                            //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
+                        //</div> -->
+
+                            echo "</div>
                                 <div class='col d-flex flex-row-reverse'>
                                     <button type='submit' name='export' class='btn btn-primary text-light'>Export</button>
                                 </div>";
@@ -112,16 +118,7 @@
                                     fputcsv($output, $row);
                                 }
                                 fclose($output);
-                            }
-                            
-                        };
-
-                        //<!-- </div>
-                        //<div class="col d-flex flex-row-reverse">
-                            //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
-                        //</div> -->
-
-                            ?>
+                            }?>
 
 
                     </div>
