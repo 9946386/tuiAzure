@@ -4,6 +4,18 @@
 <?php ini_set('display_startup_errors', 1); ?>
 
 <?php ob_start(); ?>
+
+<?php //if(isset($_POST['export'])){
+                                //header('Content-Type: text/csv; charset=utf-8');  
+                                //header('Content-Disposition: attachment; filename=data.csv');  
+                                //$output = fopen("php://output", "w");  
+                                //fputcsv($output, array('completedJobName', 'completedJobDate', 'completedJobDestination', 'completedJobType', 'completedOrderNumber', 'completedReferenceNumber', 'completedPallets', 'completedJobWeight', 'completedJobStatus', 'completedJobDriverName_fk', 'customerName', 'customerSignature'));
+                                //while($row = mysqli_fetch_assoc($result)){
+                                    //fputcsv($output, $row);
+                                //}
+                                //fclose($output);
+                            //}; ?>
+
 <!-- Including the header at the top of the page -->
 <?php include '../local-db-connection.php';?>
 <?php include '../header.php'; ?>
@@ -104,25 +116,12 @@
                         //</div> -->
 
                             echo "</div>
-                            <form method='POST' action=''>
+                            <form method='POST' action='../includes/export.php'>
                                 <div class='col d-flex flex-row-reverse'>
                                     <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
                                 </div>
-                            </form>";
-
-                        
-                            if(isset($_POST['export'])){
-                                header('Content-Type: text/csv; charset=utf-8');  
-                                header('Content-Disposition: attachment; filename=data.csv');  
-                                $output = fopen("php://output", "w");  
-                                fputcsv($output, array('completedJobName', 'completedJobDate', 'completedJobDestination', 'completedJobType', 'completedOrderNumber', 'completedReferenceNumber', 'completedPallets', 'completedJobWeight', 'completedJobStatus', 'completedJobDriverName_fk', 'customerName', 'customerSignature'));
-                                while($row = mysqli_fetch_assoc($result)){
-                                    fputcsv($output, $row);
-                                }
-                                fclose($output);
-                            }?>
-
-
+                            </form>";                        
+                            ?>
                     </div>
                 </div>
             </div>
