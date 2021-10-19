@@ -26,7 +26,7 @@ if (isset($_SESSION['useruid'])) {
         $date = date('Y-m-d H:i:s');
 
         if (emptyInput($diesel, $hours, $km, $mood) !== false) {
-            header("location: ../pages/signupPage.php?error=emptyinput");
+            header("location: ../pages/enterHours.php?error=emptyinput");
             exit();
         }
 
