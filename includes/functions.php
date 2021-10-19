@@ -55,7 +55,7 @@ function emptyInput($diesel, $hours, $kms, $mood)
 
 function invalidUid($username)
 {
-    $result;
+    $result = true;
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
     }
@@ -67,7 +67,7 @@ function invalidUid($username)
 
 function invalidEmail($email)
 {
-    $result;
+    $result = true;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     }
@@ -79,7 +79,7 @@ function invalidEmail($email)
 
 function pwdMatch($password, $confirmPassword)
 {
-    $result;
+    $result = true;
     if ($password !== $confirmPassword) {
         $result = true;
     }
@@ -501,22 +501,5 @@ function getCompletedJob()
             }
             ;
         endif;
-    }
-}
-
-function export()
-{
-
-    if (isset($_POST['export'])) {
-        header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename=data.csv');
-        $output = fopen("php://output", "w");
-        fputcsv($output, array('ID', 'First Name', 'Last Name', 'Email', 'Joining Date'));
-        $query = "SELECT * from employeeinfo ORDER BY emp_id DESC";
-        $result = mysqli_query($con, $query);
-        while ($row = mysqli_fetch_assoc($result)) {
-            fputcsv($output, $row);
-        }
-        fclose($output);
     }
 }
