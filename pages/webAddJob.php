@@ -104,6 +104,15 @@
                             <input type="submit" class="btn btn-primary text-light" name="submit" value="Submit">
                         </div>
                     </div>
+                    <?php 
+                        if (isset($_GET["error"])) {
+                            if ($_GET["error"] == "emptyinput") {
+                                echo "<br><p>Please fill in all fields and try again</p>";
+                            }
+                            else if ($_GET["error"] == "none") {
+                                echo "<br><p>Job has been added successfully.</p>";
+                            }
+                        } ?>
                 </form>
             </div>
         </div>

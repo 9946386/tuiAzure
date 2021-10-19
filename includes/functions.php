@@ -53,6 +53,18 @@ function emptyInput($diesel, $hours, $kms, $mood)
     return $result;
 }
 
+function emptyAddJobInput($driversID, $jobName, $jobDate, $destination, $jobType, $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus)
+{
+    $result = true;
+    if (empty($driversID) || empty($jobName) || empty($jobDate) || empty($destination) || empty($jobType) || empty($jobReference) || empty($jobWeight) || empty($orderNumber) || empty($pallets) || empty($jobStatus)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
 function invalidUid($username)
 {
     $result = true;

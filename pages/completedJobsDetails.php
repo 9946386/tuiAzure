@@ -89,10 +89,7 @@ if (isset($_GET['id'])) {
                 <?php endif ?>
             </div>
           </div>
-      </div> 
-
-      
-
+      </div>     
 
       <!-- This will be completed once the customer signature pad is working -->
       <div class="container px-4 p-3 ">
