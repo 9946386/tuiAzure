@@ -87,7 +87,7 @@ include '../header.php' ?>
                                 echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
                                 echo "Customer Name: " . $row['customerName'] . "<br>";
                                 echo "Customer Signature: <br>";
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']->load()) .'" />';
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" />';
                             }
                         }
                         else {
@@ -98,7 +98,7 @@ include '../header.php' ?>
 
                         </div>
                         <div class="col d-flex flex-row-reverse">
-                            <button type="submit" name="submit" class="btn btn-primary text-light ">Export</button>
+                            <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
                         </div>
                     </div>
                 </div>
