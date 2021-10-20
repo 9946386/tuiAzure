@@ -4529,7 +4529,7 @@ fieldset:disabled .btn {
 
 .modal {
   position: fixed;
-  top: 50;
+  top: 0;
   left: 0;
   z-index: 1060;
   display: none;
@@ -4545,6 +4545,7 @@ fieldset:disabled .btn {
   width: auto;
   margin: 0.5rem;
   pointer-events: none;
+  padding-top: 15%;
 }
 
 .modal.fade .modal-dialog {
