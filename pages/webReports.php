@@ -124,7 +124,8 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>";
+                                    </div>
+                                </form>";
 
                                 echo "</div>
                                         <div class='row'>
@@ -142,20 +143,13 @@
                             // If there are no matches
                             echo "No matching results. Please try again";
                         }
-                        }; ?>
-
-                        <!-- </div>
-                        //<div class="col d-flex flex-row-reverse">
-                            //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
-                        //</div> -->
-
-                                                    
+                        }; ?>                                                    
                             
                     </div>
                 </div>
             </div>
         </div>
-    </form>
+
 </div>
 
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/myTheme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/styles/addedStyles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 
     <!-- Link to manifest.json for PWA functionality -->
     <link rel="manifest" href="../manifest.json">
