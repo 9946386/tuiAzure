@@ -81,13 +81,16 @@ include '../header.php' ?>
                                                 <thead>
                                                     <tr class='table-light'>
                                                         <th scope='col' class='col-2'>Job</th>
-                                                        <th scope='col'>Driver</th>
+                                                        <th scope='col'>Date</th>
+                                                        <th scope='col'>Destination</th>
                                                         <th scope='col'>Type</th>
-                                                        <th scope='col' class='col-2'>Order #</th>
-                                                        <th scope='col' class='col-2'>Reference</th>
+                                                        <th scope='col'>Order #</th>
+                                                        <th scope='col'>Reference</th>
                                                         <th scope='col'>Pallets</th>
                                                         <th scope='col'>Weight (kg)</th>
-                                                        <th scope='col' class='col-2'>Status</th>
+                                                        <th scope='col'>Status</th>
+                                                        <th scope='col'>Driver Name</th>
+                                                        <th scope='col'>Customer Name</th>
                                                     </tr>
                                                 </thead>";
                                             echo "<tbody>
