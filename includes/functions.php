@@ -29,10 +29,10 @@ function dropDown()
     }
 }
 
-function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
+function emptyInput($diesel, $hours, $kms, $mood)
 {
     $result = true;
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword)) {
+    if (empty($diesel) || empty($hours) || empty($kms) || empty($mood)) {
         $result = true;
     }
     else {
@@ -41,10 +41,22 @@ function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
     return $result;
 }
 
-function emptyInput($diesel, $hours, $kms, $mood)
+function invalidEntryHours($diesel, $hours, $kms, $mood)
 {
     $result = true;
-    if (empty($diesel) || empty($hours) || empty($kms) || empty($mood)) {
+    if (!preg_match("/[0-9]/", $diesel, $hours, $kms, $mood)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function invalidEntryAddJob($jobWeight, $pallets)
+{
+    $result = true;
+    if (!preg_match("/[0-9]/", $jobWeight, $pallets)) {
         $result = true;
     }
     else {
@@ -65,6 +77,18 @@ function emptyAddJobInput($driversID, $jobName, $jobDate, $destination, $jobType
     return $result;
 }
 
+function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
+{
+    $result = true;
+    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword)) {
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
 function invalidUid($username)
 {
     $result = true;
@@ -76,6 +100,8 @@ function invalidUid($username)
     }
     return $result;
 }
+
+
 
 function invalidEmail($email)
 {

@@ -109,6 +109,9 @@
                             if ($_GET["error"] == "emptyinput") {
                                 echo "<br><p>Please fill in all fields and try again</p>";
                             }
+                            else if($_GET["error"] == "invalidEntry"){
+                                echo "<br><p>Only numbers can be entered in the Job Weight and Pallets input. Please try again</p>";
+                            }
                             else if ($_GET["error"] == "none") {
                                 echo "<br><p>Job has been added successfully.</p>";
                             }

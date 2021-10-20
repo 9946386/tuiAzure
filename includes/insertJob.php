@@ -36,6 +36,11 @@ if (isset($_POST['submit']))
         exit();
     }
 
+    if (invalidEntryAddJob($jobWeight, $pallets) !== false) {
+        header("location: ../pages/webAddJob.php?error=invalidEntry");
+        exit();
+    }
+
     // SQL query to insert the above variables into the openjobs table.
     $sql = "INSERT INTO openjobs(jobName, driver_fk, driverName_fk, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driverUserName_fk) 
     VALUES ('$jobName', '$driversID', '$driversName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', '$driversUserName');";

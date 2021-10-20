@@ -30,6 +30,11 @@ if (isset($_SESSION['useruid'])) {
             exit();
         }
 
+        if (invalidEntryHours($diesel, $hours, $km, $mood) !== false) {
+            header("location: ../pages/enterHours.php?error=invalidEntry");
+            exit();
+        }
+
         // SQL query to insert the above variables into the openjobs table.
         $sql = "INSERT INTO driverhours(hoursDriver_FK, hoursDate, dieselLitres, driverHours, kms, mood) 
         VALUES ('$driverID', '$date', '$diesel', '$hours', '$kms', '$mood');";

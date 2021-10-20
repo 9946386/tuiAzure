@@ -1,5 +1,6 @@
 <!-- Including the mobile header at the top of the page -->
 <?php include '../includes/mobileHeader.php';
+use Ds\Pair;
 // Including the connection file
 include '../local-db-connection.php'; ?>
 
@@ -59,6 +60,9 @@ include '../local-db-connection.php'; ?>
 if (isset($_GET["error"])) {
     if ($_GET["error"] == "emptyinput") {
         echo "<br><p>Please fill in all fields and try again</p>";
+    }
+    else if ($_GET["error"] == "invalidEntry") {
+        echo "<br><p>Only numbers can be entered. Please try again</p>";
     }
     else if ($_GET["error"] == "none") {
         echo "<br><p>Complete. Your hours have been added.</p>";
