@@ -4529,7 +4529,7 @@ fieldset:disabled .btn {
 
 .modal {
   position: fixed;
-  top: 0;
+  top: 50;
   left: 0;
   z-index: 1060;
   display: none;
