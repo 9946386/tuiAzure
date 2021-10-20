@@ -91,9 +91,10 @@ include '../header.php' ?>
                                                         <th scope='col'>Status</th>
                                                         <th scope='col'>Driver Name</th>
                                                         <th scope='col'>Customer Name</th>
+                                                        <th scope='col'>Customer Name</th>
                                                     </tr>
-                                                </thead>";
-                                            echo "<tbody>
+                                                </thead>
+                                                <tbody>
                                                     <tr>    
                                                         <th>{$row['completedJobName']}</th>
                                                         <td>{$row['completedJobDate']}</td>
@@ -106,6 +107,7 @@ include '../header.php' ?>
                                                         <td>{$row['completedJobStatus']}</td>
                                                         <td>{$row['completedJobDriverName_fk']}</td>
                                                         <td>{$row['customerName']}</td>
+                                                        <td><img src='data:image/jpeg;base64,'.base64_encode({$row['customerSignature']}) .'' /></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
