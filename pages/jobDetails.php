@@ -141,6 +141,14 @@ if (isset($_GET['id'])) {
       </button>
     </div>
 
+    <div class="container">
+      <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+          <form action="" method="POST">
+              <button name="completed" type="submit" class="btn btn-primary text-light pt-4 mt-auto bd-highlight">Complete Job</button>
+          </form>
+      </div>
+    </div>
+
     <!-- <div class="modal"> -->
     <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -171,11 +179,7 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-        <form action="" method="POST">
-            <button name="completed" type="submit" class="btn btn-primary text-light pt-4 mt-auto bd-highlight">Complete Job</button>
-        </form>
-    </div>
+    
 
           <?php
 
