@@ -43,7 +43,7 @@
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
                         <div class="col-12 d-flex flex-row-reverse form-group">
-                            <input type="submit" class="btn btn-secondary text-light form-control" name="submit" value="Login">
+                            <input type="submit" class="btn btn-secondary text-light form-control w-100" name="submit" value="Login">
                         </div>
                     </form>
                 </div>
