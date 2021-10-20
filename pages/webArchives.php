@@ -21,7 +21,7 @@ include '../header.php' ?>
                     <div class="input-group-btn">
                         <!-- <input class="btn btn-default" type="submit" name="submit" value="Submit"> -->
                         <button class="btn btn-default" type="submit" name="submit">
-                            <i class="glyphicon glyphicon-search" style="black"></i>
+                            <i class="glyphicon glyphicon-search" style="color:black"></i>
                         </button>
                     </div>
                     </div>                    
