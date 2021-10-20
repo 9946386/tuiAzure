@@ -53,7 +53,7 @@
                     </form>
                 </div>
                 <div class="row mt-4 d-flex">
-                    <p class="col-8 text-light"> Don't have an account?</p>
+                    <p class="col-9 text-light"> Don't have an account?</p>
                     <!-- Redirect to login page if they already have an account -->
                     <a href="../pages/signupPage.php" class="btn btn-secondary text-light col-4">Sign Up</a>
                 </div>
