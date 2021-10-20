@@ -4545,7 +4545,7 @@ fieldset:disabled .btn {
   width: auto;
   margin: 0.5rem;
   pointer-events: none;
-  padding-top: 15%;
+  padding-top: 25%;
 }
 
 .modal.fade .modal-dialog {
