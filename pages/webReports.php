@@ -127,11 +127,13 @@
                                     </div>";
 
                                 echo "</div>
-                                    <form method='POST' action='../includes/export.php' enctype='mulitpart/form-data'>
-                                        <div class='col d-flex flex-row-reverse'>
-                                            <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
-                                        </div>
-                                    </form>";
+                                        <div class='row'>
+                                            <form method='POST' action='../includes/export.php' enctype='mulitpart/form-data'>
+                                                <div class='col d-flex flex-row-reverse'>
+                                                    <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
+                                                </div>
+                                            </form>
+                                        </div>";
                             }
 
                             
