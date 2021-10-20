@@ -43,8 +43,8 @@
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
                         <div class="row pb-2">
-                            <div class="col-4 d-flex flex-row-reverse form-group">
-                                <input type="submit" class="btn btn-secondary text-light form-control w-100 ms-3" name="submit" value="Login">
+                            <div class="col-8 d-flex flex-row-reverse form-group">
+                                <input type="submit" class="btn btn-secondary text-light form-control ms-3" name="submit" value="Login">
                             </div>
                         </div>
                     </form>
