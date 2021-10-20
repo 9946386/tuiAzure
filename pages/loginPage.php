@@ -42,7 +42,7 @@
                             <p class="text-light">Password:</p>
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
-                        <div class="col d-flex flex-row-reverse form-group">
+                        <div class="col-12 d-flex flex-row-reverse form-group">
                             <input type="submit" class="btn btn-secondary text-light form-control" name="submit" value="Login">
                         </div>
                     </form>
@@ -54,7 +54,7 @@ if (isset($_GET["error"])) {
     // Empty input
     if ($_GET["error"] == "emptyimput") {
         echo "<p>Please fill in all fields</p>";
-    }
+    } 
     // Incorrect login
     else if ($_GET["error"] == "wrongLogin") {
         echo "<p>Incorrect login input</p>";
