@@ -21,7 +21,7 @@ include '../header.php' ?>
                     <div class="input-group-btn">
                         <!-- <input class="btn btn-default" type="submit" name="submit" value="Submit"> -->
                         <button class="btn btn-default" type="submit" name="submit">
-                            <i class="glyphicon glyphicon-search" style="color:black"></i>
+                            <i class="glyphicon glyphicon-search searchGlyph"></i>
                         </button>
                     </div>
                     </div>                    
@@ -91,7 +91,7 @@ include '../header.php' ?>
                                                         <th scope='col'>Status</th>
                                                         <th scope='col'>Driver Name</th>
                                                         <th scope='col'>Customer Name</th>
-                                                        <th scope='col'>Customer Name</th>
+                                                        <th scope='col'>Customer Signature</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -113,10 +113,7 @@ include '../header.php' ?>
                                             </table>
                                         </div>
                                     </div>";
-                                                    //echo "Customer Signature: <br>";
-                                                    //echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
-
-                                        }
+                                }
                         }
                         else {
                             // If there are no matches

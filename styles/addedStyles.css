@@ -89,3 +89,7 @@
   transform: rotate(90deg);
   display: block;
 }
+
+.searchGlyph {
+  color: var(--bs-secondary);
+}
