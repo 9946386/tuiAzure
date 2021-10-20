@@ -113,6 +113,14 @@ include '../header.php' ?>
                                             </table>
                                         </div>
                                     </div>";
+                                    echo "</div>
+                                        <div class='row'>
+                                            <form method='POST' action='../includes/export.php' enctype='mulitpart/form-data'>
+                                                <div class='col d-flex flex-row-reverse'>
+                                                    <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
+                                                </div>
+                                            </form>
+                                        </div>";
                                 }
                         }
                         else {
@@ -123,9 +131,9 @@ include '../header.php' ?>
 
                         </div>                        
                     </div>
-                    <div class="col d-flex flex-row-reverse">
+                    <!-- <div class="col d-flex flex-row-reverse">
                             <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
