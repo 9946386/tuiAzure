@@ -75,7 +75,9 @@ include '../header.php' ?>
                         if ($queryResult > 0) {
 
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<div class='row'>
+                                echo "
+                                <div class='container'
+                                    <div class='row'>
                                         <div class='col pt-3'>
                                             <table class='table table-bordered table-responsive'>
                                                 <thead>
@@ -95,22 +97,23 @@ include '../header.php' ?>
                                                 </thead>";
                                             echo "<tbody>
                                                     <tr>    
-                                                        <th>{$row['completedJobName']}<br>
-                                                        <th>{$row['completedJobDate']}<br>
-                                                        <th>{$row['completedJobDestination']}<br>
-                                                        <th>{$row['completedJobType']}<br>
-                                                        <th>{$row['completedOrderNumber']}<br>
-                                                        <th>{$row['completedReferenceNumber']}<br>
-                                                        <th>{$row['completedPallets']}<br>
-                                                        <th>{$row['completedJobWeight']}<br>
-                                                        <th>{$row['completedJobStatus']}<br>
-                                                        <th>{$row['completedJobDriverName_fk']}<br>
-                                                        <th>{$row['customerName']}<br>
+                                                        <th>{$row['completedJobName']}</th>
+                                                        <th>{$row['completedJobDate']}</td>
+                                                        <th>{$row['completedJobDestination']}</td>
+                                                        <th>{$row['completedJobType']}</td>
+                                                        <th>{$row['completedOrderNumber']}</td>
+                                                        <th>{$row['completedReferenceNumber']}</td>
+                                                        <th>{$row['completedPallets']}</td>
+                                                        <th>{$row['completedJobWeight']}</td>
+                                                        <th>{$row['completedJobStatus']}</td>
+                                                        <th>{$row['completedJobDriverName_fk']}</td>
+                                                        <th>{$row['customerName']}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>";
+                                    </div>
+                                </div>";
                                                     //echo "Customer Signature: <br>";
                                                     //echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
 
@@ -122,10 +125,10 @@ include '../header.php' ?>
                         }
                         }; ?>
 
-                        </div>
-                        <div class="col d-flex flex-row-reverse">
+                        </div>                        
+                    </div>
+                    <div class="col d-flex flex-row-reverse">
                             <button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
-                        </div>
                     </div>
                 </div>
             </div>
