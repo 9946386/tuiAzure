@@ -87,19 +87,51 @@
                         if ($queryResult > 0) {
 
                             while ($row = mysqli_fetch_array($result)) {
-                                echo "Job Name: " . $row['completedJobName'] . "<br>";
-                                echo "Date: " . $row['completedJobDate'] . "<br>";
-                                echo "Destination: " . $row['completedJobDestination'] . "<br>";
-                                echo "Type: " . $row['completedJobType'] . "<br>";
-                                echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
-                                echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
-                                echo "Pallets: " . $row['completedPallets'] . "<br>";
-                                echo "Weight: " . $row['completedJobWeight'] . "<br>";
-                                echo "Status: " . $row['completedJobStatus'] . "<br>";
-                                echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
-                                echo "Customer Name: " . $row['customerName'] . "<br>";
-                                echo "Customer Signature: <br>";
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
+                                echo "<div class='row'>
+                                        <div class='col pt-3'>
+                                            <table class='table table-bordered table-responsive'>
+                                                <thead>
+                                                    <tr class='table-light'>
+                                                        <th scope='col' class='col-2'>Job</th>
+                                                        <th scope='col'>Date</th>
+                                                        <th scope='col'>Destination</th>
+                                                        <th scope='col'>Type</th>
+                                                        <th scope='col'>Order #</th>
+                                                        <th scope='col'>Reference</th>
+                                                        <th scope='col'>Pallets</th>
+                                                        <th scope='col'>Weight (kg)</th>
+                                                        <th scope='col'>Status</th>
+                                                        <th scope='col'>Driver Name</th>
+                                                        <th scope='col'>Customer Name</th>
+                                                        <th scope='col'>Customer Signature</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>    
+                                                        <th>{$row['completedJobName']}</th>
+                                                        <td>{$row['completedJobDate']}</td>
+                                                        <td>{$row['completedJobDestination']}</td>
+                                                        <td>{$row['completedJobType']}</td>
+                                                        <td>{$row['completedOrderNumber']}</td>
+                                                        <td>{$row['completedReferenceNumber']}</td>
+                                                        <td>{$row['completedPallets']}</td>
+                                                        <td>{$row['completedJobWeight']}</td>
+                                                        <td>{$row['completedJobStatus']}</td>
+                                                        <td>{$row['completedJobDriverName_fk']}</td>
+                                                        <td>{$row['customerName']}</td>
+                                                        <td><img src='data:image/jpeg;base64,'.base64_encode({$row['customerSignature']}) .'' /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>";
+
+                                echo "</div>
+                                    <form method='POST' action='../includes/export.php' enctype='mulitpart/form-data'>
+                                        <div class='col d-flex flex-row-reverse'>
+                                            <input type='submit' name='export' class='btn btn-primary text-light' value='Export'>
+                                        </div>
+                                    </form>";
                             }
 
                             
@@ -110,18 +142,13 @@
                         }
                         }; ?>
 
-                        //<!-- </div>
+                        <!-- </div>
                         //<div class="col d-flex flex-row-reverse">
                             //<button type="submit" name="export" class="btn btn-primary text-light ">Export</button>
                         //</div> -->
 
-                            </div>
-                            <form method="POST" action="../includes/export.php" enctype="mulitpart/form-data">
-                                <div class="col d-flex flex-row-reverse">
-                                    <input type="submit" name="export" class="btn btn-primary text-light" value="Export">
-                                </div>
-                            </form>";                        
-                            ?>
+                                                    
+                            
                     </div>
                 </div>
             </div>
