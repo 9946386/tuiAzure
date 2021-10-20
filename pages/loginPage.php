@@ -42,12 +42,20 @@
                             <p class="text-light">Password:</p>
                             <input type="password" class="rounded-pill border border-white ms-3 form-control" name="password"></input>
                         </div>
-                        <div class="row pb-2">
+                        <!-- <div class="row pb-2">
                             <div class="col-8 d-flex flex-row-reverse form-group">
                                 <input type="submit" class="btn btn-secondary text-light form-control ms-3" name="submit" value="Login">
+                            </div> -->
+                            <div class="row mt-2 d-flex form-group">
+                                <input type="submit" class="col-12 btn btn-secondary text-light ms-3" name="submit" value="Login">
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </form>
+                </div>
+                <div class="row mt-4 d-flex">
+                    <p class="col-8 text-light"> Don't have an account?</p>
+                    <!-- Redirect to login page if they already have an account -->
+                    <a href="../pages/signupPage.php" class="btn btn-secondary text-light col-4">Sign Up</a>
                 </div>
             </div> 
             <?php
