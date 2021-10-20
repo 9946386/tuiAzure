@@ -31,7 +31,7 @@ if (isset($_SESSION['useruid'])) {
         }
 
         if (invalidEntryHours($diesel, $hours, $km, $mood) !== false) {
-            header("location: ../pages/enterHours.php?error=invalidEntry");
+            header("location: ../pages/enterHours.php?error=invalidentry");
             exit();
         }
 

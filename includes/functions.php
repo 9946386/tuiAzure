@@ -44,7 +44,7 @@ function emptyInput($diesel, $hours, $kms, $mood)
 function invalidEntryHours($diesel, $hours, $kms, $mood)
 {
     $result = true;
-    if (!preg_match("/[0-9]/", $diesel, $hours, $kms, $mood)) {
+    if (!preg_match("/[0-9]./", $diesel, $hours, $kms, $mood)) {
         $result = true;
     }
     else {
@@ -56,7 +56,7 @@ function invalidEntryHours($diesel, $hours, $kms, $mood)
 function invalidEntryAddJob($jobWeight, $pallets)
 {
     $result = true;
-    if (!preg_match("/[0-9]/", $jobWeight, $pallets)) {
+    if (!preg_match("/[0-9]./", $jobWeight, $pallets)) {
         $result = true;
     }
     else {

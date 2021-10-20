@@ -75,20 +75,43 @@ include '../header.php' ?>
                         if ($queryResult > 0) {
 
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "Job Name: " . $row['completedJobName'] . "<br>";
-                                echo "Date: " . $row['completedJobDate'] . "<br>";
-                                echo "Destination: " . $row['completedJobDestination'] . "<br>";
-                                echo "Type: " . $row['completedJobType'] . "<br>";
-                                echo "Order Number: " . $row['completedOrderNumber'] . "<br>";
-                                echo "Reference Number: " . $row['completedReferenceNumber'] . "<br>";
-                                echo "Pallets: " . $row['completedPallets'] . "<br>";
-                                echo "Weight: " . $row['completedJobWeight'] . "<br>";
-                                echo "Status: " . $row['completedJobStatus'] . "<br>";
-                                echo "Driver: " . $row['completedJobDriverName_fk'] . "<br>";
-                                echo "Customer Name: " . $row['customerName'] . "<br>";
-                                echo "Customer Signature: <br>";
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" />';
-                            }
+                                echo "<div class='row'>
+                                        <div class='col pt-3'>
+                                            <table class='table table-bordered table-responsive'>
+                                                <thead>
+                                                    <tr class='table-light'>
+                                                        <th scope='col' class='col-2'>Job</th>
+                                                        <th scope='col'>Driver</th>
+                                                        <th scope='col'>Type</th>
+                                                        <th scope='col' class='col-2'>Order #</th>
+                                                        <th scope='col' class='col-2'>Reference</th>
+                                                        <th scope='col'>Pallets</th>
+                                                        <th scope='col'>Weight (kg)</th>
+                                                        <th scope='col' class='col-2'>Status</th>
+                                                    </tr>
+                                                </thead>";
+                                            echo "<tbody>
+                                                    <tr>    
+                                                        <th>{$row['completedJobName']}<br>
+                                                        <th>{$row['completedJobDate']}<br>
+                                                        <th>{$row['completedJobDestination']}<br>
+                                                        <th>{$row['completedJobType']}<br>
+                                                        <th>{$row['completedOrderNumber']}<br>
+                                                        <th>{$row['completedReferenceNumber']}<br>
+                                                        <th>{$row['completedPallets']}<br>
+                                                        <th>{$row['completedJobWeight']}<br>
+                                                        <th>{$row['completedJobStatus']}<br>
+                                                        <th>{$row['completedJobDriverName_fk']}<br>
+                                                        <th>{$row['customerName']}<br>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>";
+                                                    //echo "Customer Signature: <br>";
+                                                    //echo '<img src="data:image/jpeg;base64,'.base64_encode($row['customerSignature']) .'" /> . <br>';
+
+                                        }
                         }
                         else {
                             // If there are no matches
