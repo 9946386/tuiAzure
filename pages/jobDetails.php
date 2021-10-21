@@ -224,9 +224,11 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         $('.sigPad').signaturePad();
       });
 
+      window.onload = function(){
       $("#confirmBtn").submit(function(e) {
           e.preventDefault(); // <==stop page refresh==>
       });
+      }
 
       window.onload = function(){
       $("#confirmBtn").click(function() {
