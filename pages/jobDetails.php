@@ -105,11 +105,11 @@ if (isset($_GET['id'])) {
           </div>
         </div>
         <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
-        <div class="d-flex flex-row-reverse">
+        <!-- <div class="d-flex flex-row-reverse">
           <form action="" method="POST">
             <button name="completed" type="submit" class="btn btn-primary text-light mt-4">Complete Job</button>
           </form>
-        </div>
+        </div> -->
     </div> 
 
     
@@ -178,6 +178,12 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
+    <div class="d-flex flex-row-reverse">
+      <form action="" method="POST">
+        <button name="completed" type="submit" class="btn btn-primary text-light mt-4">Complete Job</button>
+      </form>
+    </div>
+
     <!-- If there are no jobs to show -->
     <?php else: ?>
       <h5>This job is no longer open.</h5>
@@ -225,7 +231,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
 }
 ?>
       </div>
-    </div>
+    <!-- </div> -->
 
     <!-- JavaScript for the customer Signature Pad -->
     <script>
