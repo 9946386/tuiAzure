@@ -99,9 +99,9 @@ if (isset($_GET['id'])) {
               </tbody>                          
             </table>
             <!-- If there are no jobs to show -->
-              <?php else: ?>
-                <h5>This job is no longer open.</h5>
-              <?php endif ?>
+              <?php //else: ?>
+                <!-- <h5>This job is no longer open.</h5> -->
+              <?php //endif ?>
           </div>
         </div>
         <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
@@ -146,6 +146,8 @@ if (isset($_GET['id'])) {
       </button>
     </div>
 
+    
+
     <!-- <div class="modal"> -->
     <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -175,6 +177,11 @@ if (isset($_GET['id'])) {
         </div>
       </div>
     </div>
+
+    <!-- If there are no jobs to show -->
+    <?php else: ?>
+      <h5>This job is no longer open.</h5>
+    <?php endif ?>
 
     <!-- <div class="container">
       <div class="d-flex align-items-end flex-column bd-highlight mb-3">
