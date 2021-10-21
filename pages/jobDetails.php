@@ -246,15 +246,15 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         $('.sigPad').signaturePad();
       });
 
-      $(document).ready(function(){
-        // hide form on page load
-        $('#completeBtn').hide();
+      // $(document).ready(function(){
+      //   // hide form on page load
+      //   $('#completeBtn').hide();
 
-        // when button is pressed
-        $('#confirmBtn').on('click',function(){  
-          $('#completeBtn').show();
-      });
-      });
+      //   // when button is pressed
+      //   $('#confirmBtn').on('click',function(){  
+      //     $('#completeBtn').show();
+      // });
+      // });
     </script>
 
     <script src="../Signature/json2.min.js"></script>     
