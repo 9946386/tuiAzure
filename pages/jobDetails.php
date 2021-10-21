@@ -156,9 +156,9 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="position-absolute bottom-50 end-0 m-4 completedBtnDiv">
+    <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-lg rounded-pill btn-primary text-light mt-4 ">Complete Job</button>
+        <button name="completed" type="submit" class="btn btn-lg mt-auto rounded-pill btn-primary text-light">Complete Job</button>
       </form>
     </div>
               
