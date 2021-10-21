@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
       </div>
   </div>
 
-  <div class="position-relative container-fluid p-0 mainDiv">
+  <div class="position-relative container-fluid p-0">
     <!-- Job Card -->
     <div class="container-fluid bg-secondary h-100 darkMobileContainer">
       <div class="container px-4 p-3 mainPageJobCardContainer ">
@@ -156,7 +156,7 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="position-absolute bottom-0 end-0 m-4 completedBtnDiv">
+    <div class="position-absolute bottom-50 end-0 m-4 completedBtnDiv">
       <form action="" method="POST">
         <button name="completed" type="submit" class="btn btn-lg rounded-pill btn-primary text-light mt-4 ">Complete Job</button>
       </form>
