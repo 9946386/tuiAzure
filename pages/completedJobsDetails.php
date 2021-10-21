@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
   $id = mysqli_real_escape_string($conn, $_GET['id']);
 
   // Select statement to get all the jobs linked to the id number passed through the url
-  $sql = "SELECT SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
+  $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
           FROM completedjobs 
           INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
           WHERE completedJobID = $id";
