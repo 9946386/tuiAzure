@@ -147,7 +147,7 @@ if (isset($_GET['id'])) {
             </div>
           </div>
             <div class="modal-footer">
-            <button type="submit" name="submit">Confirm</button>
+            <button type="submit" name="submit" id="confirmBtn">Confirm</button>
           </div>
           </form>                
         </div>
@@ -244,6 +244,16 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
 
       $(document).ready(function () {
         $('.sigPad').signaturePad();
+      });
+
+      $(document).ready(function(){
+        // hide form on page load
+        $('#completeBtn').hide();
+
+        // when button is pressed
+        $('button#confirmBtn').on('click',function(){  
+          $('#completeBtn').show();
+      });
       });
     </script>
 
