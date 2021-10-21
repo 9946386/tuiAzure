@@ -117,7 +117,7 @@ if (isset($_GET['id'])) {
 
     
 
-    <div class="container h-50">
+    <div class="container h-25">
       <!-- Button to show customer input modal -->
       <button type="button" class="btn btn-lg rounded-pill btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
         Customer Input
