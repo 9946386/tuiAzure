@@ -21,6 +21,8 @@ if (isset($_GET['id'])) {
   // Select statement to get all the jobs linked to the id number passed through the url
   $sql = "SELECT * FROM openjobs WHERE openJobID = $id";
 
+  
+
   // Performing the query
   $result = mysqli_query($conn, $sql);
 
@@ -63,7 +65,10 @@ if (isset($_GET['id'])) {
           <div class="card-body">
             <!-- If there are any jobs from above query -->
             <!-- Take the results and put them into the table - Uses htmlspecialchars to change any special characters to html -->
-            <?php if($job): ?>
+            <?php if($job): 
+              $jobsID = $job['openJobID'];
+
+              ?>
               <h5 class="card-title"><?php echo htmlspecialchars($job['jobName']); ?></h5>
               <table class="table table-responsive">
               <tbody>
@@ -120,8 +125,8 @@ if (isset($_GET['id'])) {
           // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
 
           // Moving selected job to completed jobs table
-          $sql2 = "INSERT INTO completedjobs (completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
-                      SELECT jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
+          $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
+                      SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
                       mysqli_query($conn, $sql2); 
               echo "<script>console.log('Job moved to completed jobs')</script>";
                          
