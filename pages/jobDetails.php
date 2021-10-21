@@ -122,9 +122,7 @@ if (isset($_GET['id'])) {
       <button type="button" class="btn btn-lg rounded-pill btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
         Customer Input
       </button>
-    </div>
-
-    
+    </div>    
 
     <!-- <div class="modal"> -->
     <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,7 +154,7 @@ if (isset($_GET['id'])) {
       </div>
     </div>
 
-    <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
+    <!-- <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
         <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light">Complete Job</button>
       </form>
@@ -165,28 +163,28 @@ if (isset($_GET['id'])) {
 
     <?php  
   
-      if(isset($_POST['completed']) && isset($_GET['id'])){
+      // if(isset($_POST['completed']) && isset($_GET['id'])){
 
-        $jobID2 = $_GET['id'];
-        print_r($jobID2);
-        global $conn;     
+        // $jobID2 = $_GET['id'];
+        // print_r($jobID2);
+        // global $conn;     
         // Takes away any special characters in the string
         // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
 
         // Moving selected job to completed jobs table
-        $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
-                    SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
-                    mysqli_query($conn, $sql2); 
-            echo "<script>console.log('Job moved to completed jobs')</script>";
+        // $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
+        //             SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
+        //             mysqli_query($conn, $sql2); 
+        //     echo "<script>console.log('Job moved to completed jobs')</script>";
                         
         // Deleting it from the openjobs table
-        $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
-                    mysqli_query($conn, $deleteColumn);
-            echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
-      }
+        // $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
+        //             mysqli_query($conn, $deleteColumn);
+        //     echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
+      // }
       //header("Location: ../pages/mobileHome.php");
   
-  ?>
+  ?> -->
 
     <!-- If there are no jobs to show -->
     <?php else: ?>
@@ -231,6 +229,33 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     else {
         echo '<script>console.log("Success Bro!")</script>';
     } 
+
+    echo "<div class='d-flex align-items-end flex-column m-4 completedBtnDiv'>
+      <form action='' method='POST'>
+        <button name='completed' type='submit' class='btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light'>Complete Job</button>
+      </form>
+    </div>";
+              
+      if(isset($_POST['completed']) && isset($_GET['id'])){
+
+        $jobID2 = $_GET['id'];
+        print_r($jobID2);
+        global $conn;     
+        // Takes away any special characters in the string
+        // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
+
+        // Moving selected job to completed jobs table
+        $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
+                    SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
+                    mysqli_query($conn, $sql2); 
+            echo "<script>console.log('Job moved to completed jobs')</script>";
+                        
+        // Deleting it from the openjobs table
+        $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
+                    mysqli_query($conn, $deleteColumn);
+            echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
+      }
+      //header("Location: ../pages/mobileHome.php");
     
 }
 ?>
