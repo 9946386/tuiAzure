@@ -99,23 +99,9 @@ if (isset($_GET['id'])) {
                 </tr>                              
               </tbody>                          
             </table>
-            <!-- If there are no jobs to show -->
-              <?php //else: ?>
-                <!-- <h5>This job is no longer open.</h5> -->
-              <?php //endif ?>
           </div>
         </div>
-        <!-- Button to complete the job which will then send the table entry from openjobs to completedjobs -->
-        <!-- <div class="d-flex flex-row-reverse">
-          <form action="" method="POST">
-            <button name="completed" type="submit" class="btn btn-primary text-light mt-4">Complete Job</button>
-          </form>
-        </div> -->
     </div> 
-
-    
-
-    
 
     <div class="container h-25">
       <!-- Button to show customer input modal -->
@@ -156,7 +142,7 @@ if (isset($_GET['id'])) {
 
     <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light" id="completeBtn">Complete Job</button>
+        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light" id="completeBtn" style="display:none">Complete Job</button>
       </form>
     </div>
               
@@ -191,13 +177,6 @@ if (isset($_GET['id'])) {
       <h5>This job is no longer open.</h5>
     <?php endif ?>
 
-    <!-- <div class="container">
-      <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-          <form action="" method="POST">
-              <button name="completed" type="submit" class="btn btn-primary text-light pt-4 mt-auto bd-highlight">Complete Job</button>
-          </form>
-      </div>
-    </div> -->
      <?php
 
 if(isset($_POST['submit']) && isset($_GET['id'])){
@@ -237,7 +216,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     </div>
 
     <!-- JavaScript for the customer Signature Pad -->
-    <script>
+    <script type="text/javascript">
       $(document).ready(function () {
         $('.sigPad').signaturePad({drawOnly:true});
       });
@@ -255,6 +234,14 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
       //     $('#completeBtn').show();
       // });
       // });
+
+      window.onload = function(){
+      $("#confirmBtn").click(function() {
+          $("#completeBtn").show();
+          });
+      }     
+
+
     </script>
 
     <script src="../Signature/json2.min.js"></script>     
