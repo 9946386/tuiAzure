@@ -142,7 +142,7 @@ if (isset($_GET['id'])) {
 
     <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light" id="completeBtn" style="display:none">Complete Job</button>
+        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light" id="completeBtn">Complete Job</button>
       </form>
     </div>
               
@@ -224,11 +224,11 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         $('.sigPad').signaturePad();
       });
 
-      window.onload = function(){
-      $("#confirmBtn").submit(function(e) {
-          e.preventDefault(); // <==stop page refresh==>
-      });
-      }
+      // window.onload = function(){
+      // $("#confirmBtn").submit(function(e) {
+      //     e.preventDefault(); // <==stop page refresh==>
+      // });
+      // }
 
       window.onload = function(){
       $("#confirmBtn").click(function() {
