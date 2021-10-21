@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
   $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
           FROM completedjobs 
           INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
-          WHERE completedJobID = $id";
+          WHERE completedjobs.completedJobID = $id";
 
   // Performing the query
   $result = mysqli_query($conn, $sql);
@@ -108,7 +108,7 @@ if (isset($_GET['id'])) {
               </div>
               <!-- If there are no jobs to show -->
               <?php else: ?>
-                  <h5>This job is no longer open.</h5>
+                  <h5>This job is no longer available.</h5>
                 <?php endif ?>
           </div>
       </div>
