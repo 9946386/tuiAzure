@@ -98,11 +98,11 @@ if (isset($_GET['id'])) {
                 <table class="table table-responsive">
                   <tr>
                     <th>Customer Name:</th>
-                    <td id="jobTypeData"><?php echo htmlspecialchars($job['customerName']); ?></td>
+                    <td id="customerName"><?php echo htmlspecialchars($job['customerName']); ?></td>
                   </tr>
                   <tr>
                     <th>Customer Signature:</th>
-                    <td id="orderNumData"><?php echo htmlspecialchars($job['customerSignature']); ?></td>
+                    <td id="customerSignature"><?php echo "<img src='data:image/jpeg;base64,'.base64_encode({$job['customerSignature']}) .'' />" ?></td>
                   </tr>
                 </table>
               </div>
