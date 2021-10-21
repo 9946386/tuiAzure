@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
       </div>
   </div>
 
-  <div class="position-relative container">
+  <div class="position-relative container-fluid">
     <!-- Job Card -->
     <div class="container-fluid bg-secondary h-100 darkMobileContainer">
       <div class="container px-4 p-3 mainPageJobCardContainer ">
