@@ -19,7 +19,10 @@ if (isset($_GET['id'])) {
   $id = mysqli_real_escape_string($conn, $_GET['id']);
 
   // Select statement to get all the jobs linked to the id number passed through the url
-  $sql = "SELECT * FROM completedjobs WHERE completedJobID = $id";
+  $sql = "SELECT SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
+          FROM completedjobs 
+          INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
+          WHERE completedJobID = $id";
 
   // Performing the query
   $result = mysqli_query($conn, $sql);
@@ -83,10 +86,7 @@ if (isset($_GET['id'])) {
                 </tr>                              
               </tbody>                          
               </table>
-              <!-- If there are no jobs to show -->
-                <?php else: ?>
-                  <h5>This job is no longer open.</h5>
-                <?php endif ?>
+              
             </div>
           </div>
       </div>     
@@ -95,14 +95,21 @@ if (isset($_GET['id'])) {
       <div class="container px-4 p-3 ">
           <div class="card mainPageJobCard">
               <div class="card-body">
-                  <label for="customerName" class="form-label">Customer Name:</label>
-                  <input type="text" class="form-control" id="customerNameInput" placeholder="Customers name will be here">
-                  <label for="customerSignature" class="form-label">Customer Signature:</label>
-                  <br>
-                  <canvas id="signature-pad" width="200%" height="100%" style="border: 1px solid #ddd;"></canvas>
-                  <br>
-                  <button id="editCompletedJobDetails" class="btn btn-primary text-light float-end">Edit</button>
+                <table class="table table-responsive">
+                  <tr>
+                    <th>Customer Name:</th>
+                    <td id="jobTypeData"><?php echo htmlspecialchars($job['customerName']); ?></td>
+                  </tr>
+                  <tr>
+                    <th>Customer Signature:</th>
+                    <td id="orderNumData"><?php echo htmlspecialchars($job['customerSignature']); ?></td>
+                  </tr>
+                </table>
               </div>
+              <!-- If there are no jobs to show -->
+              <?php else: ?>
+                  <h5>This job is no longer open.</h5>
+                <?php endif ?>
           </div>
       </div>
   </div>
