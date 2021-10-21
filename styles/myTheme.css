@@ -83,7 +83,7 @@ body {
   padding-top: 0px;
 }
 
-.completedBtnDiv {
+.mainDiv .completedBtnDiv {
   position: relative;
   bottom: 10;
   right: 20;
