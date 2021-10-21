@@ -224,22 +224,11 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         $('.sigPad').signaturePad();
       });
 
-      // $(document).ready(function(){
-      //   // hide form on page load
-      //   $('#completeBtn').hide();
-
-      //   // when button is pressed
-      //   $('#confirmBtn').on('click',function(){  
-      //     $('#completeBtn').show();
-      // });
-      // });
-
       window.onload = function(){
       $("#confirmBtn").click(function() {
           $("#completeBtn").show();
           });
       }     
-
 
     </script>
 
