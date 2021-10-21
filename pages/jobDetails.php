@@ -117,7 +117,7 @@ if (isset($_GET['id'])) {
 
     
 
-    <div class="container">
+    <div class="container h-100">
       <!-- Button to show customer input modal -->
       <button type="button" class="btn btn-lg rounded-pill btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
         Customer Input
@@ -158,7 +158,7 @@ if (isset($_GET['id'])) {
 
     <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-lg mt-auto rounded-pill btn-primary text-light">Complete Job</button>
+        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light">Complete Job</button>
       </form>
     </div>
               
