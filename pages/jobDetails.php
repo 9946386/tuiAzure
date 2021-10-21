@@ -117,7 +117,7 @@ if (isset($_GET['id'])) {
 
     
 
-    <div class="container h-100">
+    <div class="container h-50">
       <!-- Button to show customer input modal -->
       <button type="button" class="btn btn-lg rounded-pill btn-primary w-50 float-end text-light" data-bs-toggle="modal" data-bs-target="#customerModal">
         Customer Input
@@ -251,7 +251,7 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         $('#completeBtn').hide();
 
         // when button is pressed
-        $('button#confirmBtn').on('click',function(){  
+        $('#confirmBtn').on('click',function(){  
           $('#completeBtn').show();
       });
       });
