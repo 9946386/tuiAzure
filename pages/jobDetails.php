@@ -147,30 +147,7 @@ if (isset($_GET['id'])) {
     </div>
               
 
-    <?php  
-  
-      if(isset($_POST['completed']) && isset($_GET['id'])){
-
-        $jobID2 = $_GET['id'];
-        print_r($jobID2);
-        global $conn;     
-        // Takes away any special characters in the string
-        // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
-
-        // Moving selected job to completed jobs table
-        $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
-                    SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
-                    mysqli_query($conn, $sql2); 
-            echo "<script>console.log('Job moved to completed jobs')</script>";
-                        
-        // Deleting it from the openjobs table
-        $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
-                    mysqli_query($conn, $deleteColumn);
-            echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
-      }
-      //header("Location: ../pages/mobileHome.php");
-  
-  ?>
+    
 
     <!-- If there are no jobs to show -->
     <?php else: ?>
@@ -193,11 +170,11 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
     $sigImg = sigJsonToImage($customerSignature);
     
     //$file = 'test.png';
-    $theimage = imagepng($sigImg,NULL);
+    //$theimage = imagepng($sigImg,NULL);
     
     // Insert into the customer table
     $sql = "INSERT INTO customers(customerName, customerSignature, completedJobID_fk)
-            VALUES ('$customerName', '$customerSignature', '$jobsID')";
+            VALUES ('$customerName', '$theimage', '$jobsID')";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -209,7 +186,29 @@ if(isset($_POST['submit']) && isset($_GET['id'])){
         echo '<script>console.log("Success Bro!")</script>';
     } 
     
-}
+}  
+  
+      if(isset($_POST['completed']) && isset($_GET['id'])){
+
+        $jobID2 = $_GET['id'];
+        print_r($jobID2);
+        global $conn;     
+        // Takes away any special characters in the string
+        // $id2 = mysqli_real_escape_string($conn, $_GET['id']);
+
+        // Moving selected job to completed jobs table
+        $sql2 = "INSERT INTO completedjobs (completedJobID, completedJobName, completedJobDate, completedJobDestination, completedJobType, completedOrderNumber, completedReferenceNumber, completedPallets, completedJobWeight, completedJobStatus, completedJobDriver_fk, completedJobDriverName_fk, completedJobDriverUserName_fk) 
+                    SELECT $jobsID, jobName, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driver_fk, driverName_fk, driverUserName_fk FROM openjobs WHERE openJobID = $jobID2"; 
+                    mysqli_query($conn, $sql2); 
+            echo "<script>console.log('Job moved to completed jobs')</script>";
+                        
+        // Deleting it from the openjobs table
+        $deleteColumn = "DELETE FROM openjobs WHERE openJobID = $jobID2";
+                    mysqli_query($conn, $deleteColumn);
+            echo $job['jobName'] . " has been completed and has moved to Completed Jobs";
+      }
+      //header("Location: ../pages/mobileHome.php");
+
 ?>
       </div>
     </div>
