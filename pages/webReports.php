@@ -124,8 +124,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-                                </form>";
+                                    </div>";
 
                                 echo "</div>
                                         <div class='row'>
@@ -148,8 +147,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div>                        
+    </form>
 </div>
 
 
