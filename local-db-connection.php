@@ -5,7 +5,7 @@
 $connectstr_dbhost = 'localhost';
 $connectstr_dbname = 'localdb';
 $connectstr_dbusername = 'azure';
-$connectstr_dbpassword = '6#vWHD_$';
+$connectstr_dbpassword = '6#vWHD_';
 
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {

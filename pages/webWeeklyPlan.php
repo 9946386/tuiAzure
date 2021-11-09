@@ -26,7 +26,9 @@
         // This could probably be moved to a function?? 
 
         // Selecting all from openjobs, getting the day value from date and setting it to "day", joining with the users table
-        $sql="SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, openjobs.driverName_fk, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
+        $sql="SELECT openjobs.openJobID, openjobs.jobName, openjobs.jobDate, openjobs.destination, openjobs.jobType, 
+                    openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, 
+                    openjobs.driverName_fk, users.usersID, users.userName, DAYNAME(openjobs.jobDate) AS Day
             FROM openjobs
             INNER JOIN users ON openjobs.driverName_fk = users.userName";
         //$results = $conn->query( $sql );

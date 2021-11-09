@@ -62,7 +62,11 @@ include '../header.php' ?>
                         $search = mysqli_real_escape_string($conn, $_POST['search']);
 
                         // Select all from completed jobs where the reference or order number is what was entered in the search input
-                        $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, customers.customerSignature
+                        $sql = "SELECT completedjobs.completedJobID, completedjobs.completedJobName, completedjobs.completedJobDate, 
+                                    completedjobs.completedJobDestination, completedjobs.completedJobType, completedjobs.completedOrderNumber, 
+                                    completedjobs.completedReferenceNumber, completedjobs.completedPallets, completedjobs.completedJobWeight, 
+                                    completedjobs.completedJobStatus, completedjobs.completedJobDriverName_fk, customers.customerName, 
+                                    customers.customerSignature
                                 FROM completedJobs 
                                 INNER JOIN customers ON completedjobs.completedJobID = customers.completedJobID_fk
                                 WHERE completedReferenceNumber LIKE '%$search%' OR completedOrderNumber LIKE '%$search%' OR completedJobDriverName_fk LIKE '%$search%'";

@@ -27,5 +27,5 @@
     <script src="../JS/app.js"></script>
     <script src="../JS/ui.js"></script>
     
-    <!-- Link to manifest.json for PWA functionality -->
+    <!-- Attach footer at bottom of page -->
     <?php include '../footer.php' ?>

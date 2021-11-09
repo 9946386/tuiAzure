@@ -14,7 +14,8 @@ function driverMenu()
     while ($row = mysqli_fetch_assoc($results)) {
         echo "
             <div class='col text-center'>
-                <input type='button' aria-pressed='true' name='driverNameBtn' class='btn btn-primary rounded-pill text-light' value='{$row['usersID']}. {$row['userName']}' />
+                <input type='button' aria-pressed='true' name='driverNameBtn' 
+                class='btn btn-primary rounded-pill text-light' value='{$row['usersID']}. {$row['userName']}' />
             </div>";
     }
 }
@@ -77,6 +78,7 @@ function emptyAddJobInput($driversID, $jobName, $jobDate, $destination, $jobType
     return $result;
 }
 
+// Taking the users input and checking that none are empty
 function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
 {
     $result = true;
@@ -88,7 +90,7 @@ function emptyInputSignup($name, $email, $username, $password, $confirmPassword)
     }
     return $result;
 }
-
+// Taking the users entered username and checking it meets the criteria
 function invalidUid($username)
 {
     $result = true;
@@ -100,9 +102,7 @@ function invalidUid($username)
     }
     return $result;
 }
-
-
-
+// Taking the users email and checking it is in a valid email format
 function invalidEmail($email)
 {
     $result = true;
@@ -114,7 +114,7 @@ function invalidEmail($email)
     }
     return $result;
 }
-
+// Taking both passwords entered and checking that they match
 function pwdMatch($password, $confirmPassword)
 {
     $result = true;
@@ -126,7 +126,7 @@ function pwdMatch($password, $confirmPassword)
     }
     return $result;
 }
-
+// Checking if the username entered already exsists
 function UidExists($conn, $username, $email)
 {
     $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
@@ -151,7 +151,7 @@ function UidExists($conn, $username, $email)
 
     mysqli_stmt_close($stmt);
 }
-
+// Creating the user
 function createUser($conn, $name, $email, $username, $password)
 {
     // Inserting new user info into users tables
@@ -171,7 +171,7 @@ function createUser($conn, $name, $email, $username, $password)
 
     header("location: ../pages/mobileHome.php");
 }
-
+// Checking that all input feilds are filled
 function emptyInputLogin($username, $password)
 {
     $result = true;
@@ -205,9 +205,11 @@ function loginUser($conn, $username, $password)
         header("location: ../pages/loginPage.php?error=wrongLogin");
         exit();
     }
-    // 
+    // If true the input is the same and user is logged in
     else if ($checkPassword === true) {
+        // A session is started
         session_start();
+        // Session variables
         $_SESSION["userid"] = $uidExists["usersID"];
         $_SESSION["useruid"] = $uidExists["userUid"];
         $_SESSION["usersname"] = $uidExists["userName"];
@@ -399,7 +401,9 @@ function getUserJobs()
             $name = $user['userName'];
 
             // Query to get open jobs and user info that are equal to the id of signed in user
-            $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.destination, openjobs.jobType, openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, openjobs.jobStatus, users.usersID, users.userName
+            $jobs = "SELECT openJobs.openJobID, openjobs.jobName, openjobs.destination, openjobs.jobType, 
+                            openjobs.orderNumber, openjobs.referenceNumber, openjobs.pallets, openjobs.jobWeight, 
+                            openjobs.jobStatus, users.usersID, users.userName
                                           FROM openjobs
                                           INNER JOIN users ON openjobs.driver_fk = users.usersID
                                           WHERE users.usersID = $id";
@@ -436,7 +440,8 @@ function getUserJobs()
                                 </table>
                                 <div class='row'>
                                     <div class='col d-flex flex-row-reverse'>
-                                    <a href='jobDetails.php?id={$openjob['openJobID']}' class='btn btn-primary text-light'>View Job</a>
+                                    <a href='jobDetails.php?id={$openjob['openJobID']}' class='btn btn-primary 
+                                    text-light'>View Job</a>
                                     </div>
                                 </div>
                             </div>
