@@ -65,6 +65,10 @@ if (isset($_GET['id'])) {
                   <td id="jobTypeData"><?php echo htmlspecialchars($job['completedJobType']); ?></td>
                 </tr>
                 <tr>
+                  <th>Destination:</th>
+                  <td id="jobTypeData"><?php echo htmlspecialchars($job['completedJobDestination']); ?></td>
+                </tr>
+                <tr>
                   <th>Order #:</th>
                   <td id="orderNumData"><?php echo htmlspecialchars($job['completedOrderNumber']); ?></td>
                 </tr>

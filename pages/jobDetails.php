@@ -142,10 +142,9 @@ if (isset($_GET['id'])) {
 
     <div class="d-flex align-items-end flex-column m-4 completedBtnDiv">
       <form action="" method="POST">
-        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-5 rounded-pill btn-primary text-light" id="completeBtn">Complete Job</button>
+        <button name="completed" type="submit" class="btn btn-lg mt-auto mb-4 rounded-pill btn-primary text-light" id="completeBtn">Complete Job</button>
       </form>
-    </div>
-              
+    </div>           
 
     
 

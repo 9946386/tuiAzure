@@ -31,7 +31,8 @@ if (isset($_POST['submit']))
 
     require '../includes/functions.php';
 
-    if (emptyInput($driversID, $jobName, $jobDate, $destination, $jobType, $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus) !== false) {
+    if (emptyInput($driversID, $jobName, $jobDate, $destination, $jobType,
+    $jobReference, $jobWeight, $orderNumber, $pallets, $jobStatus) !== false) {
         header("location: ../pages/webAddJob.php?error=emptyinput");
         exit();
     }
@@ -42,8 +43,11 @@ if (isset($_POST['submit']))
     }
 
     // SQL query to insert the above variables into the openjobs table.
-    $sql = "INSERT INTO openjobs(jobName, driver_fk, driverName_fk, jobDate, destination, jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, driverUserName_fk) 
-    VALUES ('$jobName', '$driversID', '$driversName', '$jobDate', '$destination', '$jobType', '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', '$driversUserName');";
+    $sql = "INSERT INTO openjobs(jobName, driver_fk, driverName_fk, jobDate, destination, 
+                        jobType, orderNumber, referenceNumber, pallets, jobWeight, jobStatus, 
+                        driverUserName_fk) 
+    VALUES ('$jobName', '$driversID', '$driversName', '$jobDate', '$destination', '$jobType', 
+            '$orderNumber', '$jobReference', '$pallets', '$jobWeight', '$jobStatus', '$driversUserName');";
 
     $run = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

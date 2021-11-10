@@ -13,7 +13,7 @@
         <!-- Form that uses the insertJob.php file to take form input and insert it into the openjobs table -->
         <form action="../includes/insertJob.php" method="POST" class="form-group">
         <select class="form-select form-select-lg col-2 w-50 m-auto" name="selectedDriver" id="driver">
-            <option selected>Change driver</option>
+            <option selected>Select driver</option>
             <!-- Calling the dropDown function to supply driver names in drop down -->
             <?php include '../includes/functions.php'; dropDown();?>
         </select>

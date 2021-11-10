@@ -513,25 +513,13 @@ function getCompletedJob()
                                             <td>{$completedJob['completedJobType']}</td>
                                         </tr>
                                         <tr>
-                                            <th>Order #:</th>
-                                            <td>{$completedJob['completedOrderNumber']}</td>
+                                            <th>Destination:</th>
+                                            <td>{$completedJob['completedDestination']}</td>
                                         </tr>
                                         <tr>
                                             <th>Reference:</th>
                                             <td>{$completedJob['completedReferenceNumber']}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Pallets:</th>
-                                            <td>{$completedJob['completedPallets']}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Weight:</th>
-                                            <td>{$completedJob['completedJobWeight']}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Status:</th>
-                                            <td>{$completedJob['completedJobStatus']}</td>
-                                        </tr>
+                                        </tr>                                        
                                     </tbody>                          
                                 </table>
                                 <div class='row'>
@@ -546,3 +534,16 @@ function getCompletedJob()
         endif;
     }
 }
+
+// <tr>
+//                                             <th>Pallets:</th>
+//                                             <td>{$completedJob['completedPallets']}</td>
+//                                         </tr>
+//                                         <tr>
+//                                             <th>Weight:</th>
+//                                             <td>{$completedJob['completedJobWeight']}</td>
+//                                         </tr>
+//                                         <tr>
+//                                             <th>Status:</th>
+//                                             <td>{$completedJob['completedJobStatus']}</td>
+//                                         </tr>
