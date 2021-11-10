@@ -16,8 +16,10 @@
                                 //fclose($output);
                             //}; ?>
 
-<!-- Including the header at the top of the page -->
+
 <?php include '../local-db-connection.php';?>
+
+<!-- Including the header at the top of the page -->
 <?php include '../header.php'; ?>
 
 <!-- Form that uses the search.php file to search database for anything that matches user input -->
@@ -149,6 +151,7 @@
             </div>
         </div>                        
     </form>
+</div>
 </div>
 
 
